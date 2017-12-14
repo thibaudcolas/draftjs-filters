@@ -5,6 +5,17 @@
 * [ ] Entity attribute whitelist per entity, potentially configurable.
 * [ ] Entity filtering, attribute-based.
 
+Line breaks:
+
+* Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"Soft line<?>break"`
+* [ ] Remove invalid soft line break character inserted by Apple Pages.
+* Dropbox Paper Safari iOS 11 `"Soft "`, `"line break"`
+* Google Docs Safari iOS 11, Word Safari iOS 11 `"Soft"`, `"Line break"`
+* Apple Pages Chrome 62 macOS 10.13 `"Soft line\n break"`
+* Word Online Firefox 57, Safari 11, macOS 10.13 `"Soft \nline break "`
+* Word 2010 IE11 `"Soft "`, `"line break"`.
+* Word 2010 Chrome 62, Firefox 57 `"Soft \n line break"`.
+
 ```txt
 dropboxpaper-chrome62-macos1013
 dropboxpaper-chrome62-win81
@@ -26,12 +37,15 @@ googledocs-safari11-macos1013
 
 ## Word 2010
 
+Highly similar between Chrome 62 and Firefox 57.
+
 * Page link -> `LINK` with `href`, `url`.
 * [ ] Filter `href` attribute on `LINK`.
 * Email link -> `LINK` with `href`, `url`, eg. `mailto:test@example.com`.
 * Link tooltip -> `LINK` with `title` attribute.
 * [ ] Potentially filter out `title` attribute on `LINK` if unsupported.
 * Internal link -> `LINK` with `"href": "#_Inline_styles"`, `"url": "http://localhost/examples/#_Inline_styles"`.
+* Internal link in Forefox 57 -> `unstyled`, no `LINK`.
 * [ ] Remove internal links based on `href` starting with `#`.
 * Frame link -> `LINK` with `href`, `url`.
 * Comment -> `LINK` with `"href": "#_msocom_1"`, `"http://localhost/examples/#_msocom_1"`, and `[T.C1]` text appended after the commented content.
@@ -68,10 +82,6 @@ googledocs-safari11-macos1013
 * Chart -> `IMAGE` with `file:///` for `src`, `width` and `height`.
 * WordArt -> `unstyled` block with whitespace text (multiple spaces).
 
-### Firefox
-
-* Internal link -> `unstyled`, no `LINK`.
-
 ### IE11
 
 * The equation content makes the browser crash on copy-paste.
@@ -88,16 +98,6 @@ googledocs-safari11-macos1013
 * Star list prefixed with `\t` (depth 0), `o\t`, `\t` (depth 1 & 2).
 * Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
 * [ ] Investigate equation block with single tab character `"text": "\t"`.
-
-## iOS11
-
-* Paste is plain text only.
-* Emojis preserved
-
-### Word
-
-* Numbered list prefixed with `\t`, eg. `"text": "\tStar list",` (regardless of depth).
-* Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
 
 ## Apple Pages
 
@@ -172,13 +172,12 @@ Same behavior in Chrome 62, Safari 11, Firefox 57, Edge 16. Win 8.1, Win 10, mac
 
 Unsupported, document does not open.
 
-## Line breaks
+## iOS11
 
-* Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"Soft line<?>break"`
-* [ ] Remove invalid soft line break character inserted by Apple Pages.
-* Dropbox Paper Safari iOS 11 `"Soft "`, `"line break"`
-* Google Docs Safari iOS 11, Word Safari iOS 11 `"Soft"`, `"Line break"`
-* Apple Pages Chrome 62 macOS 10.13 `"Soft line\n break"`
-* Word Online Firefox 57, Safari 11, macOS 10.13 `"Soft \nline break "`
-* Word 2010 IE11 `"Soft "`, `"line break"`.
-* Word 2010 Chrome 62, Firefox 57 `"Soft \n line break"`.
+* Paste is plain text only.
+* Emojis preserved
+
+### Word
+
+* Numbered list prefixed with `\t`, eg. `"text": "\tStar list",` (regardless of depth).
+* Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
