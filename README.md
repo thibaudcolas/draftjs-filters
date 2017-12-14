@@ -2,6 +2,9 @@
 
 ## TODO
 
+* [ ] Entity attribute whitelist per entity, potentially configurable.
+* [ ] Entity filtering, attribute-based.
+
 ```txt
 dropboxpaper-chrome62-macos1013
 dropboxpaper-chrome62-win81
@@ -23,24 +26,65 @@ googledocs-safari11-macos1013
 
 ## Word 2010
 
-```
-word2010-chrome62-win81
-word2010-firefox57-win81
-word2010-ie11-noequation-strippastedstyles-win81
-```
+* Page link -> `LINK` with `href`, `url`.
+* [ ] Filter `href` attribute on `LINK`.
+* Email link -> `LINK` with `href`, `url`, eg. `mailto:test@example.com`.
+* Link tooltip -> `LINK` with `title` attribute.
+* [ ] Potentially filter out `title` attribute on `LINK` if unsupported.
+* Internal link -> `LINK` with `"href": "#_Inline_styles"`, `"url": "http://localhost/examples/#_Inline_styles"`.
+* [ ] Remove internal links based on `href` starting with `#`.
+* Frame link -> `LINK` with `href`, `url`.
+* Comment -> `LINK` with `"href": "#_msocom_1"`, `"http://localhost/examples/#_msocom_1"`, and `[T.C1]` text appended after the commented content.
+* Comment -> also adding `unstyled` block for comment text at the end of the document, preceded with `[T.C1]`: `"text": "[T.C1]Comment"`. And `LINK` with `"href": "#_msoanchor_1"`, `"url": "http://localhost/examples/#_msoanchor_1"`.
+* [ ] Remove comment `LINK` based on `href` attribute.
+* [ ] Potentially also remove inserted text, if feasible.
+* Title, Subtitle -> `unstyled`.
+* Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> correct `header-*` level.
+* Bold, Italic, Strikethrough, Underline -> `BOLD`, `ITALIC`, `STRIKETHROUGH`, `UNDERLINE`.
+* Bigger, smaller, superscript, subscript, monospace -> `unstyled`.
+* Text color, background color -> `unstyled`.
+* Small caps -> lowercase `unstyled`.
+* Outline -> `BOLD`.
+* Double strikethrough -> `STRIKETHROUGH`.
+* Emphasis -> `ITALIC`.
+* Light emphasis, intense emphasis, quote, intense quote, light ref, intense ref, book title -> `unstyled`.
+* Left, right, center, justify, indent -> `unstyled`.
+* Heading 7, Heading 8, Heading 9 -> `unstyled`.
+* Bullet list -> `unstyled` prefixed with `·` (depth 0), `o`, `§` (depth 1 & 2).
+* Number list prefixed with `1.` (depth 0), `a.`, `i.` (depth 1 & 2).
+* Star list -> `unstyled` prefixed with `📷`, and `IMAGE` entity with `"alt": "*"` `"height": "15"`, `"width": "15"`, `"src": "file:///C:\\truncated\\msohtmlclip1\\01\\clip_image001.gif"`.
+* [ ] Remove image entities and their text when `src` uses `file:///` protocol.
+* Unstyled with borders -> `unstyled`.
+* Image -> `unstyled` with entity applied to "📷" camera emoji.
+* Image -> `IMAGE` with `file:///` for `src`, `width` and `height`.
+* Image caption -> `unstyled` after image block.
+* Table cells as separate `unstyled` blocks, eg. `"text": "row 1 col 1",`.
+* Styled code -> `unstyled`.
+* Line break -> `Soft \n line break`.
+* Emojis preserved.
+* Equation -> `IMAGE` with `file:///` for `src`, `width` and `height`.
+* Shape -> `IMAGE` with `file:///` for `src`, `width` and `height`.
+* SmartArt -> `IMAGE` with `file:///` for `src`, `width` and `height`.
+* Chart -> `IMAGE` with `file:///` for `src`, `width` and `height`.
+* WordArt -> `unstyled` block with whitespace text (multiple spaces).
+
+### Firefox
+
+* Internal link -> `unstyled`, no `LINK`.
 
 ### IE11
 
 * The equation content makes the browser crash on copy-paste.
 * Rich paste is all in a single line
+* [ ] Advise users to turn on `stripPastedStyles` in their implementation with IE11 detection.
 
 ### IE11 - stripPastedStyles
 
 * `stripPastedStyles` correctly separates the content.
 * Small caps -> uppercase.
 * Light ref, intense ref, book title -> uppercase.
-* Bulleted list prefixed with `•\t` (depth 0), `o\t`, `\t` (depth 1 & 2).
-* Numbered list prefixed with `1.\t` (depth 0), `a.\t`, `i.\t` (depth 1 & 2).
+* Bullet list prefixed with `•\t` (depth 0), `o\t`, `\t` (depth 1 & 2).
+* Number list prefixed with `1.\t` (depth 0), `a.\t`, `i.\t` (depth 1 & 2).
 * Star list prefixed with `\t` (depth 0), `o\t`, `\t` (depth 1 & 2).
 * Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
 * [ ] Investigate equation block with single tab character `"text": "\t"`.
@@ -130,10 +174,11 @@ Unsupported, document does not open.
 
 ## Line breaks
 
-* Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"text": "Soft line<?>break",`
+* Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"Soft line<?>break"`
 * [ ] Remove invalid soft line break character inserted by Apple Pages.
-* Dropbox Paper Safari iOS 11 `"text": "Soft ",`, `"text": "line break",`
-* Google Docs Safari iOS 11, Word Safari iOS 11 `"text": "Soft",`, `"text": "Line break",`
-* Apple Pages Chrome 62 macOS 10.13 `"text": "Soft line\n break",`
-* Word Online Firefox 57, Safari 11, macOS 10.13 `"text": "Soft \nline break ",`
-* Word 2010 IE11 `"text": "Soft ",`, `"text": "line break",`.
+* Dropbox Paper Safari iOS 11 `"Soft "`, `"line break"`
+* Google Docs Safari iOS 11, Word Safari iOS 11 `"Soft"`, `"Line break"`
+* Apple Pages Chrome 62 macOS 10.13 `"Soft line\n break"`
+* Word Online Firefox 57, Safari 11, macOS 10.13 `"Soft \nline break "`
+* Word 2010 IE11 `"Soft "`, `"line break"`.
+* Word 2010 Chrome 62, Firefox 57 `"Soft \n line break"`.
