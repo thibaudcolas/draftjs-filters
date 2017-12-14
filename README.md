@@ -4,56 +4,26 @@
 
 * [ ] Entity attribute whitelist per entity, potentially configurable.
 * [ ] Entity filtering, attribute-based.
+* [ ] Line break filtering
 
 Line breaks:
 
 * Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"Soft line<?>break"`
-* [ ] Remove invalid soft line break character inserted by Apple Pages.
 * Dropbox Paper Safari iOS 11 `"Soft "`, `"line break"`
 * Google Docs Safari iOS 11, Word Safari iOS 11 `"Soft"`, `"Line break"`
 * Apple Pages Chrome 62 macOS 10.13 `"Soft line\n break"`
 * Word Online Firefox 57, Safari 11, macOS 10.13 `"Soft \nline break "`
 * Word 2010 IE11 `"Soft "`, `"line break"`.
 * Word 2010 Chrome 62, Firefox 57 `"Soft \n line break"`.
-
-```txt
-dropboxpaper-chrome62-macos1013
-dropboxpaper-chrome62-win81
-dropboxpaper-edge16-win10
-dropboxpaper-firefox57-macos1013
-dropboxpaper-firefox57-win81
-dropboxpaper-ie11-unsupported-strippastedstyles-win81
-dropboxpaper-ie11-unsupported-win81
-dropboxpaper-safari11-macos1013
-googledocs-chrome62-macos1013
-googledocs-chrome62-win81
-googledocs-edge16-win10
-googledocs-firefox57-macos1013
-googledocs-firefox57-win81
-googledocs-ie11-strippastedstyles-win81
-googledocs-ie11-win81
-googledocs-safari11-macos1013
-```
+* Dropbox Paper all browsers `"Soft "`, `"line break"`.
+* Dropbox Paper Safari 11 - contains different whitespace character than for other browsers.
+* Dropbox Paper IE11 `stripPastedStyles`: `"Soft "`, `""`, `"line break"`
 
 ## Word 2010
 
 Highly similar between Chrome 62 and Firefox 57.
 
-* Page link -> `LINK` with `href`, `url`.
-* [ ] Filter `href` attribute on `LINK`.
-* Email link -> `LINK` with `href`, `url`, eg. `mailto:test@example.com`.
-* Link tooltip -> `LINK` with `title` attribute.
-* [ ] Potentially filter out `title` attribute on `LINK` if unsupported.
-* Internal link -> `LINK` with `"href": "#_Inline_styles"`, `"url": "http://localhost/examples/#_Inline_styles"`.
-* Internal link in Forefox 57 -> `unstyled`, no `LINK`.
-* [ ] Remove internal links based on `href` starting with `#`.
-* Frame link -> `LINK` with `href`, `url`.
-* Comment -> `LINK` with `"href": "#_msocom_1"`, `"http://localhost/examples/#_msocom_1"`, and `[T.C1]` text appended after the commented content.
-* Comment -> also adding `unstyled` block for comment text at the end of the document, preceded with `[T.C1]`: `"text": "[T.C1]Comment"`. And `LINK` with `"href": "#_msoanchor_1"`, `"url": "http://localhost/examples/#_msoanchor_1"`.
-* [ ] Remove comment `LINK` based on `href` attribute.
-* [ ] Potentially also remove inserted text, if feasible.
 * Title, Subtitle -> `unstyled`.
-* Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> correct `header-*` level.
 * Bold, Italic, Strikethrough, Underline -> `BOLD`, `ITALIC`, `STRIKETHROUGH`, `UNDERLINE`.
 * Bigger, smaller, superscript, subscript, monospace -> `unstyled`.
 * Text color, background color -> `unstyled`.
@@ -63,6 +33,20 @@ Highly similar between Chrome 62 and Firefox 57.
 * Emphasis -> `ITALIC`.
 * Light emphasis, intense emphasis, quote, intense quote, light ref, intense ref, book title -> `unstyled`.
 * Left, right, center, justify, indent -> `unstyled`.
+* Page link -> `LINK` with `href`, `url`.
+* [ ] Filter `href` attribute on `LINK`.
+* Email link -> `LINK` with `href`, `url`, eg. `mailto:test@example.com`.
+* Link tooltip -> `LINK` with `title` attribute.
+* [ ] Potentially filter out `title` attribute on `LINK` if unsupported.
+* Internal link -> `LINK` with `"href": "#_Inline_styles"`, `"url": "http://localhost/examples/#_Inline_styles"`.
+* Firefox 57 - Internal link -> `unstyled`, no `LINK`.
+* [ ] Remove internal links based on `href` starting with `#`.
+* Frame link -> `LINK` with `href`, `url`.
+* Comment -> `LINK` with `"href": "#_msocom_1"`, `"http://localhost/examples/#_msocom_1"`, and `[T.C1]` text appended after the commented content.
+* Comment -> also adding `unstyled` block for comment text at the end of the document, preceded with `[T.C1]`: `"text": "[T.C1]Comment"`. And `LINK` with `"href": "#_msoanchor_1"`, `"url": "http://localhost/examples/#_msoanchor_1"`.
+* [ ] Remove comment `LINK` based on `href` attribute.
+* [ ] Potentially also remove inserted text, if feasible.
+* Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> correct `header-*` level.
 * Heading 7, Heading 8, Heading 9 -> `unstyled`.
 * Bullet list -> `unstyled` prefixed with `·` (depth 0), `o`, `§` (depth 1 & 2).
 * Number list prefixed with `1.` (depth 0), `a.`, `i.` (depth 1 & 2).
@@ -99,12 +83,83 @@ Highly similar between Chrome 62 and Firefox 57.
 * Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
 * [ ] Investigate equation block with single tab character `"text": "\t"`.
 
+## Google Docs
+
+```txt
+googledocs-chrome62-macos1013
+googledocs-chrome62-win81
+googledocs-edge16-win10
+googledocs-firefox57-macos1013
+googledocs-firefox57-win81
+googledocs-ie11-strippastedstyles-win81
+googledocs-ie11-win81
+googledocs-safari11-macos1013
+```
+
+## Dropbox Paper
+
+Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Safari 11, Edge 16 Win 10 unless specified.
+
+* Title -> `header-one`
+* Bold, Italic, Strikethrough, Underline -> `BOLD`, `ITALIC`, `STRIKETHROUGH`, `UNDERLINE`.
+* Code -> `unstyled`
+* Comment -> `unstyled` with comment text added after comment position.
+* Page link -> `LINK` with `href`, `url`, `"rel": "noreferrer nofollow noopener",`, `"target": "_blank",`.
+* Mention -> `LINK` with `href`, `url` pointing at user profile `/ep/profile/iX86truncated`.
+* Safari 11 - Mention link -> `unstyled`, no entity
+* Safari 11, Firefox 57 - Mention link -> `href` and `url` are absolute path `/ep/profile/iX86truncated`.
+* Edge 16 - Mention link -> `href` is full URL, `https://paper.dropbox.com/ep/profile/iX86truncated`.
+* Chrome 62 - Mention link -> `href` is absolute path `/ep/profile/iX86truncated`, `url` is full URL, `"url": "http://localhost/ep/profile/iX86truncated"`.
+* Dropbox paper link -> `LINK` with `href`, `url`.
+* Heading one, heading two -> `header-one`, `header-two`
+* Heading three -> `unstyled`
+* Bullet list -> `unordered-list-item`
+* Nested bullet list -> `unordered-list-item` at correct depth.
+* Numbered list -> `ordered-list-item`
+* Nested numbered list -> `ordered-list-item` at correct depth.
+* Action list -> `unordered-list-item`
+* Nested action list -> `unordered-list-item` at correct depth.
+* Image, table, section break -> all concatenated into a single `unstyled` block.
+* Table cells separated by nothing.
+* Section break -> nothing
+* Image -> `unstyled` with entity applied to "📷" camera emoji.
+* Image -> `IMAGE` with `src` pointing to Dropbox Paper (CDN, `https://d2mxuefqeaa7sj.cloudfront.net/`).
+* [ ] Potentially filter `IMAGE` entities doing hotlinking?
+* Code block -> `code-block`, one block per line.
+* Code block -> `CODE` style applied on each line.
+* [ ] Remove `CODE` style in `code-block`?
+* Soft line break -> `"Soft "`, `"line break"`.
+* Emojis -> converted to `IMAGE` with `src` pointing to Dropbox Paper (`https://paper.dropboxstatic.com/static/img/ace/emoji/`), `alt` describing the emoji, `"height": "16"`.
+* Dropbox document link, Trello card, YouTube video, GitHub Gist -> all concatenated into a single `unstyled` block, all with URL in-text and `LINK` entity pointing at source.
+
+- Safari 11 - Soft line break contains different whitespace character than for other browsers.
+
+### IE11
+
+Unsupported, warning message displayed but document still partially renders.
+
+* Rich paste is all in a single line
+* [ ] Advise users to turn on `stripPastedStyles` in their implementation with IE11 detection.
+
+### IE11 - stripPastedStyles
+
+* Bullet list prefixed with `•` (depth 0), `◦`, `◾` (depth 1 & 2).
+* Number list prefixed with `1.` (depth 0), `a.`, `i.` (depth 1 & 2).
+* Action list prefixed with empty space at all depth levels.
+* Section break -> `unstyled` with `"text": "--------------------------------------------------------------------------------",`.
+* Soft line break -> `"Soft "`, `""`, `"line break"`
+
 ## Apple Pages
 
 * Paste is identical, plain text, in Safari and Firefox
 
 ### Chrome 62 macOS 10.13
 
+* Bold, italic -> `BOLD`, `ITALIC`
+* Strikethrough, monospace, underline, outline, bigger, smaller, superscript, subscript -> `unstyled`.
+* Small caps -> lowercase `unstyled`.
+* Red, text background, shadow -> `unstyled`
+* Emphasis -> `BOLD`.
 * Page link -> `LINK` with `href`, `url`.
 * [ ] Filter `href` attribute on `LINK`.
 * Email link -> `LINK` with `href`, `url`, eg. `mailto:test@example.com?subject=subject`.
@@ -120,7 +175,7 @@ Highly similar between Chrome 62 and Firefox 57.
 * Nested numbered list -> empty `unstyled` at current depth, then `ordered-list-item` at correct depth.
 * Dashed list -> `unordered-list-item`
 * Nested dashed list -> empty `unstyled` at current depth, then `unordered-list-item` at correct depth.
-* image list -> `unordered-list-item`
+* Image list -> `unordered-list-item`
 * Nested image list -> empty `unstyled` at current depth, then `unordered-list-item` at correct depth.
 * [ ] Remove empty `unstyled` block in-between list items (`unordered-list-item`, `ordered-list-item`) if the next list item has a non-zero depth? First test what happens with manual editing.
 * [ ] At list normalise all non-list block depth to `0`.
@@ -128,6 +183,8 @@ Highly similar between Chrome 62 and Firefox 57.
 * Table -> `unstyled` block per cell, separated by single-space `unstyled` blocks.
 * Line -> nothing
 * Styled code -> `BOLD` where syntax highlighting matched bold.
+* Soft line break has invalid character `"Soft line<?>break"`
+* [ ] Remove invalid soft line break character inserted by Apple Pages.
 * Emojis preserved
 * MathML equation -> nothing
 * LaTeX equation -> formula as `unstyled`.
