@@ -89,3 +89,51 @@ word2010-ie11-noequation-strippastedstyles-win81
 * LaTeX equation -> formula as `unstyled`.
 * Chart, Shape, Audio media, Video media -> nothing
 * Highlight -> `unstyled`
+
+## Word Online
+
+Same behavior in Chrome 62, Safari 11, Firefox 57, Edge 16. Win 8.1, Win 10, macOS 10.13.
+
+* Page link -> `LINK` with `href`, `url`, `rel="noreferrer"`, `target="_blank"`.
+* Page link -> `UNDERLINE`.
+* [ ] Filter `href` attribute on `LINK`.
+* [ ] Filter `rel` attribute on `LINK`.
+* [ ] Filter `target` attribute on `LINK`.
+* All block text ends with one empty space (" ").
+* Title, Subtitle, Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> `unstyled`.
+* Bold, Italic, Strikethrough, Underline -> `BOLD`, `ITALIC`, `STRIKETHROUGH`, `UNDERLINE`.
+* Bigger, smaller, superscript, subscript -> `unstyled`.
+* Text color, background color -> `unstyled`.
+* Intense emphasis, quote, intense quote, subtle reference -> `ITALIC`.
+* Intense reference, book title -> `BOLD`.
+* Comment -> `unstyled`.
+* Left, right, center, justify, indent, hanging, first line -> `unstyled`.
+* Heading 4, Heading 7, Heading 9 -> `unstyled` with `ITALIC`
+* Bullet list -> `unordered-list-item`
+* Nested bullet list -> non-nested `unordered-list-item`.
+* Numbered list -> `ordered-list-item`
+* Nested numbered list -> non-nested `ordered-list-item`.
+* Checkbox list -> `unordered-list-item`
+* Nested checkbox list -> non-nested `unordered-list-item`.
+* Image -> `unstyled` with entity applied to "📷" camera emoji.
+* Image -> `IMAGE` with data URI `src`, and `alt` if present.
+* [ ] Filter `IMAGE` entities using data URIs.
+* Image with text next to it -> `unstyled` with entity applied to "📷" and text in the same block.
+* [ ] Make sure blocks with image and more text are either split, or image is removed.
+* Styled code -> `unstyled`.
+* Emojis -> preserved but with `BOLD` applied.
+* Inline styles (`ITALIC`, `BOLD`) are split differently (and may be contiguous) between browsers.
+
+### IE11
+
+Unsupported, document does not open.
+
+## Line breaks
+
+* Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"text": "Soft line<?>break",`
+* [ ] Remove invalid soft line break character inserted by Apple Pages.
+* Dropbox Paper Safari iOS 11 `"text": "Soft ",`, `"text": "line break",`
+* Google Docs Safari iOS 11, Word Safari iOS 11 `"text": "Soft",`, `"text": "Line break",`
+* Apple Pages Chrome 62 macOS 10.13 `"text": "Soft line\n break",`
+* Word Online Firefox 57, Safari 11, macOS 10.13 `"text": "Soft \nline break ",`
+* Word 2010 IE11 `"text": "Soft ",`, `"text": "line break",`.
