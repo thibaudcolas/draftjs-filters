@@ -17,7 +17,9 @@ Line breaks:
 * Word 2010 Chrome 62, Firefox 57 `"Soft \n line break"`.
 * Dropbox Paper all browsers `"Soft "`, `"line break"`.
 * Dropbox Paper Safari 11 - contains different whitespace character than for other browsers.
-* Dropbox Paper IE11 `stripPastedStyles`: `"Soft "`, `""`, `"line break"`
+* Dropbox Paper IE11 `stripPastedStyles`: `"Soft "`, `""`, `"line break"`.
+* Google Docs all browsers `"Soft\nLine break"`.
+* Google Docs IE11 `stripPastedStyles`: `"Soft"`, `"Line break"`
 
 ## Word 2010
 
@@ -85,20 +87,52 @@ Highly similar between Chrome 62 and Firefox 57.
 
 ## Google Docs
 
-```txt
-googledocs-chrome62-macos1013
-googledocs-chrome62-win81
-googledocs-edge16-win10
-googledocs-firefox57-macos1013
-googledocs-firefox57-win81
-googledocs-ie11-strippastedstyles-win81
-googledocs-ie11-win81
-googledocs-safari11-macos1013
-```
+Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Chrome 62 Win 8.1 & macOS 10.13, Safari 11, Edge 16 Win 10 unless specified.
+
+* Title, Subtitle -> `unstyled`.
+* Bold, Italic, Strikethrough, Underline -> `BOLD`, `ITALIC`, `STRIKETHROUGH`, `UNDERLINE`.
+* Bigger, smaller, superscript, subscript, colored text, background text -> `unstyled`.
+* Page link -> `LINK` with `href`, `url`.
+* Page link -> `UNDERLINE` applied where link is.
+* Bookmark link -> `LINK` with `href`, `url` with reference as URL hash, eg. `#heading=h.h40mjmbsff92`
+* Bookmark link -> `UNDERLINE` applied where link is.
+* Comment -> `unstyled`, no comment text
+* Left, right, center, justify, indent -> `unstyled`.
+* Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> correct `header-*` level.
+* Bullet list -> `unordered-list-item`
+* Nested bullet list -> `unordered-list-item` at correct depth.
+* Numbered list -> `ordered-list-item`
+* Nested numbered list -> `ordered-list-item` at correct depth.
+* Star list -> `unordered-list-item`
+* Nested star list -> `unordered-list-item` at correct depth.
+* Unstyled with borders -> `unstyled`.
+* Image -> `unstyled` with entity applied to "📷" camera emoji.
+* Image -> `IMAGE` with `src` pointing to Google Docs (CDN, `*.googleusercontent.com`), `height`, `width`.
+* [ ] Potentially filter hotlinked `IMAGE` entities?
+* Image wrap text -> `IMAGE` with camera emoji followed by soft line break (`\n`).
+* Safari 11, Chrome 62 - wrap text `IMAGE` has `BOLD` style applied.
+* [ ] Remove styles applied on block-level entities.
+* Table cell -> one `unstyled` block per cell.
+* Horizontal line -> nothing.
+* Styled code -> `unstyled`.
+* Soft line break -> `"Soft\nLine break"`
+* Emojis preserved
+* Drawing -> `IMAGE` with `src` pointing at `docs.google.com/drawings`.
+* Chart -> `IMAGE` with `src` pointing at `*.googleusercontent.com`.
+* Bookmark -> `unstyled`.
+
+### IE11
+
+* Rich paste is all in a single line
+* [ ] Advise users to turn on `stripPastedStyles` in their implementation with IE11 detection.
+
+### IE11 - stripPastedStyles
+
+* Soft line break -> `"Soft"`, `"Line break"`
 
 ## Dropbox Paper
 
-Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Safari 11, Edge 16 Win 10 unless specified.
+Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Chrome 62 Win 8.1 & macOS 10.13, Safari 11, Edge 16 Win 10 unless specified.
 
 * Title -> `header-one`
 * Bold, Italic, Strikethrough, Underline -> `BOLD`, `ITALIC`, `STRIKETHROUGH`, `UNDERLINE`.
@@ -124,15 +158,14 @@ Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Safari 11, Edge 16 Win 10 unl
 * Section break -> nothing
 * Image -> `unstyled` with entity applied to "📷" camera emoji.
 * Image -> `IMAGE` with `src` pointing to Dropbox Paper (CDN, `https://d2mxuefqeaa7sj.cloudfront.net/`).
-* [ ] Potentially filter `IMAGE` entities doing hotlinking?
+* [ ] Potentially filter hotlinked `IMAGE` entities?
 * Code block -> `code-block`, one block per line.
 * Code block -> `CODE` style applied on each line.
 * [ ] Remove `CODE` style in `code-block`?
 * Soft line break -> `"Soft "`, `"line break"`.
+* Safari 11 - Soft line break contains different whitespace character than for other browsers.
 * Emojis -> converted to `IMAGE` with `src` pointing to Dropbox Paper (`https://paper.dropboxstatic.com/static/img/ace/emoji/`), `alt` describing the emoji, `"height": "16"`.
 * Dropbox document link, Trello card, YouTube video, GitHub Gist -> all concatenated into a single `unstyled` block, all with URL in-text and `LINK` entity pointing at source.
-
-- Safari 11 - Soft line break contains different whitespace character than for other browsers.
 
 ### IE11
 
@@ -195,20 +228,21 @@ Unsupported, warning message displayed but document still partially renders.
 
 Same behavior in Chrome 62, Safari 11, Firefox 57, Edge 16. Win 8.1, Win 10, macOS 10.13.
 
-* Page link -> `LINK` with `href`, `url`, `rel="noreferrer"`, `target="_blank"`.
-* Page link -> `UNDERLINE`.
-* [ ] Filter `href` attribute on `LINK`.
-* [ ] Filter `rel` attribute on `LINK`.
-* [ ] Filter `target` attribute on `LINK`.
 * All block text ends with one empty space (" ").
-* Title, Subtitle, Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> `unstyled`.
+* Title, Subtitle -> `unstyled`.
 * Bold, Italic, Strikethrough, Underline -> `BOLD`, `ITALIC`, `STRIKETHROUGH`, `UNDERLINE`.
 * Bigger, smaller, superscript, subscript -> `unstyled`.
 * Text color, background color -> `unstyled`.
 * Intense emphasis, quote, intense quote, subtle reference -> `ITALIC`.
 * Intense reference, book title -> `BOLD`.
+* Page link -> `LINK` with `href`, `url`, `rel="noreferrer"`, `target="_blank"`.
+* Page link -> `UNDERLINE` applied where link is.
+* [ ] Filter `href` attribute on `LINK`.
+* [ ] Filter `rel` attribute on `LINK`.
+* [ ] Filter `target` attribute on `LINK`.
 * Comment -> `unstyled`.
 * Left, right, center, justify, indent, hanging, first line -> `unstyled`.
+* Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> `unstyled`.
 * Heading 4, Heading 7, Heading 9 -> `unstyled` with `ITALIC`
 * Bullet list -> `unordered-list-item`
 * Nested bullet list -> non-nested `unordered-list-item`.
