@@ -1,0 +1,784 @@
+{
+    "entityMap": {
+        "0": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "http://example.com",
+                "rel": "noreferrer nofollow noopener",
+                "target": "_blank",
+                "url": "http://example.com/"
+            }
+        },
+        "1": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "http://example.com",
+                "rel": "noreferrer nofollow noopener",
+                "target": "_blank",
+                "url": "http://example.com/"
+            }
+        },
+        "2": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "/ep/profile/iX86truncated",
+                "url": "/ep/profile/iX86truncated"
+            }
+        },
+        "3": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+                "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU"
+            }
+        },
+        "4": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "src":
+                    "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg"
+            }
+        },
+        "5": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "src":
+                    "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated90_example-lowres-image.jpg"
+            }
+        },
+        "6": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "alt": "slightly smiling face",
+                "height": "16",
+                "src":
+                    "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2"
+            }
+        },
+        "7": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "alt": "fearful face",
+                "height": "16",
+                "src":
+                    "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2"
+            }
+        },
+        "8": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "alt": "smiling face with sunglasses",
+                "height": "16",
+                "src":
+                    "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2"
+            }
+        },
+        "9": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href":
+                    "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+                "url":
+                    "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0"
+            }
+        },
+        "10": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "https://trello.com/c/ePWJbTYs/1-test",
+                "url": "https://trello.com/c/ePWJbTYs/1-test"
+            }
+        },
+        "11": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "https://trello.com/c/ePWJbTYs/1-test",
+                "rel": "noreferrer nofollow noopener",
+                "target": "_blank",
+                "url": "https://trello.com/c/ePWJbTYs/1-test"
+            }
+        },
+        "12": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+                "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&"
+            }
+        },
+        "13": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "https://youtu.be/y8Kyi0WNg40",
+                "rel": "noreferrer nofollow noopener",
+                "target": "_blank",
+                "url": "https://youtu.be/y8Kyi0WNg40"
+            }
+        },
+        "14": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href":
+                    "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+                "url":
+                    "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0"
+            }
+        },
+        "15": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href":
+                    "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+                "rel": "noreferrer nofollow noopener",
+                "target": "_blank",
+                "url":
+                    "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0"
+            }
+        }
+    },
+    "blocks": [
+        {
+            "key": "b4b1l",
+            "text": " ",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "9c8hs",
+            "text": "Draft.js paste test document",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7edtv",
+            "text": "Inline styles",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "672qe",
+            "text":
+                "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 10,
+                    "length": 4,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 24,
+                    "length": 11,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 68,
+                    "length": 9,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 16,
+                    "length": 6,
+                    "style": "ITALIC"
+                },
+                {
+                    "offset": 24,
+                    "length": 11,
+                    "style": "ITALIC"
+                },
+                {
+                    "offset": 37,
+                    "length": 13,
+                    "style": "STRIKETHROUGH"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "etcgv",
+            "text": "Inline entities",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "a68qu",
+            "text":
+                "Unstyled, link, comment Unstyled, bold link commentMention @Thibaud C Dropbox Paper link, +Draftail paste test document ",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 34,
+                    "length": 17,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [
+                {
+                    "offset": 10,
+                    "length": 4,
+                    "key": 0
+                },
+                {
+                    "offset": 34,
+                    "length": 17,
+                    "key": 1
+                },
+                {
+                    "offset": 59,
+                    "length": 10,
+                    "key": 2
+                },
+                {
+                    "offset": 90,
+                    "length": 29,
+                    "key": 3
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "8temg",
+            "text": "Text blocks",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "cqu76",
+            "text": "Unstyled",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "5sj5a",
+            "text": "h1 - Heading one",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "6al4f",
+            "text": "h2 - Heading two bold",
+            "type": "header-two",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 17,
+                    "length": 4,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "adnni",
+            "text": "h3 - Heading three",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 2,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 3,
+                    "length": 15,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "lmp1",
+            "text": "Bulleted list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "94s83",
+            "text": "Bulleted list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "39oh4",
+            "text": "Nested bulleted list (1)",
+            "type": "unordered-list-item",
+            "depth": 1,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "3o2ad",
+            "text": "Nested bulleted list (2)",
+            "type": "unordered-list-item",
+            "depth": 2,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "dfpni",
+            "text": "Bulleted list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "djv2j",
+            "text": "Numbered list",
+            "type": "ordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "92k3b",
+            "text": "Numbered list",
+            "type": "ordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "elfob",
+            "text": "Nested numbered list (1)",
+            "type": "ordered-list-item",
+            "depth": 1,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "2slq5",
+            "text": "Nested numbered list (2)",
+            "type": "ordered-list-item",
+            "depth": 2,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "e26i4",
+            "text": "Numbered list",
+            "type": "ordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "8e3o3",
+            "text": "Action list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "dl4p2",
+            "text": "Action list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "fma22",
+            "text": "Nested action list (1)",
+            "type": "unordered-list-item",
+            "depth": 1,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "903j",
+            "text": "Nested action list (2)",
+            "type": "unordered-list-item",
+            "depth": 2,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "4dn47",
+            "text": "Action list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "6pi9s",
+            "text": "Rich blocks",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "3ki60",
+            "text":
+                "ImagesImage with caption📷Image right-aligned with caption📷\nText displayed next to image\n\n\n\n\n\nTablerow 1 col 1row 1 col 2row 2 col 1row 2 col 2Section break\nCode block",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 6,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 93,
+                    "length": 5,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 142,
+                    "length": 13,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 156,
+                    "length": 10,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [
+                {
+                    "offset": 24,
+                    "length": 1,
+                    "key": 4
+                },
+                {
+                    "offset": 57,
+                    "length": 1,
+                    "key": 5
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "e88k5",
+            "text": ".media .img {",
+            "type": "code-block",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 13,
+                    "style": "CODE"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "6gc1l",
+            "text": "    margin-right: 10px;",
+            "type": "code-block",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 23,
+                    "style": "CODE"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "vkdd",
+            "text": "}",
+            "type": "code-block",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 1,
+                    "style": "CODE"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "d5at",
+            "text": "Misc",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "1iuv0",
+            "text": "Soft ",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "8pfkq",
+            "text": "line break",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "flopi",
+            "text": "Character replacements",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 22,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "fgsjk",
+            "text": "Double quote “test”",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "3erbv",
+            "text": "Single quote ‘test’",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "528f9",
+            "text": "En dash —  (--)",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "dn326",
+            "text": "Em dash — (---)",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "9mj0f",
+            "text": "Copyright (c) ((c))",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "2auaj",
+            "text": "Fractions 1/2 (1/2)",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "4q06e",
+            "text": "Arrows → ← ↔ (-->, <--, <-->)",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "an2mv",
+            "text": "Ellipsis … (...)",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "1ihpt",
+            "text": "Emojis📷, 📷, 📷",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 6,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [
+                {
+                    "offset": 6,
+                    "length": 1,
+                    "key": 6
+                },
+                {
+                    "offset": 9,
+                    "length": 1,
+                    "key": 7
+                },
+                {
+                    "offset": 12,
+                    "length": 1,
+                    "key": 8
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "fec0r",
+            "text": "Embeds",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "6i8g5",
+            "text":
+                "Dropbox document linkhttps://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0\nTrello cardhttps://trello.com/c/ePWJbTYs/1-test\nhttps://trello.com/c/ePWJbTYs/1-test\nYouTube videohttps://www.youtube.com/watch?v=y8Kyi0WNg40&\nhttps://youtu.be/y8Kyi0WNg40\nGitHub Gisthttps://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0\nhttps://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0\n ",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 21,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 92,
+                    "length": 11,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 177,
+                    "length": 13,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 264,
+                    "length": 11,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [
+                {
+                    "offset": 21,
+                    "length": 70,
+                    "key": 9
+                },
+                {
+                    "offset": 103,
+                    "length": 36,
+                    "key": 10
+                },
+                {
+                    "offset": 140,
+                    "length": 36,
+                    "key": 11
+                },
+                {
+                    "offset": 190,
+                    "length": 44,
+                    "key": 12
+                },
+                {
+                    "offset": 235,
+                    "length": 28,
+                    "key": 13
+                },
+                {
+                    "offset": 275,
+                    "length": 69,
+                    "key": 14
+                },
+                {
+                    "offset": 345,
+                    "length": 69,
+                    "key": 15
+                }
+            ],
+            "data": {}
+        }
+    ]
+}

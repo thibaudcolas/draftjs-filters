@@ -1,0 +1,901 @@
+{
+    "entityMap": {
+        "0": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "http://example.com",
+                "url": "http://example.com/"
+            }
+        },
+        "1": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href":
+                    "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+                "url":
+                    "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92"
+            }
+        },
+        "2": {
+            "type": "LINK",
+            "mutability": "MUTABLE",
+            "data": {
+                "href": "http://example.com",
+                "url": "http://example.com/"
+            }
+        },
+        "3": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "height": "170",
+                "src": "https://lh6.googleusercontent.com/LMtruncatedSw",
+                "width": "256"
+            }
+        },
+        "4": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "height": "162",
+                "src": "https://lh5.googleusercontent.com/QS4truncatedVA",
+                "width": "245"
+            }
+        },
+        "5": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "height": "85",
+                "src":
+                    "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+                "width": "125"
+            }
+        },
+        "6": {
+            "type": "IMAGE",
+            "mutability": "MUTABLE",
+            "data": {
+                "height": "218",
+                "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
+                "width": "353"
+            }
+        }
+    },
+    "blocks": [
+        {
+            "key": "b4b1l",
+            "text": " ",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "eok1n",
+            "text": "Draft.js paste test document",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "8ro97",
+            "text": "Subtitle",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "ijan",
+            "text": "Inline styles",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "a37rp",
+            "text":
+                "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 10,
+                    "length": 4,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 24,
+                    "length": 11,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 73,
+                    "length": 14,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 16,
+                    "length": 6,
+                    "style": "ITALIC"
+                },
+                {
+                    "offset": 24,
+                    "length": 11,
+                    "style": "ITALIC"
+                },
+                {
+                    "offset": 37,
+                    "length": 13,
+                    "style": "STRIKETHROUGH"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "esnug",
+            "text":
+                "Unstyled, underline, bigger, smaller, superscript, subscript",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 10,
+                    "length": 9,
+                    "style": "UNDERLINE"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "4bcsf",
+            "text": "Unstyled, red, text background",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "a45ds",
+            "text": "Inline entities",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "4imhi",
+            "text": "Unstyled, link, bookmark link, comment ",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 10,
+                    "length": 4,
+                    "style": "UNDERLINE"
+                },
+                {
+                    "offset": 16,
+                    "length": 13,
+                    "style": "UNDERLINE"
+                }
+            ],
+            "entityRanges": [
+                {
+                    "offset": 10,
+                    "length": 4,
+                    "key": 0
+                },
+                {
+                    "offset": 16,
+                    "length": 13,
+                    "key": 1
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "afmv9",
+            "text": "Unstyled, bold link comment",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 10,
+                    "length": 17,
+                    "style": "BOLD"
+                },
+                {
+                    "offset": 10,
+                    "length": 17,
+                    "style": "UNDERLINE"
+                }
+            ],
+            "entityRanges": [
+                {
+                    "offset": 10,
+                    "length": 17,
+                    "key": 2
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "632ge",
+            "text": "Text blocks",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7cqjf",
+            "text": "Unstyled",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "c7khu",
+            "text": "Unstyled centered",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "d7lu8",
+            "text": "Unstyled right-aligned",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "ec6d2",
+            "text": "Unstyled justify",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "dphbp",
+            "text":
+                "Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7eet2",
+            "text": "h1 - Heading one",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "edui2",
+            "text": "h2 - Heading two bold",
+            "type": "header-two",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 17,
+                    "length": 4,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "1s7hq",
+            "text": "h3 - Heading three",
+            "type": "header-three",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7aut2",
+            "text": "h4 - heading four",
+            "type": "header-four",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "r5ev",
+            "text": "h5 - heading five",
+            "type": "header-five",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "722vl",
+            "text": "h6 - heading six",
+            "type": "header-six",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 16,
+                    "style": "ITALIC"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7ovif",
+            "text": "Bulleted list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "1167g",
+            "text": "Bulleted list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "h1gd",
+            "text": "Nested bulleted list (1)",
+            "type": "unordered-list-item",
+            "depth": 1,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "fvevt",
+            "text": "Nested bulleted list (2)",
+            "type": "unordered-list-item",
+            "depth": 2,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "fsifq",
+            "text": "Bulleted list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "3kk05",
+            "text": "Numbered list",
+            "type": "ordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7auv6",
+            "text": "Numbered list",
+            "type": "ordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "9ip19",
+            "text": "Nested numbered list (1)",
+            "type": "ordered-list-item",
+            "depth": 1,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "boums",
+            "text": "Nested numbered list (2)",
+            "type": "ordered-list-item",
+            "depth": 2,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "nh82",
+            "text": "Numbered list",
+            "type": "ordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "cj9mf",
+            "text": "Star list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "3c39o",
+            "text": "Star list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "fn6vl",
+            "text": "Nested star list (1)",
+            "type": "unordered-list-item",
+            "depth": 1,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7g32l",
+            "text": "Nested star list (2)",
+            "type": "unordered-list-item",
+            "depth": 2,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "bant6",
+            "text": "Star list",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "e74r",
+            "text": "Unstyled with borders",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "1m7d8",
+            "text": "Rich blocks",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "5ublk",
+            "text": "Images",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 6,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "dgil3",
+            "text": "Image",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "gmi4",
+            "text": "📷",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [
+                {
+                    "offset": 0,
+                    "length": 1,
+                    "key": 3
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "ajriq",
+            "text": "Image wrap text",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "cp50b",
+            "text": "📷\n",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [
+                {
+                    "offset": 0,
+                    "length": 1,
+                    "key": 4
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "cv701",
+            "text": "Text displayed next to image",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "f19fp",
+            "text": "Table",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 5,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "6dv33",
+            "text": "row 1 col 1",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "f5gfb",
+            "text": "row 1 col 2",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "47hks",
+            "text": "row 2 col 1",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7oala",
+            "text": "row 2 col 2",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "d4bmg",
+            "text": "Horizontal line",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 15,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "9gm8k",
+            "text": "Code block",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 10,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "asrnc",
+            "text": ".media .img {",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "elgla",
+            "text": "margin-right: 10px;",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "8vgo8",
+            "text": "}",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "bl0id",
+            "text": "Misc",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 4,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "3hmdo",
+            "text": "Soft\nLine break",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "6iofn",
+            "text": "Character replacements",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 22,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "b4h32",
+            "text": "Double quote “test”",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "fi50i",
+            "text": "Single quote ‘test’",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "4gv06",
+            "text": "Copyright ©",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "9cvh3",
+            "text": "Fractions ½ ",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "cbf0g",
+            "text": "Arrows → ←",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "bac93",
+            "text": "Ellipsis … ",
+            "type": "unordered-list-item",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "dq7ki",
+            "text": "Emojis",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 6,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7s8c0",
+            "text": "🙂, 😨, 😎",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "7uch3",
+            "text": "Embeds",
+            "type": "header-one",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "ed6dg",
+            "text": "Equation",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 8,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "a0el7",
+            "text": "Drawing",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 7,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "b3reu",
+            "text": "📷",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [
+                {
+                    "offset": 0,
+                    "length": 1,
+                    "key": 5
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "cfo7e",
+            "text": "Chart",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [
+                {
+                    "offset": 0,
+                    "length": 5,
+                    "style": "BOLD"
+                }
+            ],
+            "entityRanges": [],
+            "data": {}
+        },
+        {
+            "key": "3qab9",
+            "text": "📷",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [
+                {
+                    "offset": 0,
+                    "length": 1,
+                    "key": 6
+                }
+            ],
+            "data": {}
+        },
+        {
+            "key": "7lb1s",
+            "text": "Bookmark",
+            "type": "unstyled",
+            "depth": 0,
+            "inlineStyleRanges": [],
+            "entityRanges": [],
+            "data": {}
+        }
+    ]
+}

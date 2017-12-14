@@ -1,0 +1,14 @@
+{
+  "entityMap": {},
+  "blocks": [
+    {
+      "key": "b4b1l",
+      "text": "Draft.js paste test document  Subtitle  Inline styles  Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace  Unstyled, underline, bigger, smaller, superscript, subscript  Unstyled, red, text background  Inline entities  Unstyled, link, bookmark link, comment   Unstyled, bold link comment  Text blocks  Unstyled  Unstyled centered  Unstyled right-aligned  Unstyled justify  Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent  h1 - Heading one  h2 - Heading two bold  h3 - Heading three  h4 - heading four  h5 - heading five  h6 - heading six   •Bulleted list   •Bulleted list   ◦Nested bulleted list (1)   ◾Nested bulleted list (2)   •Bulleted list   1.Numbered list   2.Numbered list   a.Nested numbered list (1)   i.Nested numbered list (2)   3.Numbered list   •Star list   •Star list   ◦Nested star list (1)   ◾Nested star list (2)   •Star list    Unstyled with borders  Rich blocks   Images  Image    Image wrap text      Text displayed next to image        Table        row 1 col 1   row 1 col 2    row 2 col 1   row 2 col 2     Horizontal line       Code block  .media .img {     margin-right: 10px;  }  Misc  •Soft Line break    Character replacements   •Double quote “test”   •Single quote ‘test’   •Copyright ©   •Fractions ½    •Arrows → ←   •Ellipsis …     Emojis  🙂, 😨, 😎  Embeds  Equation            Drawing    Chart    Bookmark",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    }
+  ]
+}
