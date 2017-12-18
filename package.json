@@ -1,0 +1,135 @@
+{
+  "name": "draftjs-paste",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Thibaud Colas",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "es/index.js",
+  "keywords": [
+    "draftjs",
+    "draft.js",
+    "draft",
+    "draft-js",
+    "editor",
+    "wysiwyg",
+    "rich text",
+    "rte"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thibaudcolas/draftjs-paste"
+  },
+  "bugs": {
+    "url": "https://github.com/thibaudcolas/draftjs-paste/issues"
+  },
+  "homepage": "https://thibaudcolas.github.io/draftjs-paste/",
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": ["> 1%", "IE 11"]
+          },
+          "modules": false
+        }
+      ],
+      "react"
+    ],
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "env",
+            {
+              "targets": {
+                "browsers": ["> 1%", "IE 11"]
+              }
+            }
+          ],
+          "react"
+        ]
+      }
+    }
+  },
+  "eslintConfig": {
+    "extends": "plugin:springload/prettier"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.scss$": "<rootDir>/tests/styleMock.js"
+    },
+    "testPathIgnorePatterns": ["/node_modules/", "/dist/", "/es/"],
+    "coveragePathIgnorePatterns": ["<rootDir>/tests"],
+    "snapshotSerializers": ["enzyme-to-json/serializer"],
+    "setupFiles": ["<rootDir>/tests/polyfills.js"],
+    "setupTestFrameworkScriptFile": "<rootDir>/tests/setupTest.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "autotrack": "^2.4.1",
+    "babel-cli": "^6.24.1",
+    "babel-jest": "^22.0.0",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "core-js": "^2.5.1",
+    "css-loader": "^0.28.4",
+    "dotenv": "^4.0.0",
+    "draft-js": "^0.10.4",
+    "element-closest": "^2.0.2",
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
+    "enzyme-to-json": "^3.2.2",
+    "eslint": "^3.19.0",
+    "eslint-plugin-thibaudcolas": "^2.2.0",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "html-webpack-plugin": "^2.30.1",
+    "immutable": "~3.7.4",
+    "jest": "^22.0.0",
+    "node-sass": "^4.5.3",
+    "normalize.css": "^7.0.0",
+    "postcss-loader": "^2.0.6",
+    "prettier": "^1.8.2",
+    "prismjs": "^1.8.4",
+    "prop-types": "^15.6.0",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "react-test-renderer": "^16.1.1",
+    "sass-loader": "^6.0.6",
+    "webpack": "^3.8.1",
+    "webpack-bundle-analyzer": "^2.9.0",
+    "webpack-dev-server": "2.7.1"
+  },
+  "peerDependencies": {
+    "draft-js": "^0.10.4",
+    "immutable": "~3.7.4"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config=webpack/webpack.config.dev.js",
+    "js":
+      "babel lib -d es --ignore __mocks__,tests,test.js && BABEL_ENV=test babel lib -d dist --ignore __mocks__,tests,test.js",
+    "build:autotrack":
+      "autotrack -o public/autotrack.bundle.js -p maxScrollTracker,outboundLinkTracker",
+    "build":
+      "npm run js -s && npm run build:autotrack -s && webpack --config=webpack/webpack.config.prod.js --display-optimization-bailout && cp public/draftjs-paste.css dist",
+    "dist": "NODE_ENV=production npm run build -s",
+    "linter:js": "eslint",
+    "linter:css": "prettier --list-different",
+    "linter:md": "prettier --list-different",
+    "formatter": "prettier --write",
+    "lint":
+      "npm run linter:js -s -- . && npm run linter:css -s -- '**/*.scss' && npm run linter:md -s -- '**/*.md'",
+    "format":
+      "npm run formatter -s -- '**/*.scss' '**/*.md' lib/**/*.js examples/**/*.js webpack/*.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch",
+    "test:watch:coverage": "jest --watch --coverage",
+    "report:coverage": "open coverage/lcov-report/index.html",
+    "report:build": "open webpack/webpack-stats.html",
+    "test:ci": "npm run lint -s && npm run test:coverage -s && npm run dist -s"
+  }
+}

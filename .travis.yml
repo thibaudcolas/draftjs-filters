@@ -1,0 +1,28 @@
+language: node_js
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+- npm install -g coveralls
+script:
+- npm run test:ci
+# Move build artefacts to public folder so they are published on the demo site.
+- mv webpack/webpack-stats.html public || true
+- mv coverage/lcov-report public || true
+after_success:
+- cat ./coverage/lcov.info | coveralls
+branches:
+  except:
+  - gh-pages
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   # Only deploy the subfolder, not the whole repository.
+#   local_dir: public
+#   # This value is stored below, encrypted with travis-encrypt.
+#   github_token: "$GITHUB_TOKEN"
+#   on:
+#     branch: master
+notifications:
+  email: false
