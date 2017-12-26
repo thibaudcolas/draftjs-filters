@@ -5,5 +5,4 @@ dist/
 es/
 *.bundle.js
 *.json
-*.css
 *.html
