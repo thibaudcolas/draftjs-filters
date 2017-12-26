@@ -88,11 +88,8 @@ lib64
 # -------------------------------------------------
 # Your own project's ignores
 # -------------------------------------------------
-core/static/js
-core/static/css
-core/svg.html
-core/static
 
-MNIST_data
-octave-workspace
-token.mat
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
