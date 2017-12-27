@@ -40,10 +40,11 @@
   },
   "devDependencies": {
     "draft-js": "^0.10.4",
+    "flow-bin": "^0.61.0",
     "immutable": "^3.7.6",
     "jest": "^22.0.4",
     "prettier": "^1.9.2",
-    "prismjs": "^1.8.4",
+    "prismjs": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17"
@@ -57,6 +58,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "dist": "",
+    "flow": "flow",
     "test": "react-scripts test --env=jsdom",
     "linter:css": "prettier --list-different",
     "linter:md": "prettier --list-different",

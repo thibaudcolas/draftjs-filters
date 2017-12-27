@@ -1,11 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// @flow
+import React from "react"
+import ReactDOM from "react-dom"
 
-import 'prismjs/themes/prism.css';
-import 'draft-js/dist/Draft.css';
+import "prismjs/themes/prism.css"
+import "draft-js/dist/Draft.css"
 
-import './index.css';
+import "./index.css"
 
-import App from './App';
+import App from "./App"
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const mount = document.getElementById("root")
+
+if (mount) {
+  ReactDOM.render(<App />, mount)
+}

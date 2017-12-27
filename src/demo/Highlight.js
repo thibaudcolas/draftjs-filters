@@ -1,36 +1,38 @@
-import PropTypes from 'prop-types';
-import React from 'react';
-import Prism from 'prismjs';
+// @flow
+import React from "react"
+import Prism from "prismjs"
 
-const onCopy = value => {
-    const hidden = document.createElement('textarea');
-    hidden.value = value;
-    document.body.appendChild(hidden);
-    hidden.select();
-    document.execCommand('copy');
-    document.body.removeChild(hidden);
-};
+type Props = {
+  value: string,
+  language: string,
+}
 
-const Highlight = ({ value, language }) => (
-    <pre className={`language-${language}`} style={{ position: 'relative' }}>
-        <button
-            onClick={onCopy.bind(null, value)}
-            style={{ position: 'absolute', right: '1rem' }}
-        >
-            Copy
-        </button>
-        <code
-            // eslint-disable-next-line springload/react/no-danger
-            dangerouslySetInnerHTML={{
-                __html: Prism.highlight(value, Prism.languages[language]),
-            }}
-        />
-    </pre>
-);
+const onCopy = (value) => {
+  const hidden = document.createElement("textarea")
+  hidden.value = value
+  // $FlowFixMe
+  document.body.appendChild(hidden)
+  hidden.select()
+  document.execCommand("copy")
+  // $FlowFixMe
+  document.body.removeChild(hidden)
+}
 
-Highlight.propTypes = {
-    value: PropTypes.string.isRequired,
-    language: PropTypes.oneOf(Object.keys(Prism.languages)).isRequired,
-};
+const Highlight = ({ value, language }: Props) => (
+  <pre className={`language-${language}`} style={{ position: "relative" }}>
+    <button
+      onClick={onCopy.bind(null, value)}
+      style={{ position: "absolute", right: "1rem" }}
+    >
+      Copy
+    </button>
+    <code
+      // eslint-disable-next-line springload/react/no-danger
+      dangerouslySetInnerHTML={{
+        __html: Prism.highlight(value, Prism.languages[language]),
+      }}
+    />
+  </pre>
+)
 
-export default Highlight;
+export default Highlight
