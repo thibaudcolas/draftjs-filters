@@ -1,24 +1,31 @@
+// @flow
 import React, { Component } from "react"
 import { Editor, EditorState, RichUtils, convertToRaw } from "draft-js"
+import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 import SentryBoundary from "./SentryBoundary"
 import Highlight from "./Highlight"
 
 import "./TestEditor.css"
 
-class TestEditor extends Component {
-  constructor(props) {
+type Props = {}
+
+type State = {
+  editorState: EditorState,
+}
+
+class TestEditor extends Component<Props, State> {
+  constructor(props: Props) {
     super(props)
 
     this.state = {
       editorState: EditorState.createEmpty(),
     }
-
-    this.onChange = this.onChange.bind(this)
-    this.toggleBlock = this.toggleBlock.bind(this)
+    ;(this: any).onChange = this.onChange.bind(this)
+    ;(this: any).toggleBlock = this.toggleBlock.bind(this)
   }
 
-  onChange(editorState) {
+  onChange(editorState: EditorState) {
     const content = editorState.getCurrentContent()
     const rawContent = convertToRaw(content)
 
@@ -27,7 +34,7 @@ class TestEditor extends Component {
     sessionStorage.setItem(`content`, JSON.stringify(rawContent))
   }
 
-  toggleBlock(type, e) {
+  toggleBlock(type: DraftBlockType) {
     const { editorState } = this.state
     this.onChange(RichUtils.toggleBlockType(editorState, type))
   }

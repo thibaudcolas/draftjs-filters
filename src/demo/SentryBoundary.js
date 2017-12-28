@@ -1,17 +1,26 @@
 // @flow
 import PropTypes from "prop-types"
 import React, { Component } from "react"
+import type { Node } from "react"
 
 const Raven = window.Raven
 const isRavenAvailable = !!Raven
 
-class SentryBoundary extends Component {
-  constructor(props) {
+type Props = {
+  children: Node,
+}
+
+type State = {
+  error: ?Error,
+}
+
+class SentryBoundary extends Component<Props, State> {
+  constructor(props: Props) {
     super(props)
     this.state = { error: null }
   }
 
-  componentDidCatch(error, errorInfo) {
+  componentDidCatch(error: Error, errorInfo: Object) {
     this.setState({ error })
 
     if (isRavenAvailable) {
