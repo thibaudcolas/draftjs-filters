@@ -46,7 +46,8 @@
     "prismjs": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.0.17"
+    "react-scripts": "1.0.17",
+    "source-map-explorer": "^1.5.0"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -56,15 +57,18 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "dist": "",
+    "dist": "CI=true npm run build -s",
     "flow": "flow",
-    "test": "react-scripts test --env=jsdom",
-    "test:coverage": "react-scripts test --env=jsdom --coverage",
+    "test": "CI=true react-scripts test --env=jsdom",
+    "test:coverage": "CI=true react-scripts test --env=jsdom --coverage",
+    "test:watch": "react-scripts test --env=jsdom",
+    "test:watch:coverage": "react-scripts test --env=jsdom --coverage",
     "linter:css": "prettier --list-different",
     "linter:md": "prettier --list-different",
+    "report:build": "source-map-explorer build/static/js/main.*",
     "formatter": "prettier --write",
     "lint": "npm run linter:css -s -- src/**/*.css && npm run linter:md -s -- '**/*.md'",
     "format": "npm run formatter -s -- '**/*.md' src/**/*.js src/**/*.css",
-    "test:ci": "npm run lint -s && npm run test -s && npm run build -s && npm run dist -s"
+    "test:ci": "npm run lint -s && npm run flow -s && npm run test:coverage -s && npm run dist -s"
   }
 }
