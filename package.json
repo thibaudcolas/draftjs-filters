@@ -56,7 +56,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build && source-map-explorer --html build/static/js/main.* > public/source-map-explorer.html",
     "dist": "CI=true npm run build -s",
     "flow": "flow",
     "test": "CI=true react-scripts test --env=jsdom",
@@ -65,7 +65,8 @@
     "test:watch:coverage": "react-scripts test --env=jsdom --coverage",
     "linter:css": "prettier --list-different",
     "linter:md": "prettier --list-different",
-    "report:build": "source-map-explorer build/static/js/main.*",
+    "report:coverage": "open coverage/lcov-report/index.html",
+    "report:build": "open public/source-map-explorer.html",
     "formatter": "prettier --write",
     "lint": "npm run linter:css -s -- src/**/*.css && npm run linter:md -s -- '**/*.md'",
     "format": "npm run formatter -s -- '**/*.md' src/**/*.js src/**/*.css",
