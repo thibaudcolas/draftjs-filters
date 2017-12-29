@@ -1,9 +1,13 @@
+// @flow
 import { EditorState, CharacterMetadata } from "draft-js"
+import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 const UNSTYLED = "unstyled"
 const ATOMIC = "atomic"
 const IMAGE = "IMAGE"
 const HORIZONTAL_RULE = "HORIZONTAL_RULE"
+
+type EntityTypes = Array<string>
 
 /**
  * Helper functions to filter/whitelist specific formatting.
@@ -18,22 +22,21 @@ export default {
    * as Draft.js does not preserve this type of whitespace on paste anyway.
    */
   filterEditorState(
-    editorState,
-    maxListNesting,
-    enableHorizontalRule,
-    blockTypes,
-    inlineStyles,
-    entityTypes,
+    editorState: EditorState,
+    maxListNesting: number,
+    enableHorizontalRule: boolean,
+    blockTypes: Array<DraftBlockType>,
+    inlineStyles: Array<string>,
+    entityTypes: EntityTypes,
   ) {
     let nextEditorState = editorState
-    const enabledBlockTypes = blockTypes.map((type) => type.type).concat([
+    const enabledBlockTypes = blockTypes.concat([
       // Always enabled in a Draftail editor.
       UNSTYLED,
       // Filtered depending on enabled entity types.
       ATOMIC,
     ])
-    const enabledInlineStyles = inlineStyles.map((type) => type.type)
-    const enabledEntityTypes = entityTypes.map((type) => type.type)
+    let enabledEntityTypes = entityTypes
 
     if (enableHorizontalRule) {
       enabledEntityTypes.push(HORIZONTAL_RULE)
@@ -50,10 +53,7 @@ export default {
 
     nextEditorState = this.resetBlockType(nextEditorState, enabledBlockTypes)
 
-    nextEditorState = this.filterInlineStyle(
-      nextEditorState,
-      enabledInlineStyles,
-    )
+    nextEditorState = this.filterInlineStyle(nextEditorState, inlineStyles)
 
     nextEditorState = this.resetAtomicBlocks(
       nextEditorState,
@@ -71,7 +71,7 @@ export default {
    * Note: at the moment, this is only useful for IMAGE entities that Draft.js
    * injects on arbitrary blocks on paste.
    */
-  preserveAtomicBlocks(editorState, entityTypes) {
+  preserveAtomicBlocks(editorState: EditorState, entityTypes: Array<string>) {
     const content = editorState.getCurrentContent()
     const blockMap = content.getBlockMap()
 
@@ -100,7 +100,7 @@ export default {
   /**
    * Resets the depth of all the content to at most maxListNesting.
    */
-  resetBlockDepth(editorState, maxListNesting) {
+  resetBlockDepth(editorState: EditorState, maxListNesting: number) {
     const content = editorState.getCurrentContent()
     const blockMap = content.getBlockMap()
 
@@ -122,7 +122,10 @@ export default {
   /**
    * Resets all blocks that use unavailable types to unstyled.
    */
-  resetBlockType(editorState, enabledTypes) {
+  resetBlockType(
+    editorState: EditorState,
+    enabledTypes: Array<DraftBlockType>,
+  ) {
     const content = editorState.getCurrentContent()
     const blockMap = content.getBlockMap()
 
@@ -144,7 +147,7 @@ export default {
   /**
    * Removes all styles that use unavailable types.
    */
-  filterInlineStyle(editorState, enabledTypes) {
+  filterInlineStyle(editorState: EditorState, enabledTypes: Array<string>) {
     const content = editorState.getCurrentContent()
     const blockMap = content.getBlockMap()
 
@@ -179,7 +182,7 @@ export default {
    * Resets atomic blocks to unstyled based on which entity types are enabled,
    * and also normalises block text to a single "space" character.
    */
-  resetAtomicBlocks(editorState, enabledTypes) {
+  resetAtomicBlocks(editorState: EditorState, enabledTypes: Array<string>) {
     const content = editorState.getCurrentContent()
     const blockMap = content.getBlockMap()
     let blocks = blockMap
@@ -244,7 +247,7 @@ export default {
   /**
    * Reset all entity types (images, links, documents, embeds) that are unavailable.
    */
-  filterEntityType(editorState, enabledTypes) {
+  filterEntityType(editorState: EditorState, enabledTypes: Array<string>) {
     const content = editorState.getCurrentContent()
     const blockMap = content.getBlockMap()
 
