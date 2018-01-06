@@ -5,7 +5,15 @@ import {
   convertFromRaw,
 } from "draft-js"
 
-import normalize from "./normalize"
+import {
+  preserveAtomicBlocks,
+  resetBlockDepth,
+  resetBlockType,
+  filterInlineStyle,
+  resetAtomicBlocks,
+  filterEntityType,
+  filterEditorState,
+} from "./normalize"
 
 const UNSTYLED = "unstyled"
 const ATOMIC = "atomic"
@@ -19,62 +27,6 @@ const HEADER_TWO = "header-two"
 const HEADER_FIVE = "header-five"
 
 describe("normalize", () => {
-  describe("#filterEditorState", () => {
-    beforeEach(() => {
-      jest.spyOn(normalize, "preserveAtomicBlocks")
-      jest.spyOn(normalize, "resetBlockDepth")
-      jest.spyOn(normalize, "resetBlockType")
-      jest.spyOn(normalize, "filterInlineStyle")
-      jest.spyOn(normalize, "resetAtomicBlocks")
-      jest.spyOn(normalize, "filterEntityType")
-    })
-
-    afterEach(() => {
-      normalize.preserveAtomicBlocks.mockRestore()
-      normalize.resetBlockDepth.mockRestore()
-      normalize.resetBlockType.mockRestore()
-      normalize.filterInlineStyle.mockRestore()
-      normalize.resetAtomicBlocks.mockRestore()
-      normalize.filterEntityType.mockRestore()
-    })
-
-    it("works", () => {
-      const editorState = EditorState.createEmpty()
-      expect(
-        normalize.filterEditorState(
-          editorState,
-          1,
-          false,
-          [HEADER_FIVE],
-          [BOLD],
-          [IMAGE],
-        ),
-      ).toBeInstanceOf(EditorState)
-      expect(normalize.preserveAtomicBlocks).toHaveBeenCalled()
-      expect(normalize.resetBlockDepth).toHaveBeenCalled()
-      expect(normalize.resetBlockType).toHaveBeenCalled()
-      expect(normalize.filterInlineStyle).toHaveBeenCalled()
-      expect(normalize.resetAtomicBlocks).toHaveBeenCalled()
-      expect(normalize.filterEntityType).toHaveBeenCalled()
-    })
-
-    it(HORIZONTAL_RULE, () => {
-      const editorState = EditorState.createEmpty()
-      expect(
-        normalize.filterEditorState(editorState, 1, true, [], [], []),
-      ).toBeInstanceOf(EditorState)
-      expect(normalize.preserveAtomicBlocks).toHaveBeenCalled()
-      expect(normalize.resetBlockDepth).toHaveBeenCalled()
-      expect(normalize.resetBlockType).toHaveBeenCalled()
-      expect(normalize.filterInlineStyle).toHaveBeenCalled()
-      expect(normalize.resetAtomicBlocks).toHaveBeenCalled()
-      expect(normalize.filterEntityType).toHaveBeenCalledWith(
-        expect.any(EditorState),
-        [HORIZONTAL_RULE],
-      )
-    })
-  })
-
   describe("#preserveAtomicBlocks", () => {
     it("works", () => {
       const contentState = convertFromRaw({
@@ -138,10 +90,9 @@ describe("normalize", () => {
       })
 
       expect(
-        normalize
-          .preserveAtomicBlocks(EditorState.createWithContent(contentState), [
-            IMAGE,
-          ])
+        preserveAtomicBlocks(EditorState.createWithContent(contentState), [
+          IMAGE,
+        ])
           .getCurrentContent()
           .getBlockMap()
           .map((b) => b.getType())
@@ -185,7 +136,7 @@ describe("normalize", () => {
 
       const editorState = EditorState.createWithContent(contentState)
 
-      expect(normalize.preserveAtomicBlocks(editorState, [])).toBe(editorState)
+      expect(preserveAtomicBlocks(editorState, [])).toBe(editorState)
     })
   })
 
@@ -223,7 +174,7 @@ describe("normalize", () => {
           },
         ],
       })
-      const editorState = normalize.resetBlockDepth(
+      const editorState = resetBlockDepth(
         EditorState.createWithContent(contentState),
         1,
       )
@@ -242,7 +193,7 @@ describe("normalize", () => {
           convertFromHTML(`<ul><li>Depth 0</li></ul>`),
         ),
       )
-      expect(normalize.resetBlockDepth(editorState, 1)).toBe(editorState)
+      expect(resetBlockDepth(editorState, 1)).toBe(editorState)
     })
   })
 
@@ -298,7 +249,7 @@ describe("normalize", () => {
           },
         ],
       })
-      const editorState = normalize.resetBlockType(
+      const editorState = resetBlockType(
         EditorState.createWithContent(contentState),
         [UNORDERED_LIST_ITEM, HEADER_TWO],
       )
@@ -324,7 +275,7 @@ describe("normalize", () => {
         ),
       )
       expect(
-        normalize.resetBlockType(editorState, [
+        resetBlockType(editorState, [
           UNSTYLED,
           UNORDERED_LIST_ITEM,
           HEADER_TWO,
@@ -385,7 +336,7 @@ describe("normalize", () => {
           },
         ],
       })
-      const editorState = normalize.filterInlineStyle(
+      const editorState = filterInlineStyle(
         EditorState.createWithContent(contentState),
         [BOLD],
       )
@@ -462,10 +413,9 @@ describe("normalize", () => {
       })
 
       expect(
-        normalize
-          .resetAtomicBlocks(EditorState.createWithContent(contentState), [
-            "EMBED",
-          ])
+        resetAtomicBlocks(EditorState.createWithContent(contentState), [
+          "EMBED",
+        ])
           .getCurrentContent()
           .getBlockMap()
           .map((b) => b.getType())
@@ -508,10 +458,7 @@ describe("normalize", () => {
       })
 
       expect(
-        normalize
-          .resetAtomicBlocks(EditorState.createWithContent(contentState), [
-            IMAGE,
-          ])
+        resetAtomicBlocks(EditorState.createWithContent(contentState), [IMAGE])
           .getCurrentContent()
           .getFirstBlock()
           .toJS(),
@@ -562,10 +509,7 @@ describe("normalize", () => {
       })
 
       expect(
-        normalize
-          .resetAtomicBlocks(EditorState.createWithContent(contentState), [
-            IMAGE,
-          ])
+        resetAtomicBlocks(EditorState.createWithContent(contentState), [IMAGE])
           .getCurrentContent()
           .getFirstBlock()
           .getInlineStyleAt(0).size,
@@ -602,8 +546,7 @@ describe("normalize", () => {
         })
 
         expect(
-          normalize
-            .resetAtomicBlocks(EditorState.createWithContent(contentState), [])
+          resetAtomicBlocks(EditorState.createWithContent(contentState), [])
             .getCurrentContent()
             .getFirstBlock()
             .getType(),
@@ -639,10 +582,9 @@ describe("normalize", () => {
         })
 
         expect(
-          normalize
-            .resetAtomicBlocks(EditorState.createWithContent(contentState), [
-              HORIZONTAL_RULE,
-            ])
+          resetAtomicBlocks(EditorState.createWithContent(contentState), [
+            HORIZONTAL_RULE,
+          ])
             .getCurrentContent()
             .getFirstBlock()
             .getType(),
@@ -705,10 +647,7 @@ describe("normalize", () => {
       })
 
       expect(
-        normalize
-          .filterEntityType(EditorState.createWithContent(contentState), [
-            "EMBED",
-          ])
+        filterEntityType(EditorState.createWithContent(contentState), ["EMBED"])
           .getCurrentContent()
           .getBlockMap()
           .map((b) => {
@@ -767,10 +706,7 @@ describe("normalize", () => {
       })
 
       expect(
-        normalize
-          .filterEntityType(EditorState.createWithContent(contentState), [
-            "LINK",
-          ])
+        filterEntityType(EditorState.createWithContent(contentState), ["LINK"])
           .getCurrentContent()
           .getFirstBlock()
           .getCharacterList()
@@ -824,8 +760,7 @@ describe("normalize", () => {
         })
 
         expect(
-          normalize
-            .filterEntityType(EditorState.createWithContent(contentState), [])
+          filterEntityType(EditorState.createWithContent(contentState), [])
             .getCurrentContent()
             .getFirstBlock()
             .getEntityAt(0),
@@ -861,15 +796,37 @@ describe("normalize", () => {
         })
 
         expect(
-          normalize
-            .filterEntityType(EditorState.createWithContent(contentState), [
-              HORIZONTAL_RULE,
-            ])
+          filterEntityType(EditorState.createWithContent(contentState), [
+            HORIZONTAL_RULE,
+          ])
             .getCurrentContent()
             .getFirstBlock()
             .getEntityAt(0),
         ).not.toBe(null)
       })
+    })
+  })
+
+  describe("#filterEditorState", () => {
+    it("works", () => {
+      const editorState = EditorState.createEmpty()
+      expect(
+        filterEditorState(
+          editorState,
+          1,
+          false,
+          [HEADER_FIVE],
+          [BOLD],
+          [IMAGE],
+        ),
+      ).toBeInstanceOf(EditorState)
+    })
+
+    it(HORIZONTAL_RULE, () => {
+      const editorState = EditorState.createEmpty()
+      expect(
+        filterEditorState(editorState, 1, true, [], [], []),
+      ).toBeInstanceOf(EditorState)
     })
   })
 })
