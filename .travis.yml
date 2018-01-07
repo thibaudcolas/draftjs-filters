@@ -4,9 +4,10 @@ cache:
   - node_modules
 install:
 - npm install
-- npm install -g coveralls
+- npm install -g coveralls @commitlint/travis-cli
 script:
 - npm run test:ci
+- commitlint-travis
 - mv coverage/lcov-report build || true
 after_success:
 - cat ./coverage/lcov.info | coveralls

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+COMMIT_EDITMSG="$1"
+MESSAGE=$(cat $COMMIT_EDITMSG)
+
+npm run linter:commit -s -- -e "$COMMIT_EDITMSG"
