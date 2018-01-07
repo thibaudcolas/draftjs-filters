@@ -7,21 +7,21 @@ install:
 - npm install -g coveralls
 script:
 - npm run test:ci
-# Move build artefacts to public folder so they are published on the demo site.
-- mv coverage/lcov-report public || true
+- mv coverage/lcov-report build || true
 after_success:
 - cat ./coverage/lcov.info | coveralls
 branches:
   except:
   - gh-pages
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   # Only deploy the subfolder, not the whole repository.
-#   local_dir: public
-#   # This value is stored below, encrypted with travis-encrypt.
-#   github_token: "$GITHUB_TOKEN"
-#   on:
-#     branch: master
+deploy:
+  provider: pages
+  skip_cleanup: true
+  local_dir: build
+  github_token: "$GITHUB_TOKEN"
+  on:
+    branch: master
 notifications:
   email: false
+env:
+  global:
+    secure: odgRm4RHlsaPEYEcIqWUgtCiydS77y4CpdDEMg8/Bv24yQtK64Jdf0CPG13b2bWGdco8N0ECfseXuMTntGgVQhXqfutjCOYf0mb0HcPXn7I9dm5TM0fB8furAYOixDr3S1KoSDt0codUtr+yX+qWJPIQF6N92OgL0q07U442JdVn6WqAWhsav4pcVZiJss7yBeGVzIoc2ClIzsyTe9s8YIKoCeAFTFQcrawBbQUwKeg/Llel42j1aSHxySCA08QmSfd4SW7xhyD7xMLLhpulxYiqnowPy32dHGwTamZAy6tjLxtg8JK8ZOtrPMd+CwuMifMGgGr+gujsZ0GPtpH8tLJZgVa4CWCvQopoT7iML3VvsaW1CtqO077wsN/x2WBlqBwrLPX8JcD31fQTwmlWeiecuN4T0sXGjYoR/+Op2h27N5qcVbLANKo8D6WaPxIUYfRUXsfp9K4906KGCJvV4CJpcMkDyOayCCxy3X6ceJQME6UN9AXRAlg8qvGUE2Pe9xsGxUr0yjEv34Z6MXApM4yz6uTRKJ8BhT+Uu1SPSQXKbMqfkeyXe38+wX7tjWebUseoSoz5olf4nXoQqXVkCUxgnPu6dEq2XF19ZTwMLuqVKzQYPhyDDN/faKY6i2jrNRQhGH0j90D9muh45Ea8R1kVH7/ryYBMhvd1jZ+goiU=
