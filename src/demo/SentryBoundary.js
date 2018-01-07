@@ -55,7 +55,7 @@ class SentryBoundary extends Component<Props, State> {
                   </button>
                 ) : (
                   <a
-                    href="https://github.com/thibaudcolas/draftjs-paste/issues"
+                    href="https://github.com/thibaudcolas/draftjs-filters/issues"
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{

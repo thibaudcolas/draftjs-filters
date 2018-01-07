@@ -1,5 +1,5 @@
 {
-  "name": "draftjs-paste",
+  "name": "draftjs-filters",
   "version": "0.1.0",
   "description": "",
   "author": "Thibaud Colas",
@@ -18,12 +18,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/thibaudcolas/draftjs-paste"
+    "url": "https://github.com/thibaudcolas/draftjs-filters"
   },
   "bugs": {
-    "url": "https://github.com/thibaudcolas/draftjs-paste/issues"
+    "url": "https://github.com/thibaudcolas/draftjs-filters/issues"
   },
-  "homepage": "https://thibaudcolas.github.io/draftjs-paste/",
+  "homepage": "https://thibaudcolas.github.io/draftjs-filters/",
   "eslintConfig": {
     "extends": "react-app"
   },
