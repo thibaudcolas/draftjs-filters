@@ -4,7 +4,7 @@
 
 ## Unreleased
 
-## [[v0.1.0]](https://github.com/thibaudcolas/draftjs-paste/releases/tag/v0.1.0)
+## [[v0.1.0]](https://github.com/thibaudcolas/draftjs-filters/releases/tag/v0.1.0)
 
 First usable release!
 
@@ -12,7 +12,7 @@ First usable release!
 
 Template from http://keepachangelog.com/
 
-## [[vx.y.z]](https://github.com/thibaudcolas/draftjs-paste/releases/tag/vx.y.z)
+## [[vx.y.z]](https://github.com/thibaudcolas/draftjs-filters/releases/tag/vx.y.z)
 
 ### Added
 
@@ -20,6 +20,10 @@ Template from http://keepachangelog.com/
 
 ### Changed
 
-### Fixed
+### Deprecated
 
 ### Removed
+
+### Fixed
+
+### Security
