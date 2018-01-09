@@ -47,6 +47,7 @@
     "@commitlint/cli": "^5.2.8",
     "@commitlint/config-conventional": "^5.2.3",
     "danger": "^3.0.3",
+    "danger-plugin-jest": "^1.1.0",
     "draft-js": "^0.10.4",
     "flow-bin": "^0.61.0",
     "immutable": "^3.7.6",
@@ -64,7 +65,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && source-map-explorer --html build/static/js/main.* > public/source-map-explorer.html",
+    "build": "react-scripts build && source-map-explorer --html build/static/js/main.* > build/source-map-explorer.html",
     "dist": "CI=true npm run build -s",
     "flow": "flow",
     "danger": "danger ci --verbose",
@@ -80,6 +81,6 @@
     "formatter": "prettier --write",
     "lint": "npm run linter:css -s -- src/**/*.css && npm run linter:md -s -- '**/*.md'",
     "format": "npm run formatter -s -- '**/*.md' src/**/*.js src/**/*.css",
-    "test:ci": "npm run lint -s && npm run flow -s && npm run test:coverage -s && npm run dist -s"
+    "test:ci": "npm run lint -s && npm run flow -s && npm run dist -s && npm run test:coverage -s -- --outputFile build/test-results.json --json"
   }
 }
