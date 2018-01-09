@@ -13,7 +13,6 @@ const hasCHANGELOGChanges = danger.git.modified_files.includes("CHANGELOG.md")
 // Fails if the description is too short.
 if (!danger.github.pr.body || danger.github.pr.body.length < 10) {
   fail(":grey_question: This pull request needs a description.")
-  markdown("@thi-bot label Needs more information")
 }
 
 // Warns if the PR title contains [WIP]
@@ -38,4 +37,6 @@ if (hasPackageChanges && !hasLockfileChanges) {
   warn("There are package.json changes with no corresponding lockfile changes")
 }
 
-jest({ testResultsJsonPath: path.resolve(__dirname, "build/results.json") })
+jest({
+  testResultsJsonPath: path.resolve(__dirname, "build/test-results.json"),
+})
