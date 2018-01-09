@@ -43,6 +43,21 @@
       "@commitlint/config-conventional"
     ]
   },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "IE 11"
+            ]
+          }
+        }
+      ]
+    ]
+  },
   "devDependencies": {
     "@commitlint/cli": "^5.2.8",
     "@commitlint/config-conventional": "^5.2.3",
