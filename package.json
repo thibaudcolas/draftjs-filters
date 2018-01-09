@@ -46,6 +46,7 @@
   "devDependencies": {
     "@commitlint/cli": "^5.2.8",
     "@commitlint/config-conventional": "^5.2.3",
+    "danger": "^3.0.3",
     "draft-js": "^0.10.4",
     "flow-bin": "^0.61.0",
     "immutable": "^3.7.6",
@@ -66,6 +67,7 @@
     "build": "react-scripts build && source-map-explorer --html build/static/js/main.* > public/source-map-explorer.html",
     "dist": "CI=true npm run build -s",
     "flow": "flow",
+    "danger": "danger",
     "test": "CI=true react-scripts test --env=jsdom",
     "test:coverage": "CI=true react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom",
