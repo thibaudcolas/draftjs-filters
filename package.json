@@ -67,7 +67,7 @@
     "build": "react-scripts build && source-map-explorer --html build/static/js/main.* > public/source-map-explorer.html",
     "dist": "CI=true npm run build -s",
     "flow": "flow",
-    "danger": "danger",
+    "danger": "danger ci --verbose",
     "test": "CI=true react-scripts test --env=jsdom",
     "test:coverage": "CI=true react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom",
