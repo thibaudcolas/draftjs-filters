@@ -1,6 +1,6 @@
 {
   "name": "draftjs-filters",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "description": "Filter Draft.js content when copy-pasting rich text into the editor",
   "author": "Thibaud Colas",
   "license": "MIT",
@@ -16,12 +16,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/thibaudcolas/draftjs-filters"
+    "url": "https://github.com/thibaudcolas/draftjs-filters.git"
   },
   "bugs": {
     "url": "https://github.com/thibaudcolas/draftjs-filters/issues"
   },
   "homepage": "https://thibaudcolas.github.io/draftjs-filters/",
+  "files": [
+    "dist"
+  ],
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -47,9 +50,45 @@
       "env"
     ]
   },
-  "files": [
-    "dist/"
-  ],
+  "release": {
+    "branch": "master",
+    "verifyConditions": [
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ],
+    "getLastRelease": "@semantic-release/npm",
+    "analyzeCommits": {
+      "preset": "angular",
+      "releaseRules": [
+        {"type": "docs", "scope": "README", "release": "patch"},
+        {"type": "refactor", "release": "patch"}
+      ]
+    },
+    "verifyRelease": [],
+    "generateNotes": {
+      "preset": "angular"
+    },
+    "publish": [
+      "@semantic-release/npm",
+      {
+        "path": "@semantic-release/github",
+        "assets": [
+          "package.json",
+          {
+            "path": "dist/draftjs-filters.cjs.js",
+            "label": "CommonJS"
+          },
+          {
+            "path": "dist/draftjs-filters.esm.js",
+            "label": "ES modules"
+          }
+        ]
+      }
+    ]
+  },
+  "publishConfig": {
+    "tag": "next"
+  },
   "devDependencies": {
     "@commitlint/cli": "^5.2.8",
     "@commitlint/config-conventional": "^5.2.3",
@@ -65,6 +104,7 @@
     "react-scripts": "1.0.17",
     "rollup": "^0.53.3",
     "rollup-plugin-babel": "^3.0.3",
+    "semantic-release": "^11.0.2",
     "source-map-explorer": "^1.5.0"
   },
   "dependencies": {},
@@ -78,6 +118,7 @@
     "dist": "CI=true npm run build -s",
     "flow": "flow",
     "danger": "danger ci --verbose",
+    "semantic-release": "semantic-release",
     "test": "CI=true react-scripts test --env=jsdom",
     "test:coverage": "CI=true react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom",
