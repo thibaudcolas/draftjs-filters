@@ -1,6 +1,6 @@
 {
   "name": "draftjs-filters",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "description": "Filter Draft.js content when copy-pasting rich text into the editor",
   "author": "Thibaud Colas",
   "license": "MIT",
