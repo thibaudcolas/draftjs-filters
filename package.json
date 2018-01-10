@@ -1,16 +1,14 @@
 {
   "name": "draftjs-filters",
   "version": "0.1.0",
-  "description": "",
+  "description": "Filter Draft.js content when copy-pasting rich text into the editor",
   "author": "Thibaud Colas",
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "es/index.js",
+  "main": "dist/draftjs-filters.cjs.js",
+  "module": "dist/draftjs-filters.esm.js",
   "keywords": [
-    "draftjs",
-    "draft.js",
-    "draft",
     "draft-js",
+    "draftjs-utils",
     "editor",
     "wysiwyg",
     "rich text",
@@ -43,21 +41,15 @@
       "@commitlint/config-conventional"
     ]
   },
+  "browserslist": "> 1%, IE 11",
   "babel": {
     "presets": [
-      [
-        "env",
-        {
-          "targets": {
-            "browsers": [
-              "> 1%",
-              "IE 11"
-            ]
-          }
-        }
-      ]
+      "env"
     ]
   },
+  "files": [
+    "dist/"
+  ],
   "devDependencies": {
     "@commitlint/cli": "^5.2.8",
     "@commitlint/config-conventional": "^5.2.3",
@@ -71,6 +63,8 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
+    "rollup": "^0.53.3",
+    "rollup-plugin-babel": "^3.0.3",
     "source-map-explorer": "^1.5.0"
   },
   "dependencies": {},
@@ -80,7 +74,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build && source-map-explorer --html build/static/js/main.* > build/source-map-explorer.html",
+    "build": "react-scripts build && source-map-explorer --html build/static/js/main.* > build/source-map-explorer.html && rollup -c",
     "dist": "CI=true npm run build -s",
     "flow": "flow",
     "danger": "danger ci --verbose",
