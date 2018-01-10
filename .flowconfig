@@ -1,6 +1,7 @@
 [ignore]
 .*/node_modules/draft-js/lib/DraftEditorContents.react.js.flow
 suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+.*/node_modules/config-chain
 
 [include]
 
