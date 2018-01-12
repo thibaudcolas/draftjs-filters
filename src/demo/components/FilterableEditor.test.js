@@ -23,14 +23,14 @@ describe("FilterableEditor", () => {
   it("renders", () => {
     // Do not snapshot the Draft.js editor, as it contains unstable keys in the content.
     expect(
-      shallow(<FilterableEditor />).find(".EditorToolbar"),
+      shallow(<FilterableEditor filtered={false} />).find(".EditorToolbar"),
     ).toMatchSnapshot()
   })
 
   describe("onChange", () => {
     it("works", () => {
       const state = EditorState.createEmpty()
-      const wrapper = shallow(<FilterableEditor />)
+      const wrapper = shallow(<FilterableEditor filtered={false} />)
 
       wrapper.instance().onChange(state)
 
@@ -64,7 +64,7 @@ describe("FilterableEditor", () => {
   })
 
   it("toggleStyle", () => {
-    shallow(<FilterableEditor />)
+    shallow(<FilterableEditor filtered={false} />)
       .instance()
       .toggleStyle("BOLD")
 
@@ -72,7 +72,7 @@ describe("FilterableEditor", () => {
   })
 
   it("toggleBlock", () => {
-    shallow(<FilterableEditor />)
+    shallow(<FilterableEditor filtered={false} />)
       .instance()
       .toggleBlock("header-two")
 
