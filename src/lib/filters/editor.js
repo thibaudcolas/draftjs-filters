@@ -6,6 +6,7 @@ import { ATOMIC, UNSTYLED, IMAGE, HORIZONTAL_RULE } from "../constants"
 import { preserveAtomicBlocks, resetBlockDepth, resetBlockType } from "./blocks"
 import { filterInlineStyle } from "./styles"
 import { resetAtomicBlocks, filterEntityType } from "./entities"
+import { whitespaceCharacters } from "./text"
 
 type EntityTypes = Array<string>
 
@@ -53,6 +54,7 @@ export const filterEditorState = (
   nextEditorState = filterInlineStyle(nextEditorState, inlineStyles)
   nextEditorState = resetAtomicBlocks(nextEditorState, enabledEntityTypes)
   nextEditorState = filterEntityType(nextEditorState, enabledEntityTypes)
+  nextEditorState = whitespaceCharacters(editorState, ["\t"])
 
   return nextEditorState
 }
