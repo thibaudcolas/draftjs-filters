@@ -12,6 +12,7 @@ describe("editor", () => {
           editorState,
           1,
           false,
+          false,
           ["header-five"],
           ["bold"],
           [IMAGE],
@@ -19,10 +20,17 @@ describe("editor", () => {
       ).toBeInstanceOf(EditorState)
     })
 
-    it(HORIZONTAL_RULE, () => {
+    it("enableHorizontalRule", () => {
       const editorState = EditorState.createEmpty()
       expect(
-        filterEditorState(editorState, 1, true, [], [], []),
+        filterEditorState(editorState, 1, true, false, [], [], []),
+      ).toBeInstanceOf(EditorState)
+    })
+
+    it("enableLineBreak", () => {
+      const editorState = EditorState.createEmpty()
+      expect(
+        filterEditorState(editorState, 1, false, true, [], [], []),
       ).toBeInstanceOf(EditorState)
     })
   })
