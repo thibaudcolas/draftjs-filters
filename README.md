@@ -1,8 +1,10 @@
 # [Draft.js filters](https://thibaudcolas.github.io/draftjs-filters/) [![npm](https://img.shields.io/npm/v/draftjs-filters.svg?style=flat-square)](https://www.npmjs.com/package/draftjs-filters) [![Build Status](https://travis-ci.org/thibaudcolas/draftjs-filters.svg?branch=master)](https://travis-ci.org/thibaudcolas/draftjs-filters) [![Coverage Status](https://coveralls.io/repos/github/thibaudcolas/draftjs-filters/badge.svg)](https://coveralls.io/github/thibaudcolas/draftjs-filters) [<img src="https://cdn.rawgit.com/springload/awesome-wagtail/ac912cc661a7099813f90545adffa6bb3e75216c/logo.svg" width="104" align="right" alt="Wagtail">](https://wagtail.io/)
 
-> Filter [Draft.js](https://facebook.github.io/draft-js/) content when copy-pasting rich text into an editor. Built for [Draftail](https://github.com/springload/draftail) and [Wagtail](https://github.com/wagtail/wagtail).
+> Filter [Draft.js](https://facebook.github.io/draft-js/) content to preserve only the formatting you allow. Built for [Draftail](https://github.com/springload/draftail) and [Wagtail](https://github.com/wagtail/wagtail).
 
-Check out the [online demo](https://thibaudcolas.github.io/draftjs-filters).
+[![Screenshot of Microsoft Word with tens of toolbars activated](https://thibaudcolas.github.io/draftjs-filters/word-toolbars-overload.jpg)](https://thibaudcolas.github.io/draftjs-filters)
+
+The main use case is to filter out disallowed formattings when copy-pasting rich text into an editor, for example from Word or Google Docs. Check out the [online demo](https://thibaudcolas.github.io/draftjs-filters)!
 
 ## Using the filters
 
@@ -107,3 +109,5 @@ Releases are automated with [semantic-release](https://github.com/semantic-relea
 ## Credits
 
 View the full list of [contributors](https://github.com/springload/draftail/graphs/contributors). [MIT](LICENSE) licensed. Website content available as [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
+
+Microsoft Word toolbars screenshot from _PCWorld – Microsoft Word Turns 25_ article.
