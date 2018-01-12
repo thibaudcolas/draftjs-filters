@@ -1,0 +1,50 @@
+.link {
+  border-bottom: 1px dotted #43b1b0;
+}
+
+blockquote {
+  border-left: 1px solid #e5e5e5;
+  padding: 0 0 0 20px;
+  margin-left: 0;
+  font-style: italic;
+}
+
+summary {
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.example {
+  margin-top: 2rem;
+}
+
+/*
+ * Styles of the examples
+ */
+
+.anchor {
+  display: none;
+}
+
+h4:hover .anchor {
+  display: inline;
+}
+
+.list-inline {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.list-inline > li {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+.list-inline > li + li {
+  margin-left: 0.5rem;
+}
