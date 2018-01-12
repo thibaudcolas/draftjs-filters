@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterableEditor renders 1`] = `
+<div
+  className="EditorToolbar"
+>
+  <button
+    key="BOLD"
+    onClick={[Function]}
+  >
+    B
+  </button>
+  <button
+    key="ITALIC"
+    onClick={[Function]}
+  >
+    I
+  </button>
+  <button
+    key="unstyled"
+    onClick={[Function]}
+  >
+    P
+  </button>
+  <button
+    key="header-two"
+    onClick={[Function]}
+  >
+    H2
+  </button>
+  <button
+    key="header-three"
+    onClick={[Function]}
+  >
+    H3
+  </button>
+  <button
+    key="unordered-list-item"
+    onClick={[Function]}
+  >
+    UL
+  </button>
+</div>
+`;
