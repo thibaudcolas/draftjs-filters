@@ -102,6 +102,8 @@ npm run
 
 ### Releases
 
+Releases are automated with [semantic-release](https://github.com/semantic-release/semantic-release) on every push to `master`, based on the content of the commits. New versions are pushed to the `next` tag on npm, and must then manually be promoted to `latest`.
+
 ## Credits
 
 View the full list of [contributors](https://github.com/springload/draftail/graphs/contributors). [MIT](LICENSE) licensed. Website content available as [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
