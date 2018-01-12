@@ -1,3 +1,3 @@
-import { filterEditorState } from "./normalize"
+import { filterEditorState } from "./filters/editor"
 
 export { filterEditorState }
