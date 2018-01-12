@@ -102,6 +102,8 @@
     "danger": "^3.0.3",
     "danger-plugin-jest": "^1.1.0",
     "draft-js": "^0.10.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.0",
     "flow-bin": "^0.61.0",
     "immutable": "^3.7.6",
@@ -110,16 +112,13 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-scripts": "1.0.17",
+    "react-test-renderer": "^16.2.0",
     "rollup": "^0.53.3",
     "rollup-plugin-babel": "^3.0.3",
     "semantic-release": "^11.0.2",
     "source-map-explorer": "^1.5.0"
   },
-  "dependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "react-test-renderer": "^16.2.0"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "draft-js": "^0.10.4",
     "immutable": "~3.7.4"
