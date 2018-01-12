@@ -4,3 +4,16 @@
   margin: 5px;
   background-color: white;
 }
+
+.DraftEditor-root {
+  font-size: 1rem;
+  line-height: 1.5;
+  font-variant-ligatures: none;
+  overflow: auto;
+}
+
+.public-DraftEditor-content,
+.public-DraftEditorPlaceholder-root,
+.EditorToolbar {
+  padding: 0.25rem;
+}
