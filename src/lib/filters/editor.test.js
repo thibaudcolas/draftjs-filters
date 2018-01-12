@@ -1,6 +1,6 @@
 import { EditorState } from "draft-js"
 
-import { IMAGE, HORIZONTAL_RULE } from "../constants"
+import { IMAGE } from "../constants"
 import { filterEditorState } from "./editor"
 
 describe("editor", () => {
@@ -8,29 +8,45 @@ describe("editor", () => {
     it("works", () => {
       const editorState = EditorState.createEmpty()
       expect(
-        filterEditorState(
+        filterEditorState({
           editorState,
-          1,
-          false,
-          false,
-          ["header-five"],
-          ["bold"],
-          [IMAGE],
-        ),
+          maxListNesting: 1,
+          enableHorizontalRule: false,
+          enableLineBreak: false,
+          blockTypes: ["header-five"],
+          inlineStyles: ["bold"],
+          entityTypes: [IMAGE],
+        }),
       ).toBeInstanceOf(EditorState)
     })
 
     it("enableHorizontalRule", () => {
       const editorState = EditorState.createEmpty()
       expect(
-        filterEditorState(editorState, 1, true, false, [], [], []),
+        filterEditorState({
+          editorState,
+          maxListNesting: 1,
+          enableHorizontalRule: true,
+          enableLineBreak: false,
+          blockTypes: [],
+          inlineStyles: [],
+          entityTypes: [],
+        }),
       ).toBeInstanceOf(EditorState)
     })
 
     it("enableLineBreak", () => {
       const editorState = EditorState.createEmpty()
       expect(
-        filterEditorState(editorState, 1, false, true, [], [], []),
+        filterEditorState({
+          editorState,
+          maxListNesting: 1,
+          enableHorizontalRule: false,
+          enableLineBreak: true,
+          blockTypes: [],
+          inlineStyles: [],
+          entityTypes: [],
+        }),
       ).toBeInstanceOf(EditorState)
     })
   })
