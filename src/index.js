@@ -1,1 +1,2 @@
-import './demo';
+import "./demo/utils/polyfills"
+import "./demo/index"
