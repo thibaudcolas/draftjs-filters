@@ -22,7 +22,15 @@ type EntityTypes = Array<string>
  * As of now, this doesn't filter line breaks if they aren't disabled
  * as Draft.js does not preserve this type of whitespace on paste anyway.
  */
-export const filterEditorState = (
+export const filterEditorState = ({
+  editorState,
+  maxListNesting,
+  enableHorizontalRule,
+  enableLineBreak,
+  blockTypes,
+  inlineStyles,
+  entityTypes,
+}: {
   editorState: EditorState,
   maxListNesting: number,
   enableHorizontalRule: boolean,
@@ -30,7 +38,7 @@ export const filterEditorState = (
   blockTypes: Array<DraftBlockType>,
   inlineStyles: Array<string>,
   entityTypes: EntityTypes,
-) => {
+}) => {
   let nextEditorState = editorState
   const enabledBlockTypes = blockTypes.concat([
     // Always enabled in a Draftail editor.
