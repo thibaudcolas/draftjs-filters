@@ -10,63 +10,7 @@ Testing matrix
 | **Word Online**   |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
 | **Dropbox Paper** |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
 
-| Editor - Browser  | Chrome Windows | Chrome macOS    | Firefox Windows | Firefox macOS   | Edge Windows | IE11 Windows | Safari macOS    | Safari iOS | Chrome Android |
-| ----------------- | -------------- | --------------- | --------------- | --------------- | ------------ | ------------ | --------------- | ---------- | -------------- |
-| **Word 2016**     |                |                 |                 |                 |              |              |                 | iOS11      |                |
-| **Word 2013**     |                | N/A             |                 | N/A             |              |              | N/A             | N/A        | N/A            |
-| **Word 2010**     | v62, Win8.1    | N/A             | v57, Win8.1     | N/A             |              | Win8.1       | N/A             | N/A        | N/A            |
-| **Apple Pages**   | N/A            | v62, macOS10.13 | N/A             | v62, macOS10.13 | N/A          | N/A          | v11, macOS10.13 | iOS11      | N/A            |
-| **Google Docs**   | v62, Win8.1    | v62, macOS10.13 | v57, Win8.1     | v62, macOS10.13 | v16, Win10   | Win8.1       | v11, macOS10.13 | iOS11      |                |
-| **Word Online**   | v62, Win8.1    | v62, macOS10.13 | v57, Win8.1     | v62, macOS10.13 | v16, Win10   | Unsupported  | v11, macOS10.13 | No paste   | ?              |
-| **Dropbox Paper** | v62, Win8.1    | v62, macOS10.13 | v57, Win8.1     | v62, macOS10.13 | v16, Win10   | Unsupported  | v11, macOS10.13 | iOS11      | ?              |
-
 ---
-
----
-
-## TODO
-
-* [ ] Entity attribute whitelist per entity, potentially configurable.
-* [ ] Entity filtering, attribute-based.
-* [ ] Line break filtering
-
-## LINK
-
-> Attributes: `url`, potentially `title` if unsupported?
-
-* [ ] Filter `href` attribute on `LINK`.
-* [ ] Filter `title` attribute on `LINK`.
-* [ ] Filter `rel` attribute on `LINK`.
-* [ ] Filter `target` attribute on `LINK`.
-* [ ] Apple Pages allows setting mail subject. Keep or discard?
-
-Removal criteria:
-
-* [ ] `href` starts with `#`
-
-## IMAGE
-
-> Attributes: `src`, potentially `alt`
-
-Removal criteria:
-
-* [ ] `src` starts with `file:`
-* [ ] `src` starts with `data:`
-* [ ] `src` starts with `http:`
-* [ ] `src` starts with `https:`
-
-## Other
-
-* [ ] Advise users to turn on `stripPastedStyles` in their implementation with IE11 detection.
-* [ ] Remove `CODE` style in `code-block`.
-* [ ] Prevent adding `CODE` style in `code-block`.
-* [ ] Remove non-list blocks with non-zero depth.
-* [ ] Make sure blocks with image and more text are either split, or image is removed.
-* [ ] Remove invalid soft line break character inserted by Apple Pages.
-
-## Later
-
-* [ ] Handle `\t` (tab) inserted by Safari iOS, IE11.
 
 Line breaks:
 
