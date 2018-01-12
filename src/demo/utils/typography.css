@@ -22,11 +22,3 @@ h2,
 h3 {
   line-height: 1.1;
 }
-
-.page-section > h2 {
-  font-size: 2.5rem;
-}
-
-.example > h3 {
-  font-size: 1.75rem;
-}
