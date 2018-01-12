@@ -26,6 +26,7 @@ export const filterEditorState = (
   editorState: EditorState,
   maxListNesting: number,
   enableHorizontalRule: boolean,
+  enableLineBreak: boolean,
   blockTypes: Array<DraftBlockType>,
   inlineStyles: Array<string>,
   entityTypes: EntityTypes,
@@ -54,7 +55,14 @@ export const filterEditorState = (
   nextEditorState = filterInlineStyle(nextEditorState, inlineStyles)
   nextEditorState = resetAtomicBlocks(nextEditorState, enabledEntityTypes)
   nextEditorState = filterEntityType(nextEditorState, enabledEntityTypes)
-  nextEditorState = whitespaceCharacters(editorState, ["\t"])
+
+  const filteredCharacters = ["\t"]
+
+  if (!enableLineBreak) {
+    filteredCharacters.push("\n")
+  }
+
+  nextEditorState = whitespaceCharacters(editorState, filteredCharacters)
 
   return nextEditorState
 }
