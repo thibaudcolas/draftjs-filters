@@ -1,0 +1,9 @@
+.page-nav {
+  text-align: center;
+}
+
+@media only screen and (max-width: 480px) {
+  .page-nav {
+    text-align: left;
+  }
+}

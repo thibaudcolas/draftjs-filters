@@ -1,0 +1,15 @@
+.page-wrapper {
+  max-width: 960px;
+  padding: 10vh 5vw;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 768px) {
+  .page-wrapper {
+    padding: 10vh 5rem;
+  }
+}
+
+.page-section + .page-section {
+  margin-top: 2rem;
+}

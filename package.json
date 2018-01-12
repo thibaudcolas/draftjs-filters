@@ -1,7 +1,7 @@
 {
   "name": "draftjs-filters",
   "version": "0.0.0-development",
-  "description": "Filter Draft.js content when copy-pasting rich text into the editor",
+  "description": "Filter Draft.js content when copy-pasting rich text into an editor",
   "author": "Thibaud Colas",
   "license": "MIT",
   "main": "dist/draftjs-filters.cjs.js",
@@ -107,6 +107,7 @@
     "enzyme-to-json": "^3.3.0",
     "flow-bin": "^0.61.0",
     "immutable": "^3.7.6",
+    "normalize.css": "^7.0.0",
     "prettier": "^1.9.2",
     "prismjs": "^1.9.0",
     "react": "^16.2.0",
