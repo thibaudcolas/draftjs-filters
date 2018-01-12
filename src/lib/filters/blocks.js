@@ -1,7 +1,12 @@
 import { EditorState } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
-import { ATOMIC, UNSTYLED } from "../constants"
+import {
+  ATOMIC,
+  UNSTYLED,
+  UNORDERED_LIST_ITEM,
+  ORDERED_LIST_ITEM,
+} from "../constants"
 
 /**
  * Creates atomic blocks where they would be required for a block-level entity
@@ -31,6 +36,35 @@ export const preserveAtomicBlocks = (
     return EditorState.set(editorState, {
       currentContent: content.merge({
         blockMap: blockMap.merge(perservedBlocks),
+      }),
+    })
+  }
+
+  return editorState
+}
+
+/**
+ * Removes blocks that have a non-zero depth, and aren't list items.
+ * Happens with Apple Pages inserting `unstyled` items between list items.
+ */
+export const removeInvalidDepthBlocks = (editorState) => {
+  const content = editorState.getCurrentContent()
+  const blockMap = content.getBlockMap()
+
+  const isValidDepthBlock = (block) => {
+    const isListBlock = [UNORDERED_LIST_ITEM, ORDERED_LIST_ITEM].includes(
+      block.getType(),
+    )
+
+    return isListBlock || block.getDepth() === 0
+  }
+
+  const filteredBlocks = blockMap.filter(isValidDepthBlock)
+
+  if (filteredBlocks.size !== blockMap.size) {
+    return EditorState.set(editorState, {
+      currentContent: content.merge({
+        blockMap: filteredBlocks,
       }),
     })
   }

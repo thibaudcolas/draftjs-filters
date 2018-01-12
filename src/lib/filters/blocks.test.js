@@ -6,7 +6,12 @@ import {
 } from "draft-js"
 
 import { UNSTYLED, IMAGE } from "../constants"
-import { preserveAtomicBlocks, resetBlockDepth, resetBlockType } from "./blocks"
+import {
+  preserveAtomicBlocks,
+  removeInvalidDepthBlocks,
+  resetBlockDepth,
+  resetBlockType,
+} from "./blocks"
 
 describe("blocks", () => {
   describe("#preserveAtomicBlocks", () => {
@@ -119,6 +124,53 @@ describe("blocks", () => {
       const editorState = EditorState.createWithContent(contentState)
 
       expect(preserveAtomicBlocks(editorState, [])).toBe(editorState)
+    })
+  })
+
+  describe("#removeInvalidDepthBlocks", () => {
+    it("normalises depth to a given number", () => {
+      const contentState = convertFromRaw({
+        entityMap: {},
+        blocks: [
+          {
+            key: "d3071",
+            text: "Depth 0",
+            type: "ordered-list-item",
+            depth: 0,
+          },
+          {
+            key: "affm4",
+            text: "Depth 1",
+            type: "unstyled",
+            depth: 1,
+          },
+          {
+            key: "abbm4",
+            text: "Depth 2",
+            type: "unordered-list-item",
+            depth: 2,
+          },
+        ],
+      })
+      const editorState = removeInvalidDepthBlocks(
+        EditorState.createWithContent(contentState),
+      )
+      expect(
+        editorState
+          .getCurrentContent()
+          .getBlockMap()
+          .map((block) => block.getDepth())
+          .toJS(),
+      ).toEqual({ abbm4: 2, d3071: 0 })
+    })
+
+    it("no normalisation = no change", () => {
+      const editorState = EditorState.createWithContent(
+        ContentState.createFromBlockArray(
+          convertFromHTML(`<ul><li>Depth 0</li></ul>`),
+        ),
+      )
+      expect(removeInvalidDepthBlocks(editorState)).toBe(editorState)
     })
   })
 
