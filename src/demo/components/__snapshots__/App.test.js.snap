@@ -53,7 +53,9 @@ exports[`App renders 1`] = `
   <p>
     All of the formatting preserved by Draft.js is preserved in the editor.
   </p>
-  <FilterableEditor />
+  <FilterableEditor
+    filtered={false}
+  />
   <h2>
     Going further
   </h2>
