@@ -125,11 +125,6 @@ class FilterableEditor extends Component<Props, State> {
           <summary>
             <span className="link">Debug</span>
           </summary>
-          <ul className="list-inline">
-            <li>
-              <span>Version: 0</span>
-            </li>
-          </ul>
           <Highlight
             language="js"
             value={JSON.stringify(
