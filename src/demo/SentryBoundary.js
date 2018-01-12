@@ -3,9 +3,6 @@ import PropTypes from "prop-types"
 import React, { Component } from "react"
 import type { Node } from "react"
 
-const Raven = window.Raven
-const isRavenAvailable = !!Raven
-
 type Props = {
   children: Node,
 }
@@ -21,16 +18,18 @@ class SentryBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: Object) {
+    const isRavenAvailable = !!window.Raven
     this.setState({ error })
 
     if (isRavenAvailable) {
-      Raven.captureException(error, { extra: errorInfo })
+      window.Raven.captureException(error, { extra: errorInfo })
     }
   }
 
   render() {
     const { children } = this.props
     const { error } = this.state
+    const isRavenAvailable = !!window.Raven
 
     return error ? (
       <div className="DraftEditor-root">
@@ -48,7 +47,8 @@ class SentryBoundary extends Component<Props, State> {
                   <button
                     type="button"
                     onClick={() =>
-                      Raven.lastEventId() && Raven.showReportDialog()
+                      window.Raven.lastEventId() &&
+                      window.Raven.showReportDialog()
                     }
                   >
                     Submit a report
@@ -65,7 +65,7 @@ class SentryBoundary extends Component<Props, State> {
                     Open a GitHub issue
                   </a>
                 )}
-                <span> or </span>
+                <span>&nbsp;</span>
                 <button
                   type="button"
                   onClick={() => window.location.reload(false)}
