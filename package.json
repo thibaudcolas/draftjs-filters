@@ -60,8 +60,15 @@
     "analyzeCommits": {
       "preset": "angular",
       "releaseRules": [
-        {"type": "docs", "scope": "README", "release": "patch"},
-        {"type": "refactor", "release": "patch"}
+        {
+          "type": "docs",
+          "scope": "README",
+          "release": "patch"
+        },
+        {
+          "type": "refactor",
+          "release": "patch"
+        }
       ]
     },
     "verifyRelease": [],
@@ -107,7 +114,11 @@
     "semantic-release": "^11.0.2",
     "source-map-explorer": "^1.5.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "react-test-renderer": "^16.2.0"
+  },
   "peerDependencies": {
     "draft-js": "^0.10.4",
     "immutable": "~3.7.4"
