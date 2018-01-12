@@ -70,7 +70,7 @@ export const filterEditorState = ({
     filteredCharacters.push("\n")
   }
 
-  nextEditorState = whitespaceCharacters(editorState, filteredCharacters)
+  nextEditorState = whitespaceCharacters(nextEditorState, filteredCharacters)
 
   return nextEditorState
 }

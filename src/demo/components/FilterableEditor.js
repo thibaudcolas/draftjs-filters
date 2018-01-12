@@ -65,12 +65,12 @@ class FilterableEditor extends Component<Props, State> {
       const { editorState } = this.state
       const content = editorState.getCurrentContent()
       const shouldFilterPaste =
-        nextEditorState.getCurrentContent() !== content &&
-        nextEditorState.getLastChangeType() === "insert-fragment"
+        nextState.getCurrentContent() !== content &&
+        nextState.getLastChangeType() === "insert-fragment"
 
       if (shouldFilterPaste) {
         nextState = filterEditorState({
-          editorState: nextEditorState,
+          editorState: nextState,
           maxListNesting: 1,
           enableHorizontalRule: false,
           enableLineBreak: false,
@@ -85,7 +85,7 @@ class FilterableEditor extends Component<Props, State> {
 
     sessionStorage.setItem(
       `content`,
-      JSON.stringify(convertToRaw(nextEditorState.getCurrentContent())),
+      JSON.stringify(convertToRaw(nextState.getCurrentContent())),
     )
   }
 
