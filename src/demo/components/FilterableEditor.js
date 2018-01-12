@@ -1,6 +1,12 @@
 // @flow
 import React, { Component } from "react"
-import { Editor, EditorState, RichUtils, convertToRaw } from "draft-js"
+import {
+  Editor,
+  EditorState,
+  RichUtils,
+  convertToRaw,
+  CompositeDecorator,
+} from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 import { filterEditorState } from "../../lib/index"
@@ -8,9 +14,11 @@ import { filterEditorState } from "../../lib/index"
 import SentryBoundary from "./SentryBoundary"
 import Highlight from "./Highlight"
 
-import "./TestEditor.css"
+import "./FilterableEditor.css"
 
-type Props = {}
+type Props = {
+  filtered: boolean,
+}
 
 type State = {
   editorState: EditorState,
@@ -28,12 +36,31 @@ const INLINE_STYLES = {
   ITALIC: "I",
 }
 
-class TestEditor extends Component<Props, State> {
+class FilterableEditor extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
 
+    const decorator = new CompositeDecorator([
+      {
+        strategy: (contentBlock, callback, contentState) => {
+          contentBlock.findEntityRanges((character) => {
+            const entityKey = character.getEntity()
+            return (
+              entityKey !== null &&
+              // $FlowFixMe
+              contentState.getEntity(entityKey).getType() === "LINK"
+            )
+          }, callback)
+        },
+        component: ({ children }) => {
+          return <span className="link">{children}</span>
+        },
+      },
+    ])
+
     this.state = {
-      editorState: EditorState.createEmpty(),
+      // $FlowFixMe
+      editorState: EditorState.createEmpty(decorator),
     }
     ;(this: any).onChange = this.onChange.bind(this)
     ;(this: any).toggleStyle = this.toggleStyle.bind(this)
@@ -41,29 +68,34 @@ class TestEditor extends Component<Props, State> {
   }
 
   onChange(nextEditorState: EditorState) {
-    const { editorState } = this.state
-    const content = editorState.getCurrentContent()
-    let nextContent = nextEditorState.getCurrentContent()
-    const shouldFilterPaste =
-      nextContent !== content &&
-      nextEditorState.getLastChangeType() === "insert-fragment"
+    const { filtered } = this.props
+    let nextState = nextEditorState
 
-    let filteredEditorState = nextEditorState
-    if (shouldFilterPaste) {
-      filteredEditorState = filterEditorState(
-        nextEditorState,
-        1,
-        false,
-        Object.keys(BLOCK_TYPES),
-        Object.keys(INLINE_STYLES),
-        [],
-      )
+    if (filtered) {
+      const { editorState } = this.state
+      const content = editorState.getCurrentContent()
+      const shouldFilterPaste =
+        nextEditorState.getCurrentContent() !== content &&
+        nextEditorState.getLastChangeType() === "insert-fragment"
+
+      if (shouldFilterPaste) {
+        nextState = filterEditorState(
+          nextEditorState,
+          1,
+          false,
+          Object.keys(BLOCK_TYPES),
+          Object.keys(INLINE_STYLES),
+          [],
+        )
+      }
     }
 
-    this.setState({ editorState: filteredEditorState })
+    this.setState({ editorState: nextState })
 
-    nextContent = filteredEditorState.getCurrentContent()
-    sessionStorage.setItem(`content`, JSON.stringify(convertToRaw(nextContent)))
+    sessionStorage.setItem(
+      `content`,
+      JSON.stringify(convertToRaw(nextEditorState.getCurrentContent())),
+    )
   }
 
   toggleStyle(type: string) {
@@ -79,7 +111,7 @@ class TestEditor extends Component<Props, State> {
   render() {
     const { editorState } = this.state
     return (
-      <div className="TestEditor">
+      <div className="FilterableEditor">
         <SentryBoundary>
           <div className="EditorToolbar">
             {Object.keys(INLINE_STYLES).map((type) => (
@@ -122,4 +154,4 @@ class TestEditor extends Component<Props, State> {
   }
 }
 
-export default TestEditor
+export default FilterableEditor
