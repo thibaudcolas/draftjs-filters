@@ -30,6 +30,44 @@ Testing matrix
 * [ ] Entity filtering, attribute-based.
 * [ ] Line break filtering
 
+## LINK
+
+> Attributes: `url`, potentially `title` if unsupported?
+
+* [ ] Filter `href` attribute on `LINK`.
+* [ ] Filter `title` attribute on `LINK`.
+* [ ] Filter `rel` attribute on `LINK`.
+* [ ] Filter `target` attribute on `LINK`.
+* [ ] Apple Pages allows setting mail subject. Keep or discard?
+
+Removal criteria:
+
+* [ ] `href` starts with `#`
+
+## IMAGE
+
+> Attributes: `src`, potentially `alt`
+
+Removal criteria:
+
+* [ ] `src` starts with `file:`
+* [ ] `src` starts with `data:`
+* [ ] `src` starts with `http:`
+* [ ] `src` starts with `https:`
+
+## Other
+
+* [ ] Advise users to turn on `stripPastedStyles` in their implementation with IE11 detection.
+* [ ] Remove `CODE` style in `code-block`.
+* [ ] Prevent adding `CODE` style in `code-block`.
+* [ ] Remove non-list blocks with non-zero depth.
+* [ ] Make sure blocks with image and more text are either split, or image is removed.
+* [ ] Remove invalid soft line break character inserted by Apple Pages.
+
+## Later
+
+* [ ] Handle `\t` (tab) inserted by Safari iOS, IE11.
+
 Line breaks:
 
 * Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"Soft line<?>break"`
@@ -71,7 +109,7 @@ Highly similar between Chrome 62 and Firefox 57.
 * Comment -> `LINK` with `"href": "#_msocom_1"`, `"http://localhost/examples/#_msocom_1"`, and `[T.C1]` text appended after the commented content.
 * Comment -> also adding `unstyled` block for comment text at the end of the document, preceded with `[T.C1]`: `"text": "[T.C1]Comment"`. And `LINK` with `"href": "#_msoanchor_1"`, `"url": "http://localhost/examples/#_msoanchor_1"`.
 * [ ] Remove comment `LINK` based on `href` attribute.
-* [ ] Potentially also remove inserted text, if feasible.
+* ~[ ] Potentially also remove inserted text, if feasible.~
 * Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> correct `header-*` level.
 * Heading 7, Heading 8, Heading 9 -> `unstyled`.
 * Bullet list -> `unstyled` prefixed with `·` (depth 0), `o`, `§` (depth 1 & 2).
