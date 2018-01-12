@@ -57,6 +57,16 @@ function onChange(nextEditorState) {
 
 The Draft.js filters follow the browser support targets of Draft.js. Be sure to have a look at the [Draft.js required polyfills](https://facebook.github.io/draft-js/docs/advanced-topics-issues-and-pitfalls).
 
+#### IE11
+
+There are [known Draft.js issues](https://github.com/facebook/draft-js/issues/986) with pasting in IE11. For now, we advise users to turn on `stripPastedStyles` in IE11 only so that all styles are stripped, but whitespace is preserved:
+
+```jsx
+const IS_IE11 = !window.ActiveXObject && "ActiveXObject" in window
+
+const editor = <Editor stripPastedStyles={IS_IE11} />
+```
+
 ## Contributing
 
 See anything you like in here? Anything missing? We welcome all support, whether on bug reports, feature requests, code, design, reviews, tests, documentation, and more. Please have a look at our [contribution guidelines](.github/CONTRIBUTING.md).
