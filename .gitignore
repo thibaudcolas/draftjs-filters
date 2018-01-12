@@ -62,7 +62,6 @@ $node_modules.tar.gz
 .vagrant
 .anaconda
 Vagrantfile.local
-.env
 /local
 local.py
 *.sublime-project
