@@ -3,7 +3,12 @@ import { EditorState } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 import { ATOMIC, UNSTYLED, IMAGE, HORIZONTAL_RULE } from "../constants"
-import { preserveAtomicBlocks, resetBlockDepth, resetBlockType } from "./blocks"
+import {
+  preserveAtomicBlocks,
+  resetBlockDepth,
+  resetBlockType,
+  removeInvalidDepthBlocks,
+} from "./blocks"
 import { filterInlineStyle } from "./styles"
 import { resetAtomicBlocks, filterEntityType } from "./entities"
 import { whitespaceCharacters } from "./text"
@@ -58,6 +63,7 @@ export const filterEditorState = ({
     HORIZONTAL_RULE,
     IMAGE,
   ])
+  nextEditorState = removeInvalidDepthBlocks(nextEditorState)
   nextEditorState = resetBlockDepth(nextEditorState, maxListNesting)
   nextEditorState = resetBlockType(nextEditorState, enabledBlockTypes)
   nextEditorState = filterInlineStyle(nextEditorState, inlineStyles)

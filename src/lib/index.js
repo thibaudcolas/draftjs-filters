@@ -1,5 +1,6 @@
 import {
   preserveAtomicBlocks,
+  removeInvalidDepthBlocks,
   resetBlockDepth,
   resetBlockType,
 } from "./filters/blocks"
@@ -10,6 +11,7 @@ import { filterEditorState } from "./filters/editor"
 
 export {
   preserveAtomicBlocks,
+  removeInvalidDepthBlocks,
   resetBlockDepth,
   resetBlockType,
   filterInlineStyle,

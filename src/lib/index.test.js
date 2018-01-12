@@ -1,5 +1,6 @@
 import {
   preserveAtomicBlocks,
+  removeInvalidDepthBlocks,
   resetBlockDepth,
   resetBlockType,
   filterInlineStyle,
@@ -16,6 +17,8 @@ const pkg = require("../../package.json")
  */
 describe(pkg.name, () => {
   it("preserveAtomicBlocks", () => expect(preserveAtomicBlocks).toBeDefined())
+  it("removeInvalidDepthBlocks", () =>
+    expect(removeInvalidDepthBlocks).toBeDefined())
   it("resetBlockDepth", () => expect(resetBlockDepth).toBeDefined())
   it("resetBlockType", () => expect(resetBlockType).toBeDefined())
   it("filterInlineStyle", () => expect(filterInlineStyle).toBeDefined())
