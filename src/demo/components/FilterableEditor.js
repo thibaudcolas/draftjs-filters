@@ -69,14 +69,15 @@ class FilterableEditor extends Component<Props, State> {
         nextEditorState.getLastChangeType() === "insert-fragment"
 
       if (shouldFilterPaste) {
-        nextState = filterEditorState(
-          nextEditorState,
-          1,
-          false,
-          Object.keys(BLOCK_TYPES),
-          Object.keys(INLINE_STYLES),
-          [],
-        )
+        nextState = filterEditorState({
+          editorState: nextEditorState,
+          maxListNesting: 1,
+          enableHorizontalRule: false,
+          enableLineBreak: false,
+          blockTypes: Object.keys(BLOCK_TYPES),
+          inlineStyles: Object.keys(INLINE_STYLES),
+          entityTypes: [],
+        })
       }
     }
 
