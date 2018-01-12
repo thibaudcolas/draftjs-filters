@@ -39,6 +39,19 @@ describe("SentryBoundary", () => {
     ).toMatchSnapshot()
   })
 
+  it("#error reload", () => {
+    window.Raven = false
+    window.location.reload = jest.fn()
+
+    shallow(<SentryBoundary>Test</SentryBoundary>)
+      .setState({
+        error: new Error("test"),
+      })
+      .find("button")
+      .simulate("click")
+    expect(window.location.reload).toHaveBeenCalled()
+  })
+
   it("#error Raven", () => {
     window.Raven = true
     expect(
@@ -46,5 +59,22 @@ describe("SentryBoundary", () => {
         error: new Error("test"),
       }),
     ).toMatchSnapshot()
+  })
+
+  it("#error Raven report", () => {
+    window.Raven = {
+      lastEventId: jest.fn(() => true),
+      showReportDialog: jest.fn(),
+    }
+    window.location.reload = jest.fn()
+
+    shallow(<SentryBoundary>Test</SentryBoundary>)
+      .setState({
+        error: new Error("test"),
+      })
+      .find("button")
+      .at(0)
+      .simulate("click")
+    expect(window.Raven.lastEventId).toHaveBeenCalled()
   })
 })

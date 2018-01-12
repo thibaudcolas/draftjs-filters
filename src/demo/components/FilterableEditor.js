@@ -13,6 +13,7 @@ import { filterEditorState } from "../../lib/index"
 
 import SentryBoundary from "./SentryBoundary"
 import Highlight from "./Highlight"
+import Link, { linkStrategy } from "./Link"
 
 import "./FilterableEditor.css"
 
@@ -42,19 +43,8 @@ class FilterableEditor extends Component<Props, State> {
 
     const decorator = new CompositeDecorator([
       {
-        strategy: (contentBlock, callback, contentState) => {
-          contentBlock.findEntityRanges((character) => {
-            const entityKey = character.getEntity()
-            return (
-              entityKey !== null &&
-              // $FlowFixMe
-              contentState.getEntity(entityKey).getType() === "LINK"
-            )
-          }, callback)
-        },
-        component: ({ children }) => {
-          return <span className="link">{children}</span>
-        },
+        strategy: linkStrategy,
+        component: Link,
       },
     ])
 
