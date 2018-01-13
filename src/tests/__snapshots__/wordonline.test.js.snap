@@ -1,0 +1,925 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Word Online wordonline-chrome62-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "7onc3",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "e4hgm",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -153,17 +142,11 @@
+            "key": 0,
+            "length": 4,
+            "offset": 10,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "687hs",
+        "text": "Unstyled, link, comment  ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -180,15 +163,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "61paa",
+        "text": "Unstyled, bold link comment ",
+        "type": "unstyled",
+      },
+@@ -552,17 +530,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 2,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "187nl",
+        "text": "📷 ",
+        "type": "unstyled",
+      },
+@@ -576,17 +548,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 3,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1gqbc",
+        "text": "📷Text displayed next to image ",
+        "type": "unstyled",
+      },
+@@ -845,40 +811,19 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "2": Object {
+-       "data": Object {
+-         "alt": "Test alt text",
+-         "src": "data:image/jpeg;base64,/9truncated",
+    },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "3": Object {
+-       "data": Object {
+-         "src": "data:image/png;base64,iVtruncated",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-   },
+  }
+`;
+
+exports[`Word Online wordonline-chrome62-win81 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "2opr3",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "ebn1f",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -153,17 +142,11 @@
+            "key": 0,
+            "length": 4,
+            "offset": 10,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "9serg",
+        "text": "Unstyled, link, comment  ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -180,15 +163,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "nk9e",
+        "text": "Unstyled, bold link comment ",
+        "type": "unstyled",
+      },
+@@ -552,17 +530,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 2,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1ptvu",
+        "text": "📷 ",
+        "type": "unstyled",
+      },
+@@ -576,17 +548,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 3,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "emn3d",
+        "text": "📷Text displayed next to image ",
+        "type": "unstyled",
+      },
+@@ -845,40 +811,19 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "2": Object {
+-       "data": Object {
+-         "alt": "Test alt text",
+-         "src": "data:image/jpeg;base64,/9truncated",
+    },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "3": Object {
+-       "data": Object {
+-         "src": "data:image/png;base64,iVtruncated",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-   },
+  }
+`;
+
+exports[`Word Online wordonline-edge16-win10 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "4jt1t",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "cig55",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -143,17 +132,11 @@
+            "key": 0,
+            "length": 4,
+            "offset": 10,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "cik0q",
+        "text": "Unstyled, link, comment  ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -170,15 +153,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "fu8j8",
+        "text": "Unstyled, bold link comment ",
+        "type": "unstyled",
+      },
+@@ -532,17 +510,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 2,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5t8gv",
+        "text": "📷 ",
+        "type": "unstyled",
+      },
+@@ -556,17 +528,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 3,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "9u6gt",
+        "text": "📷Text displayed next to image ",
+        "type": "unstyled",
+      },
+@@ -792,40 +758,19 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "2": Object {
+-       "data": Object {
+-         "alt": "Test alt text",
+-         "src": "data:image/jpeg;base64,/9truncated",
+    },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "3": Object {
+-       "data": Object {
+-         "src": "data:image/png;base64,iVtruncated",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-   },
+  }
+`;
+
+exports[`Word Online wordonline-firefox57-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "5qjg1",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "drqs6",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -143,17 +132,11 @@
+            "key": 0,
+            "length": 4,
+            "offset": 10,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "24gjn",
+        "text": "Unstyled, link, comment  ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -170,15 +153,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "4auln",
+        "text": "Unstyled, bold link comment ",
+        "type": "unstyled",
+      },
+@@ -532,17 +510,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 2,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "6ogvg",
+        "text": "📷 ",
+        "type": "unstyled",
+      },
+@@ -556,17 +528,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 3,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "eefqd",
+        "text": "📷Text displayed next to image ",
+        "type": "unstyled",
+      },
+@@ -810,40 +776,19 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "2": Object {
+-       "data": Object {
+-         "alt": "Test alt text",
+-         "src": "data:image/jpeg;base64,/9truncated",
+    },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "3": Object {
+-       "data": Object {
+-         "src": "data:image/png;base64,iVtruncated",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-   },
+  }
+`;
+
+exports[`Word Online wordonline-firefox57-win81 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "9js6j",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "epho8",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -143,17 +132,11 @@
+            "key": 0,
+            "length": 4,
+            "offset": 10,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "762ar",
+        "text": "Unstyled, link, comment  ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -170,15 +153,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "6j2m8",
+        "text": "Unstyled, bold link comment ",
+        "type": "unstyled",
+      },
+@@ -532,17 +510,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 2,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "cu1uf",
+        "text": "📷 ",
+        "type": "unstyled",
+      },
+@@ -556,17 +528,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 3,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "6794c",
+        "text": "📷Text displayed next to image ",
+        "type": "unstyled",
+      },
+@@ -810,40 +776,19 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "2": Object {
+-       "data": Object {
+-         "alt": "Test alt text",
+-         "src": "data:image/jpeg;base64,/9truncated",
+    },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "3": Object {
+-       "data": Object {
+-         "src": "data:image/png;base64,iVtruncated",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-   },
+  }
+`;
+
+exports[`Word Online wordonline-safari11-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "53ld5",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "3e7hb",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -153,17 +142,11 @@
+            "key": 0,
+            "length": 4,
+            "offset": 10,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "nc9m",
+        "text": "Unstyled, link, comment  ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -180,15 +163,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "35jh7",
+        "text": "Unstyled, bold link comment ",
+        "type": "unstyled",
+      },
+@@ -552,17 +530,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 2,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "aknoc",
+        "text": "📷 ",
+        "type": "unstyled",
+      },
+@@ -576,17 +548,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 3,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1n3qa",
+        "text": "📷Text displayed next to image ",
+        "type": "unstyled",
+      },
+@@ -845,40 +811,19 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "2": Object {
+-       "data": Object {
+-         "alt": "Test alt text",
+-         "src": "data:image/jpeg;base64,/9truncated",
+    },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "3": Object {
+-       "data": Object {
+-         "src": "data:image/png;base64,iVtruncated",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-   },
+  }
+`;

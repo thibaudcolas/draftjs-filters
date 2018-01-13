@@ -1,0 +1,1996 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Google Docs googledocs-chrome62-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -23,11 +23,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "emnva",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "99jei",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "5l5pr",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript",
+        "type": "unstyled",
+      },
+      Object {
+@@ -96,11 +85,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "e1115",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -113,22 +102,11 @@
+            "key": 1,
+            "length": 13,
+            "offset": 16,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-         Object {
+-           "length": 13,
+-           "offset": 16,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "dffrj",
+        "text": "Unstyled, link, bookmark link, comment ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -145,15 +123,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "c49pl",
+        "text": "Unstyled, bold link comment",
+        "type": "unstyled",
+      },
+@@ -162,11 +135,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "skhh",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -216,11 +189,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "449dl",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -258,11 +231,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "bfve8",
+        "text": "h5 - heading five",
+-       "type": "header-five",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -273,11 +246,11 @@
+            "style": "ITALIC",
+          },
+        ],
+        "key": "9k6c0",
+        "text": "h6 - heading six",
+-       "type": "header-six",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -426,11 +399,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "4q1m6",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -464,12 +437,12 @@
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "8h2fc",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -479,17 +452,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 1,
+            "offset": 0,
+            "style": "BOLD",
+@@ -740,11 +707,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "4mk9l",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -777,19 +744,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 5,
++           "key": 4,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "aa2a6",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -807,19 +774,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 6,
++           "key": 5,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "fod55",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -830,64 +797,46 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+          "url": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "2": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "height": "170",
+          "src": "https://lh4.googleusercontent.com/fatruncatedU-",
+-         "width": "256",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "4": Object {
+        "data": Object {
+-         "height": "162",
+-         "src": "https://lh6.googleusercontent.com/wbtruncatedf0",
+-         "width": "245",
++         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "5": Object {
+        "data": Object {
+-         "height": "85",
+-         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+-         "width": "125",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "6": Object {
+-       "data": Object {
+-         "height": "218",
+          "src": "https://lh3.googleusercontent.com/NDtruncatedoh",
+-         "width": "353",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+    },
+`;
+
+exports[`Google Docs googledocs-chrome62-win81 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -32,11 +32,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5s32j",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -64,31 +64,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "drvrf",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "c6124",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript",
+        "type": "unstyled",
+      },
+      Object {
+@@ -105,11 +94,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "208o1",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -122,22 +111,11 @@
+            "key": 1,
+            "length": 13,
+            "offset": 16,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-         Object {
+-           "length": 13,
+-           "offset": 16,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "abhp9",
+        "text": "Unstyled, link, bookmark link, comment ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -154,15 +132,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "1de3t",
+        "text": "Unstyled, bold link comment",
+        "type": "unstyled",
+      },
+@@ -171,11 +144,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "9nobu",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -225,11 +198,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "cof3a",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -267,11 +240,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "dvjpn",
+        "text": "h5 - heading five",
+-       "type": "header-five",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -282,11 +255,11 @@
+            "style": "ITALIC",
+          },
+        ],
+        "key": "5na75",
+        "text": "h6 - heading six",
+-       "type": "header-six",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -435,11 +408,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "edbt8",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -473,12 +446,12 @@
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "9c2d9",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -488,17 +461,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 1,
+            "offset": 0,
+            "style": "BOLD",
+@@ -749,11 +716,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "f2893",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -786,19 +753,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 5,
++           "key": 4,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "bd12d",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -816,19 +783,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 6,
++           "key": 5,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "651g5",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -839,64 +806,46 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+          "url": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "2": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "height": "170",
+          "src": "https://lh3.googleusercontent.com/pQtruncatedRo",
+-         "width": "256",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "4": Object {
+        "data": Object {
+-         "height": "162",
+-         "src": "https://lh6.googleusercontent.com/3utruncatedOA",
+-         "width": "245",
++         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "5": Object {
+        "data": Object {
+-         "height": "85",
+-         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+-         "width": "125",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "6": Object {
+-       "data": Object {
+-         "height": "218",
+          "src": "https://lh6.googleusercontent.com/0HtruncatedD8",
+-         "width": "353",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+    },
+`;
+
+exports[`Google Docs googledocs-edge16-win10 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -23,11 +23,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5gvql",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "3tm8n",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "3u4i0",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript",
+        "type": "unstyled",
+      },
+      Object {
+@@ -96,11 +85,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "dfunn",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -113,22 +102,11 @@
+            "key": 1,
+            "length": 13,
+            "offset": 16,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-         Object {
+-           "length": 13,
+-           "offset": 16,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "4qvsj",
+        "text": "Unstyled, link, bookmark link, comment ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -145,15 +123,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "f7f15",
+        "text": "Unstyled, bold link comment",
+        "type": "unstyled",
+      },
+@@ -162,11 +135,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "9d48s",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -216,11 +189,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "4vem2",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -258,11 +231,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "f2ar5",
+        "text": "h5 - heading five",
+-       "type": "header-five",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -273,11 +246,11 @@
+            "style": "ITALIC",
+          },
+        ],
+        "key": "73g9v",
+        "text": "h6 - heading six",
+-       "type": "header-six",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -426,11 +399,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "2ubl9",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -464,12 +437,12 @@
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "7bfp",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -479,17 +452,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "dcvju",
+        "text": "📷
+  ",
+        "type": "unstyled",
+@@ -734,11 +701,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5qdt0",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -771,19 +738,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 5,
++           "key": 4,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "8lpl5",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -801,19 +768,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 6,
++           "key": 5,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "davvk",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -824,64 +791,46 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+          "url": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "2": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "height": "170",
+          "src": "https://lh6.googleusercontent.com/LMtruncatedSw",
+-         "width": "256",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "4": Object {
+        "data": Object {
+-         "height": "162",
+-         "src": "https://lh5.googleusercontent.com/QStruncatedVA",
+-         "width": "245",
++         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "5": Object {
+        "data": Object {
+-         "height": "85",
+-         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+-         "width": "125",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "6": Object {
+-       "data": Object {
+-         "height": "218",
+          "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
+-         "width": "353",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+    },
+`;
+
+exports[`Google Docs googledocs-firefox57-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -23,11 +23,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "66kr7",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "8u0uo",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "7e1ns",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript",
+        "type": "unstyled",
+      },
+      Object {
+@@ -96,11 +85,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "2lkij",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -113,22 +102,11 @@
+            "key": 1,
+            "length": 13,
+            "offset": 16,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-         Object {
+-           "length": 13,
+-           "offset": 16,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "c66f",
+        "text": "Unstyled, link, bookmark link, comment ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -145,15 +123,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "avel3",
+        "text": "Unstyled, bold link comment",
+        "type": "unstyled",
+      },
+@@ -162,11 +135,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "f5ph4",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -216,11 +189,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "8rchc",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -258,11 +231,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "fnvt2",
+        "text": "h5 - heading five",
+-       "type": "header-five",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -273,11 +246,11 @@
+            "style": "ITALIC",
+          },
+        ],
+        "key": "cina5",
+        "text": "h6 - heading six",
+-       "type": "header-six",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -426,11 +399,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "cvbpu",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -464,12 +437,12 @@
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "5c021",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -479,17 +452,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "7slpq",
+        "text": "📷
+  ",
+        "type": "unstyled",
+@@ -734,11 +701,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "dgp49",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -771,19 +738,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 5,
++           "key": 4,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "aet1u",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -801,19 +768,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 6,
++           "key": 5,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "1i2id",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -824,64 +791,46 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+          "url": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "2": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "height": "170",
+          "src": "https://lh6.googleusercontent.com/LMtruncatedSw",
+-         "width": "256",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "4": Object {
+        "data": Object {
+-         "height": "162",
+-         "src": "https://lh5.googleusercontent.com/QStruncatedVA",
+-         "width": "245",
++         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "5": Object {
+        "data": Object {
+-         "height": "85",
+-         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+-         "width": "125",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "6": Object {
+-       "data": Object {
+-         "height": "218",
+          "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
+-         "width": "353",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+    },
+`;
+
+exports[`Google Docs googledocs-firefox57-win81 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -32,11 +32,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "ijan",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -64,31 +64,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "a37rp",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "esnug",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript",
+        "type": "unstyled",
+      },
+      Object {
+@@ -105,11 +94,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "a45ds",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -122,22 +111,11 @@
+            "key": 1,
+            "length": 13,
+            "offset": 16,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-         Object {
+-           "length": 13,
+-           "offset": 16,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "4imhi",
+        "text": "Unstyled, link, bookmark link, comment ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -154,15 +132,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "afmv9",
+        "text": "Unstyled, bold link comment",
+        "type": "unstyled",
+      },
+@@ -171,11 +144,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "632ge",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -225,11 +198,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "7eet2",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -267,11 +240,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "r5ev",
+        "text": "h5 - heading five",
+-       "type": "header-five",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -282,11 +255,11 @@
+            "style": "ITALIC",
+          },
+        ],
+        "key": "722vl",
+        "text": "h6 - heading six",
+-       "type": "header-six",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -435,11 +408,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1m7d8",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -473,12 +446,12 @@
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "gmi4",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -488,17 +461,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "cp50b",
+        "text": "📷
+  ",
+        "type": "unstyled",
+@@ -743,11 +710,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "7uch3",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -780,19 +747,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 5,
++           "key": 4,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "b3reu",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -810,19 +777,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 6,
++           "key": 5,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "3qab9",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -833,64 +800,46 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+          "url": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "2": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "height": "170",
+          "src": "https://lh6.googleusercontent.com/LMtruncatedSw",
+-         "width": "256",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "4": Object {
+        "data": Object {
+-         "height": "162",
+-         "src": "https://lh5.googleusercontent.com/QS4truncatedVA",
+-         "width": "245",
++         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "5": Object {
+        "data": Object {
+-         "height": "85",
+-         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+-         "width": "125",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "6": Object {
+-       "data": Object {
+-         "height": "218",
+          "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
+-         "width": "353",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+    },
+`;
+
+exports[`Google Docs googledocs-ie11-strippastedstyles-win81 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Google Docs googledocs-ie11-win81 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Google Docs googledocs-safari-ios11 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Google Docs googledocs-safari11-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -23,11 +23,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1j243",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -55,31 +55,20 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "36u23",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 9,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "14ef9",
+        "text": "Unstyled, underline, bigger, smaller, superscript, subscript",
+        "type": "unstyled",
+      },
+      Object {
+@@ -96,11 +85,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "6fsir",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -113,22 +102,11 @@
+            "key": 1,
+            "length": 13,
+            "offset": 16,
+          },
+        ],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 4,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+-         Object {
+-           "length": 13,
+-           "offset": 16,
+-           "style": "UNDERLINE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "bjtq3",
+        "text": "Unstyled, link, bookmark link, comment ",
+        "type": "unstyled",
+      },
+      Object {
+@@ -145,15 +123,10 @@
+          Object {
+            "length": 17,
+            "offset": 10,
+            "style": "BOLD",
+          },
+-         Object {
+-           "length": 17,
+-           "offset": 10,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "187oj",
+        "text": "Unstyled, bold link comment",
+        "type": "unstyled",
+      },
+@@ -162,11 +135,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "fcgb4",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -216,11 +189,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1vrsf",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -258,11 +231,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "26mda",
+        "text": "h5 - heading five",
+-       "type": "header-five",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -273,11 +246,11 @@
+            "style": "ITALIC",
+          },
+        ],
+        "key": "2h0f9",
+        "text": "h6 - heading six",
+-       "type": "header-six",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -426,11 +399,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "83knn",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -464,12 +437,12 @@
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "dorb2",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -479,17 +452,11 @@
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 0,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 1,
+            "offset": 0,
+            "style": "BOLD",
+@@ -740,11 +707,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "no1p",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -777,19 +744,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 5,
++           "key": 4,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "d7rm8",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -807,19 +774,19 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 6,
++           "key": 5,
+            "length": 1,
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "2ia0t",
+-       "text": "📷",
+-       "type": "unstyled",
++       "text": " ",
++       "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -830,64 +797,46 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+          "url": "https://docs.google.com/document/d/1Ytruncated80/edit#heading=h.h40mjmbsff92",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "2": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "height": "170",
+          "src": "https://lh6.googleusercontent.com/LMtruncatedSw",
+-         "width": "256",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "4": Object {
+        "data": Object {
+-         "height": "162",
+-         "src": "https://lh5.googleusercontent.com/QStruncatedVA",
+-         "width": "245",
++         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+      "5": Object {
+        "data": Object {
+-         "height": "85",
+-         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
+-         "width": "125",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "IMAGE",
+-     },
+-     "6": Object {
+-       "data": Object {
+-         "height": "218",
+          "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
+-         "width": "353",
+        },
+        "mutability": "MUTABLE",
+        "type": "IMAGE",
+      },
+    },
+`;
