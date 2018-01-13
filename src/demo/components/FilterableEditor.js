@@ -77,6 +77,7 @@ class FilterableEditor extends Component<Props, State> {
           blockTypes: Object.keys(BLOCK_TYPES),
           inlineStyles: Object.keys(INLINE_STYLES),
           entityTypes: [],
+          entityAttributes: [],
         })
       }
     }

@@ -10,7 +10,11 @@ import {
   removeInvalidDepthBlocks,
 } from "./blocks"
 import { filterInlineStyle } from "./styles"
-import { resetAtomicBlocks, filterEntityType } from "./entities"
+import {
+  resetAtomicBlocks,
+  filterEntityType,
+  filterEntityAttributes,
+} from "./entities"
 import { whitespaceCharacters } from "./text"
 
 type EntityTypes = Array<string>
@@ -35,6 +39,7 @@ export const filterEditorState = ({
   blockTypes,
   inlineStyles,
   entityTypes,
+  entityAttributes,
 }: {
   editorState: EditorState,
   maxListNesting: number,
@@ -43,6 +48,10 @@ export const filterEditorState = ({
   blockTypes: Array<DraftBlockType>,
   inlineStyles: Array<string>,
   entityTypes: EntityTypes,
+  entityAttributes: Array<{
+    type: string,
+    attributes: Array<string>,
+  }>,
 }) => {
   let nextEditorState = editorState
   const enabledBlockTypes = blockTypes.concat([
@@ -69,6 +78,7 @@ export const filterEditorState = ({
   nextEditorState = filterInlineStyle(nextEditorState, inlineStyles)
   nextEditorState = resetAtomicBlocks(nextEditorState, enabledEntityTypes)
   nextEditorState = filterEntityType(nextEditorState, enabledEntityTypes)
+  nextEditorState = filterEntityAttributes(nextEditorState, entityAttributes)
 
   const filteredCharacters = ["\t"]
 
