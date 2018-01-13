@@ -1,7 +1,11 @@
 import { EditorState, convertFromRaw } from "draft-js"
 
 import { IMAGE, HORIZONTAL_RULE } from "../constants"
-import { resetAtomicBlocks, filterEntityType } from "./entities"
+import {
+  resetAtomicBlocks,
+  filterEntityType,
+  filterEntityAttributes,
+} from "./entities"
 
 describe("entities", () => {
   describe("#resetAtomicBlocks", () => {
@@ -457,6 +461,133 @@ describe("entities", () => {
             .getFirstBlock()
             .getEntityAt(0),
         ).not.toBe(null)
+      })
+    })
+  })
+
+  describe("#filterEntityAttributes", () => {
+    it("works", () => {
+      const contentState = convertFromRaw({
+        entityMap: {
+          "4": {
+            type: "LINK",
+            mutability: "MUTABLE",
+            data: {
+              href: "http://example.com",
+              rel: "noreferrer nofollow noopener",
+              target: "_blank",
+              url: "http://example.com/",
+            },
+          },
+          "5": {
+            type: "IMAGE",
+            mutability: "MUTABLE",
+            data: {
+              alt: "",
+              height: "15",
+              src: "/test/example.png",
+              width: "15",
+            },
+          },
+          "6": {
+            type: "EMBED",
+            mutability: "MUTABLE",
+            data: {
+              alt: "",
+              height: "15",
+              src: "/test/example.png",
+              width: "15",
+            },
+          },
+        },
+        blocks: [
+          {
+            key: "dffrj",
+            text: "link",
+            type: "unstyled",
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [
+              {
+                offset: 0,
+                length: 4,
+                key: 4,
+              },
+            ],
+            data: {},
+          },
+          {
+            key: "affm4",
+            text: " ",
+            type: "atomic",
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [
+              {
+                offset: 0,
+                length: 1,
+                key: 5,
+              },
+            ],
+            data: {},
+          },
+          {
+            key: "affm5",
+            text: " ",
+            type: "atomic",
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [
+              {
+                offset: 0,
+                length: 1,
+                key: 6,
+              },
+            ],
+            data: {},
+          },
+        ],
+      })
+
+      const editorState = filterEntityAttributes(
+        EditorState.createWithContent(contentState),
+        [
+          {
+            type: "IMAGE",
+            attributes: ["alt", "src"],
+          },
+          {
+            type: "EMBED",
+            attributes: [],
+          },
+          {
+            type: "LINK",
+            attributes: ["url", "test"],
+          },
+        ],
+      )
+      const entities = {}
+      editorState
+        .getCurrentContent()
+        .getBlockMap()
+        .forEach((block) => {
+          block.findEntityRanges((char) => {
+            const entity = editorState
+              .getCurrentContent()
+              .getEntity(char.getEntity())
+            entities[entity.getType()] = entity.getData()
+          })
+        })
+
+      expect(entities).toEqual({
+        IMAGE: {
+          alt: "",
+          src: "/test/example.png",
+        },
+        EMBED: {},
+        LINK: {
+          url: "http://example.com/",
+        },
       })
     })
   })

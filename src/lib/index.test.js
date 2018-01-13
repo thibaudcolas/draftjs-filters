@@ -6,6 +6,7 @@ import {
   filterInlineStyle,
   resetAtomicBlocks,
   filterEntityType,
+  filterEntityAttributes,
   whitespaceCharacters,
   filterEditorState,
 } from "./index"
@@ -24,6 +25,8 @@ describe(pkg.name, () => {
   it("filterInlineStyle", () => expect(filterInlineStyle).toBeDefined())
   it("resetAtomicBlocks", () => expect(resetAtomicBlocks).toBeDefined())
   it("filterEntityType", () => expect(filterEntityType).toBeDefined())
+  it("filterEntityAttributes", () =>
+    expect(filterEntityAttributes).toBeDefined())
   it("whitespaceCharacters", () => expect(whitespaceCharacters).toBeDefined())
   it("filterEditorState", () => expect(filterEditorState).toBeDefined())
 })
