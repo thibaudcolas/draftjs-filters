@@ -1,3 +1,4 @@
+// @flow
 import { EditorState, CharacterMetadata } from "draft-js"
 
 /**

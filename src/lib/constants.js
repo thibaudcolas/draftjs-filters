@@ -1,3 +1,4 @@
+// @flow
 export const ATOMIC = "atomic"
 export const UNSTYLED = "unstyled"
 export const UNORDERED_LIST_ITEM = "unordered-list-item"

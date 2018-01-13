@@ -1,9 +1,11 @@
+// @flow
 import {
   EditorState,
   CharacterMetadata,
   ContentState,
   ContentBlock,
 } from "draft-js"
+import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 import { ATOMIC, UNSTYLED, IMAGE } from "../constants"
 
@@ -129,7 +131,10 @@ export const filterEntityRanges = (
 /**
  * Keeps all entity types (images, links, documents, embeds) that are enabled.
  */
-export const shouldKeepEntityType = (enabledTypes, entityType) => {
+export const shouldKeepEntityType = (
+  enabledTypes: Array<string>,
+  entityType: string,
+) => {
   return enabledTypes.includes(entityType)
 }
 
@@ -140,11 +145,19 @@ export const shouldKeepEntityType = (enabledTypes, entityType) => {
  * - It needs to be removed in the block text, where it's 2 chars / 1 code point.
  * - The corresponding CharacterMetadata needs to be removed too, and it's 2 instances
  */
-export const shouldRemoveImageEntity = (entityType, blockType) => {
+export const shouldRemoveImageEntity = (
+  entityType: string,
+  blockType: DraftBlockType,
+) => {
   return entityType === IMAGE && blockType !== ATOMIC
 }
 
-export const shouldKeepEntityByAttribute = (entityTypes, entityType, data) => {
+export const shouldKeepEntityByAttribute = (
+  entityTypes: Array<Object>,
+  entityType: string,
+  data: Object,
+) => {
+  // $FlowFixMe
   const whitelist = entityTypes.find((t) => t.type === entityType).whitelist
   const isValid = Object.keys(whitelist).every((attr) => {
     const regex = new RegExp(whitelist[attr])
@@ -177,6 +190,7 @@ export const filterEntityAttributes = (
   Object.keys(entities).forEach((key) => {
     const entity = entities[key]
     const data = entity.getData()
+    // $FlowFixMe
     const whitelist = enabledEntityTypes.find(
       (t) => t.type === entity.getType(),
     ).attributes
