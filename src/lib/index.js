@@ -7,7 +7,9 @@ import {
 import { filterInlineStyle } from "./filters/styles"
 import {
   resetAtomicBlocks,
-  filterEntityType,
+  filterEntityRanges,
+  shouldKeepEntityType,
+  shouldRemoveImageEntity,
   filterEntityAttributes,
 } from "./filters/entities"
 import { whitespaceCharacters } from "./filters/text"
@@ -20,7 +22,9 @@ export {
   resetBlockType,
   filterInlineStyle,
   resetAtomicBlocks,
-  filterEntityType,
+  filterEntityRanges,
+  shouldKeepEntityType,
+  shouldRemoveImageEntity,
   filterEntityAttributes,
   whitespaceCharacters,
   filterEditorState,

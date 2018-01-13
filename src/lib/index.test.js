@@ -5,7 +5,9 @@ import {
   resetBlockType,
   filterInlineStyle,
   resetAtomicBlocks,
-  filterEntityType,
+  filterEntityRanges,
+  shouldKeepEntityType,
+  shouldRemoveImageEntity,
   filterEntityAttributes,
   whitespaceCharacters,
   filterEditorState,
@@ -24,7 +26,10 @@ describe(pkg.name, () => {
   it("resetBlockType", () => expect(resetBlockType).toBeDefined())
   it("filterInlineStyle", () => expect(filterInlineStyle).toBeDefined())
   it("resetAtomicBlocks", () => expect(resetAtomicBlocks).toBeDefined())
-  it("filterEntityType", () => expect(filterEntityType).toBeDefined())
+  it("filterEntityRanges", () => expect(filterEntityRanges).toBeDefined())
+  it("shouldKeepEntityType", () => expect(shouldKeepEntityType).toBeDefined())
+  it("shouldRemoveImageEntity", () =>
+    expect(shouldRemoveImageEntity).toBeDefined())
   it("filterEntityAttributes", () =>
     expect(filterEntityAttributes).toBeDefined())
   it("whitespaceCharacters", () => expect(whitespaceCharacters).toBeDefined())
