@@ -3,6 +3,8 @@ import React from "react"
 import type { Node } from "react"
 
 type Props = {
+  contentState: Object,
+  entityKey: string,
   children: Node,
 }
 
@@ -21,8 +23,13 @@ export const linkStrategy = (
   }, callback)
 }
 
-const Link = ({ children }: Props) => {
-  return <span className="link">{children}</span>
+const Link = ({ contentState, entityKey, children }: Props) => {
+  const entity = contentState.getEntity(entityKey)
+  return (
+    <span className="link" title={entity.getData().url}>
+      {children}
+    </span>
+  )
 }
 
 export default Link

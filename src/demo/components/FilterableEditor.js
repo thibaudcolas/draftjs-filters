@@ -8,6 +8,7 @@ import {
   CompositeDecorator,
 } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
+import type { DraftEntityType } from "draft-js/lib/DraftEntityType.js.flow"
 
 import { filterEditorState } from "../../lib/index"
 
@@ -37,6 +38,17 @@ const INLINE_STYLES = {
   ITALIC: "I",
 }
 
+const ENTITY_TYPES = {
+  LINK: "🔗",
+}
+
+const ENTITY_ATTRIBUTES = [
+  {
+    type: "LINK",
+    attributes: ["url"],
+  },
+]
+
 class FilterableEditor extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -55,6 +67,7 @@ class FilterableEditor extends Component<Props, State> {
     ;(this: any).onChange = this.onChange.bind(this)
     ;(this: any).toggleStyle = this.toggleStyle.bind(this)
     ;(this: any).toggleBlock = this.toggleBlock.bind(this)
+    ;(this: any).toggleEntity = this.toggleEntity.bind(this)
   }
 
   onChange(nextEditorState: EditorState) {
@@ -76,8 +89,8 @@ class FilterableEditor extends Component<Props, State> {
           enableLineBreak: false,
           blockTypes: Object.keys(BLOCK_TYPES),
           inlineStyles: Object.keys(INLINE_STYLES),
-          entityTypes: [],
-          entityAttributes: [],
+          entityTypes: Object.keys(ENTITY_TYPES),
+          entityAttributes: ENTITY_ATTRIBUTES,
         })
       }
     }
@@ -100,6 +113,17 @@ class FilterableEditor extends Component<Props, State> {
     this.onChange(RichUtils.toggleBlockType(editorState, type))
   }
 
+  toggleEntity(type: DraftEntityType) {
+    const { editorState } = this.state
+    let content = editorState.getCurrentContent()
+    const selection = editorState.getSelection()
+    content = content.createEntity(type, "MUTABLE", {
+      url: "http://www.example.com/",
+    })
+    const entityKey = content.getLastCreatedEntityKey()
+    this.onChange(RichUtils.toggleLink(editorState, selection, entityKey))
+  }
+
   render() {
     const { editorState } = this.state
     return (
@@ -114,6 +138,11 @@ class FilterableEditor extends Component<Props, State> {
             {Object.keys(BLOCK_TYPES).map((type) => (
               <button key={type} onClick={this.toggleBlock.bind(this, type)}>
                 {BLOCK_TYPES[type]}
+              </button>
+            ))}
+            {Object.keys(ENTITY_TYPES).map((type) => (
+              <button key={type} onClick={this.toggleEntity.bind(this, type)}>
+                {ENTITY_TYPES[type]}
               </button>
             ))}
           </div>
