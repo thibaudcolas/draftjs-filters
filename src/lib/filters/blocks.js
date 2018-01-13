@@ -1,3 +1,4 @@
+// @flow
 import { EditorState } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
@@ -51,7 +52,7 @@ export const preserveAtomicBlocks = (
  * Removes blocks that have a non-zero depth, and aren't list items.
  * Happens with Apple Pages inserting `unstyled` items between list items.
  */
-export const removeInvalidDepthBlocks = (editorState) => {
+export const removeInvalidDepthBlocks = (editorState: EditorState) => {
   const content = editorState.getCurrentContent()
   const blockMap = content.getBlockMap()
 
