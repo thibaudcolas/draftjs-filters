@@ -3,9 +3,11 @@ import { EditorState, convertFromRaw } from "draft-js"
 import { IMAGE, HORIZONTAL_RULE } from "../constants"
 import {
   resetAtomicBlocks,
-  filterEntityType,
+  filterEntityRanges,
   filterEntityAttributes,
+  shouldKeepEntityType,
 } from "./entities"
+import { shouldRemoveImageEntity } from "../index"
 
 describe("entities", () => {
   describe("#resetAtomicBlocks", () => {
@@ -251,7 +253,7 @@ describe("entities", () => {
     })
   })
 
-  describe("#filterEntityType", () => {
+  describe("#filterEntityRanges", () => {
     it("works", () => {
       const contentState = convertFromRaw({
         entityMap: {
@@ -305,7 +307,13 @@ describe("entities", () => {
       })
 
       expect(
-        filterEntityType(EditorState.createWithContent(contentState), ["EMBED"])
+        filterEntityRanges(
+          EditorState.createWithContent(contentState),
+          (content, entityKey, block) => {
+            const entityType = content.getEntity(entityKey).getType()
+            return entityType === "EMBED"
+          },
+        )
           .getCurrentContent()
           .getBlockMap()
           .map((b) => {
@@ -364,7 +372,13 @@ describe("entities", () => {
       })
 
       expect(
-        filterEntityType(EditorState.createWithContent(contentState), ["LINK"])
+        filterEntityRanges(
+          EditorState.createWithContent(contentState),
+          (content, entityKey, block) => {
+            const entityType = content.getEntity(entityKey).getType()
+            return entityType === "LINK"
+          },
+        )
           .getCurrentContent()
           .getFirstBlock()
           .getCharacterList()
@@ -387,81 +401,29 @@ describe("entities", () => {
         null,
       ])
     })
+  })
 
-    describe(HORIZONTAL_RULE, () => {
-      it("disabled", () => {
-        const contentState = convertFromRaw({
-          entityMap: {
-            "3": {
-              type: "HORIZONTAL_RULE",
-              mutability: "IMMUTABLE",
-              data: {},
-            },
-          },
-          blocks: [
-            {
-              key: "epoas",
-              text: " ",
-              type: "atomic",
-              depth: 0,
-              inlineStyleRanges: [],
-              entityRanges: [
-                {
-                  offset: 0,
-                  length: 1,
-                  key: 3,
-                },
-              ],
-              data: {},
-            },
-          ],
-        })
+  describe("#shouldKeepEntityType", () => {
+    it("keep", () => {
+      expect(shouldKeepEntityType("LINK", ["LINK", "IMAGE"])).toBe(true)
+    })
 
-        expect(
-          filterEntityType(EditorState.createWithContent(contentState), [])
-            .getCurrentContent()
-            .getFirstBlock()
-            .getEntityAt(0),
-        ).toBe(null)
-      })
+    it("remove", () => {
+      expect(shouldKeepEntityType("TEST", ["LINK", "IMAGE"])).toBe(false)
+    })
+  })
 
-      it("enabled", () => {
-        const contentState = convertFromRaw({
-          entityMap: {
-            "3": {
-              type: "HORIZONTAL_RULE",
-              mutability: "IMMUTABLE",
-              data: {},
-            },
-          },
-          blocks: [
-            {
-              key: "epoas",
-              text: " ",
-              type: "atomic",
-              depth: 0,
-              inlineStyleRanges: [],
-              entityRanges: [
-                {
-                  offset: 0,
-                  length: 1,
-                  key: 3,
-                },
-              ],
-              data: {},
-            },
-          ],
-        })
+  describe("#shouldRemoveImageEntity", () => {
+    it("keep", () => {
+      expect(shouldRemoveImageEntity("IMAGE", "atomic")).toBe(false)
+    })
 
-        expect(
-          filterEntityType(EditorState.createWithContent(contentState), [
-            HORIZONTAL_RULE,
-          ])
-            .getCurrentContent()
-            .getFirstBlock()
-            .getEntityAt(0),
-        ).not.toBe(null)
-      })
+    it("remove (wrong block)", () => {
+      expect(shouldRemoveImageEntity("IMAGE", "unstyled")).toBe(true)
+    })
+
+    it("not an image - no opinion", () => {
+      expect(shouldRemoveImageEntity("TEST", "unstyled")).toBe(false)
     })
   })
 

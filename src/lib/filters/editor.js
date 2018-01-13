@@ -12,8 +12,10 @@ import {
 import { filterInlineStyle } from "./styles"
 import {
   resetAtomicBlocks,
-  filterEntityType,
   filterEntityAttributes,
+  filterEntityRanges,
+  shouldKeepEntityType,
+  shouldRemoveImageEntity,
 } from "./entities"
 import { whitespaceCharacters } from "./text"
 
@@ -77,7 +79,18 @@ export const filterEditorState = ({
   nextEditorState = resetBlockType(nextEditorState, enabledBlockTypes)
   nextEditorState = filterInlineStyle(nextEditorState, inlineStyles)
   nextEditorState = resetAtomicBlocks(nextEditorState, enabledEntityTypes)
-  nextEditorState = filterEntityType(nextEditorState, enabledEntityTypes)
+  nextEditorState = filterEntityRanges(
+    nextEditorState,
+    (content, entityKey, block) => {
+      const entity = content.getEntity(entityKey)
+      const entityType = entity.getType()
+      const blockType = block.getType()
+      return (
+        shouldKeepEntityType(entityType, enabledEntityTypes) &&
+        !shouldRemoveImageEntity(entityType, blockType)
+      )
+    },
+  )
   nextEditorState = filterEntityAttributes(nextEditorState, entityAttributes)
 
   const filteredCharacters = ["\t"]

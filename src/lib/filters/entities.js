@@ -1,4 +1,9 @@
-import { EditorState, CharacterMetadata } from "draft-js"
+import {
+  EditorState,
+  CharacterMetadata,
+  ContentState,
+  ContentBlock,
+} from "draft-js"
 
 import { ATOMIC, UNSTYLED, IMAGE } from "../constants"
 
@@ -72,11 +77,15 @@ export const resetAtomicBlocks = (
 }
 
 /**
- * Reset all entity types (images, links, documents, embeds) that are unavailable.
+ *
  */
-export const filterEntityType = (
+export const filterEntityRanges = (
   editorState: EditorState,
-  enabledTypes: Array<string>,
+  filterFn: (
+    content: ContentState,
+    entityKey: string,
+    block: ContentBlock,
+  ) => boolean,
 ) => {
   const content = editorState.getCurrentContent()
   const blockMap = content.getBlockMap()
@@ -90,26 +99,15 @@ export const filterEntityType = (
    * does when the copy-paste is all within one editor.
    */
   const blocks = blockMap.map((block) => {
-    const blockType = block.getType()
     let altered = false
 
     const chars = block.getCharacterList().map((char) => {
       const entityKey = char.getEntity()
 
       if (entityKey) {
-        const entityType = content.getEntity(entityKey).getType()
-        const shouldFilter = !enabledTypes.includes(entityType)
-        /**
-         * Special case for images. They should only be in atomic blocks.
-         * This only removes the image entity, not the camera emoji (📷)
-         * that Draft.js inserts.
-         * If we want to remove this in the future, consider that:
-         * - It needs to be removed in the block text, where it's 2 chars / 1 code point.
-         * - The corresponding CharacterMetadata needs to be removed too, and it's 2 instances
-         */
-        const shouldFilterImage = entityType === IMAGE && blockType !== ATOMIC
+        const shouldRemove = !filterFn(content, entityKey, block)
 
-        if (shouldFilter || shouldFilterImage) {
+        if (shouldRemove) {
           altered = true
           return CharacterMetadata.applyEntity(char, null)
         }
@@ -126,6 +124,24 @@ export const filterEntityType = (
       blockMap: blockMap.merge(blocks),
     }),
   })
+}
+
+/**
+ * Keeps all entity types (images, links, documents, embeds) that are enabled.
+ */
+export const shouldKeepEntityType = (entityType, enabledTypes) => {
+  return enabledTypes.includes(entityType)
+}
+
+/**
+ * Removes invalid images – they should only be in atomic blocks.
+ * This only removes the image entity, not the camera emoji (📷) that Draft.js inserts.
+ * If we want to remove this in the future, consider that:
+ * - It needs to be removed in the block text, where it's 2 chars / 1 code point.
+ * - The corresponding CharacterMetadata needs to be removed too, and it's 2 instances
+ */
+export const shouldRemoveImageEntity = (entityType, blockType) => {
+  return entityType === IMAGE && blockType !== ATOMIC
 }
 
 /**
