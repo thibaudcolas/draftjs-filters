@@ -133,7 +133,7 @@ export const filterEntityType = (
  */
 export const filterEntityAttributes = (
   editorState: EditorState,
-  enabledTypes: Array<{
+  entityAttributes: Array<{
     type: string,
     attributes: Array<string>,
   }>,
@@ -154,7 +154,7 @@ export const filterEntityAttributes = (
   Object.keys(entities).forEach((key) => {
     const entity = entities[key]
     const data = entity.getData()
-    const whitelist = enabledTypes.find((t) => t.type === entity.getType())
+    const whitelist = entityAttributes.find((t) => t.type === entity.getType())
       .attributes
 
     const newData = whitelist.reduce((attrs, attr) => {
