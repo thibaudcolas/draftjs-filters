@@ -1,6 +1,6 @@
 {
   "name": "draftjs-filters",
-  "version": "0.0.0-development",
+  "version": "0.2.2",
   "description": "Filter Draft.js content to preserve only the formatting you allow",
   "author": "Thibaud Colas",
   "license": "MIT",
@@ -72,7 +72,8 @@
     "rollup": "^0.53.3",
     "rollup-plugin-babel": "^3.0.3",
     "snapshot-diff": "^0.2.2",
-    "source-map-explorer": "^1.5.0"
+    "source-map-explorer": "^1.5.0",
+    "standard-version": "^4.3.0"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -84,6 +85,7 @@
     "dist": "CI=true npm run build -s",
     "flow": "flow",
     "danger": "danger ci --verbose",
+    "release": "standard-version --no-verify",
     "test": "npm run test:coverage -s",
     "test:coverage": "react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom",

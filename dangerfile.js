@@ -46,28 +46,24 @@ if (hasPackageChanges && !hasLockfileChanges) {
   warn("There are package.json changes with no corresponding lockfile changes")
 }
 
-const linkDependency = (dep) => `[${dep}](https://www.npmjs.com/package/${dep})`
+const linkDep = (dep) =>
+  danger.utils.href(`https://www.npmjs.com/package/${dep}`, dep)
 
 schedule(async () => {
   const packageDiff = await danger.git.JSONDiffForFile("package.json")
 
   if (packageDiff.dependencies) {
-    const { added, removed } = packageDiff.dependencies
+    const added = packageDiff.dependencies.added
+    const removed = packageDiff.dependencies.removed
 
     if (added.length) {
-      message(
-        `Adding new dependencies: ${added
-          .map((d) => linkDependency(d))
-          .join(", ")}`,
-      )
+      const deps = danger.utils.sentence(added.map((d) => linkDep(d)))
+      message(`Adding new dependencies: ${deps}`)
     }
 
     if (removed.length) {
-      message(
-        `:tada:, removing dependencies: ${removed
-          .map((d) => linkDependency(d))
-          .join(", ")}`,
-      )
+      const deps = danger.utils.sentence(removed.map((d) => linkDep(d)))
+      message(`:tada:, removing dependencies: ${deps}`)
     }
   }
 })
