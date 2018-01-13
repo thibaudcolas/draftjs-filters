@@ -8,7 +8,7 @@ const libModifiedFiles = danger.git.modified_files.filter(
 const hasLibChanges =
   libModifiedFiles.filter((filepath) => !filepath.endsWith("test.js")).length >
   0
-const hasCHANGELOGChanges = danger.git.modified_files.includes("CHANGELOG.md")
+const hasREADMEChanges = danger.git.modified_files.includes("README.md")
 
 // Fails if the description is too short.
 if (!danger.github.pr.body || danger.github.pr.body.length < 10) {
@@ -24,8 +24,8 @@ if (isWIP) {
   warn(`${title} - <i>${idea}</i>`)
 }
 
-if (hasLibChanges && !hasCHANGELOGChanges) {
-  warn("This pull request may need a CHANGELOG entry.")
+if (hasLibChanges && !hasREADMEChanges) {
+  warn("This pull request updates the library. Should the docs be updated?")
 }
 
 const hasPackageChanges = danger.git.modified_files.includes("package.json")
