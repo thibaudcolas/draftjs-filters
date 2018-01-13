@@ -129,7 +129,7 @@ export const filterEntityRanges = (
 /**
  * Keeps all entity types (images, links, documents, embeds) that are enabled.
  */
-export const shouldKeepEntityType = (entityType, enabledTypes) => {
+export const shouldKeepEntityType = (enabledTypes, entityType) => {
   return enabledTypes.includes(entityType)
 }
 
@@ -144,15 +144,22 @@ export const shouldRemoveImageEntity = (entityType, blockType) => {
   return entityType === IMAGE && blockType !== ATOMIC
 }
 
+export const shouldKeepEntityByAttribute = (entityTypes, entityType, data) => {
+  const whitelist = entityTypes.find((t) => t.type === entityType).whitelist
+  const isValid = Object.keys(whitelist).every((attr) => {
+    const regex = new RegExp(whitelist[attr])
+    return regex.test(data[attr])
+  })
+
+  return isValid
+}
+
 /**
  * Filters attributes on an entity to only retain the ones whitelisted.
  */
 export const filterEntityAttributes = (
   editorState: EditorState,
-  entityAttributes: Array<{
-    type: string,
-    attributes: Array<string>,
-  }>,
+  enabledEntityTypes: Array<Object>,
 ) => {
   let content = editorState.getCurrentContent()
   const entities = {}
@@ -170,8 +177,9 @@ export const filterEntityAttributes = (
   Object.keys(entities).forEach((key) => {
     const entity = entities[key]
     const data = entity.getData()
-    const whitelist = entityAttributes.find((t) => t.type === entity.getType())
-      .attributes
+    const whitelist = enabledEntityTypes.find(
+      (t) => t.type === entity.getType(),
+    ).attributes
 
     const newData = whitelist.reduce((attrs, attr) => {
       // We do not want to include undefined values if there is no data.

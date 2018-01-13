@@ -16,10 +16,11 @@ import {
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
+  shouldKeepEntityByAttribute,
 } from "./entities"
 import { whitespaceCharacters } from "./text"
 
-type EntityTypes = Array<string>
+type EntityTypes = Array<Object>
 
 /**
  * Helper functions to filter/whitelist specific formatting.
@@ -41,7 +42,6 @@ export const filterEditorState = ({
   blockTypes,
   inlineStyles,
   entityTypes,
-  entityAttributes,
 }: {
   editorState: EditorState,
   maxListNesting: number,
@@ -50,10 +50,6 @@ export const filterEditorState = ({
   blockTypes: Array<DraftBlockType>,
   inlineStyles: Array<string>,
   entityTypes: EntityTypes,
-  entityAttributes: Array<{
-    type: string,
-    attributes: Array<string>,
-  }>,
 }) => {
   let nextEditorState = editorState
   const enabledBlockTypes = blockTypes.concat([
@@ -62,7 +58,7 @@ export const filterEditorState = ({
     // Filtered depending on enabled entity types.
     ATOMIC,
   ])
-  let enabledEntityTypes = entityTypes
+  let enabledEntityTypes = entityTypes.map((t) => t.type)
 
   if (enableHorizontalRule) {
     enabledEntityTypes.push(HORIZONTAL_RULE)
@@ -83,15 +79,17 @@ export const filterEditorState = ({
     nextEditorState,
     (content, entityKey, block) => {
       const entity = content.getEntity(entityKey)
+      const entityData = entity.getData()
       const entityType = entity.getType()
       const blockType = block.getType()
       return (
-        shouldKeepEntityType(entityType, enabledEntityTypes) &&
+        shouldKeepEntityType(enabledEntityTypes, entityType) &&
+        shouldKeepEntityByAttribute(entityTypes, entityType, entityData) &&
         !shouldRemoveImageEntity(entityType, blockType)
       )
     },
   )
-  nextEditorState = filterEntityAttributes(nextEditorState, entityAttributes)
+  nextEditorState = filterEntityAttributes(nextEditorState, entityTypes)
 
   const filteredCharacters = ["\t"]
 
