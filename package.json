@@ -129,6 +129,7 @@
     "rollup": "^0.53.3",
     "rollup-plugin-babel": "^3.0.3",
     "semantic-release": "^12.2.1",
+    "snapshot-diff": "^0.2.2",
     "source-map-explorer": "^1.5.0"
   },
   "dependencies": {},
