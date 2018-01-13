@@ -3,6 +3,7 @@
 exports[`Link renders 1`] = `
 <span
   className="link"
+  title="www.example.com"
 >
   Test
 </span>

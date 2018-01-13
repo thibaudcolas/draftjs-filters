@@ -40,5 +40,11 @@ exports[`FilterableEditor renders 1`] = `
   >
     UL
   </button>
+  <button
+    key="LINK"
+    onClick={[Function]}
+  >
+    🔗
+  </button>
 </div>
 `;
