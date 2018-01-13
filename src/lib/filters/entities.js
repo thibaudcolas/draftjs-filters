@@ -127,3 +127,49 @@ export const filterEntityType = (
     }),
   })
 }
+
+/**
+ * Filters attributes on an entity to only retain the ones whitelisted.
+ */
+export const filterEntityAttributes = (
+  editorState: EditorState,
+  enabledTypes: Array<{
+    type: string,
+    attributes: Array<string>,
+  }>,
+) => {
+  let content = editorState.getCurrentContent()
+  const entities = {}
+
+  content.getBlockMap().forEach((block) => {
+    block.findEntityRanges((char) => {
+      const entityKey = char.getEntity()
+      if (entityKey) {
+        const entity = content.getEntity(entityKey)
+        entities[entityKey] = entity
+      }
+    })
+  })
+
+  Object.keys(entities).forEach((key) => {
+    const entity = entities[key]
+    const data = entity.getData()
+    const whitelist = enabledTypes.find((t) => t.type === entity.getType())
+      .attributes
+
+    const newData = whitelist.reduce((attrs, attr) => {
+      // We do not want to include undefined values if there is no data.
+      if (data.hasOwnProperty(attr)) {
+        attrs[attr] = data[attr]
+      }
+
+      return attrs
+    }, {})
+
+    content = content.replaceEntityData(key, newData)
+  })
+
+  return EditorState.set(editorState, {
+    currentContent: content,
+  })
+}

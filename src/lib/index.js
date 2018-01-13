@@ -5,7 +5,11 @@ import {
   resetBlockType,
 } from "./filters/blocks"
 import { filterInlineStyle } from "./filters/styles"
-import { resetAtomicBlocks, filterEntityType } from "./filters/entities"
+import {
+  resetAtomicBlocks,
+  filterEntityType,
+  filterEntityAttributes,
+} from "./filters/entities"
 import { whitespaceCharacters } from "./filters/text"
 import { filterEditorState } from "./filters/editor"
 
@@ -17,6 +21,7 @@ export {
   filterInlineStyle,
   resetAtomicBlocks,
   filterEntityType,
+  filterEntityAttributes,
   whitespaceCharacters,
   filterEditorState,
 }
