@@ -24,9 +24,13 @@ export const preserveAtomicBlocks = (
   const perservedBlocks = blockMap
     .filter((block) => {
       const entityKey = block.getEntityAt(0)
+      // Use the ES6 way of counting string length to account for unicode symbols.
+      // See https://mathiasbynens.be/notes/javascript-unicode.
+      const isSingleSymbol = Array.from(block.getText()).length === 1
 
       return (
         entityKey &&
+        isSingleSymbol &&
         entityTypes.includes(content.getEntity(entityKey).getType())
       )
     })

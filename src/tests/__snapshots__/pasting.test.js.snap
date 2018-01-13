@@ -174,7 +174,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -433,36 +402,24 @@
+@@ -433,32 +402,20 @@
         "type": "unstyled",
       },
       Object {
@@ -190,10 +190,8 @@ Snapshot Diff:
 +       "entityRanges": Array [],
         "inlineStyleRanges": Array [],
         "key": "6umi7",
--       "text": "📷 Star list",
--       "type": "unstyled",
-+       "text": " ",
-+       "type": "atomic",
+        "text": "📷 Star list",
+        "type": "unstyled",
       },
       Object {
         "data": Object {},
@@ -208,16 +206,10 @@ Snapshot Diff:
 +       "entityRanges": Array [],
         "inlineStyleRanges": Array [],
         "key": "fonu3",
--       "text": "📷 Star list",
--       "type": "unstyled",
-+       "text": " ",
-+       "type": "atomic",
+        "text": "📷 Star list",
+        "type": "unstyled",
       },
-      Object {
-        "data": Object {},
-        "depth": 0,
-        "entityRanges": Array [],
-@@ -481,21 +438,15 @@
+@@ -481,17 +438,11 @@
         "type": "unstyled",
       },
       Object {
@@ -233,15 +225,9 @@ Snapshot Diff:
 +       "entityRanges": Array [],
         "inlineStyleRanges": Array [],
         "key": "nl29",
--       "text": "📷 Star list",
--       "type": "unstyled",
-+       "text": " ",
-+       "type": "atomic",
+        "text": "📷 Star list",
+        "type": "unstyled",
       },
-      Object {
-        "data": Object {},
-        "depth": 0,
-        "entityRanges": Array [],
 @@ -518,11 +469,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -331,7 +317,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -860,42 +799,24 @@
+@@ -860,32 +799,20 @@
         "type": "unstyled",
       },
       Object {
@@ -347,10 +333,8 @@ Snapshot Diff:
 +       "entityRanges": Array [],
         "inlineStyleRanges": Array [],
         "key": "7ri7s",
--       "text": "📷 ",
--       "type": "unstyled",
-+       "text": " ",
-+       "type": "atomic",
+        "text": "📷 ",
+        "type": "unstyled",
       },
       Object {
         "data": Object {},
@@ -362,26 +346,13 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
--       "inlineStyleRanges": Array [
--         Object {
--           "length": 5,
--           "offset": 1,
--           "style": "BOLD",
--         },
--       ],
 +       "entityRanges": Array [],
-+       "inlineStyleRanges": Array [],
-        "key": "alt7k",
--       "text": "📷Shape",
--       "type": "unstyled",
-+       "text": " ",
-+       "type": "atomic",
-      },
-      Object {
-        "data": Object {},
-        "depth": 0,
-        "entityRanges": Array [],
-@@ -911,21 +832,15 @@
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 5,
+            "offset": 1,
+            "style": "BOLD",
+@@ -911,21 +838,15 @@
         "type": "unstyled",
       },
       Object {
@@ -406,7 +377,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -941,21 +856,15 @@
+@@ -941,21 +862,15 @@
         "type": "unstyled",
       },
       Object {
@@ -431,7 +402,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -1004,17 +913,11 @@
+@@ -1004,17 +919,11 @@
         "type": "unstyled",
       },
       Object {
@@ -450,7 +421,7 @@ Snapshot Diff:
         "text": "[T.C1]Comment",
         "type": "unstyled",
       },
-@@ -1028,186 +931,50 @@
+@@ -1028,186 +937,50 @@
         "type": "unstyled",
       },
       Object {

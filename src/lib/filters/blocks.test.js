@@ -50,6 +50,21 @@ describe("blocks", () => {
             data: {},
           },
           {
+            key: "d3072",
+            text: "📷",
+            type: "unstyled",
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [
+              {
+                offset: 0,
+                length: 1,
+                key: 4,
+              },
+            ],
+            data: {},
+          },
+          {
             key: "affm4",
             text: " ",
             type: "unstyled",
@@ -73,6 +88,21 @@ describe("blocks", () => {
             entityRanges: [],
             data: {},
           },
+          {
+            key: "umi67",
+            text: "📷 Star list",
+            type: "unstyled",
+            depth: 0,
+            inlineStyleRanges: [],
+            entityRanges: [
+              {
+                offset: 0,
+                length: 1,
+                key: 4,
+              },
+            ],
+            data: {},
+          },
         ],
       })
 
@@ -86,8 +116,10 @@ describe("blocks", () => {
           .toJS(),
       ).toEqual({
         d3071: "atomic",
+        d3072: "atomic",
         affm4: "unstyled",
         abbm4: "unstyled",
+        umi67: "unstyled",
       })
     })
 
