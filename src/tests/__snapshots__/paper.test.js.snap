@@ -1,0 +1,2547 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropbox Paper dropboxpaper-chrome62-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -5,20 +5,20 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "b4b1l",
+        "text": "Draft.js paste test document",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1jmap",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -46,15 +46,10 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "4evok",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
+        "type": "unstyled",
+      },
+@@ -63,11 +58,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "8bteu",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -108,11 +103,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "6qsp4",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -126,11 +121,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "4odql",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -305,27 +300,16 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "8a26a",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 24,
+-         },
+-         Object {
+-           "key": 5,
+-           "length": 1,
+-           "offset": 57,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -360,59 +344,41 @@
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 13,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "ou05",
+        "text": ".media .img {",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 23,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "90f61",
+        "text": "    margin-right: 10px;",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 1,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "9sdou",
+        "text": "}",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "4h2ng",
+        "text": "Misc",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -518,27 +484,11 @@
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 6,
+-           "length": 1,
+-           "offset": 6,
+-         },
+-         Object {
+-           "key": 7,
+-           "length": 1,
+-           "offset": 9,
+-         },
+-         Object {
+-           "key": 8,
+-           "length": 1,
+-           "offset": 12,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -553,48 +503,48 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "k1ib",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 9,
++           "key": 4,
+            "length": 70,
+            "offset": 21,
+          },
+          Object {
+-           "key": 10,
++           "key": 5,
+            "length": 36,
+            "offset": 103,
+          },
+          Object {
+-           "key": 11,
++           "key": 6,
+            "length": 36,
+            "offset": 140,
+          },
+          Object {
+-           "key": 12,
++           "key": 7,
+            "length": 44,
+            "offset": 190,
+          },
+          Object {
+-           "key": 13,
++           "key": 8,
+            "length": 28,
+            "offset": 235,
+          },
+          Object {
+-           "key": 14,
++           "key": 9,
+            "length": 69,
+            "offset": 275,
+          },
+          Object {
+-           "key": 15,
++           "key": 10,
+            "length": 69,
+            "offset": 345,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -632,143 +582,81 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "10": Object {
+        "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "11": Object {
+-       "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "12": Object {
+-       "data": Object {
+-         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "13": Object {
+-       "data": Object {
+-         "href": "https://youtu.be/y8Kyi0WNg40",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://youtu.be/y8Kyi0WNg40",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "14": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "15": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+      "2": Object {
+        "data": Object {
+-         "href": "/ep/profile/iX86truncated",
+          "url": "http://localhost/ep/profile/iX86truncated",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "4": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "5": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated90_example-lowres-image.jpg",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "6": Object {
+        "data": Object {
+-         "alt": "slightly smiling face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "7": Object {
+        "data": Object {
+-         "alt": "fearful face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "8": Object {
+        "data": Object {
+-         "alt": "smiling face with sunglasses",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
++         "url": "https://youtu.be/y8Kyi0WNg40",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "9": Object {
+        "data": Object {
+-         "href": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+-         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+    },
+`;
+
+exports[`Dropbox Paper dropboxpaper-chrome62-win81 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -14,20 +14,20 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "885ce",
+        "text": "Draft.js paste test document",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5ua1g",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -55,15 +55,10 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "4n3ij",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
+        "type": "unstyled",
+      },
+@@ -72,11 +67,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "7vtrj",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -117,11 +112,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "7u83r",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -135,11 +130,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "f1as0",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -314,27 +309,16 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "ldfe",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 24,
+-         },
+-         Object {
+-           "key": 5,
+-           "length": 1,
+-           "offset": 57,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -369,59 +353,41 @@
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 13,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "507sg",
+        "text": ".media .img {",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 23,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "drrok",
+        "text": "    margin-right: 10px;",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 1,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "2cref",
+        "text": "}",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "aa7tj",
+        "text": "Misc",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -527,27 +493,11 @@
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 6,
+-           "length": 1,
+-           "offset": 6,
+-         },
+-         Object {
+-           "key": 7,
+-           "length": 1,
+-           "offset": 9,
+-         },
+-         Object {
+-           "key": 8,
+-           "length": 1,
+-           "offset": 12,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -562,48 +512,48 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "akhr3",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 9,
++           "key": 4,
+            "length": 70,
+            "offset": 21,
+          },
+          Object {
+-           "key": 10,
++           "key": 5,
+            "length": 36,
+            "offset": 103,
+          },
+          Object {
+-           "key": 11,
++           "key": 6,
+            "length": 36,
+            "offset": 140,
+          },
+          Object {
+-           "key": 12,
++           "key": 7,
+            "length": 44,
+            "offset": 190,
+          },
+          Object {
+-           "key": 13,
++           "key": 8,
+            "length": 28,
+            "offset": 235,
+          },
+          Object {
+-           "key": 14,
++           "key": 9,
+            "length": 69,
+            "offset": 275,
+          },
+          Object {
+-           "key": 15,
++           "key": 10,
+            "length": 69,
+            "offset": 345,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -641,143 +591,81 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "10": Object {
+        "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "11": Object {
+-       "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "12": Object {
+-       "data": Object {
+-         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "13": Object {
+-       "data": Object {
+-         "href": "https://youtu.be/y8Kyi0WNg40",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://youtu.be/y8Kyi0WNg40",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "14": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "15": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+      "2": Object {
+        "data": Object {
+-         "href": "/ep/profile/iX86truncated",
+          "url": "http://localhost/ep/profile/iX86truncated",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "4": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "5": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated90_example-lowres-image.jpg",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "6": Object {
+        "data": Object {
+-         "alt": "slightly smiling face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "7": Object {
+        "data": Object {
+-         "alt": "fearful face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "8": Object {
+        "data": Object {
+-         "alt": "smiling face with sunglasses",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
++         "url": "https://youtu.be/y8Kyi0WNg40",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "9": Object {
+        "data": Object {
+-         "href": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+-         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+    },
+`;
+
+exports[`Dropbox Paper dropboxpaper-edge16-win10 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -5,20 +5,20 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "b4b1l",
+        "text": "Draft.js paste test document",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "8872c",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -46,15 +46,10 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "au9mu",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
+        "type": "unstyled",
+      },
+@@ -63,11 +58,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "6np5a",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -108,11 +103,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "4c9sl",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -126,11 +121,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "adpcu",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -305,27 +300,16 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "9gphc",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 24,
+-         },
+-         Object {
+-           "key": 5,
+-           "length": 1,
+-           "offset": 57,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -360,59 +344,41 @@
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 13,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "990pe",
+        "text": ".media .img {",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 22,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "do7up",
+        "text": "   margin-right: 10px;",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 1,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "7b3fk",
+        "text": "}",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "61u5d",
+        "text": "Misc",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -518,27 +484,11 @@
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 6,
+-           "length": 1,
+-           "offset": 6,
+-         },
+-         Object {
+-           "key": 7,
+-           "length": 1,
+-           "offset": 9,
+-         },
+-         Object {
+-           "key": 8,
+-           "length": 1,
+-           "offset": 12,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -553,48 +503,48 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "916f4",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 9,
++           "key": 4,
+            "length": 70,
+            "offset": 21,
+          },
+          Object {
+-           "key": 10,
++           "key": 5,
+            "length": 36,
+            "offset": 103,
+          },
+          Object {
+-           "key": 11,
++           "key": 6,
+            "length": 36,
+            "offset": 140,
+          },
+          Object {
+-           "key": 12,
++           "key": 7,
+            "length": 44,
+            "offset": 190,
+          },
+          Object {
+-           "key": 13,
++           "key": 8,
+            "length": 28,
+            "offset": 235,
+          },
+          Object {
+-           "key": 14,
++           "key": 9,
+            "length": 69,
+            "offset": 275,
+          },
+          Object {
+-           "key": 15,
++           "key": 10,
+            "length": 69,
+            "offset": 345,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -632,143 +582,81 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com/",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "10": Object {
+        "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "11": Object {
+-       "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "12": Object {
+-       "data": Object {
+-         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "13": Object {
+-       "data": Object {
+-         "href": "https://youtu.be/y8Kyi0WNg40",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://youtu.be/y8Kyi0WNg40",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "14": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "15": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+      "2": Object {
+        "data": Object {
+-         "href": "https://paper.dropbox.com/ep/profile/iX86truncated",
+          "url": "https://paper.dropbox.com/ep/profile/iX86truncated",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "4": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "5": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated90_example-lowres-image.jpg",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "6": Object {
+        "data": Object {
+-         "alt": "slightly smiling face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "7": Object {
+        "data": Object {
+-         "alt": "fearful face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "8": Object {
+        "data": Object {
+-         "alt": "smiling face with sunglasses",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
++         "url": "https://youtu.be/y8Kyi0WNg40",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "9": Object {
+        "data": Object {
+-         "href": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+-         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+    },
+`;
+
+exports[`Dropbox Paper dropboxpaper-firefox57-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -5,20 +5,20 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "b4b1l",
+        "text": "Draft.js paste test document",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "ana90",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -46,15 +46,10 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "espno",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
+        "type": "unstyled",
+      },
+@@ -63,11 +58,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "era73",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -108,11 +103,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "ashj4",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -126,11 +121,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "e1dc5",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -305,27 +300,16 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "eglli",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 24,
+-         },
+-         Object {
+-           "key": 5,
+-           "length": 1,
+-           "offset": 57,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -360,59 +344,41 @@
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 13,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "4dtle",
+        "text": ".media .img {",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 23,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "6o3v7",
+        "text": "    margin-right: 10px;",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 1,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "ern61",
+        "text": "}",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "ba6al",
+        "text": "Misc",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -518,27 +484,11 @@
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 6,
+-           "length": 1,
+-           "offset": 6,
+-         },
+-         Object {
+-           "key": 7,
+-           "length": 1,
+-           "offset": 9,
+-         },
+-         Object {
+-           "key": 8,
+-           "length": 1,
+-           "offset": 12,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -553,48 +503,48 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "2j0tv",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 9,
++           "key": 4,
+            "length": 70,
+            "offset": 21,
+          },
+          Object {
+-           "key": 10,
++           "key": 5,
+            "length": 36,
+            "offset": 103,
+          },
+          Object {
+-           "key": 11,
++           "key": 6,
+            "length": 36,
+            "offset": 140,
+          },
+          Object {
+-           "key": 12,
++           "key": 7,
+            "length": 44,
+            "offset": 190,
+          },
+          Object {
+-           "key": 13,
++           "key": 8,
+            "length": 28,
+            "offset": 235,
+          },
+          Object {
+-           "key": 14,
++           "key": 9,
+            "length": 69,
+            "offset": 275,
+          },
+          Object {
+-           "key": 15,
++           "key": 10,
+            "length": 69,
+            "offset": 345,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -632,143 +582,81 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "10": Object {
+        "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "11": Object {
+-       "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "12": Object {
+-       "data": Object {
+-         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "13": Object {
+-       "data": Object {
+-         "href": "https://youtu.be/y8Kyi0WNg40",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://youtu.be/y8Kyi0WNg40",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "14": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "15": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+      "2": Object {
+        "data": Object {
+-         "href": "/ep/profile/iX86truncated",
+          "url": "/ep/profile/iX86truncated",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "4": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "5": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated90_example-lowres-image.jpg",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "6": Object {
+        "data": Object {
+-         "alt": "slightly smiling face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "7": Object {
+        "data": Object {
+-         "alt": "fearful face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "8": Object {
+        "data": Object {
+-         "alt": "smiling face with sunglasses",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
++         "url": "https://youtu.be/y8Kyi0WNg40",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "9": Object {
+        "data": Object {
+-         "href": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+-         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+    },
+`;
+
+exports[`Dropbox Paper dropboxpaper-firefox57-win81 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -14,20 +14,20 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "9c8hs",
+        "text": "Draft.js paste test document",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "7edtv",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -55,15 +55,10 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "672qe",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
+        "type": "unstyled",
+      },
+@@ -72,11 +67,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "etcgv",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -117,11 +112,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "8temg",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -135,11 +130,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5sj5a",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -314,27 +309,16 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "6pi9s",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 24,
+-         },
+-         Object {
+-           "key": 5,
+-           "length": 1,
+-           "offset": 57,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -369,59 +353,41 @@
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 13,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "e88k5",
+        "text": ".media .img {",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 23,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "6gc1l",
+        "text": "    margin-right: 10px;",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 1,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "vkdd",
+        "text": "}",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "d5at",
+        "text": "Misc",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -527,27 +493,11 @@
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 6,
+-           "length": 1,
+-           "offset": 6,
+-         },
+-         Object {
+-           "key": 7,
+-           "length": 1,
+-           "offset": 9,
+-         },
+-         Object {
+-           "key": 8,
+-           "length": 1,
+-           "offset": 12,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -562,48 +512,48 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "fec0r",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 9,
++           "key": 4,
+            "length": 70,
+            "offset": 21,
+          },
+          Object {
+-           "key": 10,
++           "key": 5,
+            "length": 36,
+            "offset": 103,
+          },
+          Object {
+-           "key": 11,
++           "key": 6,
+            "length": 36,
+            "offset": 140,
+          },
+          Object {
+-           "key": 12,
++           "key": 7,
+            "length": 44,
+            "offset": 190,
+          },
+          Object {
+-           "key": 13,
++           "key": 8,
+            "length": 28,
+            "offset": 235,
+          },
+          Object {
+-           "key": 14,
++           "key": 9,
+            "length": 69,
+            "offset": 275,
+          },
+          Object {
+-           "key": 15,
++           "key": 10,
+            "length": 69,
+            "offset": 345,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -641,143 +591,81 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "10": Object {
+        "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "11": Object {
+-       "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "12": Object {
+-       "data": Object {
+-         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "13": Object {
+-       "data": Object {
+-         "href": "https://youtu.be/y8Kyi0WNg40",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://youtu.be/y8Kyi0WNg40",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "14": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "15": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+      "2": Object {
+        "data": Object {
+-         "href": "/ep/profile/iX86truncated",
+          "url": "/ep/profile/iX86truncated",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "4": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "5": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated90_example-lowres-image.jpg",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "6": Object {
+        "data": Object {
+-         "alt": "slightly smiling face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "7": Object {
+        "data": Object {
+-         "alt": "fearful face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "8": Object {
+        "data": Object {
+-         "alt": "smiling face with sunglasses",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
++         "url": "https://youtu.be/y8Kyi0WNg40",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "9": Object {
+        "data": Object {
+-         "href": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+-         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+    },
+`;
+
+exports[`Dropbox Paper dropboxpaper-ie11-unsupported-strippastedstyles-win81 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Dropbox Paper dropboxpaper-ie11-unsupported-win81 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Dropbox Paper dropboxpaper-safari-ios11 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Dropbox Paper dropboxpaper-safari11-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -5,20 +5,20 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "b4b1l",
+        "text": "Draft.js paste test document",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "fa0dc",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -46,15 +46,10 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+        ],
+        "key": "d9krb",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
+        "type": "unstyled",
+      },
+@@ -63,11 +58,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "62jod",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+@@ -103,11 +98,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "dppkb",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -121,11 +116,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1t20l",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -300,27 +295,16 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "fotgi",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 3,
+-           "length": 1,
+-           "offset": 24,
+-         },
+-         Object {
+-           "key": 4,
+-           "length": 1,
+-           "offset": 57,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -355,59 +339,41 @@
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 13,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "c4fum",
+        "text": ".media .img {",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 23,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "bn7lq",
+        "text": "    margin-right: 10px;",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+-       "inlineStyleRanges": Array [
+-         Object {
+-           "length": 1,
+-           "offset": 0,
+-           "style": "CODE",
+-         },
+-       ],
++       "inlineStyleRanges": Array [],
+        "key": "d0gdr",
+        "text": "}",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "19aj9",
+        "text": "Misc",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -513,27 +479,11 @@
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+-       "entityRanges": Array [
+-         Object {
+-           "key": 5,
+-           "length": 1,
+-           "offset": 6,
+-         },
+-         Object {
+-           "key": 6,
+-           "length": 1,
+-           "offset": 9,
+-         },
+-         Object {
+-           "key": 7,
+-           "length": 1,
+-           "offset": 12,
+-         },
+-       ],
++       "entityRanges": Array [],
+        "inlineStyleRanges": Array [
+          Object {
+            "length": 6,
+            "offset": 0,
+            "style": "BOLD",
+@@ -548,48 +498,48 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "7ip1m",
+        "text": "Embeds",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 8,
++           "key": 3,
+            "length": 70,
+            "offset": 21,
+          },
+          Object {
+-           "key": 9,
++           "key": 4,
+            "length": 36,
+            "offset": 103,
+          },
+          Object {
+-           "key": 10,
++           "key": 5,
+            "length": 36,
+            "offset": 140,
+          },
+          Object {
+-           "key": 11,
++           "key": 6,
+            "length": 44,
+            "offset": 190,
+          },
+          Object {
+-           "key": 12,
++           "key": 7,
+            "length": 28,
+            "offset": 235,
+          },
+          Object {
+-           "key": 13,
++           "key": 8,
+            "length": 69,
+            "offset": 275,
+          },
+          Object {
+-           "key": 14,
++           "key": 9,
+            "length": 69,
+            "offset": 345,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -627,135 +577,74 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "http://example.com",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+-     "10": Object {
+-       "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "11": Object {
+-       "data": Object {
+-         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "12": Object {
+-       "data": Object {
+-         "href": "https://youtu.be/y8Kyi0WNg40",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://youtu.be/y8Kyi0WNg40",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "13": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "14": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+      "2": Object {
+        "data": Object {
+-         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "3": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "4": Object {
+        "data": Object {
+-         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated90_example-lowres-image.jpg",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "5": Object {
+        "data": Object {
+-         "alt": "slightly smiling face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "6": Object {
+        "data": Object {
+-         "alt": "fearful face",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "7": Object {
+        "data": Object {
+-         "alt": "smiling face with sunglasses",
+-         "height": "16",
+-         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
++         "url": "https://youtu.be/y8Kyi0WNg40",
+        },
+        "mutability": "MUTABLE",
+-       "type": "IMAGE",
++       "type": "LINK",
+      },
+      "8": Object {
+        "data": Object {
+-         "href": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
+-         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "9": Object {
+        "data": Object {
+-         "href": "https://trello.com/c/ePWJbTYs/1-test",
+-         "url": "https://trello.com/c/ePWJbTYs/1-test",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+    },
+`;

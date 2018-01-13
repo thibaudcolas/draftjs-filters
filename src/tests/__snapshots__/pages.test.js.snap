@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Apple Pages applepages-chrome62-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -298,19 +298,10 @@
+        "text": "Nested bulleted list (1)",
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+-       "depth": 1,
+-       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "9qivi",
+-       "text": "",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5d0m7",
+        "text": "Nested bulleted list (2)",
+@@ -370,19 +361,10 @@
+        "text": "Nested numbered list (1)",
+        "type": "ordered-list-item",
+      },
+      Object {
+        "data": Object {},
+-       "depth": 1,
+-       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "3hv4s",
+-       "text": "",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "cpeao",
+        "text": "Nested numbered list (2)",
+@@ -442,19 +424,10 @@
+        "text": "Nested dashed list (1)",
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+-       "depth": 1,
+-       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "7m278",
+-       "text": "",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "dcqr8",
+        "text": "Nested dashed list (2)",
+@@ -514,19 +487,10 @@
+        "text": "Nested image list (1)",
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+-       "depth": 1,
+-       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "6ua5u",
+-       "text": "",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "ekuqe",
+        "text": "Nested image list (2)",
+@@ -1281,27 +1245,24 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+        "data": Object {
+-         "href": "mailto:test@example.com?subject=subject",
+          "url": "mailto:test@example.com?subject=subject",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "2": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+`;
+
+exports[`Apple Pages applepages-firefox57-macos1013 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Apple Pages applepages-safari-ios11 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Apple Pages applepages-safari11-macos1013 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;

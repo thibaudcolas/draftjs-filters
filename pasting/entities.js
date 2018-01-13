@@ -33,7 +33,6 @@ const data = {
   "wordonline-edge16-win10": require("./wordonline-edge16-win10.json"),
   "wordonline-firefox57-macos1013": require("./wordonline-firefox57-macos1013.json"),
   "wordonline-firefox57-win81": require("./wordonline-firefox57-win81.json"),
-  "wordonline-ie11-win81": require("./wordonline-ie11-win81.json"),
   "wordonline-safari11-macos1013": require("./wordonline-safari11-macos1013.json"),
 }
 
@@ -67,7 +66,6 @@ const attributes = {
 Object.keys(data).forEach((key) => {
   const contentState = Object.assign(
     {
-      metadata: {},
       entityMap: {},
       blocks: [],
     },
