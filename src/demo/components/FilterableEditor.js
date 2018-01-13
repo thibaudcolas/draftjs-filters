@@ -38,14 +38,14 @@ const INLINE_STYLES = {
   ITALIC: "I",
 }
 
-const ENTITY_TYPES = {
-  LINK: "🔗",
-}
-
-const ENTITY_ATTRIBUTES = [
+const ENTITY_TYPES = [
   {
     type: "LINK",
+    label: "🔗",
     attributes: ["url"],
+    whitelist: {
+      href: "example",
+    },
   },
 ]
 
@@ -89,8 +89,7 @@ class FilterableEditor extends Component<Props, State> {
           enableLineBreak: false,
           blockTypes: Object.keys(BLOCK_TYPES),
           inlineStyles: Object.keys(INLINE_STYLES),
-          entityTypes: Object.keys(ENTITY_TYPES),
-          entityAttributes: ENTITY_ATTRIBUTES,
+          entityTypes: ENTITY_TYPES,
         })
       }
     }
@@ -140,9 +139,12 @@ class FilterableEditor extends Component<Props, State> {
                 {BLOCK_TYPES[type]}
               </button>
             ))}
-            {Object.keys(ENTITY_TYPES).map((type) => (
-              <button key={type} onClick={this.toggleEntity.bind(this, type)}>
-                {ENTITY_TYPES[type]}
+            {ENTITY_TYPES.map((type) => (
+              <button
+                key={type.type}
+                onClick={this.toggleEntity.bind(this, type.type)}
+              >
+                {type.label}
               </button>
             ))}
           </div>

@@ -6,8 +6,9 @@ import {
   filterEntityRanges,
   filterEntityAttributes,
   shouldKeepEntityType,
+  shouldRemoveImageEntity,
+  shouldKeepEntityByAttribute,
 } from "./entities"
-import { shouldRemoveImageEntity } from "../index"
 
 describe("entities", () => {
   describe("#resetAtomicBlocks", () => {
@@ -405,11 +406,11 @@ describe("entities", () => {
 
   describe("#shouldKeepEntityType", () => {
     it("keep", () => {
-      expect(shouldKeepEntityType("LINK", ["LINK", "IMAGE"])).toBe(true)
+      expect(shouldKeepEntityType(["LINK", "IMAGE"], "LINK")).toBe(true)
     })
 
     it("remove", () => {
-      expect(shouldKeepEntityType("TEST", ["LINK", "IMAGE"])).toBe(false)
+      expect(shouldKeepEntityType(["LINK", "IMAGE"], "TEST")).toBe(false)
     })
   })
 
@@ -424,6 +425,90 @@ describe("entities", () => {
 
     it("not an image - no opinion", () => {
       expect(shouldRemoveImageEntity("TEST", "unstyled")).toBe(false)
+    })
+  })
+
+  describe("#shouldKeepEntityByAttribute", () => {
+    it("valid", () => {
+      expect(
+        shouldKeepEntityByAttribute(
+          [
+            {
+              type: "IMAGE",
+              whitelist: {
+                src: "^/",
+              },
+            },
+          ],
+          "IMAGE",
+          {
+            src: "/test/example.png",
+          },
+        ),
+      ).toBe(true)
+    })
+
+    it("invalid", () => {
+      expect(
+        shouldKeepEntityByAttribute(
+          [
+            {
+              type: "IMAGE",
+              whitelist: {
+                src: "^/",
+              },
+            },
+          ],
+          "IMAGE",
+          {
+            src: "http://example.com/test.png",
+          },
+        ),
+      ).toBe(false)
+    })
+
+    describe("multiple attributes", () => {
+      it("valid", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+                whitelist: {
+                  href: "^(?!#)",
+                  target: "_blank",
+                },
+              },
+            ],
+            "LINK",
+            {
+              href: "http://localhost/",
+              target: "_blank",
+            },
+          ),
+        ).toBe(true)
+      })
+
+      it("invalid", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+                whitelist: {
+                  href: "^(?!#)",
+                  target: "_blank",
+                },
+              },
+            ],
+            "LINK",
+            {
+              href: "#_msocom_1",
+              target: "_blank",
+            },
+          ),
+        ).toBe(false)
+      })
     })
   })
 
