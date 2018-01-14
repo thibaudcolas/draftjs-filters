@@ -8,24 +8,20 @@ import { ATOMIC } from "../constants"
  * Note: at the moment, this is only useful for IMAGE entities that Draft.js
  * injects on arbitrary blocks on paste.
  */
-export const preserveAtomicBlocks = (
-  whitelist: Array<string>,
-  content: ContentState,
-) => {
+export const preserveAtomicBlocks = (content: ContentState) => {
   const blockMap = content.getBlockMap()
 
   const perservedBlocks = blockMap
     .filter((block) => {
+      const text = block.getText()
       const entityKey = block.getEntityAt(0)
       // Use the ES6 way of counting string length to account for unicode symbols.
       // See https://mathiasbynens.be/notes/javascript-unicode.
-      const isSingleSymbol = Array.from(block.getText()).length === 1
+      const isOneSymbol = Array.from(text).length === 1
+      const shouldPreserve =
+        entityKey && isOneSymbol && ["📷", " "].includes(text)
 
-      return (
-        entityKey &&
-        isSingleSymbol &&
-        whitelist.includes(content.getEntity(entityKey).getType())
-      )
+      return shouldPreserve
     })
     .map((block) => block.set("type", ATOMIC))
 

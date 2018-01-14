@@ -24,8 +24,6 @@ import {
 import { replaceTextBySpaces } from "./text"
 
 type FilterOptions = {
-  // Maximum amount of depth for lists (0 = no nesting).
-  maxNesting: number,
   // Whitelist of allowed block types. unstyled and atomic are always included.
   blocks: Array<DraftBlockType>,
   // Whitelist of allowed inline styles.
@@ -39,8 +37,8 @@ type FilterOptions = {
     // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
     whitelist: Object,
   }>,
-  // Whitelist of allowed block-level entities (in atomic blocks)
-  blockEntities: Array<string>,
+  // Maximum amount of depth for lists (0 = no nesting).
+  maxNesting: number,
   // Characters to replace with whitespace.
   whitespacedCharacters: Array<string>,
 }
@@ -51,11 +49,10 @@ type FilterOptions = {
  */
 export const filterEditorState = (
   {
-    maxNesting,
     blocks,
     styles,
     entities,
-    blockEntities,
+    maxNesting,
     whitespacedCharacters,
   }: FilterOptions,
   editorState: EditorState,
@@ -75,7 +72,7 @@ export const filterEditorState = (
 
   // Order matters. Some filters may need the information filtered out by others.
   const filters = [
-    preserveAtomicBlocks.bind(null, blockEntities),
+    preserveAtomicBlocks,
     removeInvalidDepthBlocks,
     limitBlockDepth.bind(null, maxNesting),
     // Add block types that are always enabled in Draft.js.
