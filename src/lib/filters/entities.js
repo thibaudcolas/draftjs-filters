@@ -149,10 +149,10 @@ export const shouldKeepEntityByAttribute = (
   entityType: string,
   data: Object,
 ) => {
-  // $FlowFixMe
   const config = entityTypes.find((t) => t.type === entityType)
   const whitelist = config ? config.whitelist : null
 
+  // If no whitelist is defined, the filter keeps the entity.
   if (!whitelist) {
     return true
   }
@@ -188,9 +188,13 @@ export const filterEntityAttributes = (
   Object.keys(entities).forEach((key) => {
     const entity = entities[key]
     const data = entity.getData()
-    // $FlowFixMe
-    const whitelist = entityTypes.find((t) => t.type === entity.getType())
-      .attributes
+    const config = entityTypes.find((t) => t.type === entity.getType())
+    const whitelist = config ? config.attributes : null
+
+    // If no whitelist is defined, keep all of the data.
+    if (!whitelist) {
+      return data
+    }
 
     const newData = whitelist.reduce((attrs, attr) => {
       // We do not want to include undefined values if there is no data.
