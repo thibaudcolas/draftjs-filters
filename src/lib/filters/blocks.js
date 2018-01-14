@@ -74,7 +74,7 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
 /**
  * Resets the depth of all the content to at most maxNesting.
  */
-export const resetBlockDepth = (maxNesting: number, content: ContentState) => {
+export const limitBlockDepth = (maxNesting: number, content: ContentState) => {
   const blockMap = content.getBlockMap()
 
   const changedBlocks = blockMap
@@ -89,16 +89,16 @@ export const resetBlockDepth = (maxNesting: number, content: ContentState) => {
 }
 
 /**
- * Resets all blocks that use unavailable types to unstyled.
+ * Removes all block types not present in the whitelist.
  */
-export const resetBlockType = (
-  enabledTypes: Array<DraftBlockType>,
+export const filterBlockTypes = (
+  whitelist: Array<DraftBlockType>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
 
   const changedBlocks = blockMap
-    .filter((block) => !enabledTypes.includes(block.getType()))
+    .filter((block) => !whitelist.includes(block.getType()))
     .map((block) => block.set("type", UNSTYLED))
 
   return changedBlocks.size === 0

@@ -1,9 +1,9 @@
 import { EditorState, convertFromRaw } from "draft-js"
 
-import { filterInlineStyle } from "./styles"
+import { filterInlineStyles } from "./styles"
 
 describe("styles", () => {
-  describe("#filterInlineStyle", () => {
+  describe("#filterInlineStyles", () => {
     it("works", () => {
       const content = convertFromRaw({
         entityMap: {},
@@ -37,7 +37,7 @@ describe("styles", () => {
         ],
       })
       expect(
-        filterInlineStyle(["BOLD"], content)
+        filterInlineStyles(["BOLD"], content)
           .getBlockMap()
           .map((b) => b.getCharacterList().map((c) => c.getStyle()))
           .toJS(),
@@ -46,7 +46,7 @@ describe("styles", () => {
 
     it("no filtering = no change", () => {
       const content = EditorState.createEmpty().getCurrentContent()
-      expect(filterInlineStyle([], content)).toBe(content)
+      expect(filterInlineStyles([], content)).toBe(content)
     })
   })
 })

@@ -2,16 +2,16 @@
 import { EditorState } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
-import { ATOMIC, UNSTYLED, IMAGE, HORIZONTAL_RULE } from "../constants"
+import { ATOMIC, UNSTYLED } from "../constants"
 import {
   preserveAtomicBlocks,
-  resetBlockDepth,
-  resetBlockType,
+  limitBlockDepth,
+  filterBlockTypes,
   removeInvalidDepthBlocks,
 } from "./blocks"
-import { filterInlineStyle } from "./styles"
+import { filterInlineStyles } from "./styles"
 import {
-  resetAtomicBlocks,
+  filterAtomicBlocks,
   filterEntityAttributes,
   filterEntityRanges,
   shouldKeepEntityType,
@@ -23,10 +23,11 @@ import { replaceTextBySpaces } from "./text"
 type EntityTypes = Array<Object>
 
 type FilterOptions = {
-  maxListNesting: number,
-  blockTypes: Array<DraftBlockType>,
-  inlineStyles: Array<string>,
+  maxNesting: number,
+  blocks: Array<DraftBlockType>,
+  styles: Array<string>,
   entityTypes: EntityTypes,
+  blockEntities: Array<string>,
   whitespacedCharacters: Array<string>,
 }
 
@@ -39,15 +40,16 @@ type FilterOptions = {
  */
 export const filterEditorState = (
   {
-    maxListNesting,
-    blockTypes,
-    inlineStyles,
+    maxNesting,
+    blocks,
+    styles,
     entityTypes,
+    blockEntities,
     whitespacedCharacters,
   }: FilterOptions,
   editorState: EditorState,
 ) => {
-  const enabledBlockTypes = blockTypes.concat([
+  const enabledBlockTypes = blocks.concat([
     // Always enabled in a Draftail editor.
     UNSTYLED,
     // Filtered depending on enabled entity types.
@@ -55,11 +57,12 @@ export const filterEditorState = (
   ])
   let enabledEntityTypes = entityTypes.map((t) => t.type)
 
-  const filterEntities = (content, entityKey, block) => {
+  const shouldKeepEntityRange = (content, entityKey, block) => {
     const entity = content.getEntity(entityKey)
     const entityData = entity.getData()
     const entityType = entity.getType()
     const blockType = block.getType()
+
     return (
       shouldKeepEntityType(enabledEntityTypes, entityType) &&
       shouldKeepEntityByAttribute(entityTypes, entityType, entityData) &&
@@ -67,20 +70,21 @@ export const filterEditorState = (
     )
   }
 
+  const filters = [
+    preserveAtomicBlocks.bind(null, blockEntities),
+    removeInvalidDepthBlocks,
+    limitBlockDepth.bind(null, maxNesting),
+    filterBlockTypes.bind(null, enabledBlockTypes),
+    filterInlineStyles.bind(null, styles),
+    // TODO Bug: should not keep atomic blocks if there is no entity.
+    filterAtomicBlocks.bind(null, enabledEntityTypes),
+    filterEntityRanges.bind(null, shouldKeepEntityRange),
+    filterEntityAttributes.bind(null, entityTypes),
+    replaceTextBySpaces.bind(null, whitespacedCharacters),
+  ]
+
   const content = editorState.getCurrentContent()
-  let nextContent = content
-  // At the moment the list is hard-coded. In the future, the idea
-  // would be to have separate config for block entities and inline entities.
-  nextContent = preserveAtomicBlocks([HORIZONTAL_RULE, IMAGE], nextContent)
-  nextContent = removeInvalidDepthBlocks(nextContent)
-  nextContent = resetBlockDepth(maxListNesting, nextContent)
-  nextContent = resetBlockType(enabledBlockTypes, nextContent)
-  nextContent = filterInlineStyle(inlineStyles, nextContent)
-  // TODO Bug: should not keep atomic blocks if there is no entity.
-  nextContent = resetAtomicBlocks(enabledEntityTypes, nextContent)
-  nextContent = filterEntityRanges(filterEntities, nextContent)
-  nextContent = filterEntityAttributes(entityTypes, nextContent)
-  nextContent = replaceTextBySpaces(whitespacedCharacters, nextContent)
+  const nextContent = filters.reduce((c, filter) => filter(c), content)
 
   return nextContent === content
     ? editorState

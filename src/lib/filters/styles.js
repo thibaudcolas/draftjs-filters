@@ -2,10 +2,10 @@
 import { ContentState, CharacterMetadata } from "draft-js"
 
 /**
- * Removes all styles that use unavailable types.
+ * Removes all styles not present in the whitelist.
  */
-export const filterInlineStyle = (
-  enabledTypes: Array<string>,
+export const filterInlineStyles = (
+  whitelist: Array<string>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
@@ -18,7 +18,7 @@ export const filterInlineStyle = (
 
       char
         .getStyle()
-        .filter((type) => !enabledTypes.includes(type))
+        .filter((type) => !whitelist.includes(type))
         .forEach((type) => {
           altered = true
           newChar = CharacterMetadata.removeStyle(newChar, type)
