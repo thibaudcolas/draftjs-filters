@@ -13,7 +13,7 @@ import {
   shouldRemoveImageEntity,
   filterEntityAttributes,
 } from "./filters/entities"
-import { whitespaceCharacters } from "./filters/text"
+import { replaceTextBySpaces } from "./filters/text"
 import { filterEditorState } from "./filters/editor"
 
 export {
@@ -27,6 +27,6 @@ export {
   shouldKeepEntityType,
   shouldRemoveImageEntity,
   filterEntityAttributes,
-  whitespaceCharacters,
+  replaceTextBySpaces,
   filterEditorState,
 }

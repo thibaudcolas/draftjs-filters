@@ -9,7 +9,7 @@ import {
   shouldKeepEntityType,
   shouldRemoveImageEntity,
   filterEntityAttributes,
-  whitespaceCharacters,
+  replaceTextBySpaces,
   filterEditorState,
 } from "./index"
 
@@ -32,6 +32,6 @@ describe(pkg.name, () => {
     expect(shouldRemoveImageEntity).toBeDefined())
   it("filterEntityAttributes", () =>
     expect(filterEntityAttributes).toBeDefined())
-  it("whitespaceCharacters", () => expect(whitespaceCharacters).toBeDefined())
+  it("replaceTextBySpaces", () => expect(replaceTextBySpaces).toBeDefined())
   it("filterEditorState", () => expect(filterEditorState).toBeDefined())
 })
