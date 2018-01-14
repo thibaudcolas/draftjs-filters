@@ -31,7 +31,6 @@ function onChange(nextEditorState) {
   if (shouldFilterPaste) {
     filteredEditorState = filterEditorState(
       {
-        maxNesting: 1,
         blocks: ["header-two", "header-three", "unordered-list-item"],
         styles: ["BOLD"],
         entities: [
@@ -47,7 +46,7 @@ function onChange(nextEditorState) {
             attributes: ["url"],
           },
         ],
-        blockEntities: ["IMAGE"],
+        maxNesting: 1,
         whitespacedCharacters: ["\n", "\t"],
       },
       filteredEditorState,
@@ -61,23 +60,21 @@ function onChange(nextEditorState) {
 Here are the available options:
 
 ```jsx
-// Maximum amount of depth for lists (0 = no nesting).
-maxNesting: number,
 // Whitelist of allowed block types. unstyled and atomic are always included.
 blocks: Array<DraftBlockType>,
 // Whitelist of allowed inline styles.
 styles: Array<string>,
 // Whitelist of allowed entities.
 entities: Array<{
-// Entity type, eg. "LINK"
-type: string,
-// Allowed attributes. Other attributes will be removed.
-attributes: Array<string>,
-// Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
-whitelist: Object,
+    // Entity type, eg. "LINK"
+    type: string,
+    // Allowed attributes. Other attributes will be removed.
+    attributes: Array<string>,
+    // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
+    whitelist: Object,
 }>,
-// Whitelist of allowed block-level entities (in atomic blocks)
-blockEntities: Array<string>,
+// Maximum amount of depth for lists (0 = no nesting).
+maxNesting: number,
 // Characters to replace with whitespace.
 whitespacedCharacters: Array<string>,
 ```
@@ -93,7 +90,7 @@ whitespacedCharacters: Array<string>,
  * Note: at the moment, this is only useful for IMAGE entities that Draft.js
  * injects on arbitrary blocks on paste.
  */
-preserveAtomicBlocks((whitelist: Array<string>), (content: ContentState))
+preserveAtomicBlocks((content: ContentState))
 /**
  * Resets atomic blocks to have a single-space char and no styles.
  */

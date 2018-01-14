@@ -1,13 +1,7 @@
-import {
-  EditorState,
-  convertFromRaw,
-  ContentState,
-  convertFromHTML,
-} from "draft-js"
+import { EditorState, convertFromRaw } from "draft-js"
 
-import { UNSTYLED, IMAGE } from "../constants"
+import { UNSTYLED } from "../constants"
 import {
-  preserveAtomicBlocks,
   removeInvalidDepthBlocks,
   limitBlockDepth,
   filterBlockTypes,

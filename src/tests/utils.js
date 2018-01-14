@@ -7,7 +7,6 @@ import { filterEditorState } from "../lib/index"
 expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
 
 const config = {
-  maxNesting: 4,
   blocks: [
     "header-two",
     "header-three",
@@ -32,7 +31,7 @@ const config = {
       },
     },
   ],
-  blockEntities: ["IMAGE"],
+  maxNesting: 4,
   whitespacedCharacters: ["\t"],
 }
 

@@ -382,7 +382,6 @@ describe("editor", () => {
         convertToRaw(
           filterEditorState(
             {
-              maxNesting: 1,
               blocks: [
                 "header-two",
                 "header-three",
@@ -405,7 +404,7 @@ describe("editor", () => {
                   whitelist: {},
                 },
               ],
-              blockEntities: ["IMAGE"],
+              maxNesting: 1,
               whitespacedCharacters: ["\n", "\t"],
             },
             editorState,
@@ -419,11 +418,10 @@ describe("editor", () => {
       expect(
         filterEditorState(
           {
-            maxNesting: 1,
             blocks: [],
             styles: [],
             entities: [],
-            blockEntities: [],
+            maxNesting: 1,
             whitespacedCharacters: [],
           },
           editorState,

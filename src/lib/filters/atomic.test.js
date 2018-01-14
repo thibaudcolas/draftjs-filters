@@ -17,17 +17,12 @@ describe("atomic", () => {
               src: "/example.png",
             },
           },
-          "5": {
-            type: "EMBED",
-            data: {
-              url: "http://www.youtube.com/watch?v=y8Kyi0WNg40",
-            },
-          },
         },
         blocks: [
           {
             key: "a",
             text: " ",
+            type: "atomic",
             entityRanges: [
               {
                 offset: 0,
@@ -50,21 +45,10 @@ describe("atomic", () => {
           {
             key: "c",
             text: " ",
-            entityRanges: [
-              {
-                offset: 0,
-                length: 1,
-                key: 5,
-              },
-            ],
-          },
-          {
-            key: "d",
-            text: " ",
             entityRanges: [],
           },
           {
-            key: "e",
+            key: "d",
             text: "📷 Star list",
             entityRanges: [
               {
@@ -78,7 +62,7 @@ describe("atomic", () => {
       })
 
       expect(
-        preserveAtomicBlocks(["IMAGE"], content)
+        preserveAtomicBlocks(content)
           .getBlockMap()
           .map((b) => b.getType())
           .toJS(),
@@ -87,13 +71,12 @@ describe("atomic", () => {
         b: "atomic",
         c: "unstyled",
         d: "unstyled",
-        e: "unstyled",
       })
     })
 
     it("no normalisation = no change", () => {
       const content = EditorState.createEmpty().getCurrentContent()
-      expect(preserveAtomicBlocks([], content)).toBe(content)
+      expect(preserveAtomicBlocks(content)).toBe(content)
     })
   })
 
