@@ -43,10 +43,10 @@ const ENTITY_TYPES = [
 
 const FILTER_CONFIG = {
   maxListNesting: 1,
-  enableLineBreak: false,
   blockTypes: Object.keys(BLOCK_TYPES),
   inlineStyles: Object.keys(INLINE_STYLES),
   entityTypes: ENTITY_TYPES,
+  whitespacedCharacters: ["\n", "\t"],
 }
 
 type Props = {

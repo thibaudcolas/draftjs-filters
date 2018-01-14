@@ -383,7 +383,6 @@ describe("editor", () => {
           filterEditorState(
             {
               maxListNesting: 1,
-              enableLineBreak: false,
               blockTypes: [
                 "unstyled",
                 "header-two",
@@ -407,27 +406,12 @@ describe("editor", () => {
                   whitelist: {},
                 },
               ],
+              whitespacedCharacters: ["\n", "\t"],
             },
             editorState,
           ).getCurrentContent(),
         ),
       ).toMatchSnapshot()
-    })
-
-    it("enableLineBreak", () => {
-      const editorState = EditorState.createEmpty()
-      expect(
-        filterEditorState(
-          {
-            maxListNesting: 1,
-            enableLineBreak: true,
-            blockTypes: [],
-            inlineStyles: [],
-            entityTypes: [],
-          },
-          editorState,
-        ),
-      ).toBeInstanceOf(EditorState)
     })
 
     it("no normalisation = no change", () => {
@@ -436,10 +420,10 @@ describe("editor", () => {
         filterEditorState(
           {
             maxListNesting: 1,
-            enableLineBreak: true,
             blockTypes: [],
             inlineStyles: [],
             entityTypes: [],
+            whitespacedCharacters: [],
           },
           editorState,
         ),
