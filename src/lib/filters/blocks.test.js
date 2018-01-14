@@ -21,7 +21,7 @@ describe("blocks", () => {
           "4": {
             type: "IMAGE",
             data: {
-              src: "../static/example-lowres-image.jpg",
+              src: "/example.png",
             },
           },
           "5": {
