@@ -9,10 +9,8 @@ describe("styles", () => {
         entityMap: {},
         blocks: [
           {
-            key: "d3071",
+            key: "a",
             text: "tes",
-            type: "unstyled",
-            depth: 0,
             inlineStyleRanges: [
               {
                 offset: 0,
@@ -35,23 +33,6 @@ describe("styles", () => {
                 style: "ITALIC",
               },
             ],
-            entityRanges: [],
-            data: {},
-          },
-          {
-            key: "abbm4",
-            text: "t",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [
-              {
-                offset: 0,
-                length: 1,
-                style: "BOLD",
-              },
-            ],
-            entityRanges: [],
-            data: {},
           },
         ],
       })
@@ -65,7 +46,7 @@ describe("styles", () => {
           .getBlockMap()
           .map((b) => b.getCharacterList().map((c) => c.getStyle()))
           .toJS(),
-      ).toEqual({ abbm4: [["BOLD"]], d3071: [["BOLD"], [], ["BOLD"]] })
+      ).toEqual({ a: [["BOLD"], [], ["BOLD"]] })
     })
   })
 })

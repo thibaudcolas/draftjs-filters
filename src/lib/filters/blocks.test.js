@@ -213,16 +213,11 @@ describe("blocks", () => {
             text: "H1",
             type: "header-one",
           },
-          {
-            key: "d",
-            text: "H2",
-            type: "header-two",
-          },
         ],
       })
       const editorState = resetBlockType(
         EditorState.createWithContent(contentState),
-        ["unordered-list-item", "header-two"],
+        ["unordered-list-item"],
       )
       expect(
         editorState
@@ -234,7 +229,6 @@ describe("blocks", () => {
         a: "unstyled",
         b: "unordered-list-item",
         c: "unstyled",
-        d: "header-two",
       })
     })
 
