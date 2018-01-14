@@ -45,7 +45,7 @@ const FILTER_CONFIG = {
   maxNesting: 1,
   blocks: Object.keys(BLOCK_TYPES),
   styles: Object.keys(INLINE_STYLES),
-  entityTypes: ENTITY_TYPES,
+  entities: ENTITY_TYPES,
   blockEntities: [],
   whitespacedCharacters: ["\n", "\t"],
 }

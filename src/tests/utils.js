@@ -17,7 +17,7 @@ const config = {
     "ordered-list-item",
   ],
   styles: ["BOLD", "ITALIC"],
-  entityTypes: [
+  entities: [
     {
       type: "LINK",
       attributes: ["url"],

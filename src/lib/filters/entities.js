@@ -9,7 +9,7 @@ import { ATOMIC, UNSTYLED, IMAGE } from "../constants"
  * and also normalises block text to a single "space" character.
  */
 export const filterAtomicBlocks = (
-  enabledTypes: Array<string>,
+  whitelist: Array<Object>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
@@ -53,9 +53,9 @@ export const filterAtomicBlocks = (
       let shouldReset = false
 
       if (entityKey) {
-        const entityType = content.getEntity(entityKey).getType()
+        const type = content.getEntity(entityKey).getType()
 
-        shouldReset = !enabledTypes.includes(entityType)
+        shouldReset = !whitelist.some((t) => t.type === type)
       }
 
       return shouldReset
@@ -72,7 +72,9 @@ export const filterAtomicBlocks = (
 }
 
 /**
- *
+ * Filters entity ranges (where entities are applied on text) based on the result of
+ * the callback function. Returning true keeps the entity range, false removes it.
+ * Draft.js automatically removes entities if they are not applied on any text.
  */
 export const filterEntityRanges = (
   filterFn: (
@@ -85,7 +87,7 @@ export const filterEntityRanges = (
   const blockMap = content.getBlockMap()
 
   /**
-   * Removes entities from the character list if the character entity isn't enabled.
+   * Removes entities from the character list if the entity isn't enabled.
    * Also removes image entities placed outside of atomic blocks, which can happen
    * on paste.
    * A better approach would probably be to split the block where the image is and
@@ -122,10 +124,10 @@ export const filterEntityRanges = (
  * Keeps all entity types (images, links, documents, embeds) that are enabled.
  */
 export const shouldKeepEntityType = (
-  enabledTypes: Array<string>,
-  entityType: string,
+  whitelist: Array<Object>,
+  type: string,
 ) => {
-  return enabledTypes.includes(entityType)
+  return whitelist.some((e) => e.type === type)
 }
 
 /**

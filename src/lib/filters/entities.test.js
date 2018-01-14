@@ -80,7 +80,7 @@ describe("entities", () => {
       })
 
       expect(
-        filterAtomicBlocks(["IMAGE"], content)
+        filterAtomicBlocks([{ type: "IMAGE" }], content)
           .getBlockMap()
           .map((b) => ({
             text: b.getText(),
@@ -209,11 +209,15 @@ describe("entities", () => {
 
   describe("#shouldKeepEntityType", () => {
     it("keep", () => {
-      expect(shouldKeepEntityType(["LINK", "IMAGE"], "LINK")).toBe(true)
+      expect(
+        shouldKeepEntityType([{ type: "LINK" }, { type: "IMAGE" }], "LINK"),
+      ).toBe(true)
     })
 
     it("remove", () => {
-      expect(shouldKeepEntityType(["LINK", "IMAGE"], "TEST")).toBe(false)
+      expect(
+        shouldKeepEntityType([{ type: "LINK" }, { type: "IMAGE" }], "TEST"),
+      ).toBe(false)
     })
   })
 

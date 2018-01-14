@@ -16,7 +16,7 @@ import {
  * injects on arbitrary blocks on paste.
  */
 export const preserveAtomicBlocks = (
-  entityTypes: Array<string>,
+  whitelist: Array<string>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
@@ -31,7 +31,7 @@ export const preserveAtomicBlocks = (
       return (
         entityKey &&
         isSingleSymbol &&
-        entityTypes.includes(content.getEntity(entityKey).getType())
+        whitelist.includes(content.getEntity(entityKey).getType())
       )
     })
     .map((block) => block.set("type", ATOMIC))
@@ -72,14 +72,14 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
 }
 
 /**
- * Resets the depth of all the content to at most maxNesting.
+ * Resets the depth of all the content to at most max.
  */
-export const limitBlockDepth = (maxNesting: number, content: ContentState) => {
+export const limitBlockDepth = (max: number, content: ContentState) => {
   const blockMap = content.getBlockMap()
 
   const changedBlocks = blockMap
-    .filter((block) => block.getDepth() > maxNesting)
-    .map((block) => block.set("depth", maxNesting))
+    .filter((block) => block.getDepth() > max)
+    .map((block) => block.set("depth", max))
 
   return changedBlocks.size === 0
     ? content
