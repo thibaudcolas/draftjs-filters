@@ -20,7 +20,7 @@ Line breaks:
 * Apple Pages Chrome 62 macOS 10.13 `"Soft line\n break"`
 * Word Online Firefox 57, Safari 11, macOS 10.13 `"Soft \nline break "`
 * Word 2010 IE11 `"Soft "`, `"line break"`.
-* Word 2010 Chrome 62, Firefox 57 `"Soft \n line break"`.
+* Word 2010 Chrome 62, Firefox 57 – Word 2016 Chrome 63, Firefox 57, Edge 16 `"Soft \n line break"`.
 * Dropbox Paper all browsers `"Soft "`, `"line break"`.
 * Dropbox Paper Safari 11 - contains different whitespace character than for other browsers.
 * Dropbox Paper IE11 `stripPastedStyles`: `"Soft "`, `""`, `"line break"`.
@@ -46,12 +46,12 @@ Highly similar between Chrome 62 and Firefox 57.
 * Email link -> `LINK` with `href`, `url`, eg. `mailto:test@example.com`.
 * Link tooltip -> `LINK` with `title` attribute.
 * [x] Potentially filter out `title` attribute on `LINK` if unsupported.
-* Internal link -> `LINK` with `"href": "#_Inline_styles"`, `"url": "http://localhost/examples/#_Inline_styles"`.
+* Internal link -> `LINK` with `"href": "#_Inline_styles"`, `"url": "http://localhost/#_Inline_styles"`.
 * Firefox 57 - Internal link -> `unstyled`, no `LINK`.
 * [x] Remove internal links based on `href` starting with `#`.
 * Frame link -> `LINK` with `href`, `url`.
-* Comment -> `LINK` with `"href": "#_msocom_1"`, `"http://localhost/examples/#_msocom_1"`, and `[T.C1]` text appended after the commented content.
-* Comment -> also adding `unstyled` block for comment text at the end of the document, preceded with `[T.C1]`: `"text": "[T.C1]Comment"`. And `LINK` with `"href": "#_msoanchor_1"`, `"url": "http://localhost/examples/#_msoanchor_1"`.
+* Comment -> `LINK` with `"href": "#_msocom_1"`, `"http://localhost/#_msocom_1"`, and `[T.C1]` text appended after the commented content.
+* Comment -> also adding `unstyled` block for comment text at the end of the document, preceded with `[T.C1]`: `"text": "[T.C1]Comment"`. And `LINK` with `"href": "#_msoanchor_1"`, `"url": "http://localhost/#_msoanchor_1"`.
 * [x] Remove comment `LINK` based on `href` attribute.
 * ~[ ] Potentially also remove inserted text, if feasible.~
 * Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> correct `header-*` level.
@@ -90,6 +90,13 @@ Highly similar between Chrome 62 and Firefox 57.
 * Star list prefixed with `\t` (depth 0), `o\t`, `\t` (depth 1 & 2).
 * Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
 * [x] Investigate equation block with single tab character `"text": "\t"`.
+
+## Word 2016
+
+### Windows
+
+* With Word 2010 document, same as Word 2010 results in Chrome 63, Firefox 57, Edge 16. Also identical in IE11, except for the equation crash.
+* With Word 2016 (macOS) document, same as Word 2010 results in Chrome 63, Firefox 57, Edge 16. Also identical in IE11, except for the equation crash.
 
 ## Google Docs
 

@@ -797,7 +797,7 @@ Snapshot Diff:
 -     "17": Object {
 -       "data": Object {
 -         "href": "#_msoanchor_1",
--         "url": "http://localhost/examples/#_msoanchor_1",
+-         "url": "http://localhost/#_msoanchor_1",
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "LINK",
@@ -805,7 +805,7 @@ Snapshot Diff:
 -     "18": Object {
 -       "data": Object {
 -         "href": "#_msoanchor_2",
--         "url": "http://localhost/examples/#_msoanchor_2",
+-         "url": "http://localhost/#_msoanchor_2",
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "LINK",
@@ -822,7 +822,7 @@ Snapshot Diff:
       "3": Object {
         "data": Object {
 -         "href": "#_Inline_styles",
--         "url": "http://localhost/examples/#_Inline_styles",
+-         "url": "http://localhost/#_Inline_styles",
 +         "url": "http://www.example.com/",
         },
         "mutability": "MUTABLE",
@@ -839,7 +839,7 @@ Snapshot Diff:
 -     "5": Object {
 -       "data": Object {
 -         "href": "#_msocom_1",
--         "url": "http://localhost/examples/#_msocom_1",
+-         "url": "http://localhost/#_msocom_1",
     },
 -       "mutability": "MUTABLE",
 -       "type": "LINK",
@@ -855,7 +855,7 @@ Snapshot Diff:
 -     "7": Object {
 -       "data": Object {
 -         "href": "#_msocom_2",
--         "url": "http://localhost/examples/#_msocom_2",
+-         "url": "http://localhost/#_msocom_2",
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "LINK",

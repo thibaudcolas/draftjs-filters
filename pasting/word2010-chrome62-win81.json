@@ -30,7 +30,7 @@
             "mutability": "MUTABLE",
             "data": {
                 "href": "#_Inline_styles",
-                "url": "http://localhost/examples/#_Inline_styles"
+                "url": "http://localhost/#_Inline_styles"
             }
         },
         "4": {
@@ -46,7 +46,7 @@
             "mutability": "MUTABLE",
             "data": {
                 "href": "#_msocom_1",
-                "url": "http://localhost/examples/#_msocom_1"
+                "url": "http://localhost/#_msocom_1"
             }
         },
         "6": {
@@ -62,7 +62,7 @@
             "mutability": "MUTABLE",
             "data": {
                 "href": "#_msocom_2",
-                "url": "http://localhost/examples/#_msocom_2"
+                "url": "http://localhost/#_msocom_2"
             }
         },
         "8": {
@@ -163,7 +163,7 @@
             "mutability": "MUTABLE",
             "data": {
                 "href": "#_msoanchor_1",
-                "url": "http://localhost/examples/#_msoanchor_1"
+                "url": "http://localhost/#_msoanchor_1"
             }
         },
         "18": {
@@ -171,7 +171,7 @@
             "mutability": "MUTABLE",
             "data": {
                 "href": "#_msoanchor_2",
-                "url": "http://localhost/examples/#_msoanchor_2"
+                "url": "http://localhost/#_msoanchor_2"
             }
         }
     },

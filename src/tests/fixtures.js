@@ -5,6 +5,17 @@ export const microsoftWord = {
   "word2010-ie11-noequation-strippastedstyles-win81": require("../../pasting/word2010-ie11-noequation-strippastedstyles-win81.json"),
   "word2010-ie11-noequation-win81": require("../../pasting/word2010-ie11-noequation-win81.json"),
   "word-safari-ios11": require("../../pasting/word-safari-ios11.json"),
+  //   "word2016-chrome63-macos1013": require("../../pasting/word2016-chrome63-macos1013.json"),
+  //   "word2016-word2010doc-chrome63-win": require("../../pasting/word2016-word2010doc-chrome63-win.json"),
+  //   "word2016-word2010doc-edge16-win": require("../../pasting/word2016-word2010doc-edge16-win.json"),
+  //   "word2016-word2010doc-firefox57-win": require("../../pasting/word2016-word2010doc-firefox57-win.json"),
+  //   "word2016-word2010doc-ie11-win": require("../../pasting/word2016-word2010doc-ie11-win.json"),
+  //   "word2016-word2016macosdoc-chrome63-win": require("../../pasting/word2016-word2016macosdoc-chrome63-win.json"),
+  //   "word2016-word2016macosdoc-edge16-win": require("../../pasting/word2016-word2016macosdoc-edge16-win.json"),
+  //   "word2016-word2016macosdoc-firefox57-macos1013": require("../../pasting/word2016-word2016macosdoc-firefox57-macos1013.json"),
+  //   "word2016-word2016macosdoc-firefox57-win": require("../../pasting/word2016-word2016macosdoc-firefox57-win.json"),
+  //   "word2016-word2016macosdoc-ie11-win": require("../../pasting/word2016-word2016macosdoc-ie11-win.json"),
+  //   "word2016-word2016macosdoc-safari11-macos1013": require("../../pasting/word2016-word2016macosdoc-safari11-macos1013.json"),
 }
 
 export const googleDocs = {

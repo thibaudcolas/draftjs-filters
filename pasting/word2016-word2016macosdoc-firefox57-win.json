@@ -1,0 +1,1145 @@
+{
+  "entityMap": {
+    "0": {
+      "type": "LINK",
+      "mutability": "MUTABLE",
+      "data": {
+        "href": "http://www.example.com",
+        "url": "http://www.example.com/"
+      }
+    },
+    "1": {
+      "type": "LINK",
+      "mutability": "MUTABLE",
+      "data": {
+        "href": "mailto:test@example.com",
+        "url": "mailto:test@example.com"
+      }
+    },
+    "2": {
+      "type": "LINK",
+      "mutability": "MUTABLE",
+      "data": {
+        "href": "http://www.example.com",
+        "title": "Test tooltip",
+        "url": "http://www.example.com/"
+      }
+    },
+    "3": {
+      "type": "LINK",
+      "mutability": "MUTABLE",
+      "data": {
+        "href": "http://www.example.com/",
+        "url": "http://www.example.com/"
+      }
+    },
+    "4": {
+      "type": "LINK",
+      "mutability": "MUTABLE",
+      "data": {
+        "href": "http://www.example.com/",
+        "url": "http://www.example.com/"
+      }
+    },
+    "5": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "alt": "*",
+        "height": "12",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image001.gif",
+        "width": "12"
+      }
+    },
+    "6": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "alt": "*",
+        "height": "12",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image001.gif",
+        "width": "12"
+      }
+    },
+    "7": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "alt": "*",
+        "height": "12",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image001.gif",
+        "width": "12"
+      }
+    },
+    "8": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "height": "227",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image003.jpg",
+        "width": "341"
+      }
+    },
+    "9": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "height": "303",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image005.png",
+        "width": "354"
+      }
+    },
+    "10": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "height": "31",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image007.png",
+        "width": "95"
+      }
+    },
+    "11": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "height": "75",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image008.png",
+        "width": "155"
+      }
+    },
+    "12": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "height": "115",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image010.png",
+        "width": "119"
+      }
+    },
+    "13": {
+      "type": "IMAGE",
+      "mutability": "MUTABLE",
+      "data": {
+        "height": "124",
+        "src": "file:///C:\\truncated\\msohtmlclip1/01/clip_image012.png",
+        "width": "139"
+      }
+    }
+  },
+  "blocks": [
+    {
+      "key": "4nb42",
+      "text": "   ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "3bum5",
+      "text": "Draft.js paste test document",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "42eal",
+      "text": "Subtitle",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "d8lio",
+      "text": "Inline styles",
+      "type": "header-one",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "rfev",
+      "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 10,
+          "length": 4,
+          "style": "BOLD"
+        },
+        {
+          "offset": 24,
+          "length": 11,
+          "style": "BOLD"
+        },
+        {
+          "offset": 73,
+          "length": 14,
+          "style": "BOLD"
+        },
+        {
+          "offset": 16,
+          "length": 6,
+          "style": "ITALIC"
+        },
+        {
+          "offset": 24,
+          "length": 11,
+          "style": "ITALIC"
+        },
+        {
+          "offset": 37,
+          "length": 13,
+          "style": "STRIKETHROUGH"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "dgbbi",
+      "text": "Unstyled, underline, bigger, smaller, superscript, subscript",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 10,
+          "length": 9,
+          "style": "UNDERLINE"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "40ag5",
+      "text": "Unstyled, red, text background, outline, small caps, double strikethrough, unstyled",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 32,
+          "length": 7,
+          "style": "BOLD"
+        },
+        {
+          "offset": 53,
+          "length": 20,
+          "style": "STRIKETHROUGH"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "fr7m1",
+      "text": "Unstyled, light em, em, intense em, quote, intense quote, light ref, intense ref, book title, unstyled",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 20,
+          "length": 2,
+          "style": "ITALIC"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "8emte",
+      "text": "Inline entities",
+      "type": "header-one",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "dk7h1",
+      "text": "Unstyled, link, email link, tooltip link, internal link, frame link, comment[T.C1] ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 10,
+          "length": 4,
+          "key": 0
+        },
+        {
+          "offset": 16,
+          "length": 10,
+          "key": 1
+        },
+        {
+          "offset": 28,
+          "length": 12,
+          "key": 2
+        },
+        {
+          "offset": 57,
+          "length": 10,
+          "key": 3
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "20i63",
+      "text": "Unstyled, bold link comment[T.C2] ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 10,
+          "length": 26,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [
+        {
+          "offset": 10,
+          "length": 17,
+          "key": 4
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "ave7p",
+      "text": "Text blocks",
+      "type": "header-one",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "3u54f",
+      "text": "Unstyled",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "3lnn3",
+      "text": "Unstyled centered",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "dvj8c",
+      "text": "Unstyled right-aligned",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "fua5m",
+      "text": "Unstyled justify",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "ckuls",
+      "text": "Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "4pr8o",
+      "text": "h1 - Heading one",
+      "type": "header-one",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "cdh3p",
+      "text": "h2 - Heading two",
+      "type": "header-two",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "c8a6a",
+      "text": "h3 - Heading three",
+      "type": "header-three",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "c7165",
+      "text": "h4 - heading four",
+      "type": "header-four",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "84s06",
+      "text": "h5 - heading five bold",
+      "type": "header-five",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 18,
+          "length": 4,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "e0ksv",
+      "text": "h6 - heading six",
+      "type": "header-six",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "bkfoa",
+      "text": "h7 - heading seven",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "d5buh",
+      "text": "h8 - heading eight",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "4n8rj",
+      "text": "h9 - heading nine",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "crrub",
+      "text": "· Bulleted list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "8qusp",
+      "text": "· Bulleted list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "9ludl",
+      "text": "o Nested bulleted list (1)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "a4dnn",
+      "text": "§ Nested bulleted list (2)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "bredc",
+      "text": "· Bulleted list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "d21cn",
+      "text": "1. Numbered list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "2gjgm",
+      "text": "2. Numbered list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "3n1ue",
+      "text": "a. Nested numbered list (1)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "5qnpe",
+      "text": "i. Nested numbered list (2)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "53ts8",
+      "text": "3. Numbered list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "7a9uv",
+      "text": "📷 Star list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 5
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "22qk6",
+      "text": "📷 Star list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 6
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "5sadb",
+      "text": "o Nested star list (1)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "9b0b7",
+      "text": "§ Nested star list (2)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "bifmv",
+      "text": "📷 Star list",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 7
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "23kep",
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "afbtr",
+      "text": "Unstyled with borders",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "7me0i",
+      "text": "Rich blocks",
+      "type": "header-one",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "26o9h",
+      "text": "Images",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 6,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "aprsp",
+      "text": "Image",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "fom23",
+      "text": "📷",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 8
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "aot88",
+      "text": "Caption",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "8tlus",
+      "text": "Image with effects",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "7cqgo",
+      "text": "📷",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 9
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "9nsfk",
+      "text": "Table",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 5,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "e4ui1",
+      "text": "  ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "8kpk7",
+      "text": "row 1 col 1",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "385qu",
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "5tmp8",
+      "text": "row 1 col 2",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "12kj7",
+      "text": " ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "d40gr",
+      "text": "row 2 col 1",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "bs39m",
+      "text": "",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "8blho",
+      "text": "row 2 col 2",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "7k40r",
+      "text": "Code block",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 10,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "6nvgk",
+      "text": ".media .img {",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "18hkq",
+      "text": "margin-right: 10px;",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "b5ank",
+      "text": "}",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "aptgp",
+      "text": "Misc",
+      "type": "header-one",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "3aot8",
+      "text": "· Soft\n line break",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "85nb8",
+      "text": "Character replacements",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 22,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "3o918",
+      "text": "· Double quote “test”",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "egh3j",
+      "text": "· Single quote ‘test’",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "5dmvm",
+      "text": "· Copyright © (( c ))",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "6q4lj",
+      "text": "· Fractions ½ (1 / 2)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "ilu8",
+      "text": "· Arrows à ß (-- >, < --)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "20dnj",
+      "text": "· Ellipsis … (. . .)",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "d7286",
+      "text": "Emojis",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 6,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "6vd51",
+      "text": "😀, 😎, 😇",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "3s67g",
+      "text": "Embeds",
+      "type": "header-one",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "77k3s",
+      "text": "Equation",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 8,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "25vs4",
+      "text": "📷 ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 10
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "4lhfk",
+      "text": "📷Shape",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 1,
+          "length": 5,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 11
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "69nj7",
+      "text": "SmartArt",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 8,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "25bnm",
+      "text": "📷",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 12
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "f6pob",
+      "text": "Chart",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 5,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "73hed",
+      "text": "📷",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [
+        {
+          "offset": 0,
+          "length": 1,
+          "key": 13
+        }
+      ],
+      "data": {}
+    },
+    {
+      "key": "6g0kq",
+      "text": "WordArt",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 7,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "hob0",
+      "text": "          ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "b09d3",
+      "text": "Test",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [
+        {
+          "offset": 0,
+          "length": 4,
+          "style": "BOLD"
+        }
+      ],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "8dmg6",
+      "text": "    ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "3o85s",
+      "text": "[T.C1]Comment",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "bnnoa",
+      "text": " ",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    },
+    {
+      "key": "8tf6d",
+      "text": "[T.C2]Comment",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    }
+  ]
+}
