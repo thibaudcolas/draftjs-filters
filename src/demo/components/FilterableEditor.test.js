@@ -13,11 +13,13 @@ describe("FilterableEditor", () => {
     }
     jest.spyOn(RichUtils, "toggleInlineStyle")
     jest.spyOn(RichUtils, "toggleBlockType")
+    jest.spyOn(RichUtils, "toggleLink")
   })
 
   afterEach(() => {
     RichUtils.toggleInlineStyle.mockRestore()
     RichUtils.toggleBlockType.mockRestore()
+    RichUtils.toggleLink.mockRestore()
   })
 
   it("renders", () => {
@@ -77,5 +79,13 @@ describe("FilterableEditor", () => {
       .toggleBlock("header-two")
 
     expect(RichUtils.toggleBlockType).toHaveBeenCalled()
+  })
+
+  it("toggleEntity", () => {
+    shallow(<FilterableEditor filtered={false} />)
+      .instance()
+      .toggleEntity("LINK")
+
+    expect(RichUtils.toggleLink).toHaveBeenCalled()
   })
 })
