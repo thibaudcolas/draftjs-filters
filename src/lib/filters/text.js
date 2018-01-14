@@ -1,14 +1,13 @@
 // @flow
-import { EditorState } from "draft-js"
+import { ContentState } from "draft-js"
 
 /**
  * Replaces the given characters by their equivalent length of spaces, in all blocks.
  */
 export const whitespaceCharacters = (
-  editorState: EditorState,
+  content: ContentState,
   characters: Array<string>,
 ) => {
-  const content = editorState.getCurrentContent()
   const blockMap = content.getBlockMap()
 
   const blocks = blockMap.map((block) => {
@@ -25,9 +24,7 @@ export const whitespaceCharacters = (
     return text !== newText ? block.set("text", newText) : block
   })
 
-  return EditorState.set(editorState, {
-    currentContent: content.merge({
-      blockMap: blockMap.merge(blocks),
-    }),
+  return content.merge({
+    blockMap: blockMap.merge(blocks),
   })
 }

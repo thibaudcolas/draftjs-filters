@@ -74,6 +74,7 @@ export const filterEditorState = ({
   nextEditorState = resetBlockDepth(nextEditorState, maxListNesting)
   nextEditorState = resetBlockType(nextEditorState, enabledBlockTypes)
   nextEditorState = filterInlineStyle(nextEditorState, inlineStyles)
+  // TODO Bug: should not keep atomic blocks if there is no entity.
   nextEditorState = resetAtomicBlocks(nextEditorState, enabledEntityTypes)
   nextEditorState = filterEntityRanges(
     nextEditorState,
@@ -97,7 +98,10 @@ export const filterEditorState = ({
     filteredCharacters.push("\n")
   }
 
-  nextEditorState = whitespaceCharacters(nextEditorState, filteredCharacters)
+  const content = nextEditorState.getCurrentContent()
+  nextEditorState = EditorState.set(nextEditorState, {
+    currentContent: whitespaceCharacters(content, filteredCharacters),
+  })
 
   return nextEditorState
 }

@@ -1,39 +1,20 @@
-import { EditorState, convertFromRaw } from "draft-js"
+import { convertFromRaw } from "draft-js"
 
 import { whitespaceCharacters } from "./text"
 
 describe("text", () => {
   describe("#whitespaceCharacters", () => {
     it("works", () => {
-      const contentState = convertFromRaw({
+      let content = convertFromRaw({
         entityMap: {},
         blocks: [
           {
-            key: "4qkb1",
-            text: "Soft\nLine break",
+            key: "a",
+            text: "So\nft",
             type: "unstyled",
           },
-        ],
-      })
-      const editorState = whitespaceCharacters(
-        EditorState.createWithContent(contentState),
-        ["\n"],
-      )
-      expect(
-        editorState
-          .getCurrentContent()
-          .getBlockMap()
-          .map((b) => b.getText())
-          .toJS(),
-      ).toEqual({ "4qkb1": "Soft Line break" })
-    })
-
-    it("works with styles", () => {
-      const contentState = convertFromRaw({
-        entityMap: {},
-        blocks: [
           {
-            key: "4qkb1",
+            key: "b",
             text: "So\nft",
             type: "unstyled",
             inlineStyleRanges: [
@@ -46,24 +27,22 @@ describe("text", () => {
           },
         ],
       })
-      const editorState = whitespaceCharacters(
-        EditorState.createWithContent(contentState),
-        ["\n"],
-      )
+      content = whitespaceCharacters(content, ["\n"])
       expect(
-        editorState
-          .getCurrentContent()
+        content
           .getBlockMap()
-          .map((b) => b.getText())
+          .map((b) => ({
+            text: b.getText(),
+            styles: b
+              .getCharacterList()
+              .map((c) => c.getStyle())
+              .toJS(),
+          }))
           .toJS(),
-      ).toEqual({ "4qkb1": "So ft" })
-      expect(
-        editorState
-          .getCurrentContent()
-          .getBlockMap()
-          .map((b) => b.getCharacterList().map((c) => c.getStyle()))
-          .toJS(),
-      ).toEqual({ "4qkb1": [["BOLD"], ["BOLD"], ["BOLD"], [], []] })
+      ).toEqual({
+        a: { text: "So ft", styles: [[], [], [], [], []] },
+        b: { text: "So ft", styles: [["BOLD"], ["BOLD"], ["BOLD"], [], []] },
+      })
     })
   })
 })
