@@ -1,10 +1,5 @@
 // @flow
-import {
-  EditorState,
-  CharacterMetadata,
-  ContentState,
-  ContentBlock,
-} from "draft-js"
+import { CharacterMetadata, ContentState, ContentBlock } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 import { ATOMIC, UNSTYLED, IMAGE } from "../constants"
@@ -14,10 +9,9 @@ import { ATOMIC, UNSTYLED, IMAGE } from "../constants"
  * and also normalises block text to a single "space" character.
  */
 export const resetAtomicBlocks = (
-  editorState: EditorState,
   enabledTypes: Array<string>,
+  content: ContentState,
 ) => {
-  const content = editorState.getCurrentContent()
   const blockMap = content.getBlockMap()
   let blocks = blockMap
 
@@ -72,10 +66,8 @@ export const resetAtomicBlocks = (
     blocks = blocks.merge(resetBlocks)
   }
 
-  return EditorState.set(editorState, {
-    currentContent: content.merge({
-      blockMap: blockMap.merge(blocks),
-    }),
+  return content.merge({
+    blockMap: blockMap.merge(blocks),
   })
 }
 
@@ -83,14 +75,13 @@ export const resetAtomicBlocks = (
  *
  */
 export const filterEntityRanges = (
-  editorState: EditorState,
   filterFn: (
     content: ContentState,
     entityKey: string,
     block: ContentBlock,
   ) => boolean,
+  content: ContentState,
 ) => {
-  const content = editorState.getCurrentContent()
   const blockMap = content.getBlockMap()
 
   /**
@@ -122,10 +113,8 @@ export const filterEntityRanges = (
     return altered ? block.set("characterList", chars) : block
   })
 
-  return EditorState.set(editorState, {
-    currentContent: content.merge({
-      blockMap: blockMap.merge(blocks),
-    }),
+  return content.merge({
+    blockMap: blockMap.merge(blocks),
   })
 }
 

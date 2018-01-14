@@ -16,7 +16,7 @@ import {
 describe("blocks", () => {
   describe("#preserveAtomicBlocks", () => {
     it("works", () => {
-      const contentState = convertFromRaw({
+      const content = convertFromRaw({
         entityMap: {
           "4": {
             type: "IMAGE",
@@ -85,10 +85,7 @@ describe("blocks", () => {
       })
 
       expect(
-        preserveAtomicBlocks(EditorState.createWithContent(contentState), [
-          IMAGE,
-        ])
-          .getCurrentContent()
+        preserveAtomicBlocks([IMAGE], content)
           .getBlockMap()
           .map((b) => b.getType())
           .toJS(),
@@ -102,14 +99,14 @@ describe("blocks", () => {
     })
 
     it("no normalisation = no change", () => {
-      const editorState = EditorState.createEmpty()
-      expect(preserveAtomicBlocks(editorState, [])).toBe(editorState)
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(preserveAtomicBlocks([], content)).toBe(content)
     })
   })
 
   describe("#removeInvalidDepthBlocks", () => {
     it("normalises depth to a given number", () => {
-      const contentState = convertFromRaw({
+      const content = convertFromRaw({
         entityMap: {},
         blocks: [
           {
@@ -132,12 +129,9 @@ describe("blocks", () => {
           },
         ],
       })
-      const editorState = removeInvalidDepthBlocks(
-        EditorState.createWithContent(contentState),
-      )
+
       expect(
-        editorState
-          .getCurrentContent()
+        removeInvalidDepthBlocks(content)
           .getBlockMap()
           .map((block) => block.getDepth())
           .toJS(),
@@ -145,14 +139,14 @@ describe("blocks", () => {
     })
 
     it("no normalisation = no change", () => {
-      const editorState = EditorState.createEmpty()
-      expect(removeInvalidDepthBlocks(editorState)).toBe(editorState)
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(removeInvalidDepthBlocks(content)).toBe(content)
     })
   })
 
   describe("#resetBlockDepth", () => {
     it("normalises depth to a given number", () => {
-      const contentState = convertFromRaw({
+      const content = convertFromRaw({
         entityMap: {},
         blocks: [
           {
@@ -175,13 +169,8 @@ describe("blocks", () => {
           },
         ],
       })
-      const editorState = resetBlockDepth(
-        EditorState.createWithContent(contentState),
-        1,
-      )
       expect(
-        editorState
-          .getCurrentContent()
+        resetBlockDepth(1, content)
           .getBlockMap()
           .map((block) => block.getDepth())
           .toJS(),
@@ -189,14 +178,14 @@ describe("blocks", () => {
     })
 
     it("no normalisation = no change", () => {
-      const editorState = EditorState.createEmpty()
-      expect(resetBlockDepth(editorState, 1)).toBe(editorState)
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(resetBlockDepth(1, content)).toBe(content)
     })
   })
 
   describe("#resetBlockType", () => {
     it("works", () => {
-      const contentState = convertFromRaw({
+      const content = convertFromRaw({
         entityMap: {},
         blocks: [
           {
@@ -215,13 +204,9 @@ describe("blocks", () => {
           },
         ],
       })
-      const editorState = resetBlockType(
-        EditorState.createWithContent(contentState),
-        ["unordered-list-item"],
-      )
+
       expect(
-        editorState
-          .getCurrentContent()
+        resetBlockType(["unordered-list-item"], content)
           .getBlockMap()
           .map((block) => block.getType())
           .toJS(),
@@ -233,8 +218,8 @@ describe("blocks", () => {
     })
 
     it("no normalisation = no change", () => {
-      const editorState = EditorState.createEmpty()
-      expect(resetBlockType(editorState, [UNSTYLED])).toBe(editorState)
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(resetBlockType([UNSTYLED], content)).toBe(content)
     })
   })
 })

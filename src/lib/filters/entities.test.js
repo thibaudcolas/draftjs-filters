@@ -1,6 +1,6 @@
 import { EditorState, convertFromRaw } from "draft-js"
 
-import { IMAGE, HORIZONTAL_RULE } from "../constants"
+import { IMAGE } from "../constants"
 import {
   resetAtomicBlocks,
   filterEntityRanges,
@@ -13,7 +13,7 @@ import {
 describe("entities", () => {
   describe("#resetAtomicBlocks", () => {
     it("works", () => {
-      const contentState = convertFromRaw({
+      const content = convertFromRaw({
         entityMap: {
           "4": {
             type: "IMAGE",
@@ -81,8 +81,7 @@ describe("entities", () => {
       })
 
       expect(
-        resetAtomicBlocks(EditorState.createWithContent(contentState), [IMAGE])
-          .getCurrentContent()
+        resetAtomicBlocks([IMAGE], content)
           .getBlockMap()
           .map((b) => ({
             text: b.getText(),
@@ -98,11 +97,16 @@ describe("entities", () => {
         d: { text: " ", type: "atomic", style: 0 },
       })
     })
+
+    it("no filtering = no change", () => {
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(resetAtomicBlocks([], content)).toBe(content)
+    })
   })
 
   describe("#filterEntityRanges", () => {
     it("works", () => {
-      const contentState = convertFromRaw({
+      let content = convertFromRaw({
         entityMap: {
           "0": {
             type: "LINK",
@@ -174,22 +178,20 @@ describe("entities", () => {
         ],
       })
 
+      content = filterEntityRanges((content, entityKey, block) => {
+        const entityType = content.getEntity(entityKey).getType()
+        return ["IMAGE", "LINK"].includes(entityType)
+      }, content)
+
       expect(
-        filterEntityRanges(
-          EditorState.createWithContent(contentState),
-          (content, entityKey, block) => {
-            const entityType = content.getEntity(entityKey).getType()
-            return ["IMAGE", "LINK"].includes(entityType)
-          },
-        )
-          .getCurrentContent()
+        content
           .getBlockMap()
           .map((b) => {
             return b
               .getCharacterList()
               .map((c) => c.getEntity())
               .map((e) => {
-                return e ? contentState.getEntity(e).getType() : null
+                return e ? content.getEntity(e).getType() : null
               })
           })
           .toJS(),
@@ -198,6 +200,11 @@ describe("entities", () => {
         b: ["IMAGE"],
         c: ["LINK", "LINK", null, null],
       })
+    })
+
+    it("no filtering = no change", () => {
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(filterEntityRanges(() => true, content)).toBe(content)
     })
   })
 

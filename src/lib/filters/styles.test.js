@@ -5,7 +5,7 @@ import { filterInlineStyle } from "./styles"
 describe("styles", () => {
   describe("#filterInlineStyle", () => {
     it("works", () => {
-      const contentState = convertFromRaw({
+      const content = convertFromRaw({
         entityMap: {},
         blocks: [
           {
@@ -36,17 +36,17 @@ describe("styles", () => {
           },
         ],
       })
-      const editorState = filterInlineStyle(
-        EditorState.createWithContent(contentState),
-        ["BOLD"],
-      )
       expect(
-        editorState
-          .getCurrentContent()
+        filterInlineStyle(["BOLD"], content)
           .getBlockMap()
           .map((b) => b.getCharacterList().map((c) => c.getStyle()))
           .toJS(),
       ).toEqual({ a: [["BOLD"], [], ["BOLD"]] })
+    })
+
+    it("no filtering = no change", () => {
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(filterInlineStyle([], content)).toBe(content)
     })
   })
 })

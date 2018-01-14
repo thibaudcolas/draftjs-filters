@@ -1,5 +1,5 @@
 // @flow
-import { EditorState } from "draft-js"
+import { ContentState } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 import {
@@ -16,10 +16,9 @@ import {
  * injects on arbitrary blocks on paste.
  */
 export const preserveAtomicBlocks = (
-  editorState: EditorState,
   entityTypes: Array<string>,
+  content: ContentState,
 ) => {
-  const content = editorState.getCurrentContent()
   const blockMap = content.getBlockMap()
 
   const perservedBlocks = blockMap
@@ -38,22 +37,19 @@ export const preserveAtomicBlocks = (
     .map((block) => block.set("type", ATOMIC))
 
   if (perservedBlocks.size !== 0) {
-    return EditorState.set(editorState, {
-      currentContent: content.merge({
-        blockMap: blockMap.merge(perservedBlocks),
-      }),
+    return content.merge({
+      blockMap: blockMap.merge(perservedBlocks),
     })
   }
 
-  return editorState
+  return content
 }
 
 /**
  * Removes blocks that have a non-zero depth, and aren't list items.
  * Happens with Apple Pages inserting `unstyled` items between list items.
  */
-export const removeInvalidDepthBlocks = (editorState: EditorState) => {
-  const content = editorState.getCurrentContent()
+export const removeInvalidDepthBlocks = (content: ContentState) => {
   const blockMap = content.getBlockMap()
 
   const isValidDepthBlock = (block) => {
@@ -67,62 +63,47 @@ export const removeInvalidDepthBlocks = (editorState: EditorState) => {
   const filteredBlocks = blockMap.filter(isValidDepthBlock)
 
   if (filteredBlocks.size !== blockMap.size) {
-    return EditorState.set(editorState, {
-      currentContent: content.merge({
-        blockMap: filteredBlocks,
-      }),
+    return content.merge({
+      blockMap: filteredBlocks,
     })
   }
 
-  return editorState
+  return content
 }
 
 /**
  * Resets the depth of all the content to at most maxNesting.
  */
-export const resetBlockDepth = (
-  editorState: EditorState,
-  maxNesting: number,
-) => {
-  const content = editorState.getCurrentContent()
+export const resetBlockDepth = (maxNesting: number, content: ContentState) => {
   const blockMap = content.getBlockMap()
 
   const changedBlocks = blockMap
     .filter((block) => block.getDepth() > maxNesting)
     .map((block) => block.set("depth", maxNesting))
 
-  if (changedBlocks.size !== 0) {
-    return EditorState.set(editorState, {
-      currentContent: content.merge({
+  return changedBlocks.size === 0
+    ? content
+    : content.merge({
         blockMap: blockMap.merge(changedBlocks),
-      }),
-    })
-  }
-
-  return editorState
+      })
 }
 
 /**
  * Resets all blocks that use unavailable types to unstyled.
  */
 export const resetBlockType = (
-  editorState: EditorState,
   enabledTypes: Array<DraftBlockType>,
+  content: ContentState,
 ) => {
-  const content = editorState.getCurrentContent()
   const blockMap = content.getBlockMap()
 
   const changedBlocks = blockMap
     .filter((block) => !enabledTypes.includes(block.getType()))
     .map((block) => block.set("type", UNSTYLED))
 
-  if (changedBlocks.size !== 0) {
-    return EditorState.set(editorState, {
-      currentContent: content.merge({
+  return changedBlocks.size === 0
+    ? content
+    : content.merge({
         blockMap: blockMap.merge(changedBlocks),
-      }),
-    })
-  }
-
-  return editorState
+      })
 }
