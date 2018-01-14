@@ -20,14 +20,12 @@ describe("blocks", () => {
         entityMap: {
           "4": {
             type: "IMAGE",
-            mutability: "IMMUTABLE",
             data: {
               src: "../static/example-lowres-image.jpg",
             },
           },
           "5": {
             type: "EMBED",
-            mutability: "IMMUTABLE",
             data: {
               url: "http://www.youtube.com/watch?v=y8Kyi0WNg40",
             },
@@ -35,11 +33,8 @@ describe("blocks", () => {
         },
         blocks: [
           {
-            key: "d3071",
+            key: "a",
             text: " ",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -47,14 +42,10 @@ describe("blocks", () => {
                 key: 4,
               },
             ],
-            data: {},
           },
           {
-            key: "d3072",
+            key: "b",
             text: "📷",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -62,14 +53,10 @@ describe("blocks", () => {
                 key: 4,
               },
             ],
-            data: {},
           },
           {
-            key: "affm4",
+            key: "c",
             text: " ",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -77,23 +64,15 @@ describe("blocks", () => {
                 key: 5,
               },
             ],
-            data: {},
           },
           {
-            key: "abbm4",
+            key: "d",
             text: " ",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [],
-            data: {},
           },
           {
-            key: "umi67",
+            key: "e",
             text: "📷 Star list",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -101,7 +80,6 @@ describe("blocks", () => {
                 key: 4,
               },
             ],
-            data: {},
           },
         ],
       })
@@ -115,46 +93,16 @@ describe("blocks", () => {
           .map((b) => b.getType())
           .toJS(),
       ).toEqual({
-        d3071: "atomic",
-        d3072: "atomic",
-        affm4: "unstyled",
-        abbm4: "unstyled",
-        umi67: "unstyled",
+        a: "atomic",
+        b: "atomic",
+        c: "unstyled",
+        d: "unstyled",
+        e: "unstyled",
       })
     })
 
     it("no normalisation = no change", () => {
-      const contentState = convertFromRaw({
-        entityMap: {
-          "4": {
-            type: "IMAGE",
-            mutability: "IMMUTABLE",
-            data: {
-              src: "../static/example-lowres-image.jpg",
-            },
-          },
-        },
-        blocks: [
-          {
-            key: "d3071",
-            text: " ",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [
-              {
-                offset: 0,
-                length: 1,
-                key: 4,
-              },
-            ],
-            data: {},
-          },
-        ],
-      })
-
-      const editorState = EditorState.createWithContent(contentState)
-
+      const editorState = EditorState.createEmpty()
       expect(preserveAtomicBlocks(editorState, [])).toBe(editorState)
     })
   })
@@ -165,20 +113,20 @@ describe("blocks", () => {
         entityMap: {},
         blocks: [
           {
-            key: "d3071",
-            text: "Depth 0",
+            key: "a",
+            text: "0",
             type: "ordered-list-item",
             depth: 0,
           },
           {
-            key: "affm4",
-            text: "Depth 1",
+            key: "b",
+            text: "1",
             type: "unstyled",
             depth: 1,
           },
           {
-            key: "abbm4",
-            text: "Depth 2",
+            key: "c",
+            text: "2",
             type: "unordered-list-item",
             depth: 2,
           },
@@ -193,15 +141,11 @@ describe("blocks", () => {
           .getBlockMap()
           .map((block) => block.getDepth())
           .toJS(),
-      ).toEqual({ abbm4: 2, d3071: 0 })
+      ).toEqual({ a: 0, c: 2 })
     })
 
     it("no normalisation = no change", () => {
-      const editorState = EditorState.createWithContent(
-        ContentState.createFromBlockArray(
-          convertFromHTML(`<ul><li>Depth 0</li></ul>`),
-        ),
-      )
+      const editorState = EditorState.createEmpty()
       expect(removeInvalidDepthBlocks(editorState)).toBe(editorState)
     })
   })
@@ -212,31 +156,22 @@ describe("blocks", () => {
         entityMap: {},
         blocks: [
           {
-            key: "d3071",
-            text: "Depth 0",
+            key: "a",
+            text: "0",
             type: "unordered-list-item",
             depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
           },
           {
-            key: "affm4",
-            text: "Depth 1",
+            key: "b",
+            text: "1",
             type: "unordered-list-item",
             depth: 1,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
           },
           {
-            key: "abbm4",
-            text: "Depth 2",
+            key: "c",
+            text: "2",
             type: "unordered-list-item",
             depth: 2,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
           },
         ],
       })
@@ -250,15 +185,11 @@ describe("blocks", () => {
           .getBlockMap()
           .map((block) => block.getDepth())
           .toJS(),
-      ).toEqual({ abbm4: 1, affm4: 1, d3071: 0 })
+      ).toEqual({ a: 0, b: 1, c: 1 })
     })
 
     it("no normalisation = no change", () => {
-      const editorState = EditorState.createWithContent(
-        ContentState.createFromBlockArray(
-          convertFromHTML(`<ul><li>Depth 0</li></ul>`),
-        ),
-      )
+      const editorState = EditorState.createEmpty()
       expect(resetBlockDepth(editorState, 1)).toBe(editorState)
     })
   })
@@ -269,49 +200,23 @@ describe("blocks", () => {
         entityMap: {},
         blocks: [
           {
-            key: "d3071",
+            key: "a",
             text: "P",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
           },
           {
-            key: "affm4",
+            key: "b",
             text: "UL",
             type: "unordered-list-item",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
           },
           {
-            key: "abbm1",
+            key: "c",
             text: "H1",
             type: "header-one",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
           },
           {
-            key: "abbm4",
+            key: "d",
             text: "H2",
             type: "header-two",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
-          },
-          {
-            key: "abbm8",
-            text: "H3",
-            type: "header-three",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
           },
         ],
       })
@@ -326,27 +231,16 @@ describe("blocks", () => {
           .map((block) => block.getType())
           .toJS(),
       ).toEqual({
-        abbm1: "unstyled",
-        abbm4: "header-two",
-        abbm8: "unstyled",
-        affm4: "unordered-list-item",
-        d3071: "unstyled",
+        a: "unstyled",
+        b: "unordered-list-item",
+        c: "unstyled",
+        d: "header-two",
       })
     })
 
     it("no normalisation = no change", () => {
-      const editorState = EditorState.createWithContent(
-        ContentState.createFromBlockArray(
-          convertFromHTML(`<ul><li>UL</li></ul><p>P</p><h2>H2</h2>`),
-        ),
-      )
-      expect(
-        resetBlockType(editorState, [
-          UNSTYLED,
-          "unordered-list-item",
-          "header-two",
-        ]),
-      ).toBe(editorState)
+      const editorState = EditorState.createEmpty()
+      expect(resetBlockType(editorState, [UNSTYLED])).toBe(editorState)
     })
   })
 })
