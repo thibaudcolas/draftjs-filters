@@ -1,7 +1,6 @@
 import { EditorState, convertFromRaw } from "draft-js"
 
 import {
-  filterAtomicBlocks,
   filterEntityRanges,
   filterEntityData,
   shouldKeepEntityType,
@@ -10,99 +9,6 @@ import {
 } from "./entities"
 
 describe("entities", () => {
-  describe("#filterAtomicBlocks", () => {
-    it("works", () => {
-      const content = convertFromRaw({
-        entityMap: {
-          "4": {
-            type: "IMAGE",
-            data: {
-              src: "/example.png",
-            },
-          },
-          "5": {
-            type: "EMBED",
-            data: {
-              url: "http://www.youtube.com/watch?v=y8Kyi0WNg40",
-            },
-          },
-        },
-        blocks: [
-          {
-            key: "a",
-            text: "📷",
-            type: "atomic",
-            entityRanges: [
-              {
-                offset: 0,
-                length: 1,
-                key: 4,
-              },
-            ],
-          },
-          {
-            key: "b",
-            text: " ",
-            type: "atomic",
-            entityRanges: [
-              {
-                offset: 0,
-                length: 1,
-                key: 4,
-              },
-            ],
-            inlineStyleRanges: [
-              {
-                offset: 0,
-                length: 1,
-                style: "BOLD",
-              },
-            ],
-          },
-          {
-            key: "c",
-            text: " ",
-            type: "atomic",
-            entityRanges: [
-              {
-                offset: 0,
-                length: 1,
-                key: 5,
-              },
-            ],
-          },
-          {
-            key: "d",
-            text: " ",
-            type: "atomic",
-          },
-        ],
-      })
-
-      expect(
-        filterAtomicBlocks([{ type: "IMAGE" }], content)
-          .getBlockMap()
-          .map((b) => ({
-            text: b.getText(),
-            type: b.getType(),
-            style: b.getInlineStyleAt(0).size,
-          }))
-          .toJS(),
-      ).toEqual({
-        a: { text: " ", type: "atomic", style: 0 },
-        b: { text: " ", type: "atomic", style: 0 },
-        c: { text: " ", type: "unstyled", style: 0 },
-        // TODO bug?
-        d: { text: " ", type: "atomic", style: 0 },
-      })
-    })
-
-    it("no filtering = no change", () => {
-      const content = EditorState.createEmpty().getCurrentContent()
-      expect(filterAtomicBlocks([], content)).toBe(content)
-    })
-  })
-
   describe("#filterEntityRanges", () => {
     it("works", () => {
       let content = convertFromRaw({

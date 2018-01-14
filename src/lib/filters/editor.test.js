@@ -138,7 +138,7 @@ const filterInlineStyles = [
   },
 ]
 
-const filterAtomicBlocksEntities = {
+const resetAtomicBlocksEntities = {
   "1": {
     type: "IMAGE",
     data: {
@@ -153,7 +153,7 @@ const filterAtomicBlocksEntities = {
   },
 }
 
-const filterAtomicBlocks = [
+const resetAtomicBlocks = [
   {
     key: "o",
     text: "📷",
@@ -185,6 +185,9 @@ const filterAtomicBlocks = [
       },
     ],
   },
+]
+
+const removeInvalidAtomicBlocks = [
   {
     key: "q",
     text: " ",
@@ -197,7 +200,6 @@ const filterAtomicBlocks = [
       },
     ],
   },
-  // TODO bug?
   {
     key: "r",
     text: " ",
@@ -239,7 +241,6 @@ const filterEntityRangesEntities = {
 }
 
 const filterEntityRanges = [
-  // TODO Bug? Should drop the block if entity type is unsupported.
   {
     key: "s",
     text: " ",
@@ -293,7 +294,6 @@ const filterEntityRanges = [
       },
     ],
   },
-  // TODO Should remove atomic block coming from filtered-out entity.
   {
     key: "w",
     text: " ",
@@ -360,7 +360,7 @@ describe("editor", () => {
         entityMap: Object.assign(
           {},
           preserveAtomicBlocksEntities,
-          filterAtomicBlocksEntities,
+          resetAtomicBlocksEntities,
           filterEntityRangesEntities,
           filterEntityDataEntities,
         ),
@@ -370,8 +370,8 @@ describe("editor", () => {
           ...limitBlockDepth,
           ...filterBlockTypes,
           ...filterInlineStyles,
-          ...filterAtomicBlocks,
-          ...filterAtomicBlocks,
+          ...resetAtomicBlocks,
+          ...removeInvalidAtomicBlocks,
           ...filterEntityRanges,
           ...filterEntityData,
           ...replaceTextBySpaces,
@@ -427,8 +427,8 @@ describe("editor", () => {
             whitespacedCharacters: [],
           },
           editorState,
-        ),
-      ).toBe(editorState)
+        ) === editorState,
+      ).toBe(true)
     })
   })
 })

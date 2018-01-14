@@ -2,48 +2,7 @@
 import { ContentState } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
-import {
-  ATOMIC,
-  UNSTYLED,
-  UNORDERED_LIST_ITEM,
-  ORDERED_LIST_ITEM,
-} from "../constants"
-
-/**
- * Creates atomic blocks where they would be required for a block-level entity
- * to work correctly, when such an entity exists.
- * Note: at the moment, this is only useful for IMAGE entities that Draft.js
- * injects on arbitrary blocks on paste.
- */
-export const preserveAtomicBlocks = (
-  whitelist: Array<string>,
-  content: ContentState,
-) => {
-  const blockMap = content.getBlockMap()
-
-  const perservedBlocks = blockMap
-    .filter((block) => {
-      const entityKey = block.getEntityAt(0)
-      // Use the ES6 way of counting string length to account for unicode symbols.
-      // See https://mathiasbynens.be/notes/javascript-unicode.
-      const isSingleSymbol = Array.from(block.getText()).length === 1
-
-      return (
-        entityKey &&
-        isSingleSymbol &&
-        whitelist.includes(content.getEntity(entityKey).getType())
-      )
-    })
-    .map((block) => block.set("type", ATOMIC))
-
-  if (perservedBlocks.size !== 0) {
-    return content.merge({
-      blockMap: blockMap.merge(perservedBlocks),
-    })
-  }
-
-  return content
-}
+import { UNSTYLED, UNORDERED_LIST_ITEM, ORDERED_LIST_ITEM } from "../constants"
 
 /**
  * Removes blocks that have a non-zero depth, and aren't list items.

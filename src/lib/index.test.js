@@ -1,10 +1,11 @@
 import {
   preserveAtomicBlocks,
+  resetAtomicBlocks,
+  removeInvalidAtomicBlocks,
   removeInvalidDepthBlocks,
   limitBlockDepth,
   filterBlockTypes,
   filterInlineStyles,
-  filterAtomicBlocks,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
@@ -20,12 +21,14 @@ const pkg = require("../../package.json")
  */
 describe(pkg.name, () => {
   it("preserveAtomicBlocks", () => expect(preserveAtomicBlocks).toBeDefined())
+  it("resetAtomicBlocks", () => expect(resetAtomicBlocks).toBeDefined())
+  it("removeInvalidAtomicBlocks", () =>
+    expect(removeInvalidAtomicBlocks).toBeDefined())
   it("removeInvalidDepthBlocks", () =>
     expect(removeInvalidDepthBlocks).toBeDefined())
   it("limitBlockDepth", () => expect(limitBlockDepth).toBeDefined())
   it("filterBlockTypes", () => expect(filterBlockTypes).toBeDefined())
   it("filterInlineStyles", () => expect(filterInlineStyles).toBeDefined())
-  it("filterAtomicBlocks", () => expect(filterAtomicBlocks).toBeDefined())
   it("filterEntityRanges", () => expect(filterEntityRanges).toBeDefined())
   it("shouldKeepEntityType", () => expect(shouldKeepEntityType).toBeDefined())
   it("shouldRemoveImageEntity", () =>

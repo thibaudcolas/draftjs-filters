@@ -176,33 +176,6 @@ Object {
     Object {
       "data": Object {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
-      "key": "q",
-      "text": " ",
-      "type": "unstyled",
-    },
-    Object {
-      "data": Object {},
-      "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
-      "key": "r",
-      "text": " ",
-      "type": "atomic",
-    },
-    Object {
-      "data": Object {},
-      "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
-      "key": "s",
-      "text": " ",
-      "type": "unstyled",
-    },
-    Object {
-      "data": Object {},
-      "depth": 0,
       "entityRanges": Array [
         Object {
           "key": 2,
@@ -238,15 +211,6 @@ Object {
       "key": "v",
       "text": "shouldRemoveImageEntity ",
       "type": "unstyled",
-    },
-    Object {
-      "data": Object {},
-      "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
-      "key": "w",
-      "text": " ",
-      "type": "atomic",
     },
     Object {
       "data": Object {},

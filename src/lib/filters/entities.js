@@ -2,74 +2,7 @@
 import { CharacterMetadata, ContentState, ContentBlock } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
-import { ATOMIC, UNSTYLED, IMAGE } from "../constants"
-
-/**
- * Resets atomic blocks to unstyled based on which entity types are enabled,
- * and also normalises block text to a single "space" character.
- */
-export const filterAtomicBlocks = (
-  whitelist: Array<Object>,
-  content: ContentState,
-) => {
-  const blockMap = content.getBlockMap()
-  let blocks = blockMap
-
-  const normalisedBlocks = blocks
-    .filter(
-      (block) =>
-        block.getType() === ATOMIC &&
-        (block.getText() !== " " || block.getInlineStyleAt(0).size !== 0),
-    )
-    .map((block) => {
-      // Retain only the first character, and remove all of its styles.
-      const chars = block
-        .getCharacterList()
-        .slice(0, 1)
-        .map((char) => {
-          let newChar = char
-
-          char.getStyle().forEach((type) => {
-            newChar = CharacterMetadata.removeStyle(newChar, type)
-          })
-
-          return newChar
-        })
-
-      return block.merge({
-        text: " ",
-        characterList: chars,
-      })
-    })
-
-  if (normalisedBlocks.size !== 0) {
-    blocks = blocks.merge(normalisedBlocks)
-  }
-
-  const resetBlocks = blocks
-    .filter((block) => block.getType() === ATOMIC)
-    .filter((block) => {
-      const entityKey = block.getEntityAt(0)
-      let shouldReset = false
-
-      if (entityKey) {
-        const type = content.getEntity(entityKey).getType()
-
-        shouldReset = !whitelist.some((t) => t.type === type)
-      }
-
-      return shouldReset
-    })
-    .map((block) => block.set("type", UNSTYLED))
-
-  if (resetBlocks.size !== 0) {
-    blocks = blocks.merge(resetBlocks)
-  }
-
-  return content.merge({
-    blockMap: blockMap.merge(blocks),
-  })
-}
+import { ATOMIC, IMAGE } from "../constants"
 
 /**
  * Filters entity ranges (where entities are applied on text) based on the result of

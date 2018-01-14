@@ -95,6 +95,14 @@ whitespacedCharacters: Array<string>,
  */
 preserveAtomicBlocks((whitelist: Array<string>), (content: ContentState))
 /**
+ * Resets atomic blocks to have a single-space char and no styles.
+ */
+resetAtomicBlocks((content: ContentState))
+/**
+ * Removes atomic blocks for which the entity isn't whitelisted.
+ */
+removeInvalidAtomicBlocks((whitelist: Array<Object>), (content: ContentState))
+/**
  * Removes blocks that have a non-zero depth, and aren't list items.
  * Happens with Apple Pages inserting `unstyled` items between list items.
  */
@@ -111,11 +119,6 @@ filterBlockTypes((whitelist: Array<DraftBlockType>), (content: ContentState))
  * Removes all styles not present in the whitelist.
  */
 filterInlineStyles((whitelist: Array<string>), (content: ContentState))
-/**
- * Resets atomic blocks to unstyled based on which entity types are enabled,
- * and also normalises block text to a single "space" character.
- */
-filterAtomicBlocks((whitelist: Array<Object>), (content: ContentState))
 /**
  * Filters entity ranges (where entities are applied on text) based on the result of
  * the callback function. Returning true keeps the entity range, false removes it.
