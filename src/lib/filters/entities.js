@@ -168,7 +168,7 @@ export const shouldKeepEntityByAttribute = (
 /**
  * Filters attributes on an entity to only retain the ones whitelisted.
  */
-export const filterEntityAttributes = (
+export const filterEntityData = (
   entityTypes: Array<Object>,
   content: ContentState,
 ) => {

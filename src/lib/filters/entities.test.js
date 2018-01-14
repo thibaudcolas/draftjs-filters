@@ -3,7 +3,7 @@ import { EditorState, convertFromRaw } from "draft-js"
 import {
   filterAtomicBlocks,
   filterEntityRanges,
-  filterEntityAttributes,
+  filterEntityData,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
   shouldKeepEntityByAttribute,
@@ -349,7 +349,7 @@ describe("entities", () => {
     })
   })
 
-  describe("#filterEntityAttributes", () => {
+  describe("#filterEntityData", () => {
     it("works", () => {
       let content = convertFromRaw({
         entityMap: {
@@ -415,7 +415,7 @@ describe("entities", () => {
         ],
       })
 
-      content = filterEntityAttributes(
+      content = filterEntityData(
         [
           {
             type: "IMAGE",
@@ -454,7 +454,7 @@ describe("entities", () => {
 
     it("no filtering = no change", () => {
       const content = EditorState.createEmpty().getCurrentContent()
-      expect(filterEntityAttributes([], content)).toBe(content)
+      expect(filterEntityData([], content)).toBe(content)
     })
 
     describe("defaults", () => {
@@ -483,7 +483,7 @@ describe("entities", () => {
           ],
         })
 
-        content = filterEntityAttributes(
+        content = filterEntityData(
           [
             {
               type: "TEST",
@@ -532,7 +532,7 @@ describe("entities", () => {
           ],
         })
 
-        content = filterEntityAttributes(
+        content = filterEntityData(
           [
             {
               type: "LINK",

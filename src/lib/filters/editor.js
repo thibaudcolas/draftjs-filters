@@ -12,7 +12,7 @@ import {
 import { filterInlineStyles } from "./styles"
 import {
   filterAtomicBlocks,
-  filterEntityAttributes,
+  filterEntityData,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
@@ -70,7 +70,7 @@ export const filterEditorState = (
     // TODO Bug: should not keep atomic blocks if there is no entity.
     filterAtomicBlocks.bind(null, entities),
     filterEntityRanges.bind(null, shouldKeepEntityRange),
-    filterEntityAttributes.bind(null, entities),
+    filterEntityData.bind(null, entities),
     replaceTextBySpaces.bind(null, whitespacedCharacters),
   ]
 
