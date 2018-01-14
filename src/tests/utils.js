@@ -9,7 +9,6 @@ expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
 const config = {
   maxNesting: 4,
   blocks: [
-    "unstyled",
     "header-two",
     "header-three",
     "header-four",

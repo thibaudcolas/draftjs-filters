@@ -144,6 +144,9 @@ export const shouldRemoveImageEntity = (
   return entityType === IMAGE && blockType !== ATOMIC
 }
 
+/**
+ * Filters entities based on the data they contain.
+ */
 export const shouldKeepEntityByAttribute = (
   entityTypes: Array<Object>,
   entityType: string,
@@ -166,7 +169,7 @@ export const shouldKeepEntityByAttribute = (
 }
 
 /**
- * Filters attributes on an entity to only retain the ones whitelisted.
+ * Filters data on an entity to only retain what is whitelisted.
  */
 export const filterEntityData = (
   entityTypes: Array<Object>,

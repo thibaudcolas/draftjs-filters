@@ -17,7 +17,6 @@ export const linkStrategy = (
     const entityKey = character.getEntity()
     return (
       entityKey !== null &&
-      // $FlowFixMe
       contentState.getEntity(entityKey).getType() === "LINK"
     )
   }, callback)

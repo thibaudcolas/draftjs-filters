@@ -20,14 +20,25 @@ import {
 } from "./entities"
 import { replaceTextBySpaces } from "./text"
 
-type EntityTypes = Array<Object>
-
 type FilterOptions = {
+  // Maximum amount of depth for lists (0 = no nesting).
   maxNesting: number,
+  // Whitelist of allowed block types. unstyled and atomic are always included.
   blocks: Array<DraftBlockType>,
+  // Whitelist of allowed inline styles.
   styles: Array<string>,
-  entities: EntityTypes,
+  // Whitelist of allowed entities.
+  entities: Array<{
+    // Entity type, eg. "LINK"
+    type: string,
+    // Allowed attributes. Other attributes will be removed.
+    attributes: Array<string>,
+    // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
+    whitelist: Object,
+  }>,
+  // Whitelist of allowed block-level entities (in atomic blocks)
   blockEntities: Array<string>,
+  // Characters to replace with whitespace.
   whitespacedCharacters: Array<string>,
 }
 
