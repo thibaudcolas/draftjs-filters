@@ -42,10 +42,11 @@ const ENTITY_TYPES = [
 ]
 
 const FILTER_CONFIG = {
-  maxListNesting: 1,
-  blockTypes: Object.keys(BLOCK_TYPES),
-  inlineStyles: Object.keys(INLINE_STYLES),
+  maxNesting: 1,
+  blocks: Object.keys(BLOCK_TYPES),
+  styles: Object.keys(INLINE_STYLES),
   entityTypes: ENTITY_TYPES,
+  blockEntities: [],
   whitespacedCharacters: ["\n", "\t"],
 }
 

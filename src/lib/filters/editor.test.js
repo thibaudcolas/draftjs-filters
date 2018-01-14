@@ -71,7 +71,7 @@ const removeInvalidDepthBlocks = [
   },
 ]
 
-const resetBlockDepth = [
+const limitBlockDepth = [
   {
     key: "h",
     text: "0",
@@ -92,7 +92,7 @@ const resetBlockDepth = [
   },
 ]
 
-const resetBlockType = [
+const filterBlockTypes = [
   {
     key: "k",
     text: "P",
@@ -109,7 +109,7 @@ const resetBlockType = [
   },
 ]
 
-const filterInlineStyle = [
+const filterInlineStyles = [
   {
     key: "n",
     text: "tes",
@@ -138,7 +138,7 @@ const filterInlineStyle = [
   },
 ]
 
-const resetAtomicBlocksEntities = {
+const filterAtomicBlocksEntities = {
   "1": {
     type: "IMAGE",
     data: {
@@ -153,7 +153,7 @@ const resetAtomicBlocksEntities = {
   },
 }
 
-const resetAtomicBlocks = [
+const filterAtomicBlocks = [
   {
     key: "o",
     text: "📷",
@@ -360,18 +360,18 @@ describe("editor", () => {
         entityMap: Object.assign(
           {},
           preserveAtomicBlocksEntities,
-          resetAtomicBlocksEntities,
+          filterAtomicBlocksEntities,
           filterEntityRangesEntities,
           filterEntityAttributesEntities,
         ),
         blocks: [
           ...preserveAtomicBlocks,
           ...removeInvalidDepthBlocks,
-          ...resetBlockDepth,
-          ...resetBlockType,
-          ...filterInlineStyle,
-          ...resetAtomicBlocks,
-          ...resetAtomicBlocks,
+          ...limitBlockDepth,
+          ...filterBlockTypes,
+          ...filterInlineStyles,
+          ...filterAtomicBlocks,
+          ...filterAtomicBlocks,
           ...filterEntityRanges,
           ...filterEntityAttributes,
           ...replaceTextBySpaces,
@@ -382,8 +382,8 @@ describe("editor", () => {
         convertToRaw(
           filterEditorState(
             {
-              maxListNesting: 1,
-              blockTypes: [
+              maxNesting: 1,
+              blocks: [
                 "unstyled",
                 "header-two",
                 "header-three",
@@ -391,7 +391,7 @@ describe("editor", () => {
                 "unordered-list-item",
                 "ordered-list-item",
               ],
-              inlineStyles: ["BOLD"],
+              styles: ["BOLD"],
               entityTypes: [
                 {
                   type: "IMAGE",
@@ -406,6 +406,7 @@ describe("editor", () => {
                   whitelist: {},
                 },
               ],
+              blockEntities: ["IMAGE"],
               whitespacedCharacters: ["\n", "\t"],
             },
             editorState,
@@ -419,10 +420,11 @@ describe("editor", () => {
       expect(
         filterEditorState(
           {
-            maxListNesting: 1,
-            blockTypes: [],
-            inlineStyles: [],
+            maxNesting: 1,
+            blocks: [],
+            styles: [],
             entityTypes: [],
+            blockEntities: [],
             whitespacedCharacters: [],
           },
           editorState,

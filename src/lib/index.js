@@ -2,12 +2,12 @@
 import {
   preserveAtomicBlocks,
   removeInvalidDepthBlocks,
-  resetBlockDepth,
-  resetBlockType,
+  limitBlockDepth,
+  filterBlockTypes,
 } from "./filters/blocks"
-import { filterInlineStyle } from "./filters/styles"
+import { filterInlineStyles } from "./filters/styles"
 import {
-  resetAtomicBlocks,
+  filterAtomicBlocks,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
@@ -19,10 +19,10 @@ import { filterEditorState } from "./filters/editor"
 export {
   preserveAtomicBlocks,
   removeInvalidDepthBlocks,
-  resetBlockDepth,
-  resetBlockType,
-  filterInlineStyle,
-  resetAtomicBlocks,
+  limitBlockDepth,
+  filterBlockTypes,
+  filterInlineStyles,
+  filterAtomicBlocks,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,

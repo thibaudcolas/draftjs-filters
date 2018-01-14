@@ -7,8 +7,8 @@ import { filterEditorState } from "../lib/index"
 expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
 
 const config = {
-  maxListNesting: 4,
-  blockTypes: [
+  maxNesting: 4,
+  blocks: [
     "unstyled",
     "header-two",
     "header-three",
@@ -16,7 +16,7 @@ const config = {
     "unordered-list-item",
     "ordered-list-item",
   ],
-  inlineStyles: ["BOLD", "ITALIC"],
+  styles: ["BOLD", "ITALIC"],
   entityTypes: [
     {
       type: "LINK",
@@ -33,6 +33,7 @@ const config = {
       },
     },
   ],
+  blockEntities: ["IMAGE"],
   whitespacedCharacters: ["\t"],
 }
 

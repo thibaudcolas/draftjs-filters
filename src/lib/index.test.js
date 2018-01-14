@@ -1,10 +1,10 @@
 import {
   preserveAtomicBlocks,
   removeInvalidDepthBlocks,
-  resetBlockDepth,
-  resetBlockType,
-  filterInlineStyle,
-  resetAtomicBlocks,
+  limitBlockDepth,
+  filterBlockTypes,
+  filterInlineStyles,
+  filterAtomicBlocks,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
@@ -22,10 +22,10 @@ describe(pkg.name, () => {
   it("preserveAtomicBlocks", () => expect(preserveAtomicBlocks).toBeDefined())
   it("removeInvalidDepthBlocks", () =>
     expect(removeInvalidDepthBlocks).toBeDefined())
-  it("resetBlockDepth", () => expect(resetBlockDepth).toBeDefined())
-  it("resetBlockType", () => expect(resetBlockType).toBeDefined())
-  it("filterInlineStyle", () => expect(filterInlineStyle).toBeDefined())
-  it("resetAtomicBlocks", () => expect(resetAtomicBlocks).toBeDefined())
+  it("limitBlockDepth", () => expect(limitBlockDepth).toBeDefined())
+  it("filterBlockTypes", () => expect(filterBlockTypes).toBeDefined())
+  it("filterInlineStyles", () => expect(filterInlineStyles).toBeDefined())
+  it("filterAtomicBlocks", () => expect(filterAtomicBlocks).toBeDefined())
   it("filterEntityRanges", () => expect(filterEntityRanges).toBeDefined())
   it("shouldKeepEntityType", () => expect(shouldKeepEntityType).toBeDefined())
   it("shouldRemoveImageEntity", () =>

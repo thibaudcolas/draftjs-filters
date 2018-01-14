@@ -8,7 +8,7 @@ import { ATOMIC, UNSTYLED, IMAGE } from "../constants"
  * Resets atomic blocks to unstyled based on which entity types are enabled,
  * and also normalises block text to a single "space" character.
  */
-export const resetAtomicBlocks = (
+export const filterAtomicBlocks = (
   enabledTypes: Array<string>,
   content: ContentState,
 ) => {

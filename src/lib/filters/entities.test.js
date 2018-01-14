@@ -1,8 +1,7 @@
 import { EditorState, convertFromRaw } from "draft-js"
 
-import { IMAGE } from "../constants"
 import {
-  resetAtomicBlocks,
+  filterAtomicBlocks,
   filterEntityRanges,
   filterEntityAttributes,
   shouldKeepEntityType,
@@ -11,7 +10,7 @@ import {
 } from "./entities"
 
 describe("entities", () => {
-  describe("#resetAtomicBlocks", () => {
+  describe("#filterAtomicBlocks", () => {
     it("works", () => {
       const content = convertFromRaw({
         entityMap: {
@@ -81,7 +80,7 @@ describe("entities", () => {
       })
 
       expect(
-        resetAtomicBlocks([IMAGE], content)
+        filterAtomicBlocks(["IMAGE"], content)
           .getBlockMap()
           .map((b) => ({
             text: b.getText(),
@@ -100,7 +99,7 @@ describe("entities", () => {
 
     it("no filtering = no change", () => {
       const content = EditorState.createEmpty().getCurrentContent()
-      expect(resetAtomicBlocks([], content)).toBe(content)
+      expect(filterAtomicBlocks([], content)).toBe(content)
     })
   })
 

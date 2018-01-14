@@ -22,7 +22,7 @@ import { filterEditorState } from "draftjs-filters"
 function onChange(nextEditorState) {
   const {
     stateSaveInterval,
-    maxListNesting,
+    maxNesting,
     stripPastedStyles,
     blockTypes,
     inlineStyles,
@@ -40,7 +40,7 @@ function onChange(nextEditorState) {
   if (shouldFilterPaste) {
     filteredEditorState = filterEditorState(
       nextEditorState,
-      maxListNesting,
+      maxNesting,
       blockTypes,
       inlineStyles,
       entityTypes,
