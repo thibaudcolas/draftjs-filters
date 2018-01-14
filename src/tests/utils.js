@@ -8,7 +8,6 @@ expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
 
 const config = {
   maxListNesting: 4,
-  enableLineBreak: true,
   blockTypes: [
     "unstyled",
     "header-two",
@@ -34,6 +33,7 @@ const config = {
       },
     },
   ],
+  whitespacedCharacters: ["\t"],
 }
 
 export const testFilteringDiff = (raw) => {

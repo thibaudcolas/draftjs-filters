@@ -24,10 +24,10 @@ type EntityTypes = Array<Object>
 
 type FilterOptions = {
   maxListNesting: number,
-  enableLineBreak: boolean,
   blockTypes: Array<DraftBlockType>,
   inlineStyles: Array<string>,
   entityTypes: EntityTypes,
+  whitespacedCharacters: Array<string>,
 }
 
 /**
@@ -40,10 +40,10 @@ type FilterOptions = {
 export const filterEditorState = (
   {
     maxListNesting,
-    enableLineBreak,
     blockTypes,
     inlineStyles,
     entityTypes,
+    whitespacedCharacters,
   }: FilterOptions,
   editorState: EditorState,
 ) => {
@@ -54,12 +54,6 @@ export const filterEditorState = (
     ATOMIC,
   ])
   let enabledEntityTypes = entityTypes.map((t) => t.type)
-
-  const whitespacedCharacters = ["\t"]
-
-  if (!enableLineBreak) {
-    whitespacedCharacters.push("\n")
-  }
 
   const filterEntities = (content, entityKey, block) => {
     const entity = content.getEntity(entityKey)
