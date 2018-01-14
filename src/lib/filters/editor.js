@@ -26,37 +26,26 @@ type FilterOptions = {
   maxNesting: number,
   blocks: Array<DraftBlockType>,
   styles: Array<string>,
-  entityTypes: EntityTypes,
+  entities: EntityTypes,
   blockEntities: Array<string>,
   whitespacedCharacters: Array<string>,
 }
 
 /**
  * Applies whitelist and blacklist operations to the editor content,
- * so the resulting editor state is shaped according to Draftail
- * expectations and configuration.
- * As of now, this doesn't filter line breaks if they aren't disabled
- * as Draft.js does not preserve this type of whitespace on paste anyway.
+ * to enforce it's shaped according to the options.
  */
 export const filterEditorState = (
   {
     maxNesting,
     blocks,
     styles,
-    entityTypes,
+    entities,
     blockEntities,
     whitespacedCharacters,
   }: FilterOptions,
   editorState: EditorState,
 ) => {
-  const enabledBlockTypes = blocks.concat([
-    // Always enabled in a Draftail editor.
-    UNSTYLED,
-    // Filtered depending on enabled entity types.
-    ATOMIC,
-  ])
-  let enabledEntityTypes = entityTypes.map((t) => t.type)
-
   const shouldKeepEntityRange = (content, entityKey, block) => {
     const entity = content.getEntity(entityKey)
     const entityData = entity.getData()
@@ -64,22 +53,24 @@ export const filterEditorState = (
     const blockType = block.getType()
 
     return (
-      shouldKeepEntityType(enabledEntityTypes, entityType) &&
-      shouldKeepEntityByAttribute(entityTypes, entityType, entityData) &&
+      shouldKeepEntityType(entities, entityType) &&
+      shouldKeepEntityByAttribute(entities, entityType, entityData) &&
       !shouldRemoveImageEntity(entityType, blockType)
     )
   }
 
+  // Order matters. Some filters may need the information filtered out by others.
   const filters = [
     preserveAtomicBlocks.bind(null, blockEntities),
     removeInvalidDepthBlocks,
     limitBlockDepth.bind(null, maxNesting),
-    filterBlockTypes.bind(null, enabledBlockTypes),
+    // Add block types that are always enabled in Draft.js.
+    filterBlockTypes.bind(null, blocks.concat([UNSTYLED, ATOMIC])),
     filterInlineStyles.bind(null, styles),
     // TODO Bug: should not keep atomic blocks if there is no entity.
-    filterAtomicBlocks.bind(null, enabledEntityTypes),
+    filterAtomicBlocks.bind(null, entities),
     filterEntityRanges.bind(null, shouldKeepEntityRange),
-    filterEntityAttributes.bind(null, entityTypes),
+    filterEntityAttributes.bind(null, entities),
     replaceTextBySpaces.bind(null, whitespacedCharacters),
   ]
 

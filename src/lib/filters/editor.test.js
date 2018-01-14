@@ -392,7 +392,7 @@ describe("editor", () => {
                 "ordered-list-item",
               ],
               styles: ["BOLD"],
-              entityTypes: [
+              entities: [
                 {
                   type: "IMAGE",
                   attributes: ["src"],
@@ -423,7 +423,7 @@ describe("editor", () => {
             maxNesting: 1,
             blocks: [],
             styles: [],
-            entityTypes: [],
+            entities: [],
             blockEntities: [],
             whitespacedCharacters: [],
           },
