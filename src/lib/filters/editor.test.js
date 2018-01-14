@@ -308,7 +308,7 @@ const filterEntityRanges = [
   },
 ]
 
-const filterEntityAttributesEntities = {
+const filterEntityDataEntities = {
   "4": {
     type: "LINK",
     data: {
@@ -318,7 +318,7 @@ const filterEntityAttributesEntities = {
   },
 }
 
-const filterEntityAttributes = [
+const filterEntityData = [
   {
     key: "x",
     text: "link",
@@ -362,7 +362,7 @@ describe("editor", () => {
           preserveAtomicBlocksEntities,
           filterAtomicBlocksEntities,
           filterEntityRangesEntities,
-          filterEntityAttributesEntities,
+          filterEntityDataEntities,
         ),
         blocks: [
           ...preserveAtomicBlocks,
@@ -373,7 +373,7 @@ describe("editor", () => {
           ...filterAtomicBlocks,
           ...filterAtomicBlocks,
           ...filterEntityRanges,
-          ...filterEntityAttributes,
+          ...filterEntityData,
           ...replaceTextBySpaces,
         ],
       })

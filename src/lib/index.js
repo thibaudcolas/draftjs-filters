@@ -11,7 +11,7 @@ import {
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
-  filterEntityAttributes,
+  filterEntityData,
 } from "./filters/entities"
 import { replaceTextBySpaces } from "./filters/text"
 import { filterEditorState } from "./filters/editor"
@@ -26,7 +26,7 @@ export {
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
-  filterEntityAttributes,
+  filterEntityData,
   replaceTextBySpaces,
   filterEditorState,
 }

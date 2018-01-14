@@ -8,7 +8,7 @@ import {
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
-  filterEntityAttributes,
+  filterEntityData,
   replaceTextBySpaces,
   filterEditorState,
 } from "./index"
@@ -30,8 +30,7 @@ describe(pkg.name, () => {
   it("shouldKeepEntityType", () => expect(shouldKeepEntityType).toBeDefined())
   it("shouldRemoveImageEntity", () =>
     expect(shouldRemoveImageEntity).toBeDefined())
-  it("filterEntityAttributes", () =>
-    expect(filterEntityAttributes).toBeDefined())
+  it("filterEntityData", () => expect(filterEntityData).toBeDefined())
   it("replaceTextBySpaces", () => expect(replaceTextBySpaces).toBeDefined())
   it("filterEditorState", () => expect(filterEditorState).toBeDefined())
 })
