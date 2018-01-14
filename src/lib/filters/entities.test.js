@@ -317,6 +317,36 @@ describe("entities", () => {
         ).toBe(false)
       })
     })
+
+    describe("defaults", () => {
+      it("missing config", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+              },
+            ],
+            "TEST",
+            {},
+          ),
+        ).toBe(true)
+      })
+
+      it("no whitelist", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+              },
+            ],
+            "LINK",
+            {},
+          ),
+        ).toBe(true)
+      })
+    })
   })
 
   describe("#filterEntityAttributes", () => {
