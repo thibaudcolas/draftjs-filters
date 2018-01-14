@@ -22,10 +22,14 @@ import { whitespaceCharacters } from "./text"
 
 type EntityTypes = Array<Object>
 
-/**
- * Helper functions to filter/whitelist specific formatting.
- * Meant to be used when pasting unconstrained content.
- */
+type FilterOptions = {
+  maxListNesting: number,
+  enableHorizontalRule: boolean,
+  enableLineBreak: boolean,
+  blockTypes: Array<DraftBlockType>,
+  inlineStyles: Array<string>,
+  entityTypes: EntityTypes,
+}
 
 /**
  * Applies whitelist and blacklist operations to the editor content,
@@ -34,23 +38,17 @@ type EntityTypes = Array<Object>
  * As of now, this doesn't filter line breaks if they aren't disabled
  * as Draft.js does not preserve this type of whitespace on paste anyway.
  */
-export const filterEditorState = ({
-  editorState,
-  maxListNesting,
-  enableHorizontalRule,
-  enableLineBreak,
-  blockTypes,
-  inlineStyles,
-  entityTypes,
-}: {
+export const filterEditorState = (
+  {
+    maxListNesting,
+    enableHorizontalRule,
+    enableLineBreak,
+    blockTypes,
+    inlineStyles,
+    entityTypes,
+  }: FilterOptions,
   editorState: EditorState,
-  maxListNesting: number,
-  enableHorizontalRule: boolean,
-  enableLineBreak: boolean,
-  blockTypes: Array<DraftBlockType>,
-  inlineStyles: Array<string>,
-  entityTypes: EntityTypes,
-}) => {
+) => {
   const enabledBlockTypes = blockTypes.concat([
     // Always enabled in a Draftail editor.
     UNSTYLED,

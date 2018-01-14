@@ -40,12 +40,8 @@ const config = {
 export const testFilteringDiff = (raw) => {
   const content = convertFromRaw(raw)
   const editorState = filterEditorState(
-    Object.assign(
-      {
-        editorState: EditorState.createWithContent(content),
-      },
-      config,
-    ),
+    config,
+    EditorState.createWithContent(content),
   )
 
   const filtered = convertToRaw(editorState.getCurrentContent())
