@@ -1,13 +1,16 @@
 // @flow
 import {
   preserveAtomicBlocks,
+  resetAtomicBlocks,
+  removeInvalidAtomicBlocks,
+} from "./filters/atomic"
+import {
   removeInvalidDepthBlocks,
   limitBlockDepth,
   filterBlockTypes,
 } from "./filters/blocks"
 import { filterInlineStyles } from "./filters/styles"
 import {
-  filterAtomicBlocks,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
@@ -19,11 +22,12 @@ import { filterEditorState } from "./filters/editor"
 
 export {
   preserveAtomicBlocks,
+  resetAtomicBlocks,
+  removeInvalidAtomicBlocks,
   removeInvalidDepthBlocks,
   limitBlockDepth,
   filterBlockTypes,
   filterInlineStyles,
-  filterAtomicBlocks,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,

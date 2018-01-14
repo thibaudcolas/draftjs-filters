@@ -5,13 +5,16 @@ import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 import { ATOMIC, UNSTYLED } from "../constants"
 import {
   preserveAtomicBlocks,
+  resetAtomicBlocks,
+  removeInvalidAtomicBlocks,
+} from "./atomic"
+import {
   limitBlockDepth,
   filterBlockTypes,
   removeInvalidDepthBlocks,
 } from "./blocks"
 import { filterInlineStyles } from "./styles"
 import {
-  filterAtomicBlocks,
   filterEntityData,
   filterEntityRanges,
   shouldKeepEntityType,
@@ -78,9 +81,9 @@ export const filterEditorState = (
     // Add block types that are always enabled in Draft.js.
     filterBlockTypes.bind(null, blocks.concat([UNSTYLED, ATOMIC])),
     filterInlineStyles.bind(null, styles),
-    // TODO Bug: should not keep atomic blocks if there is no entity.
-    filterAtomicBlocks.bind(null, entities),
     filterEntityRanges.bind(null, shouldKeepEntityRange),
+    resetAtomicBlocks,
+    removeInvalidAtomicBlocks.bind(null, entities),
     filterEntityData.bind(null, entities),
     replaceTextBySpaces.bind(null, whitespacedCharacters),
   ]
