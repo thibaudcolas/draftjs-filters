@@ -456,5 +456,104 @@ describe("entities", () => {
       const content = EditorState.createEmpty().getCurrentContent()
       expect(filterEntityAttributes([], content)).toBe(content)
     })
+
+    describe("defaults", () => {
+      it("missing config", () => {
+        let content = convertFromRaw({
+          entityMap: {
+            "4": {
+              type: "LINK",
+              data: {
+                url: "http://example.com/",
+              },
+            },
+          },
+          blocks: [
+            {
+              key: "a",
+              text: "link",
+              entityRanges: [
+                {
+                  offset: 0,
+                  length: 4,
+                  key: 4,
+                },
+              ],
+            },
+          ],
+        })
+
+        content = filterEntityAttributes(
+          [
+            {
+              type: "TEST",
+              attributes: ["url", "test"],
+            },
+          ],
+          content,
+        )
+        const entities = {}
+        content.getBlockMap().forEach((block) => {
+          block.findEntityRanges((char) => {
+            const entity = content.getEntity(char.getEntity())
+            entities[entity.getType()] = entity.getData()
+          })
+        })
+
+        expect(entities).toEqual({
+          LINK: {
+            url: "http://example.com/",
+          },
+        })
+      })
+
+      it("no whitelist", () => {
+        let content = convertFromRaw({
+          entityMap: {
+            "4": {
+              type: "LINK",
+              data: {
+                url: "http://example.com/",
+              },
+            },
+          },
+          blocks: [
+            {
+              key: "a",
+              text: "link",
+              entityRanges: [
+                {
+                  offset: 0,
+                  length: 4,
+                  key: 4,
+                },
+              ],
+            },
+          ],
+        })
+
+        content = filterEntityAttributes(
+          [
+            {
+              type: "LINK",
+            },
+          ],
+          content,
+        )
+        const entities = {}
+        content.getBlockMap().forEach((block) => {
+          block.findEntityRanges((char) => {
+            const entity = content.getEntity(char.getEntity())
+            entities[entity.getType()] = entity.getData()
+          })
+        })
+
+        expect(entities).toEqual({
+          LINK: {
+            url: "http://example.com/",
+          },
+        })
+      })
+    })
   })
 })
