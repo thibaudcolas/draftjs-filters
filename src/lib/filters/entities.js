@@ -150,7 +150,13 @@ export const shouldKeepEntityByAttribute = (
   data: Object,
 ) => {
   // $FlowFixMe
-  const whitelist = entityTypes.find((t) => t.type === entityType).whitelist
+  const config = entityTypes.find((t) => t.type === entityType)
+  const whitelist = config ? config.whitelist : null
+
+  if (!whitelist) {
+    return true
+  }
+
   const isValid = Object.keys(whitelist).every((attr) => {
     const regex = new RegExp(whitelist[attr])
     return regex.test(data[attr])
