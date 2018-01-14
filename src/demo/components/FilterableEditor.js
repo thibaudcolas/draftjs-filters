@@ -18,14 +18,6 @@ import Link, { linkStrategy } from "./Link"
 
 import "./FilterableEditor.css"
 
-type Props = {
-  filtered: boolean,
-}
-
-type State = {
-  editorState: EditorState,
-}
-
 const BLOCK_TYPES = {
   unstyled: "P",
   "header-two": "H2",
@@ -49,6 +41,26 @@ const ENTITY_TYPES = [
   },
 ]
 
+const FILTER_CONFIG = {
+  maxListNesting: 1,
+  enableHorizontalRule: false,
+  enableLineBreak: false,
+  blockTypes: Object.keys(BLOCK_TYPES),
+  inlineStyles: Object.keys(INLINE_STYLES),
+  entityTypes: ENTITY_TYPES,
+}
+
+type Props = {
+  filtered: boolean,
+}
+
+type State = {
+  editorState: EditorState,
+}
+
+/**
+ * Demo editor, which can be configured to filter content on paste.
+ */
 class FilterableEditor extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
@@ -82,15 +94,7 @@ class FilterableEditor extends Component<Props, State> {
         nextState.getLastChangeType() === "insert-fragment"
 
       if (shouldFilterPaste) {
-        nextState = filterEditorState({
-          editorState: nextState,
-          maxListNesting: 1,
-          enableHorizontalRule: false,
-          enableLineBreak: false,
-          blockTypes: Object.keys(BLOCK_TYPES),
-          inlineStyles: Object.keys(INLINE_STYLES),
-          entityTypes: ENTITY_TYPES,
-        })
+        nextState = filterEditorState(FILTER_CONFIG, nextState)
       }
     }
 

@@ -380,35 +380,37 @@ describe("editor", () => {
       const editorState = EditorState.createWithContent(contentState)
       expect(
         convertToRaw(
-          filterEditorState({
-            editorState,
-            maxListNesting: 1,
-            enableHorizontalRule: false,
-            enableLineBreak: false,
-            blockTypes: [
-              "unstyled",
-              "header-two",
-              "header-three",
-              "header-four",
-              "unordered-list-item",
-              "ordered-list-item",
-            ],
-            inlineStyles: ["BOLD"],
-            entityTypes: [
-              {
-                type: "IMAGE",
-                attributes: ["src"],
-                whitelist: {
-                  src: "^/",
+          filterEditorState(
+            {
+              maxListNesting: 1,
+              enableHorizontalRule: false,
+              enableLineBreak: false,
+              blockTypes: [
+                "unstyled",
+                "header-two",
+                "header-three",
+                "header-four",
+                "unordered-list-item",
+                "ordered-list-item",
+              ],
+              inlineStyles: ["BOLD"],
+              entityTypes: [
+                {
+                  type: "IMAGE",
+                  attributes: ["src"],
+                  whitelist: {
+                    src: "^/",
+                  },
                 },
-              },
-              {
-                type: "LINK",
-                attributes: ["url"],
-                whitelist: {},
-              },
-            ],
-          }).getCurrentContent(),
+                {
+                  type: "LINK",
+                  attributes: ["url"],
+                  whitelist: {},
+                },
+              ],
+            },
+            editorState,
+          ).getCurrentContent(),
         ),
       ).toMatchSnapshot()
     })
@@ -416,45 +418,51 @@ describe("editor", () => {
     it("enableHorizontalRule", () => {
       const editorState = EditorState.createEmpty()
       expect(
-        filterEditorState({
+        filterEditorState(
+          {
+            maxListNesting: 1,
+            enableHorizontalRule: true,
+            enableLineBreak: false,
+            blockTypes: [],
+            inlineStyles: [],
+            entityTypes: [],
+          },
           editorState,
-          maxListNesting: 1,
-          enableHorizontalRule: true,
-          enableLineBreak: false,
-          blockTypes: [],
-          inlineStyles: [],
-          entityTypes: [],
-        }),
+        ),
       ).toBeInstanceOf(EditorState)
     })
 
     it("enableLineBreak", () => {
       const editorState = EditorState.createEmpty()
       expect(
-        filterEditorState({
+        filterEditorState(
+          {
+            maxListNesting: 1,
+            enableHorizontalRule: false,
+            enableLineBreak: true,
+            blockTypes: [],
+            inlineStyles: [],
+            entityTypes: [],
+          },
           editorState,
-          maxListNesting: 1,
-          enableHorizontalRule: false,
-          enableLineBreak: true,
-          blockTypes: [],
-          inlineStyles: [],
-          entityTypes: [],
-        }),
+        ),
       ).toBeInstanceOf(EditorState)
     })
 
     it("no normalisation = no change", () => {
       const editorState = EditorState.createEmpty()
       expect(
-        filterEditorState({
+        filterEditorState(
+          {
+            maxListNesting: 1,
+            enableHorizontalRule: false,
+            enableLineBreak: true,
+            blockTypes: [],
+            inlineStyles: [],
+            entityTypes: [],
+          },
           editorState,
-          maxListNesting: 1,
-          enableHorizontalRule: false,
-          enableLineBreak: true,
-          blockTypes: [],
-          inlineStyles: [],
-          entityTypes: [],
-        }),
+        ),
       ).toBe(editorState)
     })
   })

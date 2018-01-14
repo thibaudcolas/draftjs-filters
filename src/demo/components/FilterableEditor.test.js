@@ -50,7 +50,7 @@ describe("FilterableEditor", () => {
 
     it("#filtered shouldFilterPaste", () => {
       jest.spyOn(lib, "filterEditorState")
-      lib.filterEditorState.mockImplementation((opts) => opts.editorState)
+      lib.filterEditorState.mockImplementation((opts, e) => e)
 
       const state = EditorState.createEmpty()
       const fakeState = {
