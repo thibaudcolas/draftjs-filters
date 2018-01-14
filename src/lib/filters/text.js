@@ -5,8 +5,8 @@ import { ContentState } from "draft-js"
  * Replaces the given characters by their equivalent length of spaces, in all blocks.
  */
 export const whitespaceCharacters = (
-  content: ContentState,
   characters: Array<string>,
+  content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
 

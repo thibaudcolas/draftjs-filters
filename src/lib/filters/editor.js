@@ -90,7 +90,7 @@ export const filterEditorState = ({
       )
     },
   )
-  nextEditorState = filterEntityAttributes(nextEditorState, entityTypes)
+  let nextContent = nextEditorState.getCurrentContent()
 
   const filteredCharacters = ["\t"]
 
@@ -98,9 +98,11 @@ export const filterEditorState = ({
     filteredCharacters.push("\n")
   }
 
-  const content = nextEditorState.getCurrentContent()
+  nextContent = filterEntityAttributes(entityTypes, nextContent)
+  nextContent = whitespaceCharacters(filteredCharacters, nextContent)
+
   nextEditorState = EditorState.set(nextEditorState, {
-    currentContent: whitespaceCharacters(content, filteredCharacters),
+    currentContent: nextContent,
   })
 
   return nextEditorState

@@ -311,7 +311,7 @@ describe("entities", () => {
 
   describe("#filterEntityAttributes", () => {
     it("works", () => {
-      const contentState = convertFromRaw({
+      let content = convertFromRaw({
         entityMap: {
           "4": {
             type: "LINK",
@@ -375,8 +375,7 @@ describe("entities", () => {
         ],
       })
 
-      const editorState = filterEntityAttributes(
-        EditorState.createWithContent(contentState),
+      content = filterEntityAttributes(
         [
           {
             type: "IMAGE",
@@ -391,19 +390,15 @@ describe("entities", () => {
             attributes: ["url", "test"],
           },
         ],
+        content,
       )
       const entities = {}
-      editorState
-        .getCurrentContent()
-        .getBlockMap()
-        .forEach((block) => {
-          block.findEntityRanges((char) => {
-            const entity = editorState
-              .getCurrentContent()
-              .getEntity(char.getEntity())
-            entities[entity.getType()] = entity.getData()
-          })
+      content.getBlockMap().forEach((block) => {
+        block.findEntityRanges((char) => {
+          const entity = content.getEntity(char.getEntity())
+          entities[entity.getType()] = entity.getData()
         })
+      })
 
       expect(entities).toEqual({
         IMAGE: {
@@ -415,6 +410,11 @@ describe("entities", () => {
           url: "http://example.com/",
         },
       })
+    })
+
+    it("no filtering = no change", () => {
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(filterEntityAttributes([], content)).toBe(content)
     })
   })
 })
