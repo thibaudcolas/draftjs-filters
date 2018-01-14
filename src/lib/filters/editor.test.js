@@ -384,7 +384,6 @@ describe("editor", () => {
             {
               maxNesting: 1,
               blocks: [
-                "unstyled",
                 "header-two",
                 "header-three",
                 "header-four",

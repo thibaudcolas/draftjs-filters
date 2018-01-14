@@ -14,36 +14,43 @@ First, grab the package from npm:
 npm install --save draftjs-filters
 ```
 
-WIP – Then, import the filters' entry point and use it in your `<Editor>`'s `onChange` function:
+Then, in your editor import `filterEditorState` and call it in the Draft.js `onChange` handler. This function takes two parameters: the filtering configuration, and the `editorState`.
 
 ```js
 import { filterEditorState } from "draftjs-filters"
 
 function onChange(nextEditorState) {
-  const {
-    stateSaveInterval,
-    maxNesting,
-    stripPastedStyles,
-    blockTypes,
-    inlineStyles,
-    entityTypes,
-  } = this.props
   const { editorState } = this.state
   const content = editorState.getCurrentContent()
   const nextContent = nextEditorState.getCurrentContent()
   const shouldFilterPaste =
     nextContent !== content &&
-    !stripPastedStyles &&
     nextEditorState.getLastChangeType() === "insert-fragment"
 
   let filteredEditorState = nextEditorState
   if (shouldFilterPaste) {
     filteredEditorState = filterEditorState(
-      nextEditorState,
-      maxNesting,
-      blockTypes,
-      inlineStyles,
-      entityTypes,
+      {
+        maxNesting: 1,
+        blocks: ["header-two", "header-three", "unordered-list-item"],
+        styles: ["BOLD"],
+        entities: [
+          {
+            type: "IMAGE",
+            attributes: ["src"],
+            whitelist: {
+              src: "^http",
+            },
+          },
+          {
+            type: "LINK",
+            attributes: ["url"],
+          },
+        ],
+        blockEntities: ["IMAGE"],
+        whitespacedCharacters: ["\n", "\t"],
+      },
+      filteredEditorState,
     )
   }
 
@@ -51,13 +58,127 @@ function onChange(nextEditorState) {
 }
 ```
 
+Here are the available options:
+
+```jsx
+// Maximum amount of depth for lists (0 = no nesting).
+maxNesting: number,
+// Whitelist of allowed block types. unstyled and atomic are always included.
+blocks: Array<DraftBlockType>,
+// Whitelist of allowed inline styles.
+styles: Array<string>,
+// Whitelist of allowed entities.
+entities: Array<{
+// Entity type, eg. "LINK"
+type: string,
+// Allowed attributes. Other attributes will be removed.
+attributes: Array<string>,
+// Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
+whitelist: Object,
+}>,
+// Whitelist of allowed block-level entities (in atomic blocks)
+blockEntities: Array<string>,
+// Characters to replace with whitespace.
+whitespacedCharacters: Array<string>,
+```
+
+### Advanced usage
+
+`filterEditorState` isn't very flexible. If you want more control over the filtering, simply compose your own filter function with the other single-purpose utilities. The Draft.js filters are published as ES6 modules using [Rollup](https://rollupjs.org/) – module bundlers like Rollup and Webpack will tree shake (remove) the unused functions so you only bundle the code you use.
+
+```jsx
+/**
+ * Creates atomic blocks where they would be required for a block-level entity
+ * to work correctly, when such an entity exists.
+ * Note: at the moment, this is only useful for IMAGE entities that Draft.js
+ * injects on arbitrary blocks on paste.
+ */
+preserveAtomicBlocks((whitelist: Array<string>), (content: ContentState))
+/**
+ * Removes blocks that have a non-zero depth, and aren't list items.
+ * Happens with Apple Pages inserting `unstyled` items between list items.
+ */
+removeInvalidDepthBlocks((content: ContentState))
+/**
+ * Resets the depth of all the content to at most max.
+ */
+limitBlockDepth((max: number), (content: ContentState))
+/**
+ * Removes all block types not present in the whitelist.
+ */
+filterBlockTypes((whitelist: Array<DraftBlockType>), (content: ContentState))
+/**
+ * Removes all styles not present in the whitelist.
+ */
+filterInlineStyles((whitelist: Array<string>), (content: ContentState))
+/**
+ * Resets atomic blocks to unstyled based on which entity types are enabled,
+ * and also normalises block text to a single "space" character.
+ */
+filterAtomicBlocks((whitelist: Array<Object>), (content: ContentState))
+/**
+ * Filters entity ranges (where entities are applied on text) based on the result of
+ * the callback function. Returning true keeps the entity range, false removes it.
+ * Draft.js automatically removes entities if they are not applied on any text.
+ */
+filterEntityRanges(
+  (filterFn: (
+    content: ContentState,
+    entityKey: string,
+    block: ContentBlock,
+  ) => boolean),
+  (content: ContentState),
+)
+/**
+ * Keeps all entity types (images, links, documents, embeds) that are enabled.
+ */
+shouldKeepEntityType((whitelist: Array<Object>), (type: string))
+/**
+ * Removes invalid images – they should only be in atomic blocks.
+ * This only removes the image entity, not the camera emoji (📷) that Draft.js inserts.
+ * If we want to remove this in the future, consider that:
+ * - It needs to be removed in the block text, where it's 2 chars / 1 code point.
+ * - The corresponding CharacterMetadata needs to be removed too, and it's 2 instances
+ */
+shouldRemoveImageEntity((entityType: string), (blockType: DraftBlockType))
+/**
+ * Filters entities based on the data they contain.
+ */
+shouldKeepEntityByAttribute(
+  (entityTypes: Array<Object>),
+  (entityType: string),
+  (data: Object),
+)
+/**
+ * Filters data on an entity to only retain what is whitelisted.
+ */
+filterEntityData((entityTypes: Array<Object>), (content: ContentState))
+/**
+ * Replaces the given characters by their equivalent length of spaces, in all blocks.
+ */
+replaceTextBySpaces((characters: Array<string>), (content: ContentState))
+```
+
 ### Browser support and polyfills
 
-The Draft.js filters follow the browser support targets of Draft.js. Be sure to have a look at the [Draft.js required polyfills](https://facebook.github.io/draft-js/docs/advanced-topics-issues-and-pitfalls).
+The Draft.js filters follow the browser support targets of Draft.js. Be sure to have a look at the [required Draft.js polyfills](https://facebook.github.io/draft-js/docs/advanced-topics-issues-and-pitfalls).
+
+#### Word processor support
+
+Have a look at our test data in [`pasting/`](pasting).
+
+| Editor - Browser  | Chrome Windows | Chrome macOS | Firefox Windows | Firefox macOS | Edge Windows | IE11 Windows | Safari macOS | Safari iOS | Chrome Android |
+| ----------------- | -------------- | ------------ | --------------- | ------------- | ------------ | ------------ | ------------ | ---------- | -------------- |
+| **Word 2016**     |                |              |                 |               |              |              |              | N/A        | N/A            |
+| **Word 2010**     |                | N/A          |                 | N/A           |              |              | N/A          | N/A        | N/A            |
+| **Apple Pages**   | N/A            |              | N/A             |               | N/A          | N/A          |              |            | N/A            |
+| **Google Docs**   |                |              |                 |               |              |              |              |            |                |
+| **Word Online**   |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
+| **Dropbox Paper** |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
 
 #### IE11
 
-There are [known Draft.js issues](https://github.com/facebook/draft-js/issues/986) with pasting in IE11. For now, we advise users to turn on `stripPastedStyles` in IE11 only so that all styles are stripped, but whitespace is preserved:
+There are [known Draft.js issues](https://github.com/facebook/draft-js/issues/986) with pasting in IE11. For now, we advise users to turn on `stripPastedStyles` in IE11 only so that Draft.js removes all formatting but preserves whitespace:
 
 ```jsx
 const IS_IE11 = !window.ActiveXObject && "ActiveXObject" in window

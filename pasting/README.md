@@ -1,16 +1,4 @@
-Testing matrix
-
-| Editor - Browser  | Chrome Windows | Chrome macOS | Firefox Windows | Firefox macOS | Edge Windows | IE11 Windows | Safari macOS | Safari iOS | Chrome Android |
-| ----------------- | -------------- | ------------ | --------------- | ------------- | ------------ | ------------ | ------------ | ---------- | -------------- |
-| **Word 2016**     |                |              |                 |               |              |              |              | N/A        | N/A            |
-| **Word 2013**     |                | N/A          |                 | N/A           |              |              | N/A          | N/A        | N/A            |
-| **Word 2010**     |                | N/A          |                 | N/A           |              |              | N/A          | N/A        | N/A            |
-| **Apple Pages**   | N/A            |              | N/A             |               | N/A          | N/A          |              |            | N/A            |
-| **Google Docs**   |                |              |                 |               |              |              |              |            |                |
-| **Word Online**   |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
-| **Dropbox Paper** |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
-
----
+# Pasting analysis
 
 Line breaks:
 
