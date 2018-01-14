@@ -17,14 +17,12 @@ describe("entities", () => {
         entityMap: {
           "4": {
             type: "IMAGE",
-            mutability: "IMMUTABLE",
             data: {
-              src: "../static/example-lowres-image.jpg",
+              src: "/example.png",
             },
           },
           "5": {
             type: "EMBED",
-            mutability: "IMMUTABLE",
             data: {
               url: "http://www.youtube.com/watch?v=y8Kyi0WNg40",
             },
@@ -32,11 +30,9 @@ describe("entities", () => {
         },
         blocks: [
           {
-            key: "d3071",
-            text: " ",
+            key: "a",
+            text: "📷",
             type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -44,14 +40,30 @@ describe("entities", () => {
                 key: 4,
               },
             ],
-            data: {},
           },
           {
-            key: "affm4",
+            key: "b",
             text: " ",
             type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [],
+            entityRanges: [
+              {
+                offset: 0,
+                length: 1,
+                key: 4,
+              },
+            ],
+            inlineStyleRanges: [
+              {
+                offset: 0,
+                length: 1,
+                style: "BOLD",
+              },
+            ],
+          },
+          {
+            key: "c",
+            text: " ",
+            type: "atomic",
             entityRanges: [
               {
                 offset: 0,
@@ -59,197 +71,31 @@ describe("entities", () => {
                 key: 5,
               },
             ],
-            data: {},
           },
           {
-            key: "abbm4",
+            key: "d",
             text: " ",
             type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [],
-            data: {},
           },
         ],
       })
 
       expect(
-        resetAtomicBlocks(EditorState.createWithContent(contentState), [
-          "EMBED",
-        ])
+        resetAtomicBlocks(EditorState.createWithContent(contentState), [IMAGE])
           .getCurrentContent()
           .getBlockMap()
-          .map((b) => b.getType())
+          .map((b) => ({
+            text: b.getText(),
+            type: b.getType(),
+            style: b.getInlineStyleAt(0).size,
+          }))
           .toJS(),
       ).toEqual({
-        d3071: "unstyled",
-        affm4: "atomic",
-        abbm4: "atomic",
-      })
-    })
-
-    it("normalises block text", () => {
-      const contentState = convertFromRaw({
-        entityMap: {
-          "4": {
-            type: "IMAGE",
-            mutability: "IMMUTABLE",
-            data: {
-              src: "../static/example-lowres-image.jpg",
-            },
-          },
-        },
-        blocks: [
-          {
-            key: "3d071",
-            text: "📷",
-            type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [
-              {
-                offset: 0,
-                length: 1,
-                key: 4,
-              },
-            ],
-            data: {},
-          },
-        ],
-      })
-
-      expect(
-        resetAtomicBlocks(EditorState.createWithContent(contentState), [IMAGE])
-          .getCurrentContent()
-          .getFirstBlock()
-          .toJS(),
-      ).toMatchObject({
-        text: " ",
-      })
-    })
-
-    it("normalises block styles", () => {
-      const contentState = convertFromRaw({
-        entityMap: {
-          "4": {
-            type: "IMAGE",
-            mutability: "IMMUTABLE",
-            data: {
-              src: "../static/example-lowres-image.jpg",
-            },
-          },
-        },
-        blocks: [
-          {
-            key: "3d071",
-            text: " ",
-            type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [
-              {
-                offset: 0,
-                length: 1,
-                style: "BOLD",
-              },
-              {
-                offset: 0,
-                length: 1,
-                style: "ITALIC",
-              },
-            ],
-            entityRanges: [
-              {
-                offset: 0,
-                length: 1,
-                key: 4,
-              },
-            ],
-            data: {},
-          },
-        ],
-      })
-
-      expect(
-        resetAtomicBlocks(EditorState.createWithContent(contentState), [IMAGE])
-          .getCurrentContent()
-          .getFirstBlock()
-          .getInlineStyleAt(0).size,
-      ).toBe(0)
-    })
-
-    describe(HORIZONTAL_RULE, () => {
-      it("disabled", () => {
-        const contentState = convertFromRaw({
-          entityMap: {
-            "3": {
-              type: "HORIZONTAL_RULE",
-              mutability: "IMMUTABLE",
-              data: {},
-            },
-          },
-          blocks: [
-            {
-              key: "epoas",
-              text: " ",
-              type: "atomic",
-              depth: 0,
-              inlineStyleRanges: [],
-              entityRanges: [
-                {
-                  offset: 0,
-                  length: 1,
-                  key: 3,
-                },
-              ],
-              data: {},
-            },
-          ],
-        })
-
-        expect(
-          resetAtomicBlocks(EditorState.createWithContent(contentState), [])
-            .getCurrentContent()
-            .getFirstBlock()
-            .getType(),
-        ).toBe("unstyled")
-      })
-
-      it("enabled", () => {
-        const contentState = convertFromRaw({
-          entityMap: {
-            "3": {
-              type: "HORIZONTAL_RULE",
-              mutability: "IMMUTABLE",
-              data: {},
-            },
-          },
-          blocks: [
-            {
-              key: "epoas",
-              text: " ",
-              type: "atomic",
-              depth: 0,
-              inlineStyleRanges: [],
-              entityRanges: [
-                {
-                  offset: 0,
-                  length: 1,
-                  key: 3,
-                },
-              ],
-              data: {},
-            },
-          ],
-        })
-
-        expect(
-          resetAtomicBlocks(EditorState.createWithContent(contentState), [
-            HORIZONTAL_RULE,
-          ])
-            .getCurrentContent()
-            .getFirstBlock()
-            .getType(),
-        ).toBe("atomic")
+        a: { text: " ", type: "atomic", style: 0 },
+        b: { text: " ", type: "atomic", style: 0 },
+        c: { text: " ", type: "unstyled", style: 0 },
+        // TODO bug?
+        d: { text: " ", type: "atomic", style: 0 },
       })
     })
   })
@@ -258,16 +104,26 @@ describe("entities", () => {
     it("works", () => {
       const contentState = convertFromRaw({
         entityMap: {
+          "0": {
+            type: "LINK",
+            data: {
+              url: "www.example.com",
+            },
+          },
+          "1": {
+            type: "TEST",
+            data: {
+              url: "doc.pdf",
+            },
+          },
           "4": {
             type: "IMAGE",
-            mutability: "IMMUTABLE",
             data: {
-              src: "../static/example-lowres-image.jpg",
+              src: "/example.png",
             },
           },
           "5": {
             type: "EMBED",
-            mutability: "IMMUTABLE",
             data: {
               url: "http://www.youtube.com/watch?v=y8Kyi0WNg40",
             },
@@ -275,26 +131,9 @@ describe("entities", () => {
         },
         blocks: [
           {
-            key: "3d071",
+            key: "a",
             text: " ",
             type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [
-              {
-                offset: 0,
-                length: 1,
-                key: 4,
-              },
-            ],
-            data: {},
-          },
-          {
-            key: "affm4",
-            text: " ",
-            type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -302,7 +141,35 @@ describe("entities", () => {
                 key: 5,
               },
             ],
-            data: {},
+          },
+          {
+            key: "b",
+            text: " ",
+            type: "atomic",
+            entityRanges: [
+              {
+                offset: 0,
+                length: 1,
+                key: 4,
+              },
+            ],
+          },
+          {
+            key: "c",
+            text: "test",
+            type: "unstyled",
+            entityRanges: [
+              {
+                offset: 0,
+                length: 2,
+                key: 0,
+              },
+              {
+                offset: 2,
+                length: 2,
+                key: 1,
+              },
+            ],
           },
         ],
       })
@@ -312,95 +179,25 @@ describe("entities", () => {
           EditorState.createWithContent(contentState),
           (content, entityKey, block) => {
             const entityType = content.getEntity(entityKey).getType()
-            return entityType === "EMBED"
+            return ["IMAGE", "LINK"].includes(entityType)
           },
         )
           .getCurrentContent()
           .getBlockMap()
           .map((b) => {
-            const entityKey = b.getEntityAt(0)
-            return entityKey
-              ? contentState.getEntity(entityKey).getType()
-              : entityKey
+            return b
+              .getCharacterList()
+              .map((c) => c.getEntity())
+              .map((e) => {
+                return e ? contentState.getEntity(e).getType() : null
+              })
           })
           .toJS(),
       ).toEqual({
-        "3d071": null,
-        affm4: "EMBED",
+        a: [null],
+        b: ["IMAGE"],
+        c: ["LINK", "LINK", null, null],
       })
-    })
-
-    it("works inline", () => {
-      const contentState = convertFromRaw({
-        entityMap: {
-          "0": {
-            type: "LINK",
-            mutability: "MUTABLE",
-            data: {
-              url: "www.example.com",
-            },
-          },
-          "1": {
-            type: "TEST",
-            mutability: "MUTABLE",
-            data: {
-              url: "doc.pdf",
-            },
-          },
-        },
-        blocks: [
-          {
-            key: "6i47q",
-            text: "NA link doc",
-            type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
-            entityRanges: [
-              {
-                offset: 3,
-                length: 4,
-                key: 0,
-              },
-              {
-                offset: 8,
-                length: 3,
-                key: 1,
-              },
-            ],
-            data: {},
-          },
-        ],
-      })
-
-      expect(
-        filterEntityRanges(
-          EditorState.createWithContent(contentState),
-          (content, entityKey, block) => {
-            const entityType = content.getEntity(entityKey).getType()
-            return entityType === "LINK"
-          },
-        )
-          .getCurrentContent()
-          .getFirstBlock()
-          .getCharacterList()
-          .map((c) => c.getEntity())
-          .map((e) => {
-            return e ? contentState.getEntity(e).getType() : null
-          })
-          .toJS(),
-      ).toEqual([
-        null,
-        null,
-        null,
-        "LINK",
-        "LINK",
-        "LINK",
-        "LINK",
-        null,
-        null,
-        null,
-        null,
-      ])
     })
   })
 
@@ -518,42 +315,31 @@ describe("entities", () => {
         entityMap: {
           "4": {
             type: "LINK",
-            mutability: "MUTABLE",
             data: {
               href: "http://example.com",
-              rel: "noreferrer nofollow noopener",
-              target: "_blank",
               url: "http://example.com/",
             },
           },
           "5": {
             type: "IMAGE",
-            mutability: "MUTABLE",
             data: {
               alt: "",
-              height: "15",
               src: "/test/example.png",
               width: "15",
             },
           },
           "6": {
             type: "EMBED",
-            mutability: "MUTABLE",
             data: {
-              alt: "",
-              height: "15",
-              src: "/test/example.png",
-              width: "15",
+              url: "http://example.com/",
             },
           },
         },
         blocks: [
           {
-            key: "dffrj",
+            key: "a",
             text: "link",
             type: "unstyled",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -561,14 +347,11 @@ describe("entities", () => {
                 key: 4,
               },
             ],
-            data: {},
           },
           {
-            key: "affm4",
+            key: "b",
             text: " ",
             type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -576,14 +359,11 @@ describe("entities", () => {
                 key: 5,
               },
             ],
-            data: {},
           },
           {
-            key: "affm5",
+            key: "c",
             text: " ",
             type: "atomic",
-            depth: 0,
-            inlineStyleRanges: [],
             entityRanges: [
               {
                 offset: 0,
@@ -591,7 +371,6 @@ describe("entities", () => {
                 key: 6,
               },
             ],
-            data: {},
           },
         ],
       })
