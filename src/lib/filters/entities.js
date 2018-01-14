@@ -41,6 +41,7 @@ export const resetAtomicBlocks = (
 
           return newChar
         })
+
       return block.merge({
         text: " ",
         characterList: chars,
@@ -48,7 +49,7 @@ export const resetAtomicBlocks = (
     })
 
   if (normalisedBlocks.size !== 0) {
-    blocks = blockMap.merge(normalisedBlocks)
+    blocks = blocks.merge(normalisedBlocks)
   }
 
   const resetBlocks = blocks
@@ -68,7 +69,7 @@ export const resetAtomicBlocks = (
     .map((block) => block.set("type", UNSTYLED))
 
   if (resetBlocks.size !== 0) {
-    blocks = blockMap.merge(resetBlocks)
+    blocks = blocks.merge(resetBlocks)
   }
 
   return EditorState.set(editorState, {
