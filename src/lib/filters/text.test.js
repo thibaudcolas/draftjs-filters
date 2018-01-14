@@ -1,9 +1,9 @@
 import { EditorState, convertFromRaw } from "draft-js"
 
-import { whitespaceCharacters } from "./text"
+import { replaceTextBySpaces } from "./text"
 
 describe("text", () => {
-  describe("#whitespaceCharacters", () => {
+  describe("#replaceTextBySpaces", () => {
     it("works", () => {
       let content = convertFromRaw({
         entityMap: {},
@@ -27,7 +27,7 @@ describe("text", () => {
           },
         ],
       })
-      content = whitespaceCharacters(["\n"], content)
+      content = replaceTextBySpaces(["\n"], content)
       expect(
         content
           .getBlockMap()
@@ -48,6 +48,6 @@ describe("text", () => {
 
   it("no filtering = no change", () => {
     const content = EditorState.createEmpty().getCurrentContent()
-    expect(whitespaceCharacters([], content)).toBe(content)
+    expect(replaceTextBySpaces([], content)).toBe(content)
   })
 })

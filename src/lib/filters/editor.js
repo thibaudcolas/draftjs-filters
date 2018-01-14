@@ -18,7 +18,7 @@ import {
   shouldRemoveImageEntity,
   shouldKeepEntityByAttribute,
 } from "./entities"
-import { whitespaceCharacters } from "./text"
+import { replaceTextBySpaces } from "./text"
 
 type EntityTypes = Array<Object>
 
@@ -55,10 +55,10 @@ export const filterEditorState = (
   ])
   let enabledEntityTypes = entityTypes.map((t) => t.type)
 
-  const filteredCharacters = ["\t"]
+  const whitespacedCharacters = ["\t"]
 
   if (!enableLineBreak) {
-    filteredCharacters.push("\n")
+    whitespacedCharacters.push("\n")
   }
 
   const filterEntities = (content, entityKey, block) => {
@@ -86,7 +86,7 @@ export const filterEditorState = (
   nextContent = resetAtomicBlocks(enabledEntityTypes, nextContent)
   nextContent = filterEntityRanges(filterEntities, nextContent)
   nextContent = filterEntityAttributes(entityTypes, nextContent)
-  nextContent = whitespaceCharacters(filteredCharacters, nextContent)
+  nextContent = replaceTextBySpaces(whitespacedCharacters, nextContent)
 
   return nextContent === content
     ? editorState

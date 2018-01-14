@@ -333,7 +333,7 @@ const filterEntityAttributes = [
   },
 ]
 
-const whitespaceCharacters = [
+const replaceTextBySpaces = [
   {
     key: "y",
     text: "So\nft",
@@ -374,7 +374,7 @@ describe("editor", () => {
           ...resetAtomicBlocks,
           ...filterEntityRanges,
           ...filterEntityAttributes,
-          ...whitespaceCharacters,
+          ...replaceTextBySpaces,
         ],
       })
       const editorState = EditorState.createWithContent(contentState)
