@@ -172,17 +172,17 @@ export const shouldKeepEntityByAttribute = (
  * Filters attributes on an entity to only retain the ones whitelisted.
  */
 export const filterEntityAttributes = (
-  editorState: EditorState,
-  enabledEntityTypes: Array<Object>,
+  entityTypes: Array<Object>,
+  content: ContentState,
 ) => {
-  let content = editorState.getCurrentContent()
+  let newContent = content
   const entities = {}
 
-  content.getBlockMap().forEach((block) => {
+  newContent.getBlockMap().forEach((block) => {
     block.findEntityRanges((char) => {
       const entityKey = char.getEntity()
       if (entityKey) {
-        const entity = content.getEntity(entityKey)
+        const entity = newContent.getEntity(entityKey)
         entities[entityKey] = entity
       }
     })
@@ -192,9 +192,8 @@ export const filterEntityAttributes = (
     const entity = entities[key]
     const data = entity.getData()
     // $FlowFixMe
-    const whitelist = enabledEntityTypes.find(
-      (t) => t.type === entity.getType(),
-    ).attributes
+    const whitelist = entityTypes.find((t) => t.type === entity.getType())
+      .attributes
 
     const newData = whitelist.reduce((attrs, attr) => {
       // We do not want to include undefined values if there is no data.
@@ -205,10 +204,8 @@ export const filterEntityAttributes = (
       return attrs
     }, {})
 
-    content = content.replaceEntityData(key, newData)
+    newContent = newContent.replaceEntityData(key, newData)
   })
 
-  return EditorState.set(editorState, {
-    currentContent: content,
-  })
+  return newContent
 }

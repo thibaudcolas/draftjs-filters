@@ -1,4 +1,4 @@
-import { convertFromRaw } from "draft-js"
+import { EditorState, convertFromRaw } from "draft-js"
 
 import { whitespaceCharacters } from "./text"
 
@@ -27,7 +27,7 @@ describe("text", () => {
           },
         ],
       })
-      content = whitespaceCharacters(content, ["\n"])
+      content = whitespaceCharacters(["\n"], content)
       expect(
         content
           .getBlockMap()
@@ -44,5 +44,10 @@ describe("text", () => {
         b: { text: "So ft", styles: [["BOLD"], ["BOLD"], ["BOLD"], [], []] },
       })
     })
+  })
+
+  it("no filtering = no change", () => {
+    const content = EditorState.createEmpty().getCurrentContent()
+    expect(whitespaceCharacters([], content)).toBe(content)
   })
 })
