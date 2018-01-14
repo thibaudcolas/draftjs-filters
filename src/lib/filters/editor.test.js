@@ -383,7 +383,6 @@ describe("editor", () => {
           filterEditorState(
             {
               maxListNesting: 1,
-              enableHorizontalRule: false,
               enableLineBreak: false,
               blockTypes: [
                 "unstyled",
@@ -415,30 +414,12 @@ describe("editor", () => {
       ).toMatchSnapshot()
     })
 
-    it("enableHorizontalRule", () => {
-      const editorState = EditorState.createEmpty()
-      expect(
-        filterEditorState(
-          {
-            maxListNesting: 1,
-            enableHorizontalRule: true,
-            enableLineBreak: false,
-            blockTypes: [],
-            inlineStyles: [],
-            entityTypes: [],
-          },
-          editorState,
-        ),
-      ).toBeInstanceOf(EditorState)
-    })
-
     it("enableLineBreak", () => {
       const editorState = EditorState.createEmpty()
       expect(
         filterEditorState(
           {
             maxListNesting: 1,
-            enableHorizontalRule: false,
             enableLineBreak: true,
             blockTypes: [],
             inlineStyles: [],
@@ -455,7 +436,6 @@ describe("editor", () => {
         filterEditorState(
           {
             maxListNesting: 1,
-            enableHorizontalRule: false,
             enableLineBreak: true,
             blockTypes: [],
             inlineStyles: [],

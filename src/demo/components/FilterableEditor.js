@@ -43,7 +43,6 @@ const ENTITY_TYPES = [
 
 const FILTER_CONFIG = {
   maxListNesting: 1,
-  enableHorizontalRule: false,
   enableLineBreak: false,
   blockTypes: Object.keys(BLOCK_TYPES),
   inlineStyles: Object.keys(INLINE_STYLES),

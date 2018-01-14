@@ -24,7 +24,6 @@ type EntityTypes = Array<Object>
 
 type FilterOptions = {
   maxListNesting: number,
-  enableHorizontalRule: boolean,
   enableLineBreak: boolean,
   blockTypes: Array<DraftBlockType>,
   inlineStyles: Array<string>,
@@ -41,7 +40,6 @@ type FilterOptions = {
 export const filterEditorState = (
   {
     maxListNesting,
-    enableHorizontalRule,
     enableLineBreak,
     blockTypes,
     inlineStyles,
@@ -56,10 +54,6 @@ export const filterEditorState = (
     ATOMIC,
   ])
   let enabledEntityTypes = entityTypes.map((t) => t.type)
-
-  if (enableHorizontalRule) {
-    enabledEntityTypes.push(HORIZONTAL_RULE)
-  }
 
   const filteredCharacters = ["\t"]
 

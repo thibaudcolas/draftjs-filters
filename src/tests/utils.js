@@ -8,7 +8,6 @@ expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
 
 const config = {
   maxListNesting: 4,
-  enableHorizontalRule: true,
   enableLineBreak: true,
   blockTypes: [
     "unstyled",

@@ -23,7 +23,6 @@ function onChange(nextEditorState) {
   const {
     stateSaveInterval,
     maxListNesting,
-    enableHorizontalRule,
     stripPastedStyles,
     blockTypes,
     inlineStyles,
@@ -42,7 +41,6 @@ function onChange(nextEditorState) {
     filteredEditorState = filterEditorState(
       nextEditorState,
       maxListNesting,
-      enableHorizontalRule,
       blockTypes,
       inlineStyles,
       entityTypes,
