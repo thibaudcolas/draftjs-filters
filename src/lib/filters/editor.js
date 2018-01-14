@@ -72,14 +72,19 @@ export const filterEditorState = (
 
   // Order matters. Some filters may need the information filtered out by others.
   const filters = [
-    preserveAtomicBlocks,
+    // 1. clean up blocks.
     removeInvalidDepthBlocks,
     limitBlockDepth.bind(null, maxNesting),
+    // 2. reset styles and blocks.
+    filterInlineStyles.bind(null, styles),
     // Add block types that are always enabled in Draft.js.
     filterBlockTypes.bind(null, blocks.concat([UNSTYLED, ATOMIC])),
-    filterInlineStyles.bind(null, styles),
-    filterEntityRanges.bind(null, shouldKeepEntityRange),
+    // 4. Process atomic blocks.
+    preserveAtomicBlocks,
     resetAtomicBlocks,
+    // 5. Remove entity ranges (and linked entities)
+    filterEntityRanges.bind(null, shouldKeepEntityRange),
+    // 6. Remove/filter entity-related matters.
     removeInvalidAtomicBlocks.bind(null, entities),
     filterEntityData.bind(null, entities),
     replaceTextBySpaces.bind(null, whitespacedCharacters),
