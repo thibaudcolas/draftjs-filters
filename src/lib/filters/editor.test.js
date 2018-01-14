@@ -442,5 +442,20 @@ describe("editor", () => {
         }),
       ).toBeInstanceOf(EditorState)
     })
+
+    it("no normalisation = no change", () => {
+      const editorState = EditorState.createEmpty()
+      expect(
+        filterEditorState({
+          editorState,
+          maxListNesting: 1,
+          enableHorizontalRule: false,
+          enableLineBreak: true,
+          blockTypes: [],
+          inlineStyles: [],
+          entityTypes: [],
+        }),
+      ).toBe(editorState)
+    })
   })
 })
