@@ -6,6 +6,8 @@ import {
   RichUtils,
   convertToRaw,
   CompositeDecorator,
+  AtomicBlockUtils,
+  ContentBlock,
 } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 import type { DraftEntityType } from "draft-js/lib/DraftEntityType.js.flow"
@@ -15,11 +17,13 @@ import { filterEditorState } from "../../lib/index"
 import SentryBoundary from "./SentryBoundary"
 import Highlight from "./Highlight"
 import Link, { linkStrategy } from "./Link"
+import Image from "./Image"
 
 import "./FilterableEditor.css"
 
 const BLOCK_TYPES = {
   unstyled: "P",
+  "header-one": "H1",
   "header-two": "H2",
   "header-three": "H3",
   "unordered-list-item": "UL",
@@ -37,6 +41,14 @@ const ENTITY_TYPES = [
     attributes: ["url"],
     whitelist: {
       href: "example",
+    },
+  },
+  {
+    type: "IMAGE",
+    label: "📷",
+    attributes: ["src"],
+    whitelist: {
+      src: "^https",
     },
   },
 ]
@@ -79,6 +91,7 @@ class FilterableEditor extends Component<Props, State> {
     ;(this: any).toggleStyle = this.toggleStyle.bind(this)
     ;(this: any).toggleBlock = this.toggleBlock.bind(this)
     ;(this: any).toggleEntity = this.toggleEntity.bind(this)
+    ;(this: any).blockRenderer = this.blockRenderer.bind(this)
   }
 
   onChange(nextEditorState: EditorState) {
@@ -118,12 +131,35 @@ class FilterableEditor extends Component<Props, State> {
   toggleEntity(type: DraftEntityType) {
     const { editorState } = this.state
     let content = editorState.getCurrentContent()
-    const selection = editorState.getSelection()
-    content = content.createEntity(type, "MUTABLE", {
-      url: "http://www.example.com/",
-    })
-    const entityKey = content.getLastCreatedEntityKey()
-    this.onChange(RichUtils.toggleLink(editorState, selection, entityKey))
+
+    if (type === "IMAGE") {
+      content = content.createEntity(type, "IMMUTABLE", {
+        src:
+          "https://thibaudcolas.github.io/draftjs-filters/word-toolbars-overload.jpg",
+      })
+      const entityKey = content.getLastCreatedEntityKey()
+      this.onChange(
+        AtomicBlockUtils.insertAtomicBlock(editorState, entityKey, " "),
+      )
+    } else {
+      content = content.createEntity(type, "MUTABLE", {
+        url: "http://www.example.com/",
+      })
+      const entityKey = content.getLastCreatedEntityKey()
+      const selection = editorState.getSelection()
+      this.onChange(RichUtils.toggleLink(editorState, selection, entityKey))
+    }
+  }
+
+  blockRenderer(block: ContentBlock) {
+    if (block.getType() !== "atomic") {
+      return null
+    }
+
+    return {
+      component: Image,
+      editable: false,
+    }
   }
 
   render() {
@@ -155,6 +191,7 @@ class FilterableEditor extends Component<Props, State> {
             editorState={editorState}
             onChange={this.onChange}
             stripPastedStyles={false}
+            blockRendererFn={this.blockRenderer}
           />
         </SentryBoundary>
         <details>
