@@ -1,6 +1,6 @@
 import React from "react"
 import { shallow } from "enzyme"
-import { EditorState, RichUtils } from "draft-js"
+import { EditorState, RichUtils, AtomicBlockUtils } from "draft-js"
 
 import FilterableEditor from "./FilterableEditor"
 
@@ -14,12 +14,14 @@ describe("FilterableEditor", () => {
     jest.spyOn(RichUtils, "toggleInlineStyle")
     jest.spyOn(RichUtils, "toggleBlockType")
     jest.spyOn(RichUtils, "toggleLink")
+    jest.spyOn(AtomicBlockUtils, "insertAtomicBlock")
   })
 
   afterEach(() => {
     RichUtils.toggleInlineStyle.mockRestore()
     RichUtils.toggleBlockType.mockRestore()
     RichUtils.toggleLink.mockRestore()
+    AtomicBlockUtils.insertAtomicBlock.mockRestore()
   })
 
   it("renders", () => {
@@ -81,11 +83,31 @@ describe("FilterableEditor", () => {
     expect(RichUtils.toggleBlockType).toHaveBeenCalled()
   })
 
-  it("toggleEntity", () => {
+  it("toggleEntity - LINK", () => {
     shallow(<FilterableEditor filtered={false} />)
       .instance()
       .toggleEntity("LINK")
 
     expect(RichUtils.toggleLink).toHaveBeenCalled()
+  })
+
+  it("toggleEntity - IMAGE", () => {
+    shallow(<FilterableEditor filtered={false} />)
+      .instance()
+      .toggleEntity("IMAGE")
+
+    expect(AtomicBlockUtils.insertAtomicBlock).toHaveBeenCalled()
+  })
+
+  it("blockRenderer", () => {
+    expect(
+      shallow(<FilterableEditor filtered={false} />)
+        .instance()
+        .blockRenderer({
+          getType: () => "atomic",
+        }),
+    ).toMatchObject({
+      editable: false,
+    })
   })
 })
