@@ -90,37 +90,52 @@ whitespacedCharacters: Array<string>,
  * Note: at the moment, this is only useful for IMAGE entities that Draft.js
  * injects on arbitrary blocks on paste.
  */
+
 preserveAtomicBlocks((content: ContentState))
+
 /**
  * Resets atomic blocks to have a single-space char and no styles.
  */
+
 resetAtomicBlocks((content: ContentState))
+
 /**
  * Removes atomic blocks for which the entity isn't whitelisted.
  */
+
 removeInvalidAtomicBlocks((whitelist: Array<Object>), (content: ContentState))
+
 /**
  * Removes blocks that have a non-zero depth, and aren't list items.
  * Happens with Apple Pages inserting `unstyled` items between list items.
  */
+
 removeInvalidDepthBlocks((content: ContentState))
+
 /**
  * Resets the depth of all the content to at most max.
  */
+
 limitBlockDepth((max: number), (content: ContentState))
+
 /**
  * Removes all block types not present in the whitelist.
  */
+
 filterBlockTypes((whitelist: Array<DraftBlockType>), (content: ContentState))
+
 /**
  * Removes all styles not present in the whitelist.
  */
+
 filterInlineStyles((whitelist: Array<string>), (content: ContentState))
+
 /**
  * Filters entity ranges (where entities are applied on text) based on the result of
  * the callback function. Returning true keeps the entity range, false removes it.
  * Draft.js automatically removes entities if they are not applied on any text.
  */
+
 filterEntityRanges(
   (filterFn: (
     content: ContentState,
@@ -129,10 +144,13 @@ filterEntityRanges(
   ) => boolean),
   (content: ContentState),
 )
+
 /**
  * Keeps all entity types (images, links, documents, embeds) that are enabled.
  */
+
 shouldKeepEntityType((whitelist: Array<Object>), (type: string))
+
 /**
  * Removes invalid images – they should only be in atomic blocks.
  * This only removes the image entity, not the camera emoji (📷) that Draft.js inserts.
@@ -140,22 +158,29 @@ shouldKeepEntityType((whitelist: Array<Object>), (type: string))
  * - It needs to be removed in the block text, where it's 2 chars / 1 code point.
  * - The corresponding CharacterMetadata needs to be removed too, and it's 2 instances
  */
+
 shouldRemoveImageEntity((entityType: string), (blockType: DraftBlockType))
+
 /**
  * Filters entities based on the data they contain.
  */
+
 shouldKeepEntityByAttribute(
   (entityTypes: Array<Object>),
   (entityType: string),
   (data: Object),
 )
+
 /**
  * Filters data on an entity to only retain what is whitelisted.
  */
+
 filterEntityData((entityTypes: Array<Object>), (content: ContentState))
+
 /**
  * Replaces the given characters by their equivalent length of spaces, in all blocks.
  */
+
 replaceTextBySpaces((characters: Array<string>), (content: ContentState))
 ```
 
