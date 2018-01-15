@@ -46,7 +46,7 @@ const FILTER_CONFIG = {
   styles: Object.keys(INLINE_STYLES),
   entities: ENTITY_TYPES,
   maxNesting: 1,
-  whitespacedCharacters: ["\n", "\t"],
+  whitespacedCharacters: ["\n", "\t", "📷"],
 }
 
 type Props = {

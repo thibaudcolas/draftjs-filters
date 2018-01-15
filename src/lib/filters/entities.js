@@ -66,9 +66,6 @@ export const shouldKeepEntityType = (
 /**
  * Removes invalid images – they should only be in atomic blocks.
  * This only removes the image entity, not the camera emoji (📷) that Draft.js inserts.
- * If we want to remove this in the future, consider that:
- * - It needs to be removed in the block text, where it's 2 chars / 1 code point.
- * - The corresponding CharacterMetadata needs to be removed too, and it's 2 instances
  */
 export const shouldRemoveImageEntity = (
   entityType: string,
