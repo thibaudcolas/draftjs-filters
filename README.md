@@ -19,17 +19,13 @@ Then, in your editor import `filterEditorState` and call it in the Draft.js `onC
 ```js
 import { filterEditorState } from "draftjs-filters"
 
-function onChange(nextEditorState) {
-  const { editorState } = this.state
-  const content = editorState.getCurrentContent()
-  const nextContent = nextEditorState.getCurrentContent()
+function onChange(editorState) {
   const shouldFilterPaste =
-    nextContent !== content &&
-    nextEditorState.getLastChangeType() === "insert-fragment"
+    editorState.getLastChangeType() === "insert-fragment"
+  let nextState = editorState
 
-  let filteredEditorState = nextEditorState
   if (shouldFilterPaste) {
-    filteredEditorState = filterEditorState(
+    nextState = filterEditorState(
       {
         blocks: ["header-two", "header-three", "unordered-list-item"],
         styles: ["BOLD"],
@@ -49,11 +45,11 @@ function onChange(nextEditorState) {
         maxNesting: 1,
         whitespacedCharacters: ["\n", "\t", "📷"],
       },
-      filteredEditorState,
+      nextState,
     )
   }
 
-  this.setState({ editorState: filteredEditorState })
+  this.setState({ editorState: nextState })
 }
 ```
 

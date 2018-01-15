@@ -94,15 +94,12 @@ class FilterableEditor extends Component<Props, State> {
     ;(this: any).blockRenderer = this.blockRenderer.bind(this)
   }
 
-  onChange(nextEditorState: EditorState) {
+  onChange(editorState: EditorState) {
     const { filtered } = this.props
-    let nextState = nextEditorState
+    let nextState = editorState
 
     if (filtered) {
-      const { editorState } = this.state
-      const content = editorState.getCurrentContent()
       const shouldFilterPaste =
-        nextState.getCurrentContent() !== content &&
         nextState.getLastChangeType() === "insert-fragment"
 
       if (shouldFilterPaste) {
