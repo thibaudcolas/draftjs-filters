@@ -3,20 +3,14 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="0.3.0"></a>
-# [0.3.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.2.2...v0.3.0) (2018-01-15)
 
+# [0.3.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.2.2...v0.3.0) (2018-01-15)
 
 ### Bug Fixes
 
 * **filters:** fix bug preventing atomic block text reset ([6807077](https://github.com/thibaudcolas/draftjs-filters/commit/6807077))
 * **filters:** fix filterEditorState discarding updated state ([cec872e](https://github.com/thibaudcolas/draftjs-filters/commit/cec872e))
 * **filters:** stop preserveAtomicBlocks resetting blocks with text ([04d0554](https://github.com/thibaudcolas/draftjs-filters/commit/04d0554))
-* **release:** add changelog and git plugins to semantic-release ([23ca249](https://github.com/thibaudcolas/draftjs-filters/commit/23ca249))
-* **release:** completely remove semantic-release ([4612000](https://github.com/thibaudcolas/draftjs-filters/commit/4612000))
-* **release:** debug semantic-release publishing in feature branch ([e063656](https://github.com/thibaudcolas/draftjs-filters/commit/e063656))
-* **release:** disable semantic-release for now ([5691e7e](https://github.com/thibaudcolas/draftjs-filters/commit/5691e7e))
-* **release:** re-enable semantic-release, with a more recent version ([a621e99](https://github.com/thibaudcolas/draftjs-filters/commit/a621e99))
-
 
 ### Features
 
@@ -44,8 +38,6 @@ All notable changes to this project will be documented in this file. See [standa
 * **filters:** remove tabs as part of filterEditorState ([9fd0005](https://github.com/thibaudcolas/draftjs-filters/commit/9fd0005))
 * **filters:** start updating filter methods to work on ContentState ([e716dd9](https://github.com/thibaudcolas/draftjs-filters/commit/e716dd9))
 * **filters:** update whitespaceCharacters to operate on ContentState ([62fef11](https://github.com/thibaudcolas/draftjs-filters/commit/62fef11))
-
-
 
 <a name="0.1.0"></a>
 
