@@ -32,6 +32,7 @@ const config = {
     },
   ],
   maxNesting: 4,
+  // Do not filter 📷 here, this will add trailing whitespace to the snapshots.
   whitespacedCharacters: ["\t"],
 }
 

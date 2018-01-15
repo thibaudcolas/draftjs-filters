@@ -47,7 +47,7 @@ function onChange(nextEditorState) {
           },
         ],
         maxNesting: 1,
-        whitespacedCharacters: ["\n", "\t"],
+        whitespacedCharacters: ["\n", "\t", "📷"],
       },
       filteredEditorState,
     )
