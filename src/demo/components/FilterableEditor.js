@@ -40,7 +40,7 @@ const ENTITY_TYPES = [
     label: "🔗",
     attributes: ["url"],
     whitelist: {
-      href: "example",
+      href: "^(?![#/])",
     },
   },
   {
@@ -48,7 +48,7 @@ const ENTITY_TYPES = [
     label: "📷",
     attributes: ["src"],
     whitelist: {
-      src: "^https",
+      src: "^http",
     },
   },
 ]
