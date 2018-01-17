@@ -224,6 +224,26 @@ describe("entities", () => {
       })
     })
 
+    it("attribute not defined on entities", () => {
+      expect(
+        shouldKeepEntityByAttribute(
+          [
+            {
+              type: "LINK",
+              whitelist: {
+                id: ".*",
+              },
+            },
+          ],
+          "LINK",
+          {
+            href: "#_msocom_1",
+            target: "_blank",
+          },
+        ),
+      ).toBe(false)
+    })
+
     describe("defaults", () => {
       it("missing config", () => {
         expect(
