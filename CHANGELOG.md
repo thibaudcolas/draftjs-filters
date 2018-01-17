@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.4.0...v0.5.0) (2018-01-17)
+
+
+### Features
+
+* **filters:** add better way to filter/keep based on undefined attr ([f836563](https://github.com/thibaudcolas/draftjs-filters/commit/f836563))
+
+
+
 <a name="0.4.0"></a>
 
 # [0.4.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.3.0...v0.4.0) (2018-01-17)
