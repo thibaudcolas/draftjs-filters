@@ -91,10 +91,15 @@ export const shouldKeepEntityByAttribute = (
   }
 
   const isValid = Object.keys(whitelist).every((attr) => {
-    const regex = new RegExp(whitelist[attr])
-    const hasData = data.hasOwnProperty(attr)
+    const check = whitelist[attr]
 
-    return hasData && regex.test(data[attr])
+    if (typeof check === "boolean") {
+      const hasData = data.hasOwnProperty(attr)
+
+      return check ? hasData : !hasData
+    }
+
+    return new RegExp(check).test(data[attr])
   })
 
   return isValid

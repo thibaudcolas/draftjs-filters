@@ -180,6 +180,25 @@ describe("entities", () => {
       ).toBe(false)
     })
 
+    it("attribute not defined on entities", () => {
+      expect(
+        shouldKeepEntityByAttribute(
+          [
+            {
+              type: "LINK",
+              whitelist: {
+                href: "^(?!#)",
+              },
+            },
+          ],
+          "LINK",
+          {
+            url: "http://example.com",
+          },
+        ),
+      ).toBe(true)
+    })
+
     describe("multiple attributes", () => {
       it("valid", () => {
         expect(
@@ -224,24 +243,78 @@ describe("entities", () => {
       })
     })
 
-    it("attribute not defined on entities", () => {
-      expect(
-        shouldKeepEntityByAttribute(
-          [
-            {
-              type: "LINK",
-              whitelist: {
-                id: ".*",
+    describe("attribute presence", () => {
+      it("requested, absent", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+                whitelist: {
+                  id: true,
+                },
               },
+            ],
+            "LINK",
+            {},
+          ),
+        ).toBe(false)
+      })
+
+      it("requested, present", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+                whitelist: {
+                  id: true,
+                },
+              },
+            ],
+            "LINK",
+            {
+              id: "5",
             },
-          ],
-          "LINK",
-          {
-            href: "#_msocom_1",
-            target: "_blank",
-          },
-        ),
-      ).toBe(false)
+          ),
+        ).toBe(true)
+      })
+
+      it("requested out, absent", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+                whitelist: {
+                  id: false,
+                },
+              },
+            ],
+            "LINK",
+            {},
+          ),
+        ).toBe(true)
+      })
+
+      it("requested out, present", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+                whitelist: {
+                  id: false,
+                },
+              },
+            ],
+            "LINK",
+            {
+              id: "5",
+            },
+          ),
+        ).toBe(false)
+      })
     })
 
     describe("defaults", () => {
