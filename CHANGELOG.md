@@ -3,14 +3,12 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="0.4.0"></a>
-# [0.4.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.3.0...v0.4.0) (2018-01-17)
 
+# [0.4.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.3.0...v0.4.0) (2018-01-17)
 
 ### Features
 
 * **api:** add ability for whitelist to filter by undefined attribute ([a4af845](https://github.com/thibaudcolas/draftjs-filters/commit/a4af845))
-
-
 
 <a name="0.3.0"></a>
 
@@ -48,6 +46,12 @@ All notable changes to this project will be documented in this file. See [standa
 * **filters:** remove tabs as part of filterEditorState ([9fd0005](https://github.com/thibaudcolas/draftjs-filters/commit/9fd0005))
 * **filters:** start updating filter methods to work on ContentState ([e716dd9](https://github.com/thibaudcolas/draftjs-filters/commit/e716dd9))
 * **filters:** update whitespaceCharacters to operate on ContentState ([62fef11](https://github.com/thibaudcolas/draftjs-filters/commit/62fef11))
+
+<a name="0.2.2"></a>
+
+# [0.2.2](https://github.com/thibaudcolas/draftjs-filters/compare/v0.1.0...v0.2.2) (2018-01-10)
+
+Identical to 0.1.0.
 
 <a name="0.1.0"></a>
 
