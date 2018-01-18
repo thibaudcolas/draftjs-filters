@@ -352,17 +352,28 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [
-@@ -154,23 +138,13 @@
+@@ -144,33 +128,18 @@
+            "length": 4,
+            "offset": 10,
+          },
+          Object {
+            "key": 1,
+-           "length": 10,
+-           "offset": 16,
+-         },
+-         Object {
+-           "key": 2,
             "length": 12,
             "offset": 28,
           },
           Object {
-            "key": 3,
+-           "key": 3,
 -           "length": 13,
 -           "offset": 42,
 -         },
 -         Object {
 -           "key": 4,
++           "key": 2,
             "length": 10,
             "offset": 57,
           },
@@ -376,14 +387,14 @@ Snapshot Diff:
         "key": "cnvhf",
         "text": "Unstyled, link, email link, tooltip link, internal link, frame link, comment[T.C1] ",
         "type": "unstyled",
-@@ -178,19 +152,14 @@
+@@ -178,19 +147,14 @@
       Object {
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [
           Object {
 -           "key": 6,
-+           "key": 4,
++           "key": 3,
             "length": 17,
             "offset": 10,
           },
@@ -397,7 +408,7 @@ Snapshot Diff:
           Object {
             "length": 17,
             "offset": 10,
-@@ -206,11 +175,11 @@
+@@ -206,11 +170,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -410,7 +421,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -260,11 +229,11 @@
+@@ -260,11 +224,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -423,7 +434,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -302,20 +271,20 @@
+@@ -302,20 +266,20 @@
             "style": "BOLD",
           },
         ],
@@ -446,7 +457,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -433,32 +402,20 @@
+@@ -433,32 +397,20 @@
         "type": "unstyled",
       },
       Object {
@@ -481,7 +492,7 @@ Snapshot Diff:
         "text": "📷 Star list",
         "type": "unstyled",
       },
-@@ -481,17 +438,11 @@
+@@ -481,17 +433,11 @@
         "type": "unstyled",
       },
       Object {
@@ -500,7 +511,7 @@ Snapshot Diff:
         "text": "📷 Star list",
         "type": "unstyled",
       },
-@@ -518,11 +469,11 @@
+@@ -518,11 +464,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -513,7 +524,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -547,25 +498,10 @@
+@@ -547,25 +493,10 @@
         "type": "unstyled",
       },
       Object {
@@ -539,7 +550,7 @@ Snapshot Diff:
         "key": "2oqmd",
         "text": "Caption",
         "type": "unstyled",
-@@ -580,25 +516,10 @@
+@@ -580,25 +511,10 @@
         "type": "unstyled",
       },
       Object {
@@ -565,7 +576,7 @@ Snapshot Diff:
           Object {
             "length": 5,
             "offset": 0,
-@@ -728,11 +649,11 @@
+@@ -728,11 +644,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -578,7 +589,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -840,11 +761,11 @@
+@@ -840,11 +756,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -591,7 +602,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -860,32 +781,20 @@
+@@ -860,32 +776,20 @@
         "type": "unstyled",
       },
       Object {
@@ -626,7 +637,7 @@ Snapshot Diff:
             "length": 5,
             "offset": 1,
             "style": "BOLD",
-@@ -911,25 +820,10 @@
+@@ -911,25 +815,10 @@
         "type": "unstyled",
       },
       Object {
@@ -652,7 +663,7 @@ Snapshot Diff:
           Object {
             "length": 5,
             "offset": 0,
-@@ -941,25 +835,10 @@
+@@ -941,25 +830,10 @@
         "type": "unstyled",
       },
       Object {
@@ -678,7 +689,7 @@ Snapshot Diff:
           Object {
             "length": 7,
             "offset": 0,
-@@ -1004,17 +883,11 @@
+@@ -1004,17 +878,11 @@
         "type": "unstyled",
       },
       Object {
@@ -697,7 +708,7 @@ Snapshot Diff:
         "text": "[T.C1]Comment",
         "type": "unstyled",
       },
-@@ -1028,186 +901,50 @@
+@@ -1028,186 +896,43 @@
         "type": "unstyled",
       },
       Object {
@@ -729,7 +740,8 @@ Snapshot Diff:
       "1": Object {
         "data": Object {
 -         "href": "mailto:test@example.com",
-          "url": "mailto:test@example.com",
+-         "url": "mailto:test@example.com",
++         "url": "http://www.example.com/",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -827,13 +839,12 @@ Snapshot Diff:
         "data": Object {
 -         "href": "#_Inline_styles",
 -         "url": "http://localhost/#_Inline_styles",
-+         "url": "http://www.example.com/",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
-      "4": Object {
-        "data": Object {
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "4": Object {
+-       "data": Object {
 -         "href": "http://www.example.com/",
           "url": "http://www.example.com/",
         },
@@ -968,7 +979,42 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [
-@@ -191,11 +175,11 @@
+@@ -144,20 +128,15 @@
+            "length": 4,
+            "offset": 10,
+          },
+          Object {
+            "key": 1,
+-           "length": 10,
+-           "offset": 16,
+-         },
+-         Object {
+-           "key": 2,
+            "length": 12,
+            "offset": 28,
+          },
+          Object {
+-           "key": 3,
++           "key": 2,
+            "length": 10,
+            "offset": 57,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+@@ -168,11 +147,11 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 4,
++           "key": 3,
+            "length": 17,
+            "offset": 10,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -191,11 +170,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -981,7 +1027,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -245,11 +229,11 @@
+@@ -245,11 +224,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -994,7 +1040,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -287,20 +271,20 @@
+@@ -287,20 +266,20 @@
             "style": "BOLD",
           },
         ],
@@ -1017,7 +1063,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -418,32 +402,20 @@
+@@ -418,32 +397,20 @@
         "type": "unstyled",
       },
       Object {
@@ -1052,7 +1098,7 @@ Snapshot Diff:
         "text": "📷 Star list",
         "type": "unstyled",
       },
-@@ -466,17 +438,11 @@
+@@ -466,17 +433,11 @@
         "type": "unstyled",
       },
       Object {
@@ -1071,7 +1117,7 @@ Snapshot Diff:
         "text": "📷 Star list",
         "type": "unstyled",
       },
-@@ -503,11 +469,11 @@
+@@ -503,11 +464,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1084,7 +1130,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -532,25 +498,10 @@
+@@ -532,25 +493,10 @@
         "type": "unstyled",
       },
       Object {
@@ -1110,7 +1156,7 @@ Snapshot Diff:
         "key": "82amn",
         "text": "Caption",
         "type": "unstyled",
-@@ -565,25 +516,10 @@
+@@ -565,25 +511,10 @@
         "type": "unstyled",
       },
       Object {
@@ -1136,7 +1182,7 @@ Snapshot Diff:
           Object {
             "length": 5,
             "offset": 0,
-@@ -713,11 +649,11 @@
+@@ -713,11 +644,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1149,7 +1195,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -825,11 +761,11 @@
+@@ -825,11 +756,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1162,7 +1208,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -845,32 +781,20 @@
+@@ -845,32 +776,20 @@
         "type": "unstyled",
       },
       Object {
@@ -1197,7 +1243,7 @@ Snapshot Diff:
             "length": 5,
             "offset": 1,
             "style": "BOLD",
-@@ -896,25 +820,10 @@
+@@ -896,25 +815,10 @@
         "type": "unstyled",
       },
       Object {
@@ -1223,7 +1269,7 @@ Snapshot Diff:
           Object {
             "length": 5,
             "offset": 0,
-@@ -926,25 +835,10 @@
+@@ -926,25 +830,10 @@
         "type": "unstyled",
       },
       Object {
@@ -1249,7 +1295,7 @@ Snapshot Diff:
           Object {
             "length": 7,
             "offset": 0,
-@@ -1017,130 +911,40 @@
+@@ -1017,130 +906,33 @@
       },
     ],
     "entityMap": Object {
@@ -1264,7 +1310,8 @@ Snapshot Diff:
       "1": Object {
         "data": Object {
 -         "href": "mailto:test@example.com",
-          "url": "mailto:test@example.com",
+-         "url": "mailto:test@example.com",
++         "url": "http://www.example.com/",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -1322,21 +1369,21 @@ Snapshot Diff:
         "mutability": "MUTABLE",
         "type": "LINK",
       },
-      "4": Object {
-        "data": Object {
+-     "4": Object {
+-       "data": Object {
 -         "href": "http://www.example.com",
-          "url": "http://www.example.com/",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-         "url": "http://www.example.com/",
+    },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "5": Object {
 -       "data": Object {
 -         "alt": "*",
 -         "height": "15",
 -         "src": "file:///C:\\\\truncated\\\\msohtmlclip1\\\\01\\\\clip_image001.gif",
 -         "width": "15",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },

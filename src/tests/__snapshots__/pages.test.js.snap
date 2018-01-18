@@ -5,7 +5,36 @@ Snapshot Diff:
 - First value
 + Second value
 
-@@ -298,19 +298,10 @@
+@@ -120,15 +120,10 @@
+          Object {
+            "key": 0,
+            "length": 4,
+            "offset": 10,
+          },
+-         Object {
+-           "key": 1,
+-           "length": 10,
+-           "offset": 16,
+-         },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "9ql98",
+        "text": "Unstyled, link, email link, bookmark link, comment ",
+        "type": "unstyled",
+@@ -136,11 +131,11 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 2,
++           "key": 1,
+            "length": 17,
+            "offset": 10,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+@@ -298,19 +293,10 @@
         "text": "Nested bulleted list (1)",
         "type": "unordered-list-item",
       },
@@ -25,7 +54,7 @@ Snapshot Diff:
         "inlineStyleRanges": Array [],
         "key": "5d0m7",
         "text": "Nested bulleted list (2)",
-@@ -370,19 +361,10 @@
+@@ -370,19 +356,10 @@
         "text": "Nested numbered list (1)",
         "type": "ordered-list-item",
       },
@@ -45,7 +74,7 @@ Snapshot Diff:
         "inlineStyleRanges": Array [],
         "key": "cpeao",
         "text": "Nested numbered list (2)",
-@@ -442,19 +424,10 @@
+@@ -442,19 +419,10 @@
         "text": "Nested dashed list (1)",
         "type": "unordered-list-item",
       },
@@ -65,7 +94,7 @@ Snapshot Diff:
         "inlineStyleRanges": Array [],
         "key": "dcqr8",
         "text": "Nested dashed list (2)",
-@@ -514,19 +487,10 @@
+@@ -514,19 +482,10 @@
         "text": "Nested image list (1)",
         "type": "unordered-list-item",
       },
@@ -85,7 +114,7 @@ Snapshot Diff:
         "inlineStyleRanges": Array [],
         "key": "ekuqe",
         "text": "Nested image list (2)",
-@@ -1281,27 +1245,24 @@
+@@ -1281,27 +1240,17 @@
       },
     ],
     "entityMap": Object {
@@ -100,13 +129,13 @@ Snapshot Diff:
       "1": Object {
         "data": Object {
 -         "href": "mailto:test@example.com?subject=subject",
-          "url": "mailto:test@example.com?subject=subject",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
-      "2": Object {
-        "data": Object {
+-         "url": "mailto:test@example.com?subject=subject",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "2": Object {
+-       "data": Object {
 -         "href": "http://example.com",
           "url": "http://example.com/",
         },

@@ -57,7 +57,23 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [
-@@ -108,11 +103,11 @@
+@@ -81,15 +76,10 @@
+            "length": 17,
+            "offset": 34,
+          },
+          Object {
+            "key": 2,
+-           "length": 10,
+-           "offset": 59,
+-         },
+-         Object {
+-           "key": 3,
+            "length": 29,
+            "offset": 90,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -108,11 +98,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -70,7 +86,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -126,11 +121,11 @@
+@@ -126,11 +116,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -83,7 +99,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -305,27 +300,16 @@
+@@ -305,27 +295,16 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -113,7 +129,7 @@ Snapshot Diff:
             "length": 6,
             "offset": 0,
             "style": "BOLD",
-@@ -360,59 +344,41 @@
+@@ -360,59 +339,41 @@
       },
       Object {
         "data": Object {},
@@ -180,7 +196,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -518,27 +484,11 @@
+@@ -518,27 +479,11 @@
         "type": "unordered-list-item",
       },
       Object {
@@ -209,7 +225,7 @@ Snapshot Diff:
             "length": 6,
             "offset": 0,
             "style": "BOLD",
-@@ -553,48 +503,48 @@
+@@ -553,48 +498,48 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -224,49 +240,49 @@ Snapshot Diff:
         "entityRanges": Array [
           Object {
 -           "key": 9,
-+           "key": 4,
++           "key": 3,
             "length": 70,
             "offset": 21,
           },
           Object {
 -           "key": 10,
-+           "key": 5,
++           "key": 4,
             "length": 36,
             "offset": 103,
           },
           Object {
 -           "key": 11,
-+           "key": 6,
++           "key": 5,
             "length": 36,
             "offset": 140,
           },
           Object {
 -           "key": 12,
-+           "key": 7,
++           "key": 6,
             "length": 44,
             "offset": 190,
           },
           Object {
 -           "key": 13,
-+           "key": 8,
++           "key": 7,
             "length": 28,
             "offset": 235,
           },
           Object {
 -           "key": 14,
-+           "key": 9,
++           "key": 8,
             "length": 69,
             "offset": 275,
           },
           Object {
 -           "key": 15,
-+           "key": 10,
++           "key": 9,
             "length": 69,
             "offset": 345,
           },
         ],
         "inlineStyleRanges": Array [
-@@ -632,143 +582,81 @@
+@@ -632,143 +577,74 @@
       },
     ],
     "entityMap": Object {
@@ -290,8 +306,8 @@ Snapshot Diff:
         "mutability": "MUTABLE",
         "type": "LINK",
       },
-      "10": Object {
-        "data": Object {
+-     "10": Object {
+-       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
 -       },
@@ -329,11 +345,11 @@ Snapshot Diff:
 -     "14": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "15": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
@@ -347,7 +363,8 @@ Snapshot Diff:
       "2": Object {
         "data": Object {
 -         "href": "/ep/profile/iX86truncated",
-          "url": "http://localhost/ep/profile/iX86truncated",
+-         "url": "http://localhost/ep/profile/iX86truncated",
++         "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -355,7 +372,8 @@ Snapshot Diff:
       "3": Object {
         "data": Object {
 -         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
-          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+-         "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -363,7 +381,7 @@ Snapshot Diff:
       "4": Object {
         "data": Object {
 -         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
-+         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -383,7 +401,7 @@ Snapshot Diff:
 -         "alt": "slightly smiling face",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
-+         "url": "https://trello.com/c/ePWJbTYs/1-test",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -394,7 +412,7 @@ Snapshot Diff:
 -         "alt": "fearful face",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
-+         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
++         "url": "https://youtu.be/y8Kyi0WNg40",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -405,7 +423,7 @@ Snapshot Diff:
 -         "alt": "smiling face with sunglasses",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
-+         "url": "https://youtu.be/y8Kyi0WNg40",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -480,7 +498,23 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [
-@@ -117,11 +112,11 @@
+@@ -90,15 +85,10 @@
+            "length": 17,
+            "offset": 34,
+          },
+          Object {
+            "key": 2,
+-           "length": 10,
+-           "offset": 59,
+-         },
+-         Object {
+-           "key": 3,
+            "length": 29,
+            "offset": 90,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -117,11 +107,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -493,7 +527,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -135,11 +130,11 @@
+@@ -135,11 +125,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -506,7 +540,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -314,27 +309,16 @@
+@@ -314,27 +304,16 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -536,7 +570,7 @@ Snapshot Diff:
             "length": 6,
             "offset": 0,
             "style": "BOLD",
-@@ -369,59 +353,41 @@
+@@ -369,59 +348,41 @@
       },
       Object {
         "data": Object {},
@@ -603,7 +637,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -527,27 +493,11 @@
+@@ -527,27 +488,11 @@
         "type": "unordered-list-item",
       },
       Object {
@@ -632,7 +666,7 @@ Snapshot Diff:
             "length": 6,
             "offset": 0,
             "style": "BOLD",
-@@ -562,48 +512,48 @@
+@@ -562,48 +507,48 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -647,49 +681,49 @@ Snapshot Diff:
         "entityRanges": Array [
           Object {
 -           "key": 9,
-+           "key": 4,
++           "key": 3,
             "length": 70,
             "offset": 21,
           },
           Object {
 -           "key": 10,
-+           "key": 5,
++           "key": 4,
             "length": 36,
             "offset": 103,
           },
           Object {
 -           "key": 11,
-+           "key": 6,
++           "key": 5,
             "length": 36,
             "offset": 140,
           },
           Object {
 -           "key": 12,
-+           "key": 7,
++           "key": 6,
             "length": 44,
             "offset": 190,
           },
           Object {
 -           "key": 13,
-+           "key": 8,
++           "key": 7,
             "length": 28,
             "offset": 235,
           },
           Object {
 -           "key": 14,
-+           "key": 9,
++           "key": 8,
             "length": 69,
             "offset": 275,
           },
           Object {
 -           "key": 15,
-+           "key": 10,
++           "key": 9,
             "length": 69,
             "offset": 345,
           },
         ],
         "inlineStyleRanges": Array [
-@@ -641,143 +591,81 @@
+@@ -641,143 +586,74 @@
       },
     ],
     "entityMap": Object {
@@ -713,8 +747,8 @@ Snapshot Diff:
         "mutability": "MUTABLE",
         "type": "LINK",
       },
-      "10": Object {
-        "data": Object {
+-     "10": Object {
+-       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
 -       },
@@ -752,11 +786,11 @@ Snapshot Diff:
 -     "14": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "15": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
@@ -770,7 +804,8 @@ Snapshot Diff:
       "2": Object {
         "data": Object {
 -         "href": "/ep/profile/iX86truncated",
-          "url": "http://localhost/ep/profile/iX86truncated",
+-         "url": "http://localhost/ep/profile/iX86truncated",
++         "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -778,7 +813,8 @@ Snapshot Diff:
       "3": Object {
         "data": Object {
 -         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
-          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+-         "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -786,7 +822,7 @@ Snapshot Diff:
       "4": Object {
         "data": Object {
 -         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
-+         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -806,7 +842,7 @@ Snapshot Diff:
 -         "alt": "slightly smiling face",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
-+         "url": "https://trello.com/c/ePWJbTYs/1-test",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -817,7 +853,7 @@ Snapshot Diff:
 -         "alt": "fearful face",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
-+         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
++         "url": "https://youtu.be/y8Kyi0WNg40",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -828,7 +864,7 @@ Snapshot Diff:
 -         "alt": "smiling face with sunglasses",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
-+         "url": "https://youtu.be/y8Kyi0WNg40",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -1326,7 +1362,23 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [
-@@ -108,11 +103,11 @@
+@@ -81,15 +76,10 @@
+            "length": 17,
+            "offset": 34,
+          },
+          Object {
+            "key": 2,
+-           "length": 10,
+-           "offset": 59,
+-         },
+-         Object {
+-           "key": 3,
+            "length": 29,
+            "offset": 90,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -108,11 +98,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1339,7 +1391,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -126,11 +121,11 @@
+@@ -126,11 +116,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1352,7 +1404,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -305,27 +300,16 @@
+@@ -305,27 +295,16 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1382,7 +1434,7 @@ Snapshot Diff:
             "length": 6,
             "offset": 0,
             "style": "BOLD",
-@@ -360,59 +344,41 @@
+@@ -360,59 +339,41 @@
       },
       Object {
         "data": Object {},
@@ -1449,7 +1501,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -518,27 +484,11 @@
+@@ -518,27 +479,11 @@
         "type": "unordered-list-item",
       },
       Object {
@@ -1478,7 +1530,7 @@ Snapshot Diff:
             "length": 6,
             "offset": 0,
             "style": "BOLD",
-@@ -553,48 +503,48 @@
+@@ -553,48 +498,48 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1493,49 +1545,49 @@ Snapshot Diff:
         "entityRanges": Array [
           Object {
 -           "key": 9,
-+           "key": 4,
++           "key": 3,
             "length": 70,
             "offset": 21,
           },
           Object {
 -           "key": 10,
-+           "key": 5,
++           "key": 4,
             "length": 36,
             "offset": 103,
           },
           Object {
 -           "key": 11,
-+           "key": 6,
++           "key": 5,
             "length": 36,
             "offset": 140,
           },
           Object {
 -           "key": 12,
-+           "key": 7,
++           "key": 6,
             "length": 44,
             "offset": 190,
           },
           Object {
 -           "key": 13,
-+           "key": 8,
++           "key": 7,
             "length": 28,
             "offset": 235,
           },
           Object {
 -           "key": 14,
-+           "key": 9,
++           "key": 8,
             "length": 69,
             "offset": 275,
           },
           Object {
 -           "key": 15,
-+           "key": 10,
++           "key": 9,
             "length": 69,
             "offset": 345,
           },
         ],
         "inlineStyleRanges": Array [
-@@ -632,143 +582,81 @@
+@@ -632,143 +577,74 @@
       },
     ],
     "entityMap": Object {
@@ -1559,8 +1611,8 @@ Snapshot Diff:
         "mutability": "MUTABLE",
         "type": "LINK",
       },
-      "10": Object {
-        "data": Object {
+-     "10": Object {
+-       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
 -       },
@@ -1598,11 +1650,11 @@ Snapshot Diff:
 -     "14": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "15": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
@@ -1616,7 +1668,8 @@ Snapshot Diff:
       "2": Object {
         "data": Object {
 -         "href": "/ep/profile/iX86truncated",
-          "url": "/ep/profile/iX86truncated",
+-         "url": "/ep/profile/iX86truncated",
++         "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -1624,7 +1677,8 @@ Snapshot Diff:
       "3": Object {
         "data": Object {
 -         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
-          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+-         "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -1632,7 +1686,7 @@ Snapshot Diff:
       "4": Object {
         "data": Object {
 -         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
-+         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -1652,7 +1706,7 @@ Snapshot Diff:
 -         "alt": "slightly smiling face",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
-+         "url": "https://trello.com/c/ePWJbTYs/1-test",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -1663,7 +1717,7 @@ Snapshot Diff:
 -         "alt": "fearful face",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
-+         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
++         "url": "https://youtu.be/y8Kyi0WNg40",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -1674,7 +1728,7 @@ Snapshot Diff:
 -         "alt": "smiling face with sunglasses",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
-+         "url": "https://youtu.be/y8Kyi0WNg40",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -1749,7 +1803,23 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [
-@@ -117,11 +112,11 @@
+@@ -90,15 +85,10 @@
+            "length": 17,
+            "offset": 34,
+          },
+          Object {
+            "key": 2,
+-           "length": 10,
+-           "offset": 59,
+-         },
+-         Object {
+-           "key": 3,
+            "length": 29,
+            "offset": 90,
+          },
+        ],
+        "inlineStyleRanges": Array [
+@@ -117,11 +107,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1762,7 +1832,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -135,11 +130,11 @@
+@@ -135,11 +125,11 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1775,7 +1845,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -314,27 +309,16 @@
+@@ -314,27 +304,16 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1805,7 +1875,7 @@ Snapshot Diff:
             "length": 6,
             "offset": 0,
             "style": "BOLD",
-@@ -369,59 +353,41 @@
+@@ -369,59 +348,41 @@
       },
       Object {
         "data": Object {},
@@ -1872,7 +1942,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -527,27 +493,11 @@
+@@ -527,27 +488,11 @@
         "type": "unordered-list-item",
       },
       Object {
@@ -1901,7 +1971,7 @@ Snapshot Diff:
             "length": 6,
             "offset": 0,
             "style": "BOLD",
-@@ -562,48 +512,48 @@
+@@ -562,48 +507,48 @@
         "depth": 0,
         "entityRanges": Array [],
         "inlineStyleRanges": Array [],
@@ -1916,49 +1986,49 @@ Snapshot Diff:
         "entityRanges": Array [
           Object {
 -           "key": 9,
-+           "key": 4,
++           "key": 3,
             "length": 70,
             "offset": 21,
           },
           Object {
 -           "key": 10,
-+           "key": 5,
++           "key": 4,
             "length": 36,
             "offset": 103,
           },
           Object {
 -           "key": 11,
-+           "key": 6,
++           "key": 5,
             "length": 36,
             "offset": 140,
           },
           Object {
 -           "key": 12,
-+           "key": 7,
++           "key": 6,
             "length": 44,
             "offset": 190,
           },
           Object {
 -           "key": 13,
-+           "key": 8,
++           "key": 7,
             "length": 28,
             "offset": 235,
           },
           Object {
 -           "key": 14,
-+           "key": 9,
++           "key": 8,
             "length": 69,
             "offset": 275,
           },
           Object {
 -           "key": 15,
-+           "key": 10,
++           "key": 9,
             "length": 69,
             "offset": 345,
           },
         ],
         "inlineStyleRanges": Array [
-@@ -641,143 +591,81 @@
+@@ -641,143 +586,74 @@
       },
     ],
     "entityMap": Object {
@@ -1982,8 +2052,8 @@ Snapshot Diff:
         "mutability": "MUTABLE",
         "type": "LINK",
       },
-      "10": Object {
-        "data": Object {
+-     "10": Object {
+-       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
 -       },
@@ -2021,11 +2091,11 @@ Snapshot Diff:
 -     "14": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "15": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
@@ -2039,7 +2109,8 @@ Snapshot Diff:
       "2": Object {
         "data": Object {
 -         "href": "/ep/profile/iX86truncated",
-          "url": "/ep/profile/iX86truncated",
+-         "url": "/ep/profile/iX86truncated",
++         "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -2047,7 +2118,8 @@ Snapshot Diff:
       "3": Object {
         "data": Object {
 -         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
-          "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
+-         "url": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",
++         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
@@ -2055,7 +2127,7 @@ Snapshot Diff:
       "4": Object {
         "data": Object {
 -         "src": "https://d2mxuefqeaa7sj.cloudfront.net/s_38truncated57_example-lowres-image.jpg",
-+         "url": "https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0",
++         "url": "https://trello.com/c/ePWJbTYs/1-test",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -2075,7 +2147,7 @@ Snapshot Diff:
 -         "alt": "slightly smiling face",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f642.png?version=3.1.2",
-+         "url": "https://trello.com/c/ePWJbTYs/1-test",
++         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -2086,7 +2158,7 @@ Snapshot Diff:
 -         "alt": "fearful face",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f628.png?version=3.1.2",
-+         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
++         "url": "https://youtu.be/y8Kyi0WNg40",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
@@ -2097,7 +2169,7 @@ Snapshot Diff:
 -         "alt": "smiling face with sunglasses",
 -         "height": "16",
 -         "src": "https://paper.dropboxstatic.com/static/img/ace/emoji/1f60e.png?version=3.1.2",
-+         "url": "https://youtu.be/y8Kyi0WNg40",
++         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
         },
         "mutability": "MUTABLE",
 -       "type": "IMAGE",
