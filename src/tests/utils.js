@@ -20,7 +20,7 @@ const config = {
       type: "LINK",
       attributes: ["url"],
       whitelist: {
-        href: "^http",
+        href: "^(?!(#|/|mailto:))",
       },
     },
     {
