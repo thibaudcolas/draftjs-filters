@@ -4,7 +4,7 @@
 
 [![Screenshot of Microsoft Word with tens of toolbars activated](https://thibaudcolas.github.io/draftjs-filters/word-toolbars-overload.jpg)](https://thibaudcolas.github.io/draftjs-filters)
 
-The main use case is to filter out disallowed formattings when copy-pasting rich text into an editor, for example from Word or Google Docs. Check out the [online demo](https://thibaudcolas.github.io/draftjs-filters)!
+The main use case is to select what formatting to keep when copy-pasting rich text into an editor, for example from Word or Google Docs, addressing Draft.js limitations like [#166](https://github.com/facebook/draft-js/issues/166). Check out the [online demo](https://thibaudcolas.github.io/draftjs-filters)!
 
 ## Using the filters
 
