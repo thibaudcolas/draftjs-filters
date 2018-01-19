@@ -197,6 +197,19 @@ Have a look at our test data in [`pasting/`](pasting).
 | **Word Online**   |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
 | **Dropbox Paper** |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
 
+Use the [Draft.js Cut/Copy/Paste testing plan](https://github.com/facebook/draft-js/wiki/Manual-Testing#cutcopypaste). We target specific external sources, and have ready-made test documents available to test them:
+
+##### External sources
+
+Here are external sources we want to pay special attention to, and for which we have ready-made test documents with diverse rich content.
+
+* [Microsoft Word 2016](/pasting/documents/Draft.js%20paste%20test%20document%20Word2016%20macOS.docx)
+* [Microsoft Word 2010](/pasting/documents/Draft.js%20paste%20test%20document%20Word2010.docx)
+* [Google Docs](https://docs.google.com/document/d/1YjqkIMC3q4jAzy__-S4fb6mC_w9EssmA6aZbGYWFv80/edit)
+* [Dropbox Paper](https://paper.dropbox.com/doc/Draft.js-paste-test-document-njfdkwmkeGQ9KICjVwLmU)
+* [Apple Pages](/pasting/documents/Draft.js%20paste%20test%20document.pages)
+* [Microsoft Word Online](https://1drv.ms/w/s!AuGin45FpiF5hjzm9QdWHYGqPrqm)
+
 #### IE11
 
 There are [known Draft.js issues](https://github.com/facebook/draft-js/issues/986) with pasting in IE11. For now, we advise users to turn on `stripPastedStyles` in IE11 only so that Draft.js removes all formatting but preserves whitespace:
