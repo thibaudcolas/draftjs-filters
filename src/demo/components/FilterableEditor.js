@@ -40,7 +40,7 @@ const ENTITY_TYPES = [
     label: "🔗",
     attributes: ["url"],
     whitelist: {
-      href: "^(?![#/])",
+      href: "^(http:|https:|undefined$)",
     },
   },
   {

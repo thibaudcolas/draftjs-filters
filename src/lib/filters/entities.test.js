@@ -180,14 +180,14 @@ describe("entities", () => {
       ).toBe(false)
     })
 
-    it("attribute not defined on entities", () => {
+    it("attribute not defined on entities matches undefined", () => {
       expect(
         shouldKeepEntityByAttribute(
           [
             {
               type: "LINK",
               whitelist: {
-                href: "^(?!#)",
+                href: "^(http:|https:|undefined$)",
               },
             },
           ],
@@ -207,7 +207,7 @@ describe("entities", () => {
               {
                 type: "LINK",
                 whitelist: {
-                  href: "^(?!#)",
+                  href: "^(http:|https:|undefined$)",
                   target: "_blank",
                 },
               },
@@ -228,7 +228,7 @@ describe("entities", () => {
               {
                 type: "LINK",
                 whitelist: {
-                  href: "^(?!#)",
+                  href: "^(http:|https:|undefined$)",
                   target: "_blank",
                 },
               },
