@@ -67,7 +67,9 @@ entities: Array<{
     // Allowed attributes. Other attributes will be removed.
     attributes: Array<string>,
     // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
-    whitelist: Object,
+    whitelist: {
+      [attribute: string]: string,
+    },
 }>,
 // Maximum amount of depth for lists (0 = no nesting).
 maxNesting: number,
