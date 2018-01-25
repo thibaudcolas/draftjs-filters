@@ -5,6 +5,71 @@ import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 import { ATOMIC, IMAGE } from "../constants"
 
 /**
+ * Clones entities in the entityMap, so each range points to its own entity instance.
+ * This only clones entities as necessary – if an entity is only referenced
+ * in a single range, it won't be touched.
+ */
+export const cloneEntities = (content: ContentState) => {
+  let newContent = content
+  const blockMap = newContent.getBlockMap()
+
+  const encounteredEntities = []
+
+  // Marks ranges that need cloning, because their entity has been encountered previously.
+  const shouldCloneEntity = (firstChar) => {
+    const key = firstChar.getEntity()
+
+    if (key) {
+      if (encounteredEntities.includes(key)) {
+        return true
+      }
+
+      encounteredEntities.push(key)
+    }
+
+    return false
+  }
+
+  // We're going to update blocks that contain ranges pointing at the same entity as other ranges.
+  const blocks = blockMap.map((block) => {
+    let newChars = block.getCharacterList()
+    let altered = false
+
+    // Updates ranges for which the entity needs to be cloned.
+    const updateRangeWithClone = (start, end) => {
+      const key = newChars.get(start).getEntity()
+      const entity = newContent.getEntity(key)
+
+      newContent = newContent.createEntity(
+        entity.getType(),
+        entity.getMutability(),
+        entity.getData(),
+      )
+      const newKey = newContent.getLastCreatedEntityKey()
+
+      // Update all of the chars in the range with the new entity.
+      newChars = newChars.map((char, i) => {
+        if (start <= i && i <= end) {
+          return CharacterMetadata.applyEntity(char, newKey)
+        }
+
+        return char
+      })
+
+      altered = true
+    }
+
+    block.findEntityRanges(shouldCloneEntity, updateRangeWithClone)
+
+    return altered ? block.set("characterList", newChars) : block
+  })
+
+  return newContent.merge({
+    blockMap: blockMap.merge(blocks),
+  })
+}
+
+/**
  * Filters entity ranges (where entities are applied on text) based on the result of
  * the callback function. Returning true keeps the entity range, false removes it.
  * Draft.js automatically removes entities if they are not applied on any text.

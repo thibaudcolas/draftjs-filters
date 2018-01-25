@@ -1,6 +1,7 @@
-import { EditorState, convertFromRaw } from "draft-js"
+import { EditorState, convertFromRaw, convertToRaw } from "draft-js"
 
 import {
+  cloneEntities,
   filterEntityRanges,
   filterEntityData,
   shouldKeepEntityType,
@@ -9,6 +10,94 @@ import {
 } from "./entities"
 
 describe("entities", () => {
+  describe("#cloneEntities", () => {
+    it("works", () => {
+      const content = convertFromRaw({
+        entityMap: {
+          "1": {
+            type: "LINK",
+            data: {
+              url: "www.example.com",
+            },
+          },
+          "2": {
+            type: "IMAGE",
+            data: {
+              src: "/example.png",
+            },
+          },
+        },
+        blocks: [
+          {
+            key: "a",
+            text: " ",
+            type: "atomic",
+            entityRanges: [
+              {
+                offset: 0,
+                length: 1,
+                key: 2,
+              },
+            ],
+          },
+          {
+            key: "b",
+            text: " ",
+            type: "atomic",
+            entityRanges: [
+              {
+                offset: 0,
+                length: 1,
+                key: 2,
+              },
+            ],
+          },
+          {
+            key: "c",
+            text: "test",
+            type: "unstyled",
+            entityRanges: [
+              {
+                offset: 0,
+                length: 2,
+                key: 1,
+              },
+              {
+                offset: 2,
+                length: 2,
+                key: 1,
+              },
+            ],
+          },
+          {
+            key: "d",
+            text: "test test",
+            type: "unstyled",
+            entityRanges: [
+              {
+                offset: 0,
+                length: 4,
+                key: 1,
+              },
+              {
+                offset: 5,
+                length: 4,
+                key: 1,
+              },
+            ],
+          },
+        ],
+      })
+
+      expect(convertToRaw(cloneEntities(content))).toMatchSnapshot()
+    })
+
+    it("no filtering = no change", () => {
+      const content = EditorState.createEmpty().getCurrentContent()
+      expect(cloneEntities(content)).toBe(content)
+    })
+  })
+
   describe("#filterEntityRanges", () => {
     it("works", () => {
       let content = convertFromRaw({
