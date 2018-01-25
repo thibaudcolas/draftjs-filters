@@ -15,7 +15,7 @@ indent_size = 4
 max_line_length = 80
 
 # Rules for tool configuration.
-[*.{json, yml, yaml, js, css}]
+[*.{json,yml,yaml,js,css}]
 indent_size = 2
 
 # Rules for markdown documents.
