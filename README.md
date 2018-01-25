@@ -127,6 +127,13 @@ filterBlockTypes((whitelist: Array<DraftBlockType>), (content: ContentState))
 filterInlineStyles((whitelist: Array<string>), (content: ContentState))
 
 /**
+ * Clones entities in the entityMap, so each range points to its own entity instance.
+ * This only clones entities as necessary – if an entity is only referenced
+ * in a single range, it won't be changed.
+ */
+cloneEntities((content: ContentState))
+
+/**
  * Filters entity ranges (where entities are applied on text) based on the result of
  * the callback function. Returning true keeps the entity range, false removes it.
  * Draft.js automatically removes entities if they are not applied on any text.

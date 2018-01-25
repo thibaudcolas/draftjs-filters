@@ -6,6 +6,7 @@ import {
   limitBlockDepth,
   filterBlockTypes,
   filterInlineStyles,
+  cloneEntities,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
@@ -29,6 +30,7 @@ describe(pkg.name, () => {
   it("limitBlockDepth", () => expect(limitBlockDepth).toBeDefined())
   it("filterBlockTypes", () => expect(filterBlockTypes).toBeDefined())
   it("filterInlineStyles", () => expect(filterInlineStyles).toBeDefined())
+  it("cloneEntities", () => expect(cloneEntities).toBeDefined())
   it("filterEntityRanges", () => expect(filterEntityRanges).toBeDefined())
   it("shouldKeepEntityType", () => expect(shouldKeepEntityType).toBeDefined())
   it("shouldRemoveImageEntity", () =>

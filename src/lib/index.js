@@ -11,6 +11,7 @@ import {
 } from "./filters/blocks"
 import { filterInlineStyles } from "./filters/styles"
 import {
+  cloneEntities,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
@@ -28,6 +29,7 @@ export {
   limitBlockDepth,
   filterBlockTypes,
   filterInlineStyles,
+  cloneEntities,
   filterEntityRanges,
   shouldKeepEntityType,
   shouldRemoveImageEntity,
