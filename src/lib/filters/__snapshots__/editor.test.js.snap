@@ -23,7 +23,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 0,
+          "key": 1,
           "length": 1,
           "offset": 0,
         },
@@ -148,7 +148,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 1,
+          "key": 2,
           "length": 1,
           "offset": 0,
         },
@@ -163,7 +163,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 1,
+          "key": 3,
           "length": 1,
           "offset": 0,
         },
@@ -178,7 +178,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 2,
+          "key": 4,
           "length": 1,
           "offset": 0,
         },
@@ -193,7 +193,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 3,
+          "key": 5,
           "length": 2,
           "offset": 0,
         },
@@ -217,7 +217,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 4,
+          "key": 6,
           "length": 4,
           "offset": 0,
         },
@@ -230,9 +230,29 @@ Object {
     Object {
       "data": Object {},
       "depth": 0,
-      "entityRanges": Array [],
+      "entityRanges": Array [
+        Object {
+          "key": 7,
+          "length": 4,
+          "offset": 0,
+        },
+        Object {
+          "key": 8,
+          "length": 4,
+          "offset": 5,
+        },
+      ],
       "inlineStyleRanges": Array [],
       "key": "y",
+      "text": "link link",
+      "type": "unstyled",
+    },
+    Object {
+      "data": Object {},
+      "depth": 0,
+      "entityRanges": Array [],
+      "inlineStyleRanges": Array [],
+      "key": "z",
       "text": "So ft",
       "type": "unstyled",
     },
@@ -247,7 +267,7 @@ Object {
           "style": "BOLD",
         },
       ],
-      "key": "z",
+      "key": "aa",
       "text": "Ta bs",
       "type": "unstyled",
     },
@@ -262,29 +282,53 @@ Object {
     },
     "1": Object {
       "data": Object {
-        "src": "/1.png",
+        "src": "/0.png",
       },
       "mutability": undefined,
       "type": "IMAGE",
     },
     "2": Object {
       "data": Object {
-        "src": "/example.png",
+        "src": "/1.png",
       },
       "mutability": undefined,
       "type": "IMAGE",
     },
     "3": Object {
       "data": Object {
+        "src": "/1.png",
+      },
+      "mutability": undefined,
+      "type": "IMAGE",
+    },
+    "4": Object {
+      "data": Object {
+        "src": "/example.png",
+      },
+      "mutability": undefined,
+      "type": "IMAGE",
+    },
+    "5": Object {
+      "data": Object {
         "url": "www.example.com",
       },
       "mutability": undefined,
       "type": "LINK",
     },
-    "4": Object {
+    "6": Object {
       "data": Object {
         "url": "http://example.com/",
       },
+      "mutability": undefined,
+      "type": "LINK",
+    },
+    "7": Object {
+      "data": Object {},
+      "mutability": undefined,
+      "type": "LINK",
+    },
+    "8": Object {
+      "data": Object {},
       "mutability": undefined,
       "type": "LINK",
     },

@@ -15,6 +15,7 @@ import {
 } from "./blocks"
 import { filterInlineStyles } from "./styles"
 import {
+  cloneEntities,
   filterEntityData,
   filterEntityRanges,
   shouldKeepEntityType,
@@ -79,7 +80,7 @@ export const filterEditorState = (
     filterInlineStyles.bind(null, styles),
     // Add block types that are always enabled in Draft.js.
     filterBlockTypes.bind(null, blocks.concat([UNSTYLED, ATOMIC])),
-    // 4. Process atomic blocks.
+    // 4. Process atomic blocks before processing entities.
     preserveAtomicBlocks,
     resetAtomicBlocks,
     // 5. Remove entity ranges (and linked entities)
@@ -87,6 +88,9 @@ export const filterEditorState = (
     // 6. Remove/filter entity-related matters.
     removeInvalidAtomicBlocks.bind(null, entities),
     filterEntityData.bind(null, entities),
+    // 7. Clone entities for which it is necessary.
+    cloneEntities,
+    // 8. Finally, do text operations.
     replaceTextBySpaces.bind(null, whitespacedCharacters),
   ]
 

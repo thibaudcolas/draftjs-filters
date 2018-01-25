@@ -333,14 +333,41 @@ const filterEntityData = [
   },
 ]
 
-const replaceTextBySpaces = [
+const cloneEntitiesEntities = {
+  "5": {
+    type: "LINK",
+    data: {},
+  },
+}
+
+const cloneEntities = [
   {
     key: "y",
+    text: "link link",
+    type: "unstyled",
+    entityRanges: [
+      {
+        offset: 0,
+        length: 4,
+        key: 5,
+      },
+      {
+        offset: 5,
+        length: 4,
+        key: 5,
+      },
+    ],
+  },
+]
+
+const replaceTextBySpaces = [
+  {
+    key: "z",
     text: "So\nft",
     type: "unstyled",
   },
   {
-    key: "z",
+    key: "aa",
     text: "Ta\tbs",
     type: "unstyled",
     inlineStyleRanges: [
@@ -363,6 +390,7 @@ describe("editor", () => {
           resetAtomicBlocksEntities,
           filterEntityRangesEntities,
           filterEntityDataEntities,
+          cloneEntitiesEntities,
         ),
         blocks: [
           ...preserveAtomicBlocks,
@@ -374,6 +402,7 @@ describe("editor", () => {
           ...removeInvalidAtomicBlocks,
           ...filterEntityRanges,
           ...filterEntityData,
+          ...cloneEntities,
           ...replaceTextBySpaces,
         ],
       })

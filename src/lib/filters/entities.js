@@ -7,7 +7,7 @@ import { ATOMIC, IMAGE } from "../constants"
 /**
  * Clones entities in the entityMap, so each range points to its own entity instance.
  * This only clones entities as necessary – if an entity is only referenced
- * in a single range, it won't be touched.
+ * in a single range, it won't be changed.
  */
 export const cloneEntities = (content: ContentState) => {
   let newContent = content
