@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`blocks #preserveBlockByText works 1`] = `
+Object {
+  "blocks": Array [
+    Object {
+      "data": Object {},
+      "depth": 0,
+      "entityRanges": Array [],
+      "inlineStyleRanges": Array [],
+      "key": "a",
+      "text": "test",
+      "type": "unstyled",
+    },
+    Object {
+      "data": Object {},
+      "depth": 0,
+      "entityRanges": Array [],
+      "inlineStyleRanges": Array [],
+      "key": "b",
+      "text": "· Bullet 0",
+      "type": "unordered-list-item",
+    },
+    Object {
+      "data": Object {},
+      "depth": 1,
+      "entityRanges": Array [],
+      "inlineStyleRanges": Array [],
+      "key": "c",
+      "text": "o	Bullet 1",
+      "type": "unordered-list-item",
+    },
+    Object {
+      "data": Object {},
+      "depth": 2,
+      "entityRanges": Array [],
+      "inlineStyleRanges": Array [],
+      "key": "d",
+      "text": "◾Bullet 2",
+      "type": "unordered-list-item",
+    },
+    Object {
+      "data": Object {},
+      "depth": 0,
+      "entityRanges": Array [],
+      "inlineStyleRanges": Array [],
+      "key": "e",
+      "text": "1. Numbered 1",
+      "type": "ordered-list-item",
+    },
+    Object {
+      "data": Object {},
+      "depth": 1,
+      "entityRanges": Array [],
+      "inlineStyleRanges": Array [],
+      "key": "f",
+      "text": "a. Numbered 2",
+      "type": "ordered-list-item",
+    },
+  ],
+  "entityMap": Object {},
+}
+`;
