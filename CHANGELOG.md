@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.5.0...v0.6.0) (2018-01-26)
+
+
+### Features
+
+* **api:** add cloneEntities to the API ([bdcd15c](https://github.com/thibaudcolas/draftjs-filters/commit/bdcd15c))
+* **filters:** add cloneEntities to filterEditorState ([812bb57](https://github.com/thibaudcolas/draftjs-filters/commit/812bb57))
+* **filters:** add cloneEntity to ensure entity uniqueness. Fix [#10](https://github.com/thibaudcolas/draftjs-filters/issues/10) ([9bda5ba](https://github.com/thibaudcolas/draftjs-filters/commit/9bda5ba))
+
+
+
 <a name="0.5.0"></a>
 
 # [0.5.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.4.0...v0.5.0) (2018-01-17)
