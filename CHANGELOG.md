@@ -3,14 +3,12 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="0.6.1"></a>
-## [0.6.1](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.0...v0.6.1) (2018-01-26)
 
+## [0.6.1](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.0...v0.6.1) (2018-01-26)
 
 ### Bug Fixes
 
 * **release:** replace prepublish script with prepublishOnly ([2d5e01f](https://github.com/thibaudcolas/draftjs-filters/commit/2d5e01f))
-
-
 
 <a name="0.6.0"></a>
 
