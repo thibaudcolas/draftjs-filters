@@ -31,6 +31,41 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
 }
 
 /**
+ * Changes block type and depth based on the block's text. – some word processors
+ * add a specific prefix within the text, eg. "· Bulleted list" in Word 2010.
+ */
+export const preserveBlockByText = (
+  rules: Array<{
+    type: DraftBlockType,
+    test: string,
+    depth: number,
+  }>,
+  content: ContentState,
+) => {
+  const blockMap = content.getBlockMap()
+
+  const blocks = blockMap
+    .filter((block) => block.getType() === "unstyled")
+    .map((block) => {
+      const text = block.getText()
+      let newBlock = block
+      const match = rules.find((b) => new RegExp(b.test).test(text))
+
+      if (match) {
+        newBlock = newBlock.set("type", match.type).set("depth", match.depth)
+      }
+
+      return newBlock
+    })
+
+  return blocks.size === 0
+    ? content
+    : content.merge({
+        blockMap: blockMap.merge(blocks),
+      })
+}
+
+/**
  * Resets the depth of all the content to at most max.
  */
 export const limitBlockDepth = (max: number, content: ContentState) => {
