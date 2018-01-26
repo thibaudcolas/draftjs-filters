@@ -1,26 +1,8 @@
 # Pasting analysis
 
-## Draft.js
+## Overview
 
-> Pasting from Draft.js to Draft.js
-
-### Same editor
-
-* All formatting is preserved as-is.
-* [x] Entity ranges refer to the same entities multiple times.
-
-### Different editors
-
-* [ ] Successive `unstyled` blocks are concatenated into a single block.
-* [ ] `CODE` style is not preserved.
-* [ ] `LINK` entities are not preserved.
-* [ ] List nesting is not preserved.
-* [ ] Line breaks are not preserved.
-* [x] `IMAGE` entity is inserted with `📷` character.
-
-### Different editors
-
-Line breaks:
+### Line breaks
 
 * Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"Soft line<?>break"`
 * Dropbox Paper Safari iOS 11 `"Soft "`, `"line break"`
@@ -35,7 +17,107 @@ Line breaks:
 * Google Docs all browsers `"Soft\nLine break"`.
 * Google Docs IE11 `stripPastedStyles`: `"Soft"`, `"Line break"`
 
-## Word 2010
+### List item prefixes
+
+For Word 2010 / 2016, list items cycle through the prefixes every 3 levels of nesting. It's impossible to preserve the real nesting level above depth 2.
+
+#### UL
+
+Depth 0:
+
+```js
+// Word 2010 / Word 2016
+"· "
+// Word 2010, IE11 (plain text)
+"•\t"
+// Dropbox Paper, IE11 (plain text)
+"•"
+// Word Safari iOS11
+"\t"
+// Image list, Word 2010 / Word 2016
+"📷 "
+// Image list, Word 2010, IE11 (plain text)
+" \t"
+```
+
+Depth 1:
+
+```js
+// Word 2010 / Word 2016
+"o "
+// Word 2010, IE11 (plain text)
+"o\t"
+// Dropbox Paper / Google Docs, IE11 (plain text)
+"◦"
+```
+
+Depth 2:
+
+```js
+// Word 2010 / Word 2016
+"§ "
+// Word 2010, IE11 (plain text)
+"\t"
+// Dropbox Paper / Google Docs, IE11 (plain text)
+"◾"
+```
+
+#### OL
+
+Depth 0:
+
+```js
+// Word 2010 / Word 2016
+"1. "
+// Word 2010, IE11 (plain text)
+"1.\t"
+// Dropbox Paper / Google Docs, IE11 (plain text)
+"1."
+```
+
+Depth 1:
+
+```js
+// Word 2010 / Word 2016
+"a. "
+// Word 2010, IE11 (plain text)
+"a.\t"
+// Dropbox Paper / Google Docs, IE11 (plain text)
+"a."
+```
+
+Depth 2:
+
+```js
+// Word 2010 / Word 2016
+"i. "
+// Word 2010, IE11 (plain text)
+"i.\t"
+// Dropbox Paper / Google Docs, IE11 (plain text)
+"i."
+```
+
+## By word processor
+
+### Draft.js
+
+> Pasting from Draft.js to Draft.js
+
+#### Same editor
+
+* All formatting is preserved as-is.
+* [x] Entity ranges refer to the same entities multiple times.
+
+#### Different editors
+
+* [ ] Successive `unstyled` blocks are concatenated into a single block.
+* [ ] `CODE` style is not preserved.
+* [ ] `LINK` entities are not preserved.
+* [ ] List nesting is not preserved.
+* [ ] Line breaks are not preserved.
+* [x] `IMAGE` entity is inserted with `📷` character.
+
+### Word 2010
 
 Highly similar between Chrome 62 and Firefox 57.
 
@@ -82,13 +164,13 @@ Highly similar between Chrome 62 and Firefox 57.
 * Chart -> `IMAGE` with `file:///` for `src`, `width` and `height`.
 * WordArt -> `unstyled` block with whitespace text (multiple spaces).
 
-### IE11
+#### IE11
 
 * The equation content makes the browser crash on copy-paste.
 * Rich paste is all in a single line
 * [x] Advise users to turn on `stripPastedStyles` in their implementation with IE11 detection.
 
-### IE11 - stripPastedStyles
+#### IE11 - stripPastedStyles
 
 * `stripPastedStyles` correctly separates the content.
 * Small caps -> uppercase.
@@ -99,14 +181,14 @@ Highly similar between Chrome 62 and Firefox 57.
 * Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
 * [x] Investigate equation block with single tab character `"text": "\t"`.
 
-## Word 2016
+### Word 2016
 
-### Windows
+#### Windows
 
 * With Word 2010 document, same as Word 2010 results in Chrome 63, Firefox 57, Edge 16. Also identical in IE11, except for the equation crash.
 * With Word 2016 (macOS) document, same as Word 2010 results in Chrome 63, Firefox 57, Edge 16. Also identical in IE11, except for the equation crash.
 
-## Google Docs
+### Google Docs
 
 Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Chrome 62 Win 8.1 & macOS 10.13, Safari 11, Edge 16 Win 10 unless specified.
 
@@ -141,16 +223,16 @@ Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Chrome 62 Win 8.1 & macOS 10.
 * Chart -> `IMAGE` with `src` pointing at `*.googleusercontent.com`.
 * Bookmark -> `unstyled`.
 
-### IE11
+#### IE11
 
 * Rich paste is all in a single line
 * [x] Advise users to turn on `stripPastedStyles` in their implementation with IE11 detection.
 
-### IE11 - stripPastedStyles
+#### IE11 - stripPastedStyles
 
 * Soft line break -> `"Soft"`, `"Line break"`
 
-## Dropbox Paper
+### Dropbox Paper
 
 Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Chrome 62 Win 8.1 & macOS 10.13, Safari 11, Edge 16 Win 10 unless specified.
 
@@ -187,14 +269,14 @@ Same behavior in Firefox 57 Win 8.1 & macOS 10.13, Chrome 62 Win 8.1 & macOS 10.
 * Emojis -> converted to `IMAGE` with `src` pointing to Dropbox Paper (`https://paper.dropboxstatic.com/static/img/ace/emoji/`), `alt` describing the emoji, `"height": "16"`.
 * Dropbox document link, Trello card, YouTube video, GitHub Gist -> all concatenated into a single `unstyled` block, all with URL in-text and `LINK` entity pointing at source.
 
-### IE11
+#### IE11
 
 Unsupported, warning message displayed but document still partially renders.
 
 * Rich paste is all in a single line
 * [x] Advise users to turn on `stripPastedStyles` in their implementation with IE11 detection.
 
-### IE11 - stripPastedStyles
+#### IE11 - stripPastedStyles
 
 * Bullet list prefixed with `•` (depth 0), `◦`, `◾` (depth 1 & 2).
 * Number list prefixed with `1.` (depth 0), `a.`, `i.` (depth 1 & 2).
@@ -202,11 +284,11 @@ Unsupported, warning message displayed but document still partially renders.
 * Section break -> `unstyled` with `"text": "--------------------------------------------------------------------------------",`.
 * Soft line break -> `"Soft "`, `""`, `"line break"`
 
-## Apple Pages
+### Apple Pages
 
 * Paste is identical, plain text, in Safari and Firefox
 
-### Chrome 62 macOS 10.13
+#### Chrome 62 macOS 10.13
 
 * Bold, italic -> `BOLD`, `ITALIC`
 * Strikethrough, monospace, underline, outline, bigger, smaller, superscript, subscript -> `unstyled`.
@@ -243,7 +325,7 @@ Unsupported, warning message displayed but document still partially renders.
 * Chart, Shape, Audio media, Video media -> nothing
 * Highlight -> `unstyled`
 
-## Word Online
+### Word Online
 
 Same behavior in Chrome 62, Safari 11, Firefox 57, Edge 16. Win 8.1, Win 10, macOS 10.13.
 
@@ -278,16 +360,16 @@ Same behavior in Chrome 62, Safari 11, Firefox 57, Edge 16. Win 8.1, Win 10, mac
 * Emojis -> preserved but with `BOLD` applied.
 * Inline styles (`ITALIC`, `BOLD`) are split differently (and may be contiguous) between browsers.
 
-### IE11
+#### IE11
 
 Unsupported, document does not open.
 
-## iOS11
+### iOS11
 
 * Paste is plain text only.
 * Emojis preserved
 
-### Word
+#### Word
 
 * Numbered list prefixed with `\t`, eg. `"text": "\tStar list",` (regardless of depth).
 * Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
