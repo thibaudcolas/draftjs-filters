@@ -98,6 +98,6 @@
     "lint": "npm run linter:css -s -- src/**/*.css && npm run linter:md -s -- '**/*.md'",
     "format": "npm run formatter -s -- '**/*.md' src/**/*.js src/**/*.css",
     "test:ci": "npm run lint -s && npm run flow -s && npm run dist -s && npm run test:coverage -s -- --outputFile build/test-results.json --json",
-    "prepublish": "npm run dist -s"
+    "prepublishOnly": "npm run dist -s"
   }
 }
