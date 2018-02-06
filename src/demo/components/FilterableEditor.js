@@ -8,6 +8,7 @@ import {
   CompositeDecorator,
   AtomicBlockUtils,
   ContentBlock,
+  convertFromRaw,
 } from "draft-js"
 import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 import type { DraftEntityType } from "draft-js/lib/DraftEntityType.js.flow"
@@ -94,6 +95,7 @@ type State = {
 class FilterableEditor extends Component<Props, State> {
   constructor(props: Props) {
     super(props)
+    const { extended } = props
 
     const decorator = new CompositeDecorator([
       {
@@ -102,9 +104,20 @@ class FilterableEditor extends Component<Props, State> {
       },
     ])
 
-    this.state = {
+    const save = window.sessionStorage.getItem("extended")
+    let editorState
+
+    if (extended && save) {
+      const content = convertFromRaw(JSON.parse(save))
       // $FlowFixMe
-      editorState: EditorState.createEmpty(decorator),
+      editorState = EditorState.createWithContent(content, decorator)
+    } else {
+      // $FlowFixMe
+      editorState = EditorState.createEmpty(decorator)
+    }
+
+    this.state = {
+      editorState: editorState,
     }
     ;(this: any).onChange = this.onChange.bind(this)
     ;(this: any).onTab = this.onTab.bind(this)
@@ -137,7 +150,7 @@ class FilterableEditor extends Component<Props, State> {
 
     this.setState({ editorState: nextState })
 
-    sessionStorage.setItem(
+    window.sessionStorage.setItem(
       `content`,
       JSON.stringify(convertToRaw(nextState.getCurrentContent())),
     )

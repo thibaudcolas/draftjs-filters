@@ -9,6 +9,7 @@ const lib = require("../../lib/index")
 describe("FilterableEditor", () => {
   beforeEach(() => {
     global.sessionStorage = {
+      getItem: jest.fn(),
       setItem: jest.fn(),
     }
     jest.spyOn(RichUtils, "toggleInlineStyle")
