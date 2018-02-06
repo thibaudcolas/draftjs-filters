@@ -93,63 +93,69 @@ describe("blocks", () => {
       const content = convertFromRaw({
         entityMap: {},
         blocks: [
-          {
-            key: "a",
-            text: "test",
-            type: "unstyled",
-          },
-          {
-            key: "b",
-            text: "· Bullet 0",
-            type: "unstyled",
-          },
-          {
-            key: "c",
-            text: "o\tBullet 1",
-            type: "unstyled",
-          },
-          {
-            key: "d",
-            text: "◾Bullet 2",
-            type: "unstyled",
-          },
-          {
-            key: "e",
-            text: "1. Numbered 1",
-            type: "unstyled",
-          },
-          {
-            key: "f",
-            text: "a. Numbered 2",
-            type: "unstyled",
-          },
+          { key: "a", text: "test" },
+          { key: "b", text: "· Bullet 0" },
+          { key: "c", text: "•\tBullet 0" },
+          { key: "d", text: "•Bullet 0" },
+          { key: "e", text: "📷 Bullet 0" },
+          { key: "f", text: "\tBullet 0" },
+          { key: "g", text: " \tBullet 0" },
+          // TODO Investigate this case which happens with Word, Word Online.
+          // { key: "h", text: "📷 " },
+          { key: "i", text: "◦Bullet 1" },
+          { key: "j", text: "o Bullet 1" },
+          { key: "k", text: "o\tBullet 1" },
+          { key: "l", text: "§ Bullet 2" },
+          { key: "m", text: "\tBullet 2" },
+          { key: "n", text: "◾Bullet 2" },
+          { key: "o", text: "1. Numbered 0" },
+          { key: "p", text: "19. Numbered 0" },
+          { key: "q", text: "1.\tNumbered 0" },
+          { key: "r", text: "19.\tNumbered 0" },
+          { key: "s", text: "i. Numbered 2" },
+          { key: "t", text: "xviii. Numbered 2" },
+          { key: "u", text: "i.\tNumbered 2" },
+          { key: "v", text: "xviii.\tNumbered 2" },
+          { key: "w", text: "a. Numbered 1" },
+          { key: "x", text: "z. Numbered 1" },
+          { key: "y", text: "a.\tNumbered 1" },
+          { key: "z", text: "z.\tNumbered 1" },
         ],
       })
       expect(
         convertToRaw(
           preserveBlockByText(
-            // WIP. Some of those replacements could be dangerous.
             [
-              // https://regexper.com/#%5E(%C2%B7%20%7C%E2%80%A2%5Ct%7C%E2%80%A2%7C%F0%9F%93%B7%20%7C%5Ct%7C%20%5Ct)
               {
-                type: "unordered-list-item",
+                // https://regexper.com/#%5E(%C2%B7%20%7C%E2%80%A2%5Ct%7C%E2%80%A2%7C%F0%9F%93%B7%20%7C%5Ct%7C%20%5Ct)
                 test: "^(· |•\t|•|📷 |\t| \t)",
+                type: "unordered-list-item",
                 depth: 0,
               },
-              { type: "unordered-list-item", test: "^(◦|o |o\t)", depth: 1 },
-              { type: "unordered-list-item", test: "^(§ |\t|◾)", depth: 2 },
-              // https://regexper.com/#%5E(%5Cd%2B%5C.%5B%20%5Ct%5D)
-              { type: "ordered-list-item", test: "^\\d+\\.[ \t]", depth: 0 },
+              // https://regexper.com/#%5E(%E2%97%A6%7Co%20%7Co%5Ct)
+              { test: "^(◦|o |o\t)", type: "unordered-list-item", depth: 1 },
+              // https://regexper.com/#%5E(%C2%A7%20%7C%EF%82%A7%5Ct%7C%E2%97%BE)
+              { test: "^(§ |\t|◾)", type: "unordered-list-item", depth: 2 },
               {
+                // https://regexper.com/#%5E1%7B0%2C1%7D%5Cd%5C.%5B%20%5Ct%5D
+                test: "^1{0,1}\\d\\.[ \t]",
                 type: "ordered-list-item",
-                // Roman numerals from I to XXX.
-                test: "^x{0,2}(i|ii|iii|iv|v|vi|vii|viii|ix|x)\\.[ \t]",
+                depth: 0,
+              },
+              {
+                // Roman numerals from I to XX.
+                // https://regexper.com/#%5Ex%7B0%2C1%7D(i%7Cii%7Ciii%7Civ%7Cv%7Cvi%7Cvii%7Cviii%7Cix%7Cx)%5C.%5B%20%5Ct%5D
+                test: "^x{0,1}(i|ii|iii|iv|v|vi|vii|viii|ix|x)\\.[ \t]",
+                type: "ordered-list-item",
                 depth: 2,
               },
               {
-                type: "ordered-list-item",
-                // There is a clash between this and the i. roman numeral. Those tests are executed in order though.
+                // There is a clash between this and the i., v., x. roman numerals.
+                // Those tests are executed in order though, so the roman numerals take priority.
+                // We do not want to match too many letters (say aa.), because those could be actual text.
+                // https://regexper.com/#%5E%5Ba-z%5D%5C.%5B%20%5Ct%5D
                 test: "^[a-z]\\.[ \t]",
+                type: "ordered-list-item",
                 depth: 1,
               },
             ],
