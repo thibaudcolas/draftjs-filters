@@ -21,20 +21,42 @@ import Image from "./Image"
 
 import "./FilterableEditor.css"
 
-const BLOCK_TYPES = {
+const BLOCKS = {
   unstyled: "P",
+  "unordered-list-item": "UL",
   "header-one": "H1",
   "header-two": "H2",
   "header-three": "H3",
-  "unordered-list-item": "UL",
 }
 
-const INLINE_STYLES = {
+const BLOCKS_EXTENDED = {
+  unstyled: "P",
+  "unordered-list-item": "UL",
+  "ordered-list-item": "OL",
+  "header-one": "H1",
+  "header-two": "H2",
+  "header-three": "H3",
+  "header-four": "H4",
+  "header-five": "H5",
+  "header-six": "H6",
+  blockquote: "❝",
+  "code-block": "{ }",
+}
+
+const STYLES = {
   BOLD: "B",
   ITALIC: "I",
 }
 
-const ENTITY_TYPES = [
+const STYLES_EXTENDED = {
+  BOLD: "B",
+  ITALIC: "I",
+  CODE: "`",
+  STRIKETHROUGH: "~",
+  UNDERLINE: "_",
+}
+
+const ENTITIES = [
   {
     type: "LINK",
     label: "🔗",
@@ -53,16 +75,13 @@ const ENTITY_TYPES = [
   },
 ]
 
-const FILTER_CONFIG = {
-  blocks: Object.keys(BLOCK_TYPES),
-  styles: Object.keys(INLINE_STYLES),
-  entities: ENTITY_TYPES,
-  maxNesting: 1,
-  whitespacedCharacters: ["\n", "\t", "📷"],
-}
+const MAX_NESTING = 1
+
+const MAX_NESTING_EXTENDED = 4
 
 type Props = {
   filtered: boolean,
+  extended: boolean,
 }
 
 type State = {
@@ -88,6 +107,7 @@ class FilterableEditor extends Component<Props, State> {
       editorState: EditorState.createEmpty(decorator),
     }
     ;(this: any).onChange = this.onChange.bind(this)
+    ;(this: any).onTab = this.onTab.bind(this)
     ;(this: any).toggleStyle = this.toggleStyle.bind(this)
     ;(this: any).toggleBlock = this.toggleBlock.bind(this)
     ;(this: any).toggleEntity = this.toggleEntity.bind(this)
@@ -95,7 +115,7 @@ class FilterableEditor extends Component<Props, State> {
   }
 
   onChange(editorState: EditorState) {
-    const { filtered } = this.props
+    const { filtered, extended } = this.props
     let nextState = editorState
 
     if (filtered) {
@@ -103,7 +123,15 @@ class FilterableEditor extends Component<Props, State> {
         nextState.getLastChangeType() === "insert-fragment"
 
       if (shouldFilterPaste) {
-        nextState = filterEditorState(FILTER_CONFIG, nextState)
+        const filters = {
+          blocks: Object.keys(extended ? BLOCKS_EXTENDED : BLOCKS),
+          styles: Object.keys(extended ? STYLES_EXTENDED : STYLES),
+          entities: ENTITIES,
+          maxNesting: extended ? MAX_NESTING_EXTENDED : MAX_NESTING,
+          whitespacedCharacters: ["\n", "\t", "📷"],
+        }
+
+        nextState = filterEditorState(filters, nextState)
       }
     }
 
@@ -163,29 +191,42 @@ class FilterableEditor extends Component<Props, State> {
     }
   }
 
-  render() {
+  onTab(event: SyntheticKeyboardEvent<>) {
+    const { extended } = this.props
     const { editorState } = this.state
+    const maxNesting = extended ? MAX_NESTING_EXTENDED : MAX_NESTING
+    const newState = RichUtils.onTab(event, editorState, maxNesting)
+
+    this.onChange(newState)
+  }
+
+  render() {
+    const { extended } = this.props
+    const { editorState } = this.state
+    const styles = extended ? STYLES_EXTENDED : STYLES
+    const blocks = extended ? BLOCKS_EXTENDED : BLOCKS
+
     return (
       <div className="FilterableEditor">
         <SentryBoundary>
           <div className="EditorToolbar">
-            {Object.keys(INLINE_STYLES).map((type) => (
+            {Object.keys(styles).map((type) => (
               <button
                 key={type}
                 onMouseDown={this.toggleStyle.bind(this, type)}
               >
-                {INLINE_STYLES[type]}
+                {STYLES_EXTENDED[type]}
               </button>
             ))}
-            {Object.keys(BLOCK_TYPES).map((type) => (
+            {Object.keys(blocks).map((type) => (
               <button
                 key={type}
                 onMouseDown={this.toggleBlock.bind(this, type)}
               >
-                {BLOCK_TYPES[type]}
+                {BLOCKS_EXTENDED[type]}
               </button>
             ))}
-            {ENTITY_TYPES.map((type) => (
+            {ENTITIES.map((type) => (
               <button
                 key={type.type}
                 onMouseDown={this.toggleEntity.bind(this, type.type)}
@@ -199,6 +240,7 @@ class FilterableEditor extends Component<Props, State> {
             onChange={this.onChange}
             stripPastedStyles={false}
             blockRendererFn={this.blockRenderer}
+            onTab={this.onTab}
           />
         </SentryBoundary>
         <details>

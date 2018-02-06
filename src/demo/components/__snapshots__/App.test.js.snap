@@ -45,6 +45,7 @@ exports[`App renders 1`] = `
     </li>
   </ul>
   <FilterableEditor
+    extended={false}
     filtered={true}
   />
   <h2>
@@ -54,6 +55,7 @@ exports[`App renders 1`] = `
     All of the formatting preserved by Draft.js is preserved in the editor.
   </p>
   <FilterableEditor
+    extended={false}
     filtered={false}
   />
   <h2>
@@ -143,5 +145,12 @@ exports[`App renders 1`] = `
       </a>
     </li>
   </ul>
+  <p>
+    Here is an editor with more formatting enabled:
+  </p>
+  <FilterableEditor
+    extended={true}
+    filtered={false}
+  />
 </div>
 `;

@@ -47,7 +47,7 @@ class App extends Component<{}> {
           </li>
         </ul>
 
-        <FilterableEditor filtered={true} />
+        <FilterableEditor filtered={true} extended={false} />
         <h2>Without filtering</h2>
 
         <p>
@@ -55,7 +55,7 @@ class App extends Component<{}> {
           editor.
         </p>
 
-        <FilterableEditor filtered={false} />
+        <FilterableEditor filtered={false} extended={false} />
 
         <h2>Going further</h2>
         <p>
@@ -139,6 +139,10 @@ class App extends Component<{}> {
             </a>
           </li>
         </ul>
+
+        <p>Here is an editor with more formatting enabled:</p>
+
+        <FilterableEditor filtered={false} extended={true} />
       </div>
     )
   }

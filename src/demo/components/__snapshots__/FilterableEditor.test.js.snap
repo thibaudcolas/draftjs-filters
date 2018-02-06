@@ -23,6 +23,12 @@ exports[`FilterableEditor renders 1`] = `
     P
   </button>
   <button
+    key="unordered-list-item"
+    onMouseDown={[Function]}
+  >
+    UL
+  </button>
+  <button
     key="header-one"
     onMouseDown={[Function]}
   >
@@ -39,12 +45,6 @@ exports[`FilterableEditor renders 1`] = `
     onMouseDown={[Function]}
   >
     H3
-  </button>
-  <button
-    key="unordered-list-item"
-    onMouseDown={[Function]}
-  >
-    UL
   </button>
   <button
     key="LINK"
