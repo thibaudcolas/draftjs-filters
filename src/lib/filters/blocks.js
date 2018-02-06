@@ -33,11 +33,12 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
 /**
  * Changes block type and depth based on the block's text. – some word processors
  * add a specific prefix within the text, eg. "· Bulleted list" in Word 2010.
+ * Also removes the matched prefix.
  */
 export const preserveBlockByText = (
   rules: Array<{
-    type: DraftBlockType,
     test: string,
+    type: DraftBlockType,
     depth: number,
   }>,
   content: ContentState,
@@ -49,10 +50,37 @@ export const preserveBlockByText = (
     .map((block) => {
       const text = block.getText()
       let newBlock = block
-      const match = rules.find((b) => new RegExp(b.test).test(text))
+      let match
+      const matchingRule = rules.find((rule) => {
+        match = new RegExp(rule.test).exec(text)
+        return match !== null
+      })
 
-      if (match) {
-        newBlock = newBlock.set("type", match.type).set("depth", match.depth)
+      if (matchingRule && match && match[0]) {
+        // Unicode gotcha:
+        // At the moment, Draft.js stores one CharacterMetadata in the character list
+        // for each "character" in an astral symbol. "📷" has a length of 2.
+        // What matters is that we remove the correct number of chars from both
+        // the text and the List<CharacterMetadata>. So – we want to use the ES5 way of counting
+        // a string length.
+        // See https://mathiasbynens.be/notes/javascript-unicode.
+        const sliceOffset = match[0].length
+
+        // Maintain persistence in the list while removing chars from the start.
+        // https://github.com/facebook/draft-js/blob/788595984da7c1e00d1071ea82b063ff87140be4/src/model/transaction/removeRangeFromContentState.js#L333
+        let chars = block.getCharacterList()
+        let startOffset = 0
+        while (startOffset < sliceOffset) {
+          chars = chars.shift()
+          startOffset++
+        }
+
+        newBlock = newBlock.merge({
+          type: matchingRule.type,
+          depth: matchingRule.depth,
+          text: block.getText().slice(sliceOffset),
+          characterList: chars,
+        })
       }
 
       return newBlock

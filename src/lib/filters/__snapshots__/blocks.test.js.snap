@@ -18,7 +18,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "b",
-      "text": "· Bullet 0",
+      "text": "Bullet 0",
       "type": "unordered-list-item",
     },
     Object {
@@ -27,7 +27,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "c",
-      "text": "•	Bullet 0",
+      "text": "Bullet 0",
       "type": "unordered-list-item",
     },
     Object {
@@ -36,7 +36,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "d",
-      "text": "•Bullet 0",
+      "text": "Bullet 0",
       "type": "unordered-list-item",
     },
     Object {
@@ -45,7 +45,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "e",
-      "text": "📷 Bullet 0",
+      "text": "Bullet 0",
       "type": "unordered-list-item",
     },
     Object {
@@ -54,7 +54,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "f",
-      "text": "	Bullet 0",
+      "text": "Bullet 0",
       "type": "unordered-list-item",
     },
     Object {
@@ -63,7 +63,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "g",
-      "text": " 	Bullet 0",
+      "text": "Bullet 0",
       "type": "unordered-list-item",
     },
     Object {
@@ -72,7 +72,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "i",
-      "text": "◦Bullet 1",
+      "text": "Bullet 1",
       "type": "unordered-list-item",
     },
     Object {
@@ -81,7 +81,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "j",
-      "text": "o Bullet 1",
+      "text": "Bullet 1",
       "type": "unordered-list-item",
     },
     Object {
@@ -90,7 +90,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "k",
-      "text": "o	Bullet 1",
+      "text": "Bullet 1",
       "type": "unordered-list-item",
     },
     Object {
@@ -99,7 +99,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "l",
-      "text": "§ Bullet 2",
+      "text": "Bullet 2",
       "type": "unordered-list-item",
     },
     Object {
@@ -108,7 +108,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "m",
-      "text": "	Bullet 2",
+      "text": "Bullet 2",
       "type": "unordered-list-item",
     },
     Object {
@@ -117,7 +117,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "n",
-      "text": "◾Bullet 2",
+      "text": "Bullet 2",
       "type": "unordered-list-item",
     },
     Object {
@@ -126,7 +126,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "o",
-      "text": "1. Numbered 0",
+      "text": "Numbered 0",
       "type": "ordered-list-item",
     },
     Object {
@@ -135,7 +135,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "p",
-      "text": "19. Numbered 0",
+      "text": "Numbered 0",
       "type": "ordered-list-item",
     },
     Object {
@@ -144,7 +144,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "q",
-      "text": "1.	Numbered 0",
+      "text": "Numbered 0",
       "type": "ordered-list-item",
     },
     Object {
@@ -153,7 +153,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "r",
-      "text": "19.	Numbered 0",
+      "text": "Numbered 0",
       "type": "ordered-list-item",
     },
     Object {
@@ -162,7 +162,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "s",
-      "text": "i. Numbered 2",
+      "text": "Numbered 2",
       "type": "ordered-list-item",
     },
     Object {
@@ -171,7 +171,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "t",
-      "text": "xviii. Numbered 2",
+      "text": "Numbered 2",
       "type": "ordered-list-item",
     },
     Object {
@@ -180,7 +180,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "u",
-      "text": "i.	Numbered 2",
+      "text": "Numbered 2",
       "type": "ordered-list-item",
     },
     Object {
@@ -189,7 +189,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "v",
-      "text": "xviii.	Numbered 2",
+      "text": "Numbered 2",
       "type": "ordered-list-item",
     },
     Object {
@@ -198,7 +198,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "w",
-      "text": "a. Numbered 1",
+      "text": "Numbered 1",
       "type": "ordered-list-item",
     },
     Object {
@@ -207,7 +207,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "x",
-      "text": "z. Numbered 1",
+      "text": "Numbered 1",
       "type": "ordered-list-item",
     },
     Object {
@@ -216,7 +216,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "y",
-      "text": "a.	Numbered 1",
+      "text": "Numbered 1",
       "type": "ordered-list-item",
     },
     Object {
@@ -225,7 +225,7 @@ Object {
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
       "key": "z",
-      "text": "z.	Numbered 1",
+      "text": "Numbered 1",
       "type": "ordered-list-item",
     },
   ],
