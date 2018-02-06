@@ -1,5 +1,120 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FilterableEditor #extended works 1`] = `
+<div
+  className="EditorToolbar"
+>
+  <button
+    key="BOLD"
+    onMouseDown={[Function]}
+  >
+    B
+  </button>
+  <button
+    key="ITALIC"
+    onMouseDown={[Function]}
+  >
+    I
+  </button>
+  <button
+    key="CODE"
+    onMouseDown={[Function]}
+  >
+    \`
+  </button>
+  <button
+    key="STRIKETHROUGH"
+    onMouseDown={[Function]}
+  >
+    ~
+  </button>
+  <button
+    key="UNDERLINE"
+    onMouseDown={[Function]}
+  >
+    _
+  </button>
+  <button
+    key="unstyled"
+    onMouseDown={[Function]}
+  >
+    P
+  </button>
+  <button
+    key="unordered-list-item"
+    onMouseDown={[Function]}
+  >
+    UL
+  </button>
+  <button
+    key="ordered-list-item"
+    onMouseDown={[Function]}
+  >
+    OL
+  </button>
+  <button
+    key="header-one"
+    onMouseDown={[Function]}
+  >
+    H1
+  </button>
+  <button
+    key="header-two"
+    onMouseDown={[Function]}
+  >
+    H2
+  </button>
+  <button
+    key="header-three"
+    onMouseDown={[Function]}
+  >
+    H3
+  </button>
+  <button
+    key="header-four"
+    onMouseDown={[Function]}
+  >
+    H4
+  </button>
+  <button
+    key="header-five"
+    onMouseDown={[Function]}
+  >
+    H5
+  </button>
+  <button
+    key="header-six"
+    onMouseDown={[Function]}
+  >
+    H6
+  </button>
+  <button
+    key="blockquote"
+    onMouseDown={[Function]}
+  >
+    ❝
+  </button>
+  <button
+    key="code-block"
+    onMouseDown={[Function]}
+  >
+    { }
+  </button>
+  <button
+    key="LINK"
+    onMouseDown={[Function]}
+  >
+    🔗
+  </button>
+  <button
+    key="IMAGE"
+    onMouseDown={[Function]}
+  >
+    📷
+  </button>
+</div>
+`;
+
 exports[`FilterableEditor renders 1`] = `
 <div
   className="EditorToolbar"
