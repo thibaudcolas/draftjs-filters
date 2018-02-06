@@ -57,3 +57,7 @@ export const wordOnline = {
   "wordonline-firefox57-win81": require("../../pasting/wordonline-firefox57-win81.json"),
   "wordonline-safari11-macos1013": require("../../pasting/wordonline-safari11-macos1013.json"),
 }
+
+export const draftjs = {
+  "draftjs-chrome64-macos1013": require("../../pasting/draftjs-chrome64-macos1013.json"),
+}

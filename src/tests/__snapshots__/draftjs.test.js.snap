@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Draft.js draftjs-chrome64-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -5,11 +5,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5bqub",
+        "text": "Inline styles",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -37,20 +37,10 @@
+          Object {
+            "length": 11,
+            "offset": 24,
+            "style": "ITALIC",
+          },
+-         Object {
+-           "length": 13,
+-           "offset": 37,
+-           "style": "STRIKETHROUGH",
+-         },
+-         Object {
+-           "length": 9,
+-           "offset": 89,
+-           "style": "UNDERLINE",
+-         },
+        ],
+        "key": "fv0vg",
+        "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace, underlineUnstyled",
+        "type": "unstyled",
+      },
+@@ -59,11 +49,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5aab3",
+        "text": "Inline entities",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -83,11 +73,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "cfjn7",
+        "text": "Text blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -107,29 +97,29 @@
+            "style": "ITALIC",
+          },
+        ],
+        "key": "3oe9v",
+        "text": "Blockquote",
+-       "type": "blockquote",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5ha5m",
+        "text": "Code block",
+-       "type": "code-block",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "fq85v",
+        "text": "h1 - Heading one",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -167,11 +157,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "d5k2v",
+        "text": "h5 - heading five",
+-       "type": "header-five",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -182,11 +172,11 @@
+            "style": "ITALIC",
+          },
+        ],
+        "key": "f890d",
+        "text": "h6 - heading six",
+-       "type": "header-six",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -281,11 +271,11 @@
+        "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "36m0j",
+        "text": "Rich blocks",
+-       "type": "header-one",
++       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [],
+@@ -310,11 +300,11 @@
+            "offset": 0,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "augge",
+-       "text": "📷",
++       "text": " ",
+        "type": "atomic",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+`;

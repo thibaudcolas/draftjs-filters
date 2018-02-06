@@ -1,5 +1,25 @@
 # Pasting analysis
 
+## Draft.js
+
+> Pasting from Draft.js to Draft.js
+
+### Same editor
+
+* All formatting is preserved as-is.
+* [x] Entity ranges refer to the same entities multiple times.
+
+### Different editors
+
+* [ ] Successive `unstyled` blocks are concatenated into a single block.
+* [ ] `CODE` style is not preserved.
+* [ ] `LINK` entities are not preserved.
+* [ ] List nesting is not preserved.
+* [ ] Line breaks are not preserved.
+* [x] `IMAGE` entity is inserted with `📷` character.
+
+### Different editors
+
 Line breaks:
 
 * Apple Pages Firefox / Safari macOS 10.13 / Safari iOS11 inserts invalid character `"Soft line<?>break"`
@@ -196,7 +216,7 @@ Unsupported, warning message displayed but document still partially renders.
 * Page link -> `LINK` with `href`, `url`.
 * [x] Filter `href` attribute on `LINK`.
 * Email link -> `LINK` with `href`, `url`, eg. `mailto:test@example.com?subject=subject`.
-* [ ] Allows setting mail subject. Keep or discard?
+* ~[ ] Allows setting mail subject. Keep or discard?~
 * Bookmark link -> `unstyled`.
 * Comment -> `unstyled`.
 * Bold + link + comment -> `link` only.

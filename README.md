@@ -205,6 +205,7 @@ Have a look at our test data in [`pasting/`](pasting).
 | **Google Docs**   |                |              |                 |               |              |              |              |            |                |
 | **Word Online**   |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
 | **Dropbox Paper** |                |              |                 |               |              | Unsupported  |              | ?          | ?              |
+| **Draft.js**      |                |              |                 |               |              |              |              |            |                |
 
 Use the [Draft.js Cut/Copy/Paste testing plan](https://github.com/facebook/draft-js/wiki/Manual-Testing#cutcopypaste). We target specific external sources, and have ready-made test documents available to test them:
 
