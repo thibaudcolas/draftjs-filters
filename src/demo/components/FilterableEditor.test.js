@@ -70,7 +70,7 @@ describe("FilterableEditor", () => {
   it("toggleStyle", () => {
     shallow(<FilterableEditor filtered={false} />)
       .instance()
-      .toggleStyle("BOLD")
+      .toggleStyle("BOLD", new Event("mousedown"))
 
     expect(RichUtils.toggleInlineStyle).toHaveBeenCalled()
   })
@@ -78,7 +78,7 @@ describe("FilterableEditor", () => {
   it("toggleBlock", () => {
     shallow(<FilterableEditor filtered={false} />)
       .instance()
-      .toggleBlock("header-two")
+      .toggleBlock("header-two", new Event("mousedown"))
 
     expect(RichUtils.toggleBlockType).toHaveBeenCalled()
   })

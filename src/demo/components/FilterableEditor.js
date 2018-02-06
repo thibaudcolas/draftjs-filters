@@ -115,14 +115,18 @@ class FilterableEditor extends Component<Props, State> {
     )
   }
 
-  toggleStyle(type: string) {
+  toggleStyle(type: string, e: Event) {
     const { editorState } = this.state
     this.onChange(RichUtils.toggleInlineStyle(editorState, type))
+
+    e.preventDefault()
   }
 
-  toggleBlock(type: DraftBlockType) {
+  toggleBlock(type: DraftBlockType, e: Event) {
     const { editorState } = this.state
     this.onChange(RichUtils.toggleBlockType(editorState, type))
+
+    e.preventDefault()
   }
 
   toggleEntity(type: DraftEntityType) {
@@ -166,19 +170,25 @@ class FilterableEditor extends Component<Props, State> {
         <SentryBoundary>
           <div className="EditorToolbar">
             {Object.keys(INLINE_STYLES).map((type) => (
-              <button key={type} onClick={this.toggleStyle.bind(this, type)}>
+              <button
+                key={type}
+                onMouseDown={this.toggleStyle.bind(this, type)}
+              >
                 {INLINE_STYLES[type]}
               </button>
             ))}
             {Object.keys(BLOCK_TYPES).map((type) => (
-              <button key={type} onClick={this.toggleBlock.bind(this, type)}>
+              <button
+                key={type}
+                onMouseDown={this.toggleBlock.bind(this, type)}
+              >
                 {BLOCK_TYPES[type]}
               </button>
             ))}
             {ENTITY_TYPES.map((type) => (
               <button
                 key={type.type}
-                onClick={this.toggleEntity.bind(this, type.type)}
+                onMouseDown={this.toggleEntity.bind(this, type.type)}
               >
                 {type.label}
               </button>
