@@ -1,4 +1,11 @@
 describe("demo", () => {
+  beforeEach(() => {
+    global.sessionStorage = {
+      getItem: jest.fn(),
+      setItem: jest.fn(),
+    }
+  })
+
   it("mount", () => {
     document.body.innerHTML = "<div id=root></div>"
     require("./index")
