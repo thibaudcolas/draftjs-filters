@@ -6,55 +6,55 @@ exports[`FilterableEditor renders 1`] = `
 >
   <button
     key="BOLD"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     B
   </button>
   <button
     key="ITALIC"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     I
   </button>
   <button
     key="unstyled"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     P
   </button>
   <button
     key="header-one"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     H1
   </button>
   <button
     key="header-two"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     H2
   </button>
   <button
     key="header-three"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     H3
   </button>
   <button
     key="unordered-list-item"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     UL
   </button>
   <button
     key="LINK"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     🔗
   </button>
   <button
     key="IMAGE"
-    onClick={[Function]}
+    onMouseDown={[Function]}
   >
     📷
   </button>
