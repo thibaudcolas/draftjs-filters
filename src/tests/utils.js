@@ -36,16 +36,18 @@ const config = {
   whitespacedCharacters: ["\t"],
 }
 
-export const testFilteringDiff = (raw) => {
+export const filter = (raw) => {
   const content = convertFromRaw(raw)
   const editorState = filterEditorState(
     config,
     EditorState.createWithContent(content),
   )
 
-  const filtered = convertToRaw(editorState.getCurrentContent())
+  return convertToRaw(editorState.getCurrentContent())
+}
 
+export const testFilteringDiff = (raw) => {
   // We snapshot the difference in the content before-after filtering, instead of the resulting content.
   // This makes it easier to review what exactly is filtered out.
-  expect(snapshotDiff(raw, filtered)).toMatchSnapshot()
+  expect(snapshotDiff(raw, filter(raw))).toMatchSnapshot()
 }
