@@ -463,12 +463,44 @@ describe("editor", () => {
     // If the filtering operation order is wrong, it can introduce unwanted content
     // during the filtering, which would be filtered in a re-run (second paste).
     // We run the filter twice in a row and make sure the second output is equal to the first.
-    it("does not introduce filterable content during filtering", () => {
-      const filteredState = filterEditorState(
-        filters,
-        EditorState.createWithContent(content),
-      )
-      expect(filterEditorState(filters, filteredState)).toBe(filteredState)
+    describe("does not introduce filterable content during filtering", () => {
+      it("works", () => {
+        const filteredState = filterEditorState(
+          filters,
+          EditorState.createWithContent(content),
+        )
+        expect(filterEditorState(filters, filteredState)).toBe(filteredState)
+      })
+
+      it("in particular with list items", () => {
+        const emptyConfig = {
+          blocks: [],
+          styles: [],
+          entities: [],
+          maxNesting: 1,
+          whitespacedCharacters: [],
+        }
+        const filteredState = filterEditorState(
+          emptyConfig,
+          EditorState.createWithContent(
+            convertFromRaw({
+              entityMap: {},
+              blocks: [
+                {
+                  key: "a",
+                  text: "o List item",
+                },
+              ],
+            }),
+          ),
+        )
+
+        expect(
+          convertToRaw(
+            filterEditorState(emptyConfig, filteredState).getCurrentContent(),
+          ),
+        ).toEqual(convertToRaw(filteredState.getCurrentContent()))
+      })
     })
   })
 })

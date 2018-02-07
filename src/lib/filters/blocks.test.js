@@ -184,11 +184,18 @@ describe("blocks", () => {
             key: "b",
             text: "UL",
             type: "unordered-list-item",
+            depth: 1,
           },
           {
             key: "c",
             text: "H1",
             type: "header-one",
+          },
+          {
+            key: "d",
+            text: "UL",
+            type: "ordered-list-item",
+            depth: 1,
           },
         ],
       })
@@ -196,12 +203,16 @@ describe("blocks", () => {
       expect(
         filterBlockTypes(["unordered-list-item"], content)
           .getBlockMap()
-          .map((block) => block.getType())
+          .map((block) => ({
+            type: block.getType(),
+            depth: block.getDepth(),
+          }))
           .toJS(),
       ).toEqual({
-        a: "unstyled",
-        b: "unordered-list-item",
-        c: "unstyled",
+        a: { type: "unstyled", depth: 0 },
+        b: { type: "unordered-list-item", depth: 1 },
+        c: { type: "unstyled", depth: 0 },
+        d: { type: "unstyled", depth: 0 },
       })
     })
 

@@ -120,7 +120,8 @@ removeInvalidDepthBlocks((content: ContentState))
 limitBlockDepth((max: number), (content: ContentState))
 
 /**
- * Removes all block types not present in the whitelist.
+ * Converts all block types not present in the whitelist to unstyled.
+ * Also sets depth to 0 (for potentially nested list items).
  */
 
 filterBlockTypes((whitelist: Array<DraftBlockType>), (content: ContentState))

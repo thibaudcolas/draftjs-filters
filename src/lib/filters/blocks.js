@@ -33,7 +33,7 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
 /**
  * Changes block type and depth based on the block's text. – some word processors
  * add a specific prefix within the text, eg. "· Bulleted list" in Word 2010.
- * Also removes the matched prefix.
+ * Also removes the matched text, use with caution.
  */
 export const preserveBlockByText = (
   rules: Array<{
@@ -59,7 +59,7 @@ export const preserveBlockByText = (
       if (matchingRule && match && match[0]) {
         // Unicode gotcha:
         // At the moment, Draft.js stores one CharacterMetadata in the character list
-        // for each "character" in an astral symbol. "📷" has a length of 2.
+        // for each "character" in an astral symbol. "📷" has a length of 2, is stored with two CharacterMetadata instances.
         // What matters is that we remove the correct number of chars from both
         // the text and the List<CharacterMetadata>. So – we want to use the ES5 way of counting
         // a string length.
@@ -111,7 +111,8 @@ export const limitBlockDepth = (max: number, content: ContentState) => {
 }
 
 /**
- * Removes all block types not present in the whitelist.
+ * Converts all block types not present in the whitelist to unstyled.
+ * Also sets depth to 0 (for potentially nested list items).
  */
 export const filterBlockTypes = (
   whitelist: Array<DraftBlockType>,
@@ -121,7 +122,13 @@ export const filterBlockTypes = (
 
   const changedBlocks = blockMap
     .filter((block) => !whitelist.includes(block.getType()))
-    .map((block) => block.set("type", UNSTYLED))
+    .map((block) =>
+      block.merge({
+        type: UNSTYLED,
+        // Also reset
+        depth: 0,
+      }),
+    )
 
   return changedBlocks.size === 0
     ? content
