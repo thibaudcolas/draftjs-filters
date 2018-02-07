@@ -127,13 +127,15 @@ class FilterableEditor extends Component<Props, State> {
     ;(this: any).blockRenderer = this.blockRenderer.bind(this)
   }
 
-  onChange(editorState: EditorState) {
+  onChange(nextState: EditorState) {
     const { filtered, extended } = this.props
-    let nextState = editorState
+    const { editorState } = this.state
+    let filteredState = nextState
 
     if (filtered) {
       const shouldFilterPaste =
-        nextState.getLastChangeType() === "insert-fragment"
+        nextState.getCurrentContent() !== editorState.getCurrentContent() &&
+        filteredState.getLastChangeType() === "insert-fragment"
 
       if (shouldFilterPaste) {
         const filters = {
@@ -144,11 +146,11 @@ class FilterableEditor extends Component<Props, State> {
           whitespacedCharacters: ["\n", "\t", "📷"],
         }
 
-        nextState = filterEditorState(filters, nextState)
+        filteredState = filterEditorState(filters, filteredState)
       }
     }
 
-    this.setState({ editorState: nextState })
+    this.setState({ editorState: filteredState })
 
     window.sessionStorage.setItem(
       `content`,
