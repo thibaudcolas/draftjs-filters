@@ -6,7 +6,7 @@ import { filterEditorState } from "../lib/index"
 // https://github.com/jest-community/snapshot-diff
 expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
 
-const config = {
+export const config = {
   blocks: [
     "header-two",
     "header-three",
@@ -36,18 +36,20 @@ const config = {
   whitespacedCharacters: ["\t"],
 }
 
-export const filter = (raw) => {
-  const content = convertFromRaw(raw)
-  const editorState = filterEditorState(
-    config,
-    EditorState.createWithContent(content),
-  )
-
-  return convertToRaw(editorState.getCurrentContent())
-}
+export const filter = (raw) => {}
 
 export const testFilteringDiff = (raw) => {
+  const editorState = filterEditorState(
+    config,
+    EditorState.createWithContent(convertFromRaw(raw)),
+  )
+
   // We snapshot the difference in the content before-after filtering, instead of the resulting content.
   // This makes it easier to review what exactly is filtered out.
-  expect(snapshotDiff(raw, filter(raw))).toMatchSnapshot()
+  expect(
+    snapshotDiff(raw, convertToRaw(editorState.getCurrentContent())),
+  ).toMatchSnapshot()
+
+  // Make sure none of the transformations introduce invalid content.
+  expect(editorState).toBe(filterEditorState(config, editorState))
 }

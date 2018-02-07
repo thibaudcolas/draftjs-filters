@@ -1,6 +1,10 @@
-import { filter } from "./utils"
+import { EditorState, convertFromRaw, convertToRaw } from "draft-js"
 
-const content = {
+import { filterEditorState } from "../lib/index"
+
+import { config } from "./utils"
+
+const rawContent = {
   entityMap: {
     "0": {
       type: "LINK",
@@ -342,6 +346,11 @@ const content = {
 
 describe("No paste", () => {
   it("does not alter content entered manually", () => {
-    expect(filter(content)).toEqual(content)
+    const editorState = filterEditorState(
+      config,
+      EditorState.createWithContent(convertFromRaw(rawContent)),
+    )
+
+    expect(convertToRaw(editorState.getCurrentContent())).toEqual(rawContent)
   })
 })
