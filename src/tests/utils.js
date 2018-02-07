@@ -36,8 +36,6 @@ export const config = {
   whitespacedCharacters: ["\t"],
 }
 
-export const filter = (raw) => {}
-
 export const testFilteringDiff = (raw) => {
   const editorState = filterEditorState(
     config,
@@ -51,5 +49,5 @@ export const testFilteringDiff = (raw) => {
   ).toMatchSnapshot()
 
   // Make sure none of the transformations introduce invalid content.
-  expect(editorState).toBe(filterEditorState(config, editorState))
+  expect(editorState === filterEditorState(config, editorState)).toBe(true)
 }
