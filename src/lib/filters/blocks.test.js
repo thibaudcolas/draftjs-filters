@@ -91,17 +91,43 @@ describe("blocks", () => {
   describe("#preserveBlockByText", () => {
     it("works", () => {
       const content = convertFromRaw({
-        entityMap: {},
+        entityMap: {
+          "0": {
+            type: "IMAGE",
+            data: {},
+          },
+        },
         blocks: [
           { key: "a", text: "test" },
           { key: "b", text: "· Bullet 0" },
           { key: "c", text: "•\tBullet 0" },
           { key: "d", text: "•Bullet 0" },
-          { key: "e", text: "📷 Bullet 0" },
+          {
+            key: "e",
+            text: "📷 Bullet 0",
+            entityRanges: [
+              {
+                type: "IMAGE",
+                key: 0,
+                offset: 0,
+                length: 1,
+              },
+            ],
+          },
           { key: "f", text: "\tBullet 0" },
           { key: "g", text: " \tBullet 0" },
-          // TODO Investigate this case which happens with Word, Word Online.
-          // { key: "h", text: "📷 " },
+          {
+            key: "h",
+            text: "📷 ",
+            entityRanges: [
+              {
+                type: "IMAGE",
+                key: 0,
+                offset: 0,
+                length: 1,
+              },
+            ],
+          },
           { key: "i", text: "◦Bullet 1" },
           { key: "j", text: "o Bullet 1" },
           { key: "k", text: "o\tBullet 1" },
@@ -166,7 +192,16 @@ describe("blocks", () => {
     })
 
     it("no normalisation = no change", () => {
-      const content = EditorState.createEmpty().getCurrentContent()
+      const content = convertFromRaw({
+        entityMap: {},
+        blocks: [
+          {
+            key: "a",
+            type: "header-one",
+            text: "test",
+          },
+        ],
+      })
       expect(preserveBlockByText([], content)).toBe(content)
     })
   })

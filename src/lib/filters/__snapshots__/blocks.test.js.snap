@@ -68,6 +68,21 @@ Object {
     },
     Object {
       "data": Object {},
+      "depth": 0,
+      "entityRanges": Array [
+        Object {
+          "key": 0,
+          "length": 1,
+          "offset": 0,
+        },
+      ],
+      "inlineStyleRanges": Array [],
+      "key": "h",
+      "text": "📷 ",
+      "type": "unstyled",
+    },
+    Object {
+      "data": Object {},
       "depth": 1,
       "entityRanges": Array [],
       "inlineStyleRanges": Array [],
@@ -229,6 +244,12 @@ Object {
       "type": "ordered-list-item",
     },
   ],
-  "entityMap": Object {},
+  "entityMap": Object {
+    "0": Object {
+      "data": Object {},
+      "mutability": undefined,
+      "type": "IMAGE",
+    },
+  },
 }
 `;
