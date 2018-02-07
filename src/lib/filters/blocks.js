@@ -33,7 +33,9 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
 /**
  * Changes block type and depth based on the block's text. – some word processors
  * add a specific prefix within the text, eg. "· Bulleted list" in Word 2010.
- * Also removes the matched text, use with caution.
+ * Also removes the matched text.
+ * This is meant first and foremost for list items where the list bullet or numeral
+ * ends up in the text. Other use cases may not be well covered.
  */
 export const preserveBlockByText = (
   rules: Array<{
@@ -51,12 +53,22 @@ export const preserveBlockByText = (
       const text = block.getText()
       let newBlock = block
       let match
+
       const matchingRule = rules.find((rule) => {
         match = new RegExp(rule.test).exec(text)
         return match !== null
       })
 
       if (matchingRule && match && match[0]) {
+        const text = block.getText()
+        const entity = block.getEntityAt(0)
+
+        // Special case – do not convert the block if there is an entity at the start, and the matching text is the full block’s text.
+        // This can happen in Word for equations, which are injected as images with text "📷 ".
+        if (entity && match[0] === text) {
+          return newBlock
+        }
+
         // Unicode gotcha:
         // At the moment, Draft.js stores one CharacterMetadata in the character list
         // for each "character" in an astral symbol. "📷" has a length of 2, is stored with two CharacterMetadata instances.
@@ -78,7 +90,7 @@ export const preserveBlockByText = (
         newBlock = newBlock.merge({
           type: matchingRule.type,
           depth: matchingRule.depth,
-          text: block.getText().slice(sliceOffset),
+          text: text.slice(sliceOffset),
           characterList: chars,
         })
       }
