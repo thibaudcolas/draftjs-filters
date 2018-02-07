@@ -380,63 +380,65 @@ const replaceTextBySpaces = [
   },
 ]
 
+const content = convertFromRaw({
+  entityMap: Object.assign(
+    {},
+    preserveAtomicBlocksEntities,
+    resetAtomicBlocksEntities,
+    filterEntityRangesEntities,
+    filterEntityDataEntities,
+    cloneEntitiesEntities,
+  ),
+  blocks: [
+    ...preserveAtomicBlocks,
+    ...removeInvalidDepthBlocks,
+    ...limitBlockDepth,
+    ...filterBlockTypes,
+    ...filterInlineStyles,
+    ...resetAtomicBlocks,
+    ...removeInvalidAtomicBlocks,
+    ...filterEntityRanges,
+    ...filterEntityData,
+    ...cloneEntities,
+    ...replaceTextBySpaces,
+  ],
+})
+
+const filters = {
+  blocks: [
+    "header-two",
+    "header-three",
+    "header-four",
+    "unordered-list-item",
+    "ordered-list-item",
+  ],
+  styles: ["BOLD"],
+  entities: [
+    {
+      type: "IMAGE",
+      attributes: ["src"],
+      whitelist: {
+        src: "^/",
+      },
+    },
+    {
+      type: "LINK",
+      attributes: ["url"],
+      whitelist: {},
+    },
+  ],
+  maxNesting: 1,
+  whitespacedCharacters: ["\n", "\t", "📷"],
+}
+
 describe("editor", () => {
   describe("#filterEditorState", () => {
     it("works", () => {
-      const contentState = convertFromRaw({
-        entityMap: Object.assign(
-          {},
-          preserveAtomicBlocksEntities,
-          resetAtomicBlocksEntities,
-          filterEntityRangesEntities,
-          filterEntityDataEntities,
-          cloneEntitiesEntities,
-        ),
-        blocks: [
-          ...preserveAtomicBlocks,
-          ...removeInvalidDepthBlocks,
-          ...limitBlockDepth,
-          ...filterBlockTypes,
-          ...filterInlineStyles,
-          ...resetAtomicBlocks,
-          ...removeInvalidAtomicBlocks,
-          ...filterEntityRanges,
-          ...filterEntityData,
-          ...cloneEntities,
-          ...replaceTextBySpaces,
-        ],
-      })
-      const editorState = EditorState.createWithContent(contentState)
       expect(
         convertToRaw(
           filterEditorState(
-            {
-              blocks: [
-                "header-two",
-                "header-three",
-                "header-four",
-                "unordered-list-item",
-                "ordered-list-item",
-              ],
-              styles: ["BOLD"],
-              entities: [
-                {
-                  type: "IMAGE",
-                  attributes: ["src"],
-                  whitelist: {
-                    src: "^/",
-                  },
-                },
-                {
-                  type: "LINK",
-                  attributes: ["url"],
-                  whitelist: {},
-                },
-              ],
-              maxNesting: 1,
-              whitespacedCharacters: ["\n", "\t", "📷"],
-            },
-            editorState,
+            filters,
+            EditorState.createWithContent(content),
           ).getCurrentContent(),
         ),
       ).toMatchSnapshot()
@@ -456,6 +458,17 @@ describe("editor", () => {
           editorState,
         ) === editorState,
       ).toBe(true)
+    })
+
+    // If the filtering operation order is wrong, it can introduce unwanted content
+    // during the filtering, which would be filtered in a re-run (second paste).
+    // We run the filter twice in a row and make sure the second output is equal to the first.
+    it("does not introduce filterable content during filtering", () => {
+      const filteredState = filterEditorState(
+        filters,
+        EditorState.createWithContent(content),
+      )
+      expect(filterEditorState(filters, filteredState)).toBe(filteredState)
     })
   })
 })
