@@ -19,8 +19,6 @@
 
 ### List item prefixes
 
-For Word 2010 / 2016, list items cycle through the prefixes every 3 levels of nesting. It's impossible to preserve the real nesting level above depth 2.
-
 #### UL
 
 Depth 0:
@@ -49,6 +47,8 @@ Depth 1:
 "o\t"
 // Dropbox Paper / Google Docs, IE11 (plain text)
 "◦"
+// Word Safari iOS11
+"\t"
 ```
 
 Depth 2:
@@ -60,6 +60,8 @@ Depth 2:
 "\t"
 // Dropbox Paper / Google Docs, IE11 (plain text)
 "◾"
+// Word Safari iOS11
+"\t"
 ```
 
 #### OL
@@ -146,8 +148,8 @@ Highly similar between Chrome 62 and Firefox 57.
 * ~[ ] Potentially also remove inserted text, if feasible.~
 * Heading 1, Heading 2, Heading 3, Heading 5, Heading 6, Heading 8 -> correct `header-*` level.
 * Heading 7, Heading 8, Heading 9 -> `unstyled`.
-* Bullet list -> `unstyled` prefixed with `·` (depth 0), `o`, `§` (depth 1 & 2).
-* Number list prefixed with `1.` (depth 0), `a.`, `i.` (depth 1 & 2).
+* [x] Bullet list -> `unstyled` prefixed with `·` (depth 0), `o`, `§` (depth 1 & 2).
+* [x] Number list prefixed with `1.` (depth 0), `a.`, `i.` (depth 1 & 2).
 * Star list -> `unstyled` prefixed with `📷`, and `IMAGE` entity with `"alt": "*"` `"height": "15"`, `"width": "15"`, `"src": "file:///C:\\truncated\\msohtmlclip1\\01\\clip_image001.gif"`.
 * [x] Remove image entities and their text when `src` uses `file:///` protocol.
 * Unstyled with borders -> `unstyled`.
@@ -175,8 +177,8 @@ Highly similar between Chrome 62 and Firefox 57.
 * `stripPastedStyles` correctly separates the content.
 * Small caps -> uppercase.
 * Light ref, intense ref, book title -> uppercase.
-* Bullet list prefixed with `•\t` (depth 0), `o\t`, `\t` (depth 1 & 2).
-* Number list prefixed with `1.\t` (depth 0), `a.\t`, `i.\t` (depth 1 & 2).
+* [x] Bullet list prefixed with `•\t` (depth 0), `o\t`, `\t` (depth 1 & 2).
+* [x] Number list prefixed with `1.\t` (depth 0), `a.\t`, `i.\t` (depth 1 & 2).
 * Star list prefixed with `\t` (depth 0), `o\t`, `\t` (depth 1 & 2).
 * Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
 * [x] Investigate equation block with single tab character `"text": "\t"`.
@@ -371,5 +373,6 @@ Unsupported, document does not open.
 
 #### Word
 
-* Numbered list prefixed with `\t`, eg. `"text": "\tStar list",` (regardless of depth).
+* [x] Bullet list prefixed with `\t`, eg. `"text": "\tBullet list",` (regardless of depth).
+* [x] Numbered list prefixed with `\t`, eg. `"text": "\tNumber list",` (regardless of depth).
 * Table columns separated with `\t`, eg. `"text": "row 1 col 1\trow 1 col 2",`.
