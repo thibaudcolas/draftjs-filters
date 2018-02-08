@@ -380,10 +380,51 @@ const replaceTextBySpaces = [
   },
 ]
 
+const preserveBlockByTextEntities = {
+  "6": {
+    type: "IMAGE",
+    data: {},
+  },
+}
+
+const preserveBlockByText = [
+  { key: "ab", text: "· Bullet 0" },
+  {
+    key: "ac",
+    text: "📷 Bullet 0",
+    entityRanges: [
+      {
+        type: "IMAGE",
+        key: 0,
+        offset: 0,
+        length: 1,
+      },
+    ],
+  },
+  {
+    key: "ad",
+    text: "📷 ",
+    entityRanges: [
+      {
+        type: "IMAGE",
+        key: 0,
+        offset: 0,
+        length: 1,
+      },
+    ],
+  },
+  { key: "ae", text: "◦Bullet 1" },
+  { key: "af", text: "§ Bullet 2" },
+  { key: "ag", text: "1. Numbered 0" },
+  { key: "ah", text: "i. Numbered 2" },
+  { key: "ai", text: "a. Numbered 1" },
+]
+
 const content = convertFromRaw({
   entityMap: Object.assign(
     {},
     preserveAtomicBlocksEntities,
+    preserveBlockByTextEntities,
     resetAtomicBlocksEntities,
     filterEntityRangesEntities,
     filterEntityDataEntities,
@@ -392,6 +433,7 @@ const content = convertFromRaw({
   blocks: [
     ...preserveAtomicBlocks,
     ...removeInvalidDepthBlocks,
+    ...preserveBlockByText,
     ...limitBlockDepth,
     ...filterBlockTypes,
     ...filterInlineStyles,

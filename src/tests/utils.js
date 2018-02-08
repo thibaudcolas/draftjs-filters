@@ -44,10 +44,12 @@ export const testFilteringDiff = (raw) => {
 
   // We snapshot the difference in the content before-after filtering, instead of the resulting content.
   // This makes it easier to review what exactly is filtered out.
-  expect(
-    snapshotDiff(raw, convertToRaw(editorState.getCurrentContent())),
-  ).toMatchSnapshot()
+  const filteredContent = convertToRaw(editorState.getCurrentContent())
+  expect(snapshotDiff(raw, filteredContent)).toMatchSnapshot()
 
   // Make sure none of the transformations introduce invalid content.
-  expect(editorState === filterEditorState(config, editorState)).toBe(true)
+  const filteredTwice = convertToRaw(
+    filterEditorState(config, editorState).getCurrentContent(),
+  )
+  expect(filteredTwice).toEqual(filteredContent)
 }

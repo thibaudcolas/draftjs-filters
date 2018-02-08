@@ -10,6 +10,7 @@ import {
 } from "./atomic"
 import {
   limitBlockDepth,
+  preserveBlockByText,
   filterBlockTypes,
   removeInvalidDepthBlocks,
 } from "./blocks"
@@ -46,6 +47,41 @@ type FilterOptions = {
   whitespacedCharacters: Array<string>,
 }
 
+const PREFIX_RULES = [
+  {
+    // https://regexper.com/#%5E(%C2%B7%20%7C%E2%80%A2%5Ct%7C%E2%80%A2%7C%F0%9F%93%B7%20%7C%5Ct%7C%20%5Ct)
+    test: "^(· |•\t|•|📷 |\t| \t)",
+    type: "unordered-list-item",
+    depth: 0,
+  },
+  // https://regexper.com/#%5E(%E2%97%A6%7Co%20%7Co%5Ct)
+  { test: "^(◦|o |o\t)", type: "unordered-list-item", depth: 1 },
+  // https://regexper.com/#%5E(%C2%A7%20%7C%EF%82%A7%5Ct%7C%E2%97%BE)
+  { test: "^(§ |\t|◾)", type: "unordered-list-item", depth: 2 },
+  {
+    // https://regexper.com/#%5E1%7B0%2C1%7D%5Cd%5C.%5B%20%5Ct%5D
+    test: "^1{0,1}\\d\\.[ \t]",
+    type: "ordered-list-item",
+    depth: 0,
+  },
+  {
+    // Roman numerals from I to XX.
+    // https://regexper.com/#%5Ex%7B0%2C1%7D(i%7Cii%7Ciii%7Civ%7Cv%7Cvi%7Cvii%7Cviii%7Cix%7Cx)%5C.%5B%20%5Ct%5D
+    test: "^x{0,1}(i|ii|iii|iv|v|vi|vii|viii|ix|x)\\.[ \t]",
+    type: "ordered-list-item",
+    depth: 2,
+  },
+  {
+    // There is a clash between this and the i., v., x. roman numerals.
+    // Those tests are executed in order though, so the roman numerals take priority.
+    // We do not want to match too many letters (say aa.), because those could be actual text.
+    // https://regexper.com/#%5E%5Ba-z%5D%5C.%5B%20%5Ct%5D
+    test: "^[a-z]\\.[ \t]",
+    type: "ordered-list-item",
+    depth: 1,
+  },
+]
+
 /**
  * Applies whitelist and blacklist operations to the editor content,
  * to enforce it's shaped according to the options.
@@ -77,6 +113,7 @@ export const filterEditorState = (
   const filters = [
     // 1. clean up blocks.
     removeInvalidDepthBlocks,
+    preserveBlockByText.bind(null, PREFIX_RULES),
     limitBlockDepth.bind(null, maxNesting),
     // 2. reset styles and blocks.
     filterInlineStyles.bind(null, styles),

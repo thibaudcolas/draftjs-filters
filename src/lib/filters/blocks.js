@@ -137,7 +137,6 @@ export const filterBlockTypes = (
     .map((block) =>
       block.merge({
         type: UNSTYLED,
-        // Also reset
         depth: 0,
       }),
     )
