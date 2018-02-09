@@ -120,6 +120,22 @@ removeInvalidDepthBlocks((content: ContentState))
 limitBlockDepth((max: number), (content: ContentState))
 
 /**
+ * Changes block type and depth based on the block's text. – some word processors
+ * add a specific prefix within the text, eg. "· Bulleted list" in Word 2010.
+ * Also removes the matched text.
+ * This is meant first and foremost for list items where the list bullet or numeral
+ * ends up in the text. Other use cases may not be well covered.
+ */
+preserveBlockByText(
+  (rules: Array<{
+    test: string,
+    type: DraftBlockType,
+    depth: number,
+  }>),
+  (content: ContentState),
+)
+
+/**
  * Converts all block types not present in the whitelist to unstyled.
  * Also sets depth to 0 (for potentially nested list items).
  */
