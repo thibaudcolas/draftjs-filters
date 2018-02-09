@@ -4,6 +4,7 @@ import {
   removeInvalidAtomicBlocks,
   removeInvalidDepthBlocks,
   limitBlockDepth,
+  preserveBlockByText,
   filterBlockTypes,
   filterInlineStyles,
   cloneEntities,
@@ -28,6 +29,7 @@ describe(pkg.name, () => {
   it("removeInvalidDepthBlocks", () =>
     expect(removeInvalidDepthBlocks).toBeDefined())
   it("limitBlockDepth", () => expect(limitBlockDepth).toBeDefined())
+  it("preserveBlockByText", () => expect(preserveBlockByText).toBeDefined())
   it("filterBlockTypes", () => expect(filterBlockTypes).toBeDefined())
   it("filterInlineStyles", () => expect(filterInlineStyles).toBeDefined())
   it("cloneEntities", () => expect(cloneEntities).toBeDefined())

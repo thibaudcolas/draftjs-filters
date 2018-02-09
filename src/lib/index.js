@@ -7,6 +7,7 @@ import {
 import {
   removeInvalidDepthBlocks,
   limitBlockDepth,
+  preserveBlockByText,
   filterBlockTypes,
 } from "./filters/blocks"
 import { filterInlineStyles } from "./filters/styles"
@@ -27,6 +28,7 @@ export {
   removeInvalidAtomicBlocks,
   removeInvalidDepthBlocks,
   limitBlockDepth,
+  preserveBlockByText,
   filterBlockTypes,
   filterInlineStyles,
   cloneEntities,
