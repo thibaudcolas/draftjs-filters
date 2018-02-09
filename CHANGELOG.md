@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.1...v0.7.0) (2018-02-09)
+
+
+### Features
+
+* **api:** add preserveBlockByText to exposed filters ([077e008](https://github.com/thibaudcolas/draftjs-filters/commit/077e008))
+* **filters:** add first implementation of preserveBlockByText ([ed27ca7](https://github.com/thibaudcolas/draftjs-filters/commit/ed27ca7))
+* **filters:** add preserveBlockByText to filterEditorState ([0c52d72](https://github.com/thibaudcolas/draftjs-filters/commit/0c52d72))
+* **filters:** add special case to preserveBlockByText for entities ([21583de](https://github.com/thibaudcolas/draftjs-filters/commit/21583de))
+* **filters:** change atomic block check to convert camera emoji + space ([9249033](https://github.com/thibaudcolas/draftjs-filters/commit/9249033))
+* **filters:** filterBlockTypes now also resets block depth to 0 ([33c337d](https://github.com/thibaudcolas/draftjs-filters/commit/33c337d))
+* **filters:** remove matched prefix when preserving list items ([059bf9e](https://github.com/thibaudcolas/draftjs-filters/commit/059bf9e))
+
+
+
 <a name="0.6.1"></a>
 
 ## [0.6.1](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.0...v0.6.1) (2018-01-26)
