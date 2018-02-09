@@ -90,11 +90,17 @@ Object {
     Object {
       "data": Object {},
       "depth": 0,
-      "entityRanges": Array [],
+      "entityRanges": Array [
+        Object {
+          "key": 2,
+          "length": 1,
+          "offset": 0,
+        },
+      ],
       "inlineStyleRanges": Array [],
       "key": "ad",
-      "text": "   ",
-      "type": "unstyled",
+      "text": " ",
+      "type": "atomic",
     },
     Object {
       "data": Object {},
@@ -220,7 +226,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 2,
+          "key": 3,
           "length": 1,
           "offset": 0,
         },
@@ -235,7 +241,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 3,
+          "key": 4,
           "length": 1,
           "offset": 0,
         },
@@ -250,7 +256,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 4,
+          "key": 5,
           "length": 1,
           "offset": 0,
         },
@@ -265,7 +271,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 5,
+          "key": 6,
           "length": 2,
           "offset": 0,
         },
@@ -289,7 +295,7 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 6,
+          "key": 7,
           "length": 4,
           "offset": 0,
         },
@@ -304,12 +310,12 @@ Object {
       "depth": 0,
       "entityRanges": Array [
         Object {
-          "key": 7,
+          "key": 8,
           "length": 4,
           "offset": 0,
         },
         Object {
-          "key": 8,
+          "key": 9,
           "length": 4,
           "offset": 5,
         },
@@ -361,7 +367,7 @@ Object {
     },
     "2": Object {
       "data": Object {
-        "src": "/1.png",
+        "src": "/0.png",
       },
       "mutability": undefined,
       "type": "IMAGE",
@@ -375,31 +381,38 @@ Object {
     },
     "4": Object {
       "data": Object {
-        "src": "/example.png",
+        "src": "/1.png",
       },
       "mutability": undefined,
       "type": "IMAGE",
     },
     "5": Object {
       "data": Object {
+        "src": "/example.png",
+      },
+      "mutability": undefined,
+      "type": "IMAGE",
+    },
+    "6": Object {
+      "data": Object {
         "url": "www.example.com",
       },
       "mutability": undefined,
       "type": "LINK",
     },
-    "6": Object {
+    "7": Object {
       "data": Object {
         "url": "http://example.com/",
       },
       "mutability": undefined,
       "type": "LINK",
     },
-    "7": Object {
+    "8": Object {
       "data": Object {},
       "mutability": undefined,
       "type": "LINK",
     },
-    "8": Object {
+    "9": Object {
       "data": Object {},
       "mutability": undefined,
       "type": "LINK",

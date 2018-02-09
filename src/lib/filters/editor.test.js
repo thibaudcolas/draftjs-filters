@@ -394,7 +394,6 @@ const preserveBlockByText = [
     text: "📷 Bullet 0",
     entityRanges: [
       {
-        type: "IMAGE",
         key: 0,
         offset: 0,
         length: 1,
@@ -406,7 +405,6 @@ const preserveBlockByText = [
     text: "📷 ",
     entityRanges: [
       {
-        type: "IMAGE",
         key: 0,
         offset: 0,
         length: 1,

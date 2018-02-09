@@ -15,11 +15,7 @@ export const preserveAtomicBlocks = (content: ContentState) => {
     .filter((block) => {
       const text = block.getText()
       const entityKey = block.getEntityAt(0)
-      // Use the ES6 way of counting string length to account for unicode symbols.
-      // See https://mathiasbynens.be/notes/javascript-unicode.
-      const isOneSymbol = Array.from(text).length === 1
-      const shouldPreserve =
-        entityKey && isOneSymbol && ["📷", " "].includes(text)
+      const shouldPreserve = entityKey && ["📷", " ", "📷 "].includes(text)
 
       return shouldPreserve
     })

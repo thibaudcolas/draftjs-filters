@@ -851,7 +851,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -860,32 +776,20 @@
+@@ -860,32 +776,11 @@
         "type": "unstyled",
       },
       Object {
@@ -864,15 +864,14 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
-+       "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "7ri7s",
-        "text": "📷 ",
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
-        "depth": 0,
+-       "inlineStyleRanges": Array [],
+-       "key": "7ri7s",
+-       "text": "📷 ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 14,
@@ -886,7 +885,7 @@ Snapshot Diff:
             "length": 5,
             "offset": 1,
             "style": "BOLD",
-@@ -911,25 +815,10 @@
+@@ -911,25 +806,10 @@
         "type": "unstyled",
       },
       Object {
@@ -912,7 +911,7 @@ Snapshot Diff:
           Object {
             "length": 5,
             "offset": 0,
-@@ -941,25 +830,10 @@
+@@ -941,25 +821,10 @@
         "type": "unstyled",
       },
       Object {
@@ -938,7 +937,7 @@ Snapshot Diff:
           Object {
             "length": 7,
             "offset": 0,
-@@ -1004,17 +878,11 @@
+@@ -1004,17 +869,11 @@
         "type": "unstyled",
       },
       Object {
@@ -957,7 +956,7 @@ Snapshot Diff:
         "text": "[T.C1]Comment",
         "type": "unstyled",
       },
-@@ -1028,186 +896,43 @@
+@@ -1028,186 +887,43 @@
         "type": "unstyled",
       },
       Object {
@@ -1681,7 +1680,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -845,32 +776,20 @@
+@@ -845,32 +776,11 @@
         "type": "unstyled",
       },
       Object {
@@ -1694,15 +1693,14 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
-+       "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "5tsng",
-        "text": "📷 ",
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
-        "depth": 0,
+-       "inlineStyleRanges": Array [],
+-       "key": "5tsng",
+-       "text": "📷 ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 11,
@@ -1716,7 +1714,7 @@ Snapshot Diff:
             "length": 5,
             "offset": 1,
             "style": "BOLD",
-@@ -896,25 +815,10 @@
+@@ -896,25 +806,10 @@
         "type": "unstyled",
       },
       Object {
@@ -1742,7 +1740,7 @@ Snapshot Diff:
           Object {
             "length": 5,
             "offset": 0,
-@@ -926,25 +830,10 @@
+@@ -926,25 +821,10 @@
         "type": "unstyled",
       },
       Object {
@@ -1768,7 +1766,7 @@ Snapshot Diff:
           Object {
             "length": 7,
             "offset": 0,
-@@ -1017,130 +906,33 @@
+@@ -1017,130 +897,33 @@
       },
     ],
     "entityMap": Object {
