@@ -73,7 +73,7 @@ Snapshot Diff:
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
       },
-@@ -552,17 +530,11 @@
+@@ -552,41 +530,20 @@
         "type": "unstyled",
       },
       Object {
@@ -86,13 +86,18 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
-+       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "187nl",
+-       "text": "📷 ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
+        "entityRanges": Array [],
         "inlineStyleRanges": Array [],
-        "key": "187nl",
-        "text": "📷 ",
-        "type": "unstyled",
-      },
-@@ -576,17 +548,11 @@
+        "key": "rn60",
+        "text": "Image wrap text with border ",
         "type": "unstyled",
       },
       Object {
@@ -111,7 +116,7 @@ Snapshot Diff:
         "text": "📷Text displayed next to image ",
         "type": "unstyled",
       },
-@@ -845,40 +811,19 @@
+@@ -845,40 +802,19 @@
       },
     ],
     "entityMap": Object {
@@ -227,7 +232,7 @@ Snapshot Diff:
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
       },
-@@ -552,17 +530,11 @@
+@@ -552,41 +530,20 @@
         "type": "unstyled",
       },
       Object {
@@ -240,13 +245,18 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
-+       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "1ptvu",
+-       "text": "📷 ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
+        "entityRanges": Array [],
         "inlineStyleRanges": Array [],
-        "key": "1ptvu",
-        "text": "📷 ",
-        "type": "unstyled",
-      },
-@@ -576,17 +548,11 @@
+        "key": "189sv",
+        "text": "Image wrap text with border ",
         "type": "unstyled",
       },
       Object {
@@ -265,7 +275,7 @@ Snapshot Diff:
         "text": "📷Text displayed next to image ",
         "type": "unstyled",
       },
-@@ -845,40 +811,19 @@
+@@ -845,40 +802,19 @@
       },
     ],
     "entityMap": Object {
@@ -381,7 +391,7 @@ Snapshot Diff:
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
       },
-@@ -532,17 +510,11 @@
+@@ -532,41 +510,20 @@
         "type": "unstyled",
       },
       Object {
@@ -394,13 +404,18 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
-+       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "5t8gv",
+-       "text": "📷 ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
+        "entityRanges": Array [],
         "inlineStyleRanges": Array [],
-        "key": "5t8gv",
-        "text": "📷 ",
-        "type": "unstyled",
-      },
-@@ -556,17 +528,11 @@
+        "key": "7sfnt",
+        "text": "Image wrap text with border ",
         "type": "unstyled",
       },
       Object {
@@ -419,7 +434,7 @@ Snapshot Diff:
         "text": "📷Text displayed next to image ",
         "type": "unstyled",
       },
-@@ -792,40 +758,19 @@
+@@ -792,40 +749,19 @@
       },
     ],
     "entityMap": Object {
@@ -535,7 +550,7 @@ Snapshot Diff:
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
       },
-@@ -532,17 +510,11 @@
+@@ -532,41 +510,20 @@
         "type": "unstyled",
       },
       Object {
@@ -548,13 +563,18 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
-+       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "6ogvg",
+-       "text": "📷 ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
+        "entityRanges": Array [],
         "inlineStyleRanges": Array [],
-        "key": "6ogvg",
-        "text": "📷 ",
-        "type": "unstyled",
-      },
-@@ -556,17 +528,11 @@
+        "key": "80leb",
+        "text": "Image wrap text with border ",
         "type": "unstyled",
       },
       Object {
@@ -573,7 +593,7 @@ Snapshot Diff:
         "text": "📷Text displayed next to image ",
         "type": "unstyled",
       },
-@@ -810,40 +776,19 @@
+@@ -810,40 +767,19 @@
       },
     ],
     "entityMap": Object {
@@ -689,7 +709,7 @@ Snapshot Diff:
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
       },
-@@ -532,17 +510,11 @@
+@@ -532,41 +510,20 @@
         "type": "unstyled",
       },
       Object {
@@ -702,13 +722,18 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
-+       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "cu1uf",
+-       "text": "📷 ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
+        "entityRanges": Array [],
         "inlineStyleRanges": Array [],
-        "key": "cu1uf",
-        "text": "📷 ",
-        "type": "unstyled",
-      },
-@@ -556,17 +528,11 @@
+        "key": "5lfj",
+        "text": "Image wrap text with border ",
         "type": "unstyled",
       },
       Object {
@@ -727,7 +752,7 @@ Snapshot Diff:
         "text": "📷Text displayed next to image ",
         "type": "unstyled",
       },
-@@ -810,40 +776,19 @@
+@@ -810,40 +767,19 @@
       },
     ],
     "entityMap": Object {
@@ -843,7 +868,7 @@ Snapshot Diff:
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
       },
-@@ -552,17 +530,11 @@
+@@ -552,41 +530,20 @@
         "type": "unstyled",
       },
       Object {
@@ -856,13 +881,18 @@ Snapshot Diff:
 -           "offset": 0,
 -         },
 -       ],
-+       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "aknoc",
+-       "text": "📷 ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
+        "entityRanges": Array [],
         "inlineStyleRanges": Array [],
-        "key": "aknoc",
-        "text": "📷 ",
-        "type": "unstyled",
-      },
-@@ -576,17 +548,11 @@
+        "key": "bftp0",
+        "text": "Image wrap text with border ",
         "type": "unstyled",
       },
       Object {
@@ -881,7 +911,7 @@ Snapshot Diff:
         "text": "📷Text displayed next to image ",
         "type": "unstyled",
       },
-@@ -845,40 +811,19 @@
+@@ -845,40 +802,19 @@
       },
     ],
     "entityMap": Object {
