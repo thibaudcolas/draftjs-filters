@@ -3,8 +3,8 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="0.7.0"></a>
-# [0.7.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.1...v0.7.0) (2018-02-09)
 
+# [0.7.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.1...v0.7.0) (2018-02-09)
 
 ### Features
 
@@ -15,8 +15,6 @@ All notable changes to this project will be documented in this file. See [standa
 * **filters:** change atomic block check to convert camera emoji + space ([9249033](https://github.com/thibaudcolas/draftjs-filters/commit/9249033))
 * **filters:** filterBlockTypes now also resets block depth to 0 ([33c337d](https://github.com/thibaudcolas/draftjs-filters/commit/33c337d))
 * **filters:** remove matched prefix when preserving list items ([059bf9e](https://github.com/thibaudcolas/draftjs-filters/commit/059bf9e))
-
-
 
 <a name="0.6.1"></a>
 
