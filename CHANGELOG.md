@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.0.0"></a>
+
+# [1.0.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.7.0...v1.0.0) (2018-03-01)
+
+> This release is functionally identical to `v0.7.0`.
+
+The project has reached a high-enough level of stability to be used in production, and breaking changes will now be reflected via major version changes.
+
 <a name="0.7.0"></a>
 
 # [0.7.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.1...v0.7.0) (2018-02-09)
