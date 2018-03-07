@@ -178,8 +178,7 @@ class FilterableEditor extends Component<Props, State> {
 
     if (type === "IMAGE") {
       content = content.createEntity(type, "IMMUTABLE", {
-        src:
-          "https://thibaudcolas.github.io/draftjs-filters/word-toolbars-overload.jpg",
+        src: "./word-toolbars-overload.jpg",
       })
       const entityKey = content.getLastCreatedEntityKey()
       this.onChange(
