@@ -3,7 +3,7 @@
 exports[`Image no entity 1`] = `
 <img
   alt=""
-  src="/404"
+  src="404.svg"
   width="256"
 />
 `;

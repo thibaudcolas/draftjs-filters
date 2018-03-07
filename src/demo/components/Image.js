@@ -12,7 +12,7 @@ const Image = ({
   const entityKey = block.getEntityAt(0)
   const src = entityKey
     ? contentState.getEntity(entityKey).getData().src
-    : "/404"
+    : "404.svg"
 
   return <img src={src} alt="" width="256" />
 }
