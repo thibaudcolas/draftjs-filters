@@ -125,6 +125,7 @@ class FilterableEditor extends Component<Props, State> {
     ;(this: any).toggleBlock = this.toggleBlock.bind(this)
     ;(this: any).toggleEntity = this.toggleEntity.bind(this)
     ;(this: any).blockRenderer = this.blockRenderer.bind(this)
+    ;(this: any).handleKeyCommand = this.handleKeyCommand.bind(this)
   }
 
   onChange(nextState: EditorState) {
@@ -214,6 +215,19 @@ class FilterableEditor extends Component<Props, State> {
     this.onChange(newState)
   }
 
+  handleKeyCommand(command: string) {
+    const { editorState } = this.state
+
+    let newState = RichUtils.handleKeyCommand(editorState, command)
+
+    if (newState) {
+      this.onChange(newState)
+      return "handled"
+    }
+
+    return "not-handled"
+  }
+
   render() {
     const { extended } = this.props
     const { editorState } = this.state
@@ -255,6 +269,7 @@ class FilterableEditor extends Component<Props, State> {
             stripPastedStyles={false}
             blockRendererFn={this.blockRenderer}
             onTab={this.onTab}
+            handleKeyCommand={this.handleKeyCommand}
           />
         </SentryBoundary>
         <details>
