@@ -6,6 +6,8 @@
 
 The main use case is to select what formatting to keep when copy-pasting rich text into an editor, for example from Word or Google Docs, addressing Draft.js limitations like [#166](https://github.com/facebook/draft-js/issues/166) and [#504](https://github.com/facebook/draft-js/issues/504). Check out the [online demo](https://thibaudcolas.github.io/draftjs-filters)!
 
+> If you want to learn more about how this is used in practice, have a look at [Rethinking rich text pipelines with Draft.js](https://wagtail.io/blog/rethinking-rich-text-pipelines-with-draft-js/).
+
 ## Using the filters
 
 First, grab the package from npm:
