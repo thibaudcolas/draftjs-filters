@@ -144,6 +144,16 @@ exports[`App renders 1`] = `
         Microsoft Word Online
       </a>
     </li>
+    <li>
+      <a
+        className="link"
+        href="tests"
+        rel="noopener noreferrer"
+        target="_blank"
+      >
+        HTML content
+      </a>
+    </li>
   </ul>
   <p>
     Here is an editor with more formatting enabled:

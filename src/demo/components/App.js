@@ -140,6 +140,16 @@ class App extends Component<{}> {
               Microsoft Word Online
             </a>
           </li>
+          <li>
+            <a
+              className="link"
+              href="tests"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              HTML content
+            </a>
+          </li>
         </ul>
 
         <p>Here is an editor with more formatting enabled:</p>
