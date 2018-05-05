@@ -186,4 +186,30 @@ describe("FilterableEditor", () => {
       expect(wrapper.instance().onChange).toHaveBeenCalled()
     })
   })
+
+  describe("handleKeyCommand", () => {
+    it("draftjs internal, handled", () => {
+      RichUtils.handleKeyCommand = jest.fn((editorState) => editorState)
+
+      expect(
+        shallow(<FilterableEditor />)
+          .instance()
+          .handleKeyCommand("backspace"),
+      ).toBe("handled")
+
+      RichUtils.handleKeyCommand.mockRestore()
+    })
+
+    it("draftjs internal, not handled", () => {
+      RichUtils.handleKeyCommand = jest.fn(() => false)
+
+      expect(
+        shallow(<FilterableEditor />)
+          .instance()
+          .handleKeyCommand("backspace"),
+      ).toBe("not-handled")
+
+      RichUtils.handleKeyCommand.mockRestore()
+    })
+  })
 })
