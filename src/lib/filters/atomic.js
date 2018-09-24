@@ -1,3 +1,4 @@
+// @flow
 import { CharacterMetadata, ContentState } from "draft-js"
 
 import { ATOMIC } from "../constants"

@@ -1,5 +1,6 @@
 // @flow
 import React from "react"
+// flowlint-next-line untyped-import:off
 import Prism from "prismjs"
 
 type Props = {
