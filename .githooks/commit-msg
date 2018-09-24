@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
 COMMIT_EDITMSG="$1"
+MESSAGE=$(cat $COMMIT_EDITMSG)
 
-# Only display the linter output for errors.
-if ! npm run linter:commit -s -- -e "$COMMIT_EDITMSG" --quiet;
-then
-    npm run linter:commit -s -- -e "$COMMIT_EDITMSG"
-fi
+npx commitlint -e "$COMMIT_EDITMSG"
