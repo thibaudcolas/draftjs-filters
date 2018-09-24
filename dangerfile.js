@@ -1,6 +1,5 @@
 import path from "path"
-import { danger, message, warn, fail, markdown, schedule } from "danger"
-import jest from "danger-plugin-jest"
+import { danger, message, warn, fail, schedule } from "danger"
 
 const libModifiedFiles = danger.git.modified_files.filter(
   (path) => path.startsWith("src/lib") && path.endsWith("js"),
@@ -66,8 +65,4 @@ schedule(async () => {
       message(`:tada:, removing dependencies: ${deps}`)
     }
   }
-})
-
-jest({
-  testResultsJsonPath: path.resolve(__dirname, "build/test-results.json"),
 })
