@@ -1,15 +1,14 @@
 {
-    "entityMap": {},
-    "blocks": [
-        {
-            "key": "b4b1l",
-            "text":
-                "Draft.js paste test document Subtitle Inline styles Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace Unstyled, underline, bigger, smaller, superscript, subscript Unstyled, red, text background, outline, SMALL CAPS, double strikethrough, unstyled Unstyled, light em, em, intense em, quote, intense quote, LIGHT REF, INTENSE REF, BOOK TITLE, unstyled Inline entities Unstyled, link, email link, tooltip link, internal link, frame link, comment  Unstyled, bold link comment  Text blocks Unstyled Unstyled centered Unstyled right-aligned Unstyled justify Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent h1 - Heading one h2 - Heading two h3 - Heading three h4 - heading four h5 - heading five bold h6 - heading six h7 - heading seven h8 - heading eight h9 - heading nine •\tBulleted list •\tBulleted list o\tNested bulleted list (1) \tNested bulleted list (2) •\tBulleted list 1.\tNumbered list 2.\tNumbered list a.\tNested numbered list (1) i.\tNested numbered list (2) 3.\tNumbered list  \tStar list  \tStar list o\tNested star list (1) \tNested star list (2)  \tStar list Unstyled with borders Rich blocks Images Image   Caption Image with effects   Table row 1 col 1\trow 1 col 2 row 2 col 1\trow 2 col 2 Code block .media .img {     margin-right: 10px; } Misc •\tSoft  line break Character replacements •\tDouble quote “test” •\tSingle quote ‘test’ •\tCopyright © (( c )) •\tFractions ½ (1 / 2) •\tArrows   (-- >, < --) •\tEllipsis … (. . .) Emojis 🙂, 😨, 😎 Embeds Equation \t Shape   SmartArt   Chart   WordArt",
-            "type": "unstyled",
-            "depth": 0,
-            "inlineStyleRanges": [],
-            "entityRanges": [],
-            "data": {}
-        }
-    ]
+  "entityMap": {},
+  "blocks": [
+    {
+      "key": "b4b1l",
+      "text": "Draft.js paste test document Subtitle Inline styles Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace Unstyled, underline, bigger, smaller, superscript, subscript Unstyled, red, text background, outline, SMALL CAPS, double strikethrough, unstyled Unstyled, light em, em, intense em, quote, intense quote, LIGHT REF, INTENSE REF, BOOK TITLE, unstyled Inline entities Unstyled, link, email link, tooltip link, internal link, frame link, comment  Unstyled, bold link comment  Text blocks Unstyled Unstyled centered Unstyled right-aligned Unstyled justify Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent Unstyled indent h1 - Heading one h2 - Heading two h3 - Heading three h4 - heading four h5 - heading five bold h6 - heading six h7 - heading seven h8 - heading eight h9 - heading nine •\tBulleted list •\tBulleted list o\tNested bulleted list (1) \tNested bulleted list (2) •\tBulleted list 1.\tNumbered list 2.\tNumbered list a.\tNested numbered list (1) i.\tNested numbered list (2) 3.\tNumbered list  \tStar list  \tStar list o\tNested star list (1) \tNested star list (2)  \tStar list Unstyled with borders Rich blocks Images Image   Caption Image with effects   Table row 1 col 1\trow 1 col 2 row 2 col 1\trow 2 col 2 Code block .media .img {     margin-right: 10px; } Misc •\tSoft  line break Character replacements •\tDouble quote “test” •\tSingle quote ‘test’ •\tCopyright © (( c )) •\tFractions ½ (1 / 2) •\tArrows   (-- >, < --) •\tEllipsis … (. . .) Emojis 🙂, 😨, 😎 Embeds Equation \t Shape   SmartArt   Chart   WordArt",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    }
+  ]
 }

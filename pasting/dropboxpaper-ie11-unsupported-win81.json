@@ -1,15 +1,14 @@
 {
-    "entityMap": {},
-    "blocks": [
-        {
-            "key": "b4b1l",
-            "text":
-                "Draft.js paste test document   Inline styles  Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code   Inline entities  Unstyled, link, comment   Unstyled, bold link comment  Mention @Thibaud C   Dropbox Paper link, +Draftail paste test document    Text blocks  Unstyled   h1 - Heading one   h2 - Heading two bold  h3 - Heading three •Bulleted list •Bulleted list ◦Nested bulleted list (1) ◾Nested bulleted list (2) •Bulleted list 1.Numbered list 2.Numbered list a.Nested numbered list (1) i.Nested numbered list (2) 3.Numbered list  Action list  Action list  Nested action list (1)  Nested action list (2)  Action list   Rich blocks  Images  Image with caption     Image right-aligned with caption        Text displayed next to image                    Table    row 1 col 1   row 1 col 2    row 2 col 1   row 2 col 2    Section break   --------------------------------------------------------------------------------      Code block  .media .img {      margin-right: 10px;  }   Misc •Soft   line break  Character replacements •Double quote “test” •Single quote ‘test’ •En dash —  (--) •Em dash — (---) •Copyright (c) ((c)) •Fractions 1/2 (1/2) •Arrows → ← ↔ (-->, <--, <-->) •Ellipsis … (...)  Emojis  slightly smiling face, fearful face, smiling face with sunglasses   Embeds  Dropbox document link   https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0   Trello card   https://trello.com/c/ePWJbTYs/1-test   https://trello.com/c/ePWJbTYs/1-test     YouTube video   https://www.youtube.com/watch?v=y8Kyi0WNg40&   https://youtu.be/y8Kyi0WNg40     GitHub Gist   https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0   https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-            "type": "unstyled",
-            "depth": 0,
-            "inlineStyleRanges": [],
-            "entityRanges": [],
-            "data": {}
-        }
-    ]
+  "entityMap": {},
+  "blocks": [
+    {
+      "key": "b4b1l",
+      "text": "Draft.js paste test document   Inline styles  Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code   Inline entities  Unstyled, link, comment   Unstyled, bold link comment  Mention @Thibaud C   Dropbox Paper link, +Draftail paste test document    Text blocks  Unstyled   h1 - Heading one   h2 - Heading two bold  h3 - Heading three •Bulleted list •Bulleted list ◦Nested bulleted list (1) ◾Nested bulleted list (2) •Bulleted list 1.Numbered list 2.Numbered list a.Nested numbered list (1) i.Nested numbered list (2) 3.Numbered list  Action list  Action list  Nested action list (1)  Nested action list (2)  Action list   Rich blocks  Images  Image with caption     Image right-aligned with caption        Text displayed next to image                    Table    row 1 col 1   row 1 col 2    row 2 col 1   row 2 col 2    Section break   --------------------------------------------------------------------------------      Code block  .media .img {      margin-right: 10px;  }   Misc •Soft   line break  Character replacements •Double quote “test” •Single quote ‘test’ •En dash —  (--) •Em dash — (---) •Copyright (c) ((c)) •Fractions 1/2 (1/2) •Arrows → ← ↔ (-->, <--, <-->) •Ellipsis … (...)  Emojis  slightly smiling face, fearful face, smiling face with sunglasses   Embeds  Dropbox document link   https://www.dropbox.com/s/a449tq7vmz7iyv0/draftail-test-paste.txt?dl=0   Trello card   https://trello.com/c/ePWJbTYs/1-test   https://trello.com/c/ePWJbTYs/1-test     YouTube video   https://www.youtube.com/watch?v=y8Kyi0WNg40&   https://youtu.be/y8Kyi0WNg40     GitHub Gist   https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0   https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+      "type": "unstyled",
+      "depth": 0,
+      "inlineStyleRanges": [],
+      "entityRanges": [],
+      "data": {}
+    }
+  ]
 }
