@@ -2,8 +2,11 @@
 .*/node_modules/draft-js/lib/DraftEditorContents.react.js.flow
 .*/node_modules/draft-js/lib/ContentBlockNode.js.flow
 .*/node_modules/draft-js/lib/ContentBlock.js.flow
-suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
+.*/node_modules/draft-js/lib/DraftEditorLeaf.react.js.flow
+.*/node_modules/draft-js/lib/DraftEditorDragHandler.js.flow
+.*/node_modules/draft-js/lib/DraftEditor.react.js.flow
 .*/node_modules/config-chain
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
 
 [include]
 
