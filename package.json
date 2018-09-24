@@ -43,7 +43,7 @@
     "flow-bin": "^0.61.0",
     "immutable": "~3.7.6",
     "normalize.css": "^7.0.0",
-    "prettier": "^1.9.2",
+    "prettier": "^1.14.3",
     "prismjs": "^1.9.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -76,8 +76,8 @@
     "report:build": "open public/source-map-explorer.html",
     "report:package": "npm pack --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee build/package.txt && rm *.tgz",
     "formatter": "prettier --write",
-    "lint": "npm run linter:css -s -- src/**/*.css && npm run linter:md -s -- '**/*.md'",
-    "format": "npm run formatter -s -- '**/*.md' src/**/*.js src/**/*.css",
+    "lint": "prettier --list-different '**/*.{js,css,md,json,yaml,yml}'",
+    "format": "prettier --write '**/*.{js,css,md,json,yaml,yml}'",
     "test:ci": "npm run lint -s && npm run flow -s && npm run dist -s && npm run test:coverage -s -- --outputFile build/test-results.json --json",
     "prepublishOnly": "npm run dist -s"
   }
