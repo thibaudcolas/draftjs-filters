@@ -65,13 +65,15 @@ class App extends Component<{}> {
             href="https://github.com/thibaudcolas/draftjs-filters/tree/master/pasting"
           >
             full test suite
-          </a>, and if there is anything that is missing please&nbsp;
+          </a>
+          , and if there is anything that is missing please&nbsp;
           <a
             className="link"
             href="https://github.com/thibaudcolas/draftjs-filters/issues"
           >
             open an issue on GitHub
-          </a>.
+          </a>
+          .
         </p>
         <p>
           Here are more ready-made rich text paste testing documents should you
