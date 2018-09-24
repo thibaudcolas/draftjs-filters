@@ -1,4 +1,6 @@
 // @flow
+// flowlint untyped-import:off
+
 export const microsoftWord = {
   "word2010-chrome62-win81": require("../../pasting/word2010-chrome62-win81.json"),
   "word2010-firefox57-win81": require("../../pasting/word2010-firefox57-win81.json"),

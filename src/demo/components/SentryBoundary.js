@@ -1,5 +1,4 @@
 // @flow
-import PropTypes from "prop-types"
 import React, { Component } from "react"
 import type { Node } from "react"
 
@@ -81,10 +80,6 @@ class SentryBoundary extends Component<Props, State> {
       children
     )
   }
-}
-
-SentryBoundary.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default SentryBoundary

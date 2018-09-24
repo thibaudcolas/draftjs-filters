@@ -13,6 +13,8 @@ suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
 [libs]
 
 [lints]
+all=error
+unclear-type=off
 
 [options]
 module.name_mapper='.*\(.css\)' -> 'empty/object'
