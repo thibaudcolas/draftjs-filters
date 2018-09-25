@@ -35,7 +35,7 @@
     "@commitlint/cli": "^7.1.2",
     "@commitlint/config-conventional": "^7.1.2",
     "core-js": "^2.5.7",
-    "danger": "^3.0.3",
+    "danger": "^4.0.2",
     "draft-js": "0.10.5",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
