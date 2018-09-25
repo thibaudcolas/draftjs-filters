@@ -1,5 +1,4 @@
-import path from "path"
-import { danger, message, warn, fail, schedule } from "danger"
+const { danger, message, warn, fail, schedule } = require("danger")
 
 const libModifiedFiles = danger.git.modified_files.filter(
   (path) => path.startsWith("src/lib") && path.endsWith("js"),
