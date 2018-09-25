@@ -1,8 +1,8 @@
-# Change Log
+# Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file.
 
-<a name="1.0.0"></a>
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
 # [1.0.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.7.0...v1.0.0) (2018-03-01)
 
@@ -10,9 +10,7 @@ All notable changes to this project will be documented in this file. See [standa
 
 The project has reached a high-enough level of stability to be used in production, and breaking changes will now be reflected via major version changes.
 
-<a name="0.7.0"></a>
-
-# [0.7.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.1...v0.7.0) (2018-02-09)
+## [0.7.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.1...v0.7.0) (2018-02-09)
 
 ### Features
 
@@ -24,15 +22,11 @@ The project has reached a high-enough level of stability to be used in productio
 - **filters:** filterBlockTypes now also resets block depth to 0 ([33c337d](https://github.com/thibaudcolas/draftjs-filters/commit/33c337d))
 - **filters:** remove matched prefix when preserving list items ([059bf9e](https://github.com/thibaudcolas/draftjs-filters/commit/059bf9e))
 
-<a name="0.6.1"></a>
-
 ## [0.6.1](https://github.com/thibaudcolas/draftjs-filters/compare/v0.6.0...v0.6.1) (2018-01-26)
 
 ### Bug Fixes
 
 - **release:** replace prepublish script with prepublishOnly ([2d5e01f](https://github.com/thibaudcolas/draftjs-filters/commit/2d5e01f))
-
-<a name="0.6.0"></a>
 
 # [0.6.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.5.0...v0.6.0) (2018-01-26)
 
@@ -42,23 +36,17 @@ The project has reached a high-enough level of stability to be used in productio
 - **filters:** add cloneEntities to filterEditorState ([812bb57](https://github.com/thibaudcolas/draftjs-filters/commit/812bb57))
 - **filters:** add cloneEntity to ensure entity uniqueness. Fix [#10](https://github.com/thibaudcolas/draftjs-filters/issues/10) ([9bda5ba](https://github.com/thibaudcolas/draftjs-filters/commit/9bda5ba))
 
-<a name="0.5.0"></a>
-
 # [0.5.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.4.0...v0.5.0) (2018-01-17)
 
 ### Features
 
 - **filters:** add better way to filter/keep based on undefined attr ([f836563](https://github.com/thibaudcolas/draftjs-filters/commit/f836563))
 
-<a name="0.4.0"></a>
-
 # [0.4.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.3.0...v0.4.0) (2018-01-17)
 
 ### Features
 
 - **api:** add ability for whitelist to filter by undefined attribute ([a4af845](https://github.com/thibaudcolas/draftjs-filters/commit/a4af845))
-
-<a name="0.3.0"></a>
 
 # [0.3.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.2.2...v0.3.0) (2018-01-15)
 
@@ -95,13 +83,9 @@ The project has reached a high-enough level of stability to be used in productio
 - **filters:** start updating filter methods to work on ContentState ([e716dd9](https://github.com/thibaudcolas/draftjs-filters/commit/e716dd9))
 - **filters:** update whitespaceCharacters to operate on ContentState ([62fef11](https://github.com/thibaudcolas/draftjs-filters/commit/62fef11))
 
-<a name="0.2.2"></a>
-
 # [0.2.2](https://github.com/thibaudcolas/draftjs-filters/compare/v0.1.0...v0.2.2) (2018-01-10)
 
 Identical to 0.1.0.
-
-<a name="0.1.0"></a>
 
 # 0.1.0 (2018-01-10)
 
