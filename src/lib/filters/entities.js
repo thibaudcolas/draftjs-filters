@@ -1,6 +1,5 @@
 // @flow
 import { CharacterMetadata, ContentState, ContentBlock } from "draft-js"
-import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 import { ATOMIC, IMAGE } from "../constants"
 
@@ -134,7 +133,7 @@ export const shouldKeepEntityType = (
  */
 export const shouldRemoveImageEntity = (
   entityType: string,
-  blockType: DraftBlockType,
+  blockType: string,
 ) => {
   return entityType === IMAGE && blockType !== ATOMIC
 }

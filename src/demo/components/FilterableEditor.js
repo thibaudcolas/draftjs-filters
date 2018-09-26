@@ -10,7 +10,6 @@ import {
   ContentBlock,
   convertFromRaw,
 } from "draft-js"
-import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 import type { DraftEntityType } from "draft-js/lib/DraftEntityType.js.flow"
 
 import { filterEditorState } from "../../lib/index"
@@ -166,7 +165,7 @@ class FilterableEditor extends Component<Props, State> {
     e.preventDefault()
   }
 
-  toggleBlock(type: DraftBlockType, e: Event) {
+  toggleBlock(type: string, e: Event) {
     const { editorState } = this.state
     this.onChange(RichUtils.toggleBlockType(editorState, type))
 
