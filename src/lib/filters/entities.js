@@ -1,7 +1,8 @@
 // @flow
-import { CharacterMetadata, ContentState, ContentBlock } from "draft-js"
-
+import { CharacterMetadata, ContentState } from "draft-js"
 import { ATOMIC, IMAGE } from "../constants"
+
+import type { BlockNode } from "draft-js/lib/BlockNode.js.flow"
 
 /**
  * Clones entities in the entityMap, so each range points to its own entity instance.
@@ -77,7 +78,7 @@ export const filterEntityRanges = (
   filterFn: (
     content: ContentState,
     entityKey: string,
-    block: ContentBlock,
+    block: BlockNode,
   ) => boolean,
   content: ContentState,
 ) => {
