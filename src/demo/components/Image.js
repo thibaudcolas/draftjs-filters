@@ -1,6 +1,6 @@
 // @flow
 import React from "react"
-import { ContentBlock, ContentState } from "draft-js"
+import type { ContentBlock, ContentState } from "draft-js"
 
 const Image = ({
   block,

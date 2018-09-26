@@ -7,9 +7,9 @@ import {
   convertToRaw,
   CompositeDecorator,
   AtomicBlockUtils,
-  ContentBlock,
   convertFromRaw,
 } from "draft-js"
+import type { ContentBlock } from "draft-js"
 import type { DraftEntityType } from "draft-js/lib/DraftEntityType.js.flow"
 
 import { filterEditorState } from "../../lib/index"
