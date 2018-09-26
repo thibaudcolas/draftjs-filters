@@ -62,7 +62,7 @@ Here are the available options:
 
 ```jsx
 // Whitelist of allowed block types. unstyled and atomic are always included.
-blocks: Array<DraftBlockType>,
+blocks: Array<string>,
 // Whitelist of allowed inline styles.
 styles: Array<string>,
 // Whitelist of allowed entities.
@@ -131,7 +131,7 @@ limitBlockDepth((max: number), (content: ContentState))
 preserveBlockByText(
   (rules: Array<{
     test: string,
-    type: DraftBlockType,
+    type: string,
     depth: number,
   }>),
   (content: ContentState),
@@ -142,7 +142,7 @@ preserveBlockByText(
  * Also sets depth to 0 (for potentially nested list items).
  */
 
-filterBlockTypes((whitelist: Array<DraftBlockType>), (content: ContentState))
+filterBlockTypes((whitelist: Array<string>), (content: ContentState))
 
 /**
  * Removes all styles not present in the whitelist.
@@ -186,7 +186,7 @@ shouldKeepEntityType((whitelist: Array<Object>), (type: string))
  * - The corresponding CharacterMetadata needs to be removed too, and it's 2 instances
  */
 
-shouldRemoveImageEntity((entityType: string), (blockType: DraftBlockType))
+shouldRemoveImageEntity((entityType: string), (blockType: string))
 
 /**
  * Filters entities based on the data they contain.

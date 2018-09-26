@@ -1,7 +1,5 @@
 // @flow
 import { ContentState } from "draft-js"
-import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
-
 import { UNSTYLED, UNORDERED_LIST_ITEM, ORDERED_LIST_ITEM } from "../constants"
 
 /**
@@ -40,7 +38,7 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
 export const preserveBlockByText = (
   rules: Array<{
     test: string,
-    type: DraftBlockType,
+    type: string,
     depth: number,
   }>,
   content: ContentState,
@@ -127,7 +125,7 @@ export const limitBlockDepth = (max: number, content: ContentState) => {
  * Also sets depth to 0 (for potentially nested list items).
  */
 export const filterBlockTypes = (
-  whitelist: Array<DraftBlockType>,
+  whitelist: Array<string>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()

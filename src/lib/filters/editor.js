@@ -1,6 +1,5 @@
 // @flow
 import { EditorState } from "draft-js"
-import type { DraftBlockType } from "draft-js/lib/DraftBlockType.js.flow"
 
 import { ATOMIC, UNSTYLED } from "../constants"
 import {
@@ -27,7 +26,7 @@ import { replaceTextBySpaces } from "./text"
 
 type FilterOptions = {
   // Whitelist of allowed block types. unstyled and atomic are always included.
-  blocks: Array<DraftBlockType>,
+  blocks: Array<string>,
   // Whitelist of allowed inline styles.
   styles: Array<string>,
   // Whitelist of allowed entities.
