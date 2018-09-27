@@ -24,6 +24,8 @@ import {
 } from "./entities"
 import { replaceTextBySpaces } from "./text"
 
+import type { EditorState as EditorStateType } from "draft-js"
+
 type FilterOptions = {
   // Whitelist of allowed block types. unstyled and atomic are always included.
   blocks: Array<string>,
@@ -86,15 +88,16 @@ const PREFIX_RULES = [
  * to enforce it's shaped according to the options.
  */
 export const filterEditorState = (
-  {
+  options: FilterOptions,
+  editorState: EditorStateType,
+) => {
+  const {
     blocks,
     styles,
     entities,
     maxNesting,
     whitespacedCharacters,
-  }: FilterOptions,
-  editorState: EditorState,
-) => {
+  } = options
   const shouldKeepEntityRange = (content, entityKey, block) => {
     const entity = content.getEntity(entityKey)
     const entityData = entity.getData()
@@ -133,7 +136,10 @@ export const filterEditorState = (
   ]
 
   const content = editorState.getCurrentContent()
-  const nextContent = filters.reduce((c, filter) => filter(c), content)
+  const nextContent = filters.reduce(
+    (c, filter: Function) => filter(c),
+    content,
+  )
 
   return nextContent === content
     ? editorState
