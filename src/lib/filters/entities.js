@@ -148,12 +148,8 @@ export const shouldKeepEntityByAttribute = (
   data: Object,
 ) => {
   const config = entityTypes.find((t) => t.type === entityType)
-  const whitelist = config ? config.whitelist : null
-
   // If no whitelist is defined, the filter keeps the entity.
-  if (!whitelist) {
-    return true
-  }
+  const whitelist = config && config.whitelist ? config.whitelist : {}
 
   const isValid = Object.keys(whitelist).every((attr) => {
     const check = whitelist[attr]
