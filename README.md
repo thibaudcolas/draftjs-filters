@@ -256,47 +256,6 @@ const editor = <Editor stripPastedStyles={IS_IE11} />
 
 See anything you like in here? Anything missing? We welcome all support, whether on bug reports, feature requests, code, design, reviews, tests, documentation, and more. Please have a look at our [contribution guidelines](.github/CONTRIBUTING.md).
 
-## Development
-
-### Install
-
-> Clone the project on your computer, and install [Node](https://nodejs.org). This project also uses [nvm](https://github.com/creationix/nvm).
-
-```sh
-nvm install
-# Then, install all project dependencies.
-npm install
-# Install the git hooks.
-./.githooks/deploy.sh
-```
-
-### Working on the project
-
-> Everything mentioned in the installation process should already be done.
-
-```sh
-# Make sure you use the right node version.
-nvm use
-# Start the server and the development tools.
-npm run start
-# Runs linting.
-npm run lint
-# Start a Flow server for type errors.
-npx flow
-# Re-formats all of the files in the project (with Prettier).
-npm run format
-# Run tests in a watcher.
-npm run test:watch
-# Run test coverage
-npm run test:coverage
-# Open the coverage report with:
-npm run report:coverage
-# Open the build report with:
-npm run report:build
-# View other available commands with:
-npm run
-```
-
 ## Credits
 
 View the full list of [contributors](https://github.com/springload/draftail/graphs/contributors). [MIT](LICENSE) licensed. Website content available as [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
