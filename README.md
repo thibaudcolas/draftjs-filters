@@ -82,6 +82,10 @@ maxNesting: number,
 whitespacedCharacters: Array<string>,
 ```
 
+### Types
+
+If your project uses [Flow](https://flow.org/), type inference should just work. If you don't use Flow, it won't get in your way either.
+
 ### Advanced usage
 
 `filterEditorState` isn't very flexible. If you want more control over the filtering, simply compose your own filter function with the other single-purpose utilities. The Draft.js filters are published as ES6 modules using [Rollup](https://rollupjs.org/) – module bundlers like Rollup and Webpack will tree shake (remove) the unused functions so you only bundle the code you use.
