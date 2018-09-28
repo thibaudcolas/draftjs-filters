@@ -23,7 +23,7 @@
   },
   "homepage": "https://thibaudcolas.github.io/draftjs-filters/",
   "files": [
-    "dist"
+    "dist/*.js"
   ],
   "browserslist": "> 1%, IE 11",
   "babel": {
