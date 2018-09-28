@@ -1,3 +1,5 @@
+// @flow
+// flowlint untyped-import:off
 const { danger, message, warn, fail, schedule } = require("danger")
 
 const libModifiedFiles = danger.git.modified_files.filter(
