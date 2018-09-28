@@ -4,6 +4,16 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+# [2.0.0](https://github.com/thibaudcolas/draftjs-filters/compare/v1.0.0...v2.0.0) (2018-09-28)
+
+### Features
+
+- **api:** publish package with Flow annotations built in ([7a813cc](https://github.com/thibaudcolas/draftjs-filters/commit/7a813cc))
+
+### BREAKING CHANGES
+
+- **api:** The Draft.js filters now come with [Flow](https://flow.org/) annotations. For projects that do not use Flow this has no impact. For Flow users, please make sure you correctly type your code so Flow doesn't raise issues because of conflicts with this package's type definitions.
+
 # [1.0.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.7.0...v1.0.0) (2018-03-01)
 
 > This release is functionally identical to `v0.7.0`.
