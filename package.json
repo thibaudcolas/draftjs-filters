@@ -6,6 +6,7 @@
   "license": "MIT",
   "main": "dist/draftjs-filters.cjs.js",
   "module": "dist/draftjs-filters.esm.js",
+  "sideEffects": false,
   "keywords": [
     "draft-js",
     "draftjs-utils",
