@@ -58,9 +58,7 @@
     "rollup-plugin-babel": "^3.0.7",
     "semantic-release": "^15.9.16",
     "snapshot-diff": "^0.4.0",
-    "source-map-explorer": "^1.6.0",
-    "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "source-map-explorer": "^1.6.0"
   },
   "dependencies": {},
   "peerDependencies": {

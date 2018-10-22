@@ -52,6 +52,7 @@ bower_components
 venv
 $virtualenv.tar.gz
 $node_modules.tar.gz
+
 # -------------------------------------------------
 # Users Environment
 # -------------------------------------------------
