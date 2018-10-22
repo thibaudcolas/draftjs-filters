@@ -52,7 +52,6 @@ bower_components
 venv
 $virtualenv.tar.gz
 $node_modules.tar.gz
-!src/tests/webpack-tests/node_modules
 # -------------------------------------------------
 # Users Environment
 # -------------------------------------------------

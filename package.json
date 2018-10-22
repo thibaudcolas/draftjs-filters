@@ -81,7 +81,6 @@
     "lint": "prettier --list-different '**/*.{js,css,md,json,yaml,yml}'",
     "format": "prettier --write '**/*.{js,css,md,json,yaml,yml}'",
     "test:ci": "npm run lint -s && npm run dist -s && flow && npm run test:coverage -s -- --outputFile build/test-results.json --json",
-    "test:webpack": "node ./src/tests/webpack-tests/build.js",
     "prepublishOnly": "npm run dist -s"
   }
 }
