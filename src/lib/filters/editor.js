@@ -1,6 +1,4 @@
 // @flow
-import { EditorState } from "draft-js"
-
 import { ATOMIC, UNSTYLED } from "../constants"
 import {
   preserveAtomicBlocks,
@@ -23,6 +21,7 @@ import {
   shouldKeepEntityByAttribute,
 } from "./entities"
 import { replaceTextBySpaces } from "./text"
+import { applyContentWithSelection } from "./selection"
 
 import type { EditorState as EditorStateType } from "draft-js"
 
@@ -141,9 +140,9 @@ export const filterEditorState = (
     content,
   )
 
-  return nextContent === content
-    ? editorState
-    : EditorState.set(editorState, {
-        currentContent: nextContent,
-      })
+  if (nextContent === content) {
+    return editorState
+  }
+
+  return applyContentWithSelection(editorState, content, nextContent)
 }
