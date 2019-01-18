@@ -383,5 +383,81 @@ describe("selection", () => {
         focusOffset: 4,
       })
     })
+
+    it("works with consecutive blocks removed", () => {
+      let editorState = EditorState.createWithContent(
+        convertFromRaw({
+          entityMap: {
+            "0": {
+              type: "IMAGE",
+              mutability: "IMMUTABLE",
+              data: {
+                src: "file://localhost/clip_image002.png",
+              },
+            },
+          },
+          blocks: [
+            {
+              key: "f8beh",
+              text: "  ",
+            },
+            {
+              key: "35q1g",
+              text: "Test",
+            },
+            {
+              key: "82ioh",
+              text: "📷",
+              entityRanges: [
+                {
+                  offset: 0,
+                  length: 1,
+                  key: 0,
+                },
+              ],
+            },
+            {
+              key: "82iof",
+              text: "📷",
+              entityRanges: [
+                {
+                  offset: 0,
+                  length: 1,
+                  key: 0,
+                },
+              ],
+            },
+            {
+              key: "35q1h",
+              text: "Test",
+            },
+          ],
+        }),
+      )
+      editorState = EditorState.acceptSelection(
+        editorState,
+        editorState.getSelection().merge({
+          anchorKey: "82iof",
+          focusKey: "82iof",
+          anchorOffset: 1,
+          focusOffset: 1,
+        }),
+      )
+
+      const content = editorState.getCurrentContent()
+      const nextContent = filters.reduce((c, filter) => filter(c), content)
+      const nextState = applyContentWithSelection(
+        editorState,
+        content,
+        nextContent,
+      )
+
+      expect(nextState.getSelection().toJS()).toMatchObject({
+        anchorKey: "35q1g",
+        anchorOffset: 4,
+        focusKey: "35q1g",
+        focusOffset: 4,
+      })
+    })
   })
 })
