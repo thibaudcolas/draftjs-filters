@@ -70,7 +70,7 @@ const ENTITIES = [
     label: "📷",
     attributes: ["src"],
     whitelist: {
-      src: "^http|./",
+      src: "^http|\\./",
     },
   },
 ]
