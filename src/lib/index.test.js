@@ -13,6 +13,7 @@ import {
   shouldRemoveImageEntity,
   filterEntityData,
   replaceTextBySpaces,
+  applyContentWithSelection,
   filterEditorState,
 } from "./index"
 
@@ -39,5 +40,7 @@ describe(pkg.name, () => {
     expect(shouldRemoveImageEntity).toBeDefined())
   it("filterEntityData", () => expect(filterEntityData).toBeDefined())
   it("replaceTextBySpaces", () => expect(replaceTextBySpaces).toBeDefined())
+  it("applyContentWithSelection", () =>
+    expect(applyContentWithSelection).toBeDefined())
   it("filterEditorState", () => expect(filterEditorState).toBeDefined())
 })
