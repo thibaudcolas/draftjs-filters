@@ -20,6 +20,7 @@ import {
   filterEntityData,
 } from "./filters/entities"
 import { replaceTextBySpaces } from "./filters/text"
+import { applyContentWithSelection } from "./filters/selection"
 import { filterEditorState } from "./filters/editor"
 
 export {
@@ -38,5 +39,6 @@ export {
   shouldKeepEntityByAttribute,
   filterEntityData,
   replaceTextBySpaces,
+  applyContentWithSelection,
   filterEditorState,
 }

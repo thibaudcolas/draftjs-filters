@@ -90,6 +90,8 @@ If your project uses [Flow](https://flow.org/), type inference should just work.
 
 `filterEditorState` isn't very flexible. If you want more control over the filtering, simply compose your own filter function with the other single-purpose utilities. The Draft.js filters are published as ES6 modules using [Rollup](https://rollupjs.org/) – module bundlers like Rollup and Webpack will tree shake (remove) the unused functions so you only bundle the code you use.
 
+If using filters that remove blocks, be sure to use `applyContentWithSelection` to restore the selection where appropriate after filtering.
+
 ```jsx
 /**
  * Creates atomic blocks where they would be required for a block-level entity
@@ -213,6 +215,17 @@ filterEntityData((entityTypes: Array<Object>), (content: ContentState))
  */
 
 replaceTextBySpaces((characters: Array<string>), (content: ContentState))
+
+/**
+ * Applies the new content to the editor state, optionally moving the selection
+ * to be on a valid block (https://github.com/thibaudcolas/draftjs-filters/issues/27).
+ */
+
+applyContentWithSelection = (
+  editorState: EditorStateType,
+  content: ContentState,
+  nextContent: ContentState,
+)
 ```
 
 ### Browser support and polyfills
