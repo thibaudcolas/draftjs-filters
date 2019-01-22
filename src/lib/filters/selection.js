@@ -44,6 +44,7 @@ export const applyContentWithSelection = (
     .reverse()
     .find((k) => content.getKeyAfter(k) !== nextContent.getKeyAfter(k))
 
+  // If the selection was already misplaced before paste, we do not move it.
   if (nextAnchorKey) {
     const nextSelectedBlock = nextContent.getBlockForKey(nextAnchorKey)
     const blockEndOffset = nextSelectedBlock.getText().length
