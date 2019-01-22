@@ -8,7 +8,7 @@ install:
 script:
   - npm run test:ci
   - commitlint-travis
-  - npm run danger
+  - if [ "$TRAVIS_SECURE_ENV_VARS" == true ]; then npm run danger; fi
   - npm run report:package
 after_success:
   - mv coverage/lcov-report build || true
