@@ -13,6 +13,11 @@ export const applyContentWithSelection = (
   content: ContentState,
   nextContent: ContentState,
 ) => {
+  // If the content is the same before/after, return the state unaltered.
+  if (nextContent === content) {
+    return editorState
+  }
+
   // If the block map is empty, insert a new unstyled block and put the selection on it.
   if (nextContent.getBlockMap().size === 0) {
     return EditorState.moveFocusToEnd(

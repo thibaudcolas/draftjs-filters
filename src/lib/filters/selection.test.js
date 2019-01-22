@@ -31,6 +31,24 @@ describe("selection", () => {
       ]),
     ]
 
+    it("does not alter editorState if content is the same before / after filters", () => {
+      const content = convertFromRaw({
+        entityMap: {},
+        blocks: [
+          {
+            key: "f8beh",
+            text: "test",
+            depth: 3,
+          },
+        ],
+      })
+      const editorState = EditorState.createWithContent(content)
+
+      expect(applyContentWithSelection(editorState, content, content)).toBe(
+        editorState,
+      )
+    })
+
     it("inserts a block if there is none left, with selection on it", () => {
       let editorState = EditorState.createWithContent(
         convertFromRaw({
