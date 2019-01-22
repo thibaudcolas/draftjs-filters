@@ -140,9 +140,5 @@ export const filterEditorState = (
     content,
   )
 
-  if (nextContent === content) {
-    return editorState
-  }
-
   return applyContentWithSelection(editorState, content, nextContent)
 }
