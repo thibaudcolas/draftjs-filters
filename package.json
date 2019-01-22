@@ -76,7 +76,7 @@
     "report:coverage": "open coverage/lcov-report/index.html",
     "report:build": "open public/source-map-explorer.html",
     "report:package": "npm pack --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee build/package.txt && rm *.tgz",
-    "lint": "prettier --list-different '**/*.{js,css,md,json,yaml,yml,html}'",
+    "lint": "prettier --check '**/*.{js,css,md,json,yaml,yml,html}'",
     "format": "prettier --write '**/*.{js,css,md,json,yaml,yml,html}'",
     "test:ci": "npm run lint -s && npm run dist -s && flow && npm run test:coverage -s -- --outputFile build/test-results.json --json",
     "prepublishOnly": "npm run dist -s"
