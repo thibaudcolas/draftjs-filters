@@ -8,61 +8,133 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
 
-    <title>Tests page – Draft.js filters</title>
+    <title>Draft.js filters – Manual copy/paste tests</title>
   </head>
   <body>
-    <h1>Draft.js paste test document</h1>
+    <h1>Draft.js filters – Manual copy/paste tests</h1>
+    <p>
+      Here are copy/paste test cases for the filters. They are not meant to
+      showcase all types of HTML content that could be pasted into the editor,
+      just the most common formats, as well as specific issues.
+    </p>
+    <p>
+      See also:
+      <a
+        href="https://github.com/facebook/draft-js/wiki/Manual-Testing#cutcopypaste"
+        >Draft.js cut-copy-paste manual test plan</a
+      >.
+    </p>
     <details>
       <summary>Inline styles</summary>
-      <p>
-        Unstyled, <strong>strong</strong>, <em>em</em>, <b>b</b>, <i>i</i>,
-        <strong><em>strong em</em></strong
-        >, <code>code</code>
-      </p>
-      <p>
-        Unstyled, <u>u</u>, <s>s</s>, <sup>sup</sup>, <sub>sub</sub>,
-        <mark>mark</mark>, <q>q</q>, <small>small</small>
-      </p>
-      <p>
-        Unstyled, <samp>samp</samp>, <ins>ins</ins>, <del>del</del>,
-        <kbd>kbd</kbd>
-      </p>
+      <div contenteditable>
+        <p>
+          Unstyled, <strong>strong</strong>, <em>em</em>, <b>b</b>, <i>i</i>,
+          <strong><em>strong em</em></strong
+          >, <code>code</code>
+        </p>
+        <p>
+          Unstyled, <u>u</u>, <s>s</s>, <sup>sup</sup>, <sub>sub</sub>,
+          <mark>mark</mark>, <q>q</q>, <small>small</small>
+        </p>
+        <p>
+          Unstyled, <samp>samp</samp>, <ins>ins</ins>, <del>del</del>,
+          <kbd>kbd</kbd>
+        </p>
+      </div>
+    </details>
+
+    <details>
+      <summary>Entities</summary>
+      <div contenteditable>
+        <p>
+          Unstyled, <a href="#test">anchor link</a>,
+          <a href="/absolute">absolute link</a>,
+          <a href="relative">relative link</a>,
+          <a href="https://www.example.com/">full URL</a>,
+          <a href="mailto:test@example.com">mailto</a>
+        </p>
+        <p>Image:</p>
+        <img src="../word-toolbars-overload.jpg" />
+        <p>After image</p>
+      </div>
     </details>
 
     <details>
       <summary>Block types</summary>
-      <p>paragraph</p>
-      <h1>h1</h1>
-      <h2>h2</h2>
-      <h3>h3</h3>
-      <h4>h4</h4>
-      <h5>h5</h5>
-      <h6>h6</h6>
-      <ul>
-        <li>ul li</li>
-      </ul>
-      <ol>
-        <li>ol li</li>
-      </ol>
-      <blockquote>blockquote</blockquote>
-      <pre>pre</pre>
-      <pre><code>pre code</code></pre>
+      <div contenteditable>
+        <p>paragraph</p>
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3>h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+        <ul>
+          <li>ul li</li>
+        </ul>
+        <ol>
+          <li>ol li</li>
+        </ol>
+        <blockquote>blockquote</blockquote>
+        <pre>pre</pre>
+        <pre><code>pre code</code></pre>
+      </div>
     </details>
 
     <details>
       <summary>Block nesting</summary>
-      <ol>
-        <li>
-          ol 1.
-          <ol>
-            <li>ol 1.</li>
-            <li>ol 1.</li>
-            <li>ol 1.</li>
-          </ol>
-        </li>
-        <li>ol 2.</li>
-        <li>ol 3.</li>
-      </ol>
+      <div contenteditable>
+        <ol>
+          <li>
+            ol 1.
+            <ol>
+              <li>ol 2.</li>
+              <li>ol 2.</li>
+              <li>ol 2.</li>
+            </ol>
+          </li>
+          <li>ol 1.</li>
+          <li>ol 1.</li>
+        </ol>
+        <ul>
+          <li>
+            ul 1.
+            <ul>
+              <li>ul 2.</li>
+              <li>ul 2.</li>
+              <li>ul 2.</li>
+            </ul>
+          </li>
+          <li>ul 1.</li>
+          <li>ul 1.</li>
+        </ul>
+      </div>
+    </details>
+
+    <details>
+      <summary
+        >Last block gets removed (<a
+          href="https://github.com/thibaudcolas/draftjs-filters/issues/27"
+          >#27</a
+        >)</summary
+      >
+      <div contenteditable>
+        <p>First block</p>
+        <img src="file://word-toolbars-overload.jpg" alt="Last block" />
+      </div>
+    </details>
+
+    <details>
+      <summary
+        >All blocks are removed (<a
+          href="https://github.com/thibaudcolas/draftjs-filters/issues/27"
+          >#27</a
+        >)</summary
+      >
+      <div contenteditable>
+        <img src="file://word-toolbars-overload.jpg" alt="First block" />
+        <img src="file://word-toolbars-overload.jpg" alt="Last block" />
+      </div>
     </details>
   </body>
 </html>
