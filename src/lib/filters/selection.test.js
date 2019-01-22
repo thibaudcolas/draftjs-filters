@@ -31,6 +31,43 @@ describe("selection", () => {
       ]),
     ]
 
+    it("inserts a block if there is none left, with selection on it", () => {
+      let editorState = EditorState.createWithContent(
+        convertFromRaw({
+          entityMap: {},
+          blocks: [
+            {
+              key: "f8beh",
+              text: "test",
+              depth: 3,
+            },
+          ],
+        }),
+      )
+
+      const content = editorState.getCurrentContent()
+      const nextContent = filters.reduce((c, filter) => filter(c), content)
+      const nextState = applyContentWithSelection(
+        editorState,
+        content,
+        nextContent,
+      )
+      const block = nextState.getCurrentContent().getFirstBlock()
+
+      expect(block.toJS()).toMatchObject({
+        text: "",
+        type: "unstyled",
+        depth: 0,
+      })
+
+      expect(nextState.getSelection().toJS()).toMatchObject({
+        anchorKey: block.getKey(),
+        anchorOffset: 0,
+        focusKey: block.getKey(),
+        focusOffset: 0,
+      })
+    })
+
     it("does not change selection if valid", () => {
       let editorState = EditorState.createWithContent(
         convertFromRaw({
@@ -131,45 +168,6 @@ describe("selection", () => {
         anchorOffset: 0,
         focusKey: "82iof",
         focusOffset: 1,
-      })
-    })
-
-    it("does not change selection if it cannot be moved elsewhere", () => {
-      let editorState = EditorState.createWithContent(
-        convertFromRaw({
-          entityMap: {},
-          blocks: [
-            {
-              key: "f8beh",
-              text: "test",
-              depth: 3,
-            },
-          ],
-        }),
-      )
-      editorState = EditorState.acceptSelection(
-        editorState,
-        editorState.getSelection().merge({
-          anchorKey: "f8beh",
-          focusKey: "f8beh",
-          anchorOffset: 4,
-          focusOffset: 4,
-        }),
-      )
-
-      const content = editorState.getCurrentContent()
-      const nextContent = filters.reduce((c, filter) => filter(c), content)
-      const nextState = applyContentWithSelection(
-        editorState,
-        content,
-        nextContent,
-      )
-
-      expect(nextState.getSelection().toJS()).toMatchObject({
-        anchorKey: "f8beh",
-        anchorOffset: 4,
-        focusKey: "f8beh",
-        focusOffset: 4,
       })
     })
 

@@ -5,13 +5,23 @@ import { ContentState } from "draft-js"
 
 /**
  * Applies the new content to the editor state, optionally moving the selection
- * to be on a valid block (https://github.com/thibaudcolas/draftjs-filters/issues/27).
+ * to be on a valid block, inserting one if needed.
+ * See https://github.com/thibaudcolas/draftjs-filters/issues/27.
  */
 export const applyContentWithSelection = (
   editorState: EditorStateType,
   content: ContentState,
   nextContent: ContentState,
 ) => {
+  // If the block map is empty, insert a new unstyled block and put the selection on it.
+  if (nextContent.getBlockMap().size === 0) {
+    return EditorState.moveFocusToEnd(
+      EditorState.set(editorState, {
+        currentContent: ContentState.createFromText(""),
+      }),
+    )
+  }
+
   const nextState = EditorState.set(editorState, {
     currentContent: nextContent,
   })
@@ -29,7 +39,7 @@ export const applyContentWithSelection = (
   const nextKeys = nextContent.getBlockMap().keySeq()
 
   // Find the first key whose successor is different in the old content (because a block was removed).
-  // Starting from the end so the selection is preserved towards the last not-removed block in the filtered region.
+  // Starting from the end so the selection is preserved towards the last preserved block in the filtered region.
   const nextAnchorKey = nextKeys
     .reverse()
     .find((k) => content.getKeyAfter(k) !== nextContent.getKeyAfter(k))
