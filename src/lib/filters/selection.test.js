@@ -457,5 +457,48 @@ describe("selection", () => {
         focusOffset: 4,
       })
     })
+
+    it("fail-safe if new selection location cannot be determined", () => {
+      let editorState = EditorState.createWithContent(
+        convertFromRaw({
+          entityMap: {},
+          blocks: [
+            {
+              key: "f8beh",
+              text: "  ",
+              depth: 3,
+            },
+            {
+              key: "35q1g",
+              text: "Test",
+            },
+          ],
+        }),
+      )
+      editorState = EditorState.acceptSelection(
+        editorState,
+        editorState.getSelection().merge({
+          anchorKey: "abcde",
+          focusKey: "abcde",
+          anchorOffset: 4,
+          focusOffset: 4,
+        }),
+      )
+
+      const content = editorState.getCurrentContent()
+      const nextContent = filters.reduce((c, filter) => filter(c), content)
+      const nextState = applyContentWithSelection(
+        editorState,
+        content,
+        nextContent,
+      )
+
+      expect(nextState.getSelection().toJS()).toMatchObject({
+        anchorKey: "abcde",
+        anchorOffset: 4,
+        focusKey: "abcde",
+        focusOffset: 4,
+      })
+    })
   })
 })
