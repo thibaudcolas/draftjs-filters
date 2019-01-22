@@ -33,6 +33,7 @@ export const preserveAtomicBlocks = (content: ContentState) => {
 
 /**
  * Resets atomic blocks to have a single-space char and no styles.
+ * This is how they are stored by Draft.js by default.
  */
 export const resetAtomicBlocks = (content: ContentState) => {
   const blockMap = content.getBlockMap()

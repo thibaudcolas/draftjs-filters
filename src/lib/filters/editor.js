@@ -85,6 +85,7 @@ const PREFIX_RULES = [
 /**
  * Applies whitelist and blacklist operations to the editor content,
  * to enforce it's shaped according to the options.
+ * Will not alter the editor state if there are no changes to make.
  */
 export const filterEditorState = (
   options: FilterOptions,
