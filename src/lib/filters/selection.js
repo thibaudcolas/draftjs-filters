@@ -1,6 +1,5 @@
 // @flow
 import { EditorState } from "draft-js"
-import type { EditorState as EditorStateType } from "draft-js"
 import { ContentState } from "draft-js"
 
 /**
@@ -9,7 +8,7 @@ import { ContentState } from "draft-js"
  * See https://github.com/thibaudcolas/draftjs-filters/issues/27.
  */
 export const applyContentWithSelection = (
-  editorState: EditorStateType,
+  editorState: EditorState,
   content: ContentState,
   nextContent: ContentState,
 ) => {
