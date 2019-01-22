@@ -76,12 +76,10 @@
     "report:coverage": "open coverage/lcov-report/index.html",
     "report:build": "open public/source-map-explorer.html",
     "report:package": "npm pack --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee build/package.txt && rm *.tgz",
-    "lint": "prettier --check '**/*.{js,css,md,json,yaml,yml,html}'",
+    "lint": "prettier --check '**/*.{js,css,md,json,yaml,yml,html}' && documentation lint src/**",
     "format": "prettier --write '**/*.{js,css,md,json,yaml,yml,html}'",
     "test:ci": "npm run lint -s && npm run dist -s && flow && npm run test:coverage -s -- --outputFile build/test-results.json --json",
     "prepublishOnly": "npm run dist -s",
-    "docs:generate:html": "documentation build src/lib/** -f htmk -o docs",
-    "docs:generate:md": "documentation build src/lib/** -f md -o docs/doc.md",
-    "docs:serve": "documentation serve src/lib/**"
+    "build:docs": "documentation readme src/lib/index.js -f md > docs/doc.md --section=API --markdown-toc=false && prettier --write README.md"
   }
 }
