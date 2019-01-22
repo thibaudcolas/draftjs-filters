@@ -2,8 +2,6 @@
 import { CharacterMetadata, ContentState } from "draft-js"
 import { ATOMIC, IMAGE } from "../constants"
 
-import type { BlockNode } from "draft-js/lib/BlockNode.js.flow"
-
 /**
  * Clones entities in the entityMap, so each range points to its own entity instance.
  * This only clones entities as necessary – if an entity is only referenced
@@ -69,6 +67,8 @@ export const cloneEntities = (content: ContentState) => {
   })
 }
 
+/*:: import type { BlockNode } from "draft-js/lib/BlockNode.js.flow" */
+
 /**
  * Filters entity ranges (where entities are applied on text) based on the result of
  * the callback function. Returning true keeps the entity range, false removes it.
@@ -84,7 +84,7 @@ export const filterEntityRanges = (
 ) => {
   const blockMap = content.getBlockMap()
 
-  /**
+  /*
    * Removes entities from the character list if the entity isn't enabled.
    * Also removes image entities placed outside of atomic blocks, which can happen
    * on paste.
