@@ -110,6 +110,7 @@ injects on arbitrary blocks on paste.
 ##### resetAtomicBlocks
 
 Resets atomic blocks to have a single-space char and no styles.
+This is how they are stored by Draft.js by default.
 
 ###### Parameters
 
@@ -227,6 +228,8 @@ Filters entities based on the data they contain.
 ##### filterEntityData
 
 Filters data on an entity to only retain what is whitelisted.
+This is crucial for IMAGE and LINK, where Draft.js adds a lot
+of unneeded attributes (width, height, etc).
 
 ###### Parameters
 
@@ -258,6 +261,7 @@ See <https://github.com/thibaudcolas/draftjs-filters/issues/27>.
 
 Applies whitelist and blacklist operations to the editor content,
 to enforce it's shaped according to the options.
+Will not alter the editor state if there are no changes to make.
 
 ###### Parameters
 

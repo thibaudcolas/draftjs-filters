@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## [2.2.1](https://github.com/thibaudcolas/draftjs-filters/compare/v2.2.0...v2.2.1) (2019-01-23)
+
+### Bug Fixes
+
+- **api:** auto-generate documentation using flow types. Fix [#19](https://github.com/thibaudcolas/draftjs-filters/issues/19) ([#26](https://github.com/thibaudcolas/draftjs-filters/issues/26)) ([a2da323](https://github.com/thibaudcolas/draftjs-filters/commit/a2da323))
+- **api:** auto-update API docs in README ([aa40707](https://github.com/thibaudcolas/draftjs-filters/commit/aa40707))
+
 # [2.2.0](https://github.com/thibaudcolas/draftjs-filters/compare/v2.1.0...v2.2.0) (2019-01-22)
 
 ### Bug Fixes
