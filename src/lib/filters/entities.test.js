@@ -239,6 +239,7 @@ describe("entities", () => {
               type: "IMAGE",
               whitelist: {
                 src: "^/",
+                href: "^/"
               },
             },
           ],

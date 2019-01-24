@@ -160,7 +160,7 @@ export const shouldKeepEntityByAttribute = (
       return check ? hasData : !hasData
     }
 
-    return new RegExp(check).test(data[attr])
+    return new !data.hasOwnProperty(attr) || RegExp(check).test(data[attr])
   })
 
   return isValid
