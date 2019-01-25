@@ -122,7 +122,7 @@ export const filterEntityRanges = (
  * Keeps all entity types (images, links, documents, embeds) that are enabled.
  */
 export const shouldKeepEntityType = (
-  whitelist: Array<Object>,
+  whitelist: $ReadOnlyArray<{ type: string }>,
   type: string,
 ) => {
   return whitelist.some((e) => e.type === type)
@@ -143,9 +143,14 @@ export const shouldRemoveImageEntity = (
  * Filters entities based on the data they contain.
  */
 export const shouldKeepEntityByAttribute = (
-  entityTypes: Array<Object>,
+  entityTypes: $ReadOnlyArray<{
+    type: string,
+    whitelist: {
+      [attribute: string]: string | boolean,
+    },
+  }>,
   entityType: string,
-  data: Object,
+  data: {},
 ) => {
   const config = entityTypes.find((t) => t.type === entityType)
   // If no whitelist is defined, the filter keeps the entity.
@@ -172,7 +177,10 @@ export const shouldKeepEntityByAttribute = (
  * of unneeded attributes (width, height, etc).
  */
 export const filterEntityData = (
-  entityTypes: Array<Object>,
+  entityTypes: $ReadOnlyArray<{
+    type: string,
+    attributes: $ReadOnlyArray<string>,
+  }>,
   content: ContentState,
 ) => {
   let newContent = content
