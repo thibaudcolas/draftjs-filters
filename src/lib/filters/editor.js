@@ -35,12 +35,13 @@ type FilterOptions = {
   entities: $ReadOnlyArray<{
     // Entity type, eg. "LINK"
     type: string,
-    // Allowed attributes. Other attributes will be removed.
-    attributes: $ReadOnlyArray<string>,
+    // Allowed attributes. Other attributes will be removed. If this is omitted, all attributes are kept.
+    attributes?: $ReadOnlyArray<string>,
     // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
     // It's also possible to use "true" to signify that a field is required to be present,
     // and "false" for fields required to be absent.
-    whitelist: {
+    // If this is omitted, all entities are kept.
+    whitelist?: {
       [attribute: string]: string | boolean,
     },
   }>,

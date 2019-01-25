@@ -145,7 +145,7 @@ export const shouldRemoveImageEntity = (
 export const shouldKeepEntityByAttribute = (
   entityTypes: $ReadOnlyArray<{
     type: string,
-    whitelist: {
+    whitelist?: {
       [attribute: string]: string | boolean,
     },
   }>,
@@ -179,7 +179,7 @@ export const shouldKeepEntityByAttribute = (
 export const filterEntityData = (
   entityTypes: $ReadOnlyArray<{
     type: string,
-    attributes: $ReadOnlyArray<string>,
+    attributes?: $ReadOnlyArray<string>,
   }>,
   content: ContentState,
 ) => {
