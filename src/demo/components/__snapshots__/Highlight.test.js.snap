@@ -20,12 +20,6 @@ exports[`Highlight renders 1`] = `
   >
     Copy
   </button>
-  <code
-    dangerouslySetInnerHTML={
-      Object {
-        "__html": "",
-      }
-    }
-  />
+  <code />
 </pre>
 `;

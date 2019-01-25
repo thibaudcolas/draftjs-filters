@@ -1,7 +1,5 @@
 // @flow
 import React from "react"
-// flowlint-next-line untyped-import:off
-import Prism from "prismjs"
 
 type Props = {
   value: string,
@@ -27,12 +25,7 @@ const Highlight = ({ value, language }: Props) => (
     >
       Copy
     </button>
-    <code
-      // eslint-disable-next-line springload/react/no-danger
-      dangerouslySetInnerHTML={{
-        __html: Prism.highlight(value, Prism.languages[language]),
-      }}
-    />
+    <code>{value}</code>
   </pre>
 )
 
