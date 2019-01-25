@@ -224,7 +224,7 @@ Filters entities based on the data they contain.
 
 ###### Parameters
 
-- `entityTypes` **\$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), whitelist: {}}>**
+- `entityTypes` **\$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), whitelist: {}?}>**
 - `entityType` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 - `data` **{}**
 
@@ -236,7 +236,7 @@ of unneeded attributes (width, height, etc).
 
 ###### Parameters
 
-- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), attributes: $ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>}>**
+- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), attributes: $ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>?}>**
 - `content` **ContentState**
 
 ##### replaceTextBySpaces
