@@ -9,7 +9,6 @@ import "./utils/typography.css"
 import "./utils/layout.css"
 import "./utils/objects.css"
 
-import "prismjs/themes/prism.css"
 import "draft-js/dist/Draft.css"
 
 import "./components/header.css"
