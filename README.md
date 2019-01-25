@@ -124,7 +124,7 @@ Removes atomic blocks for which the entity isn't whitelisted.
 
 ###### Parameters
 
-- `whitelist` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>**
+- `whitelist` **\$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
 - `content` **ContentState**
 
 ##### removeInvalidDepthBlocks
@@ -146,7 +146,7 @@ ends up in the text. Other use cases may not be well covered.
 
 ###### Parameters
 
-- `rules` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;{test: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), depth: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>**
+- `rules` **\$ReadOnlyArray&lt;{test: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), depth: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>**
 - `content` **ContentState**
 
 ##### limitBlockDepth
@@ -165,7 +165,7 @@ Also sets depth to 0 (for potentially nested list items).
 
 ###### Parameters
 
-- `whitelist` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
+- `whitelist` **\$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 - `content` **ContentState**
 
 ##### filterInlineStyles
@@ -174,7 +174,7 @@ Removes all styles not present in the whitelist.
 
 ###### Parameters
 
-- `whitelist` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
+- `whitelist` **\$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 - `content` **ContentState**
 
 ##### cloneEntities
@@ -204,7 +204,7 @@ Keeps all entity types (images, links, documents, embeds) that are enabled.
 
 ###### Parameters
 
-- `whitelist` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>**
+- `whitelist` **\$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
 - `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ##### shouldRemoveImageEntity
@@ -223,9 +223,9 @@ Filters entities based on the data they contain.
 
 ###### Parameters
 
-- `entityTypes` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>**
+- `entityTypes` **\$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), whitelist: {}}>**
 - `entityType` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
-- `data` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+- `data` **{}**
 
 ##### filterEntityData
 
@@ -235,7 +235,7 @@ of unneeded attributes (width, height, etc).
 
 ###### Parameters
 
-- `entityTypes` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>**
+- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), attributes: $ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>}>**
 - `content` **ContentState**
 
 ##### replaceTextBySpaces
@@ -244,7 +244,7 @@ Replaces the given characters by their equivalent length of spaces, in all block
 
 ###### Parameters
 
-- `characters` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
+- `characters` **\$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 - `content` **ContentState**
 
 ##### applyContentWithSelection
