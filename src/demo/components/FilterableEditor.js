@@ -118,15 +118,16 @@ class FilterableEditor extends Component<Props, State> {
     this.state = {
       editorState: editorState,
     }
-    ;(this: any).onChange = this.onChange.bind(this)
-    ;(this: any).onTab = this.onTab.bind(this)
-    ;(this: any).toggleStyle = this.toggleStyle.bind(this)
-    ;(this: any).toggleBlock = this.toggleBlock.bind(this)
-    ;(this: any).toggleEntity = this.toggleEntity.bind(this)
-    ;(this: any).blockRenderer = this.blockRenderer.bind(this)
-    ;(this: any).handleKeyCommand = this.handleKeyCommand.bind(this)
+    this.onChange = this.onChange.bind(this)
+    this.onTab = this.onTab.bind(this)
+    this.toggleStyle = this.toggleStyle.bind(this)
+    this.toggleBlock = this.toggleBlock.bind(this)
+    this.toggleEntity = this.toggleEntity.bind(this)
+    this.blockRenderer = this.blockRenderer.bind(this)
+    this.handleKeyCommand = this.handleKeyCommand.bind(this)
   }
 
+  /* :: onChange: (nextState: EditorState) => void; */
   onChange(nextState: EditorState) {
     const { filtered, extended } = this.props
     const { editorState } = this.state
@@ -158,6 +159,7 @@ class FilterableEditor extends Component<Props, State> {
     )
   }
 
+  /* :: toggleStyle: (type: string, e: Event) => void; */
   toggleStyle(type: string, e: Event) {
     const { editorState } = this.state
     this.onChange(RichUtils.toggleInlineStyle(editorState, type))
@@ -165,6 +167,7 @@ class FilterableEditor extends Component<Props, State> {
     e.preventDefault()
   }
 
+  /* :: toggleBlock: (type: string, e: Event) => void; */
   toggleBlock(type: string, e: Event) {
     const { editorState } = this.state
     this.onChange(RichUtils.toggleBlockType(editorState, type))
@@ -172,6 +175,7 @@ class FilterableEditor extends Component<Props, State> {
     e.preventDefault()
   }
 
+  /* :: toggleEntity: (type: DraftEntityType) => void; */
   toggleEntity(type: DraftEntityType) {
     const { editorState } = this.state
     let content = editorState.getCurrentContent()
@@ -194,6 +198,7 @@ class FilterableEditor extends Component<Props, State> {
     }
   }
 
+  /* :: blockRenderer: (block: ContentBlock) => { component: typeof Component, editable: boolean }; */
   blockRenderer(block: ContentBlock) {
     if (block.getType() !== "atomic") {
       return null
@@ -205,6 +210,7 @@ class FilterableEditor extends Component<Props, State> {
     }
   }
 
+  /* :: onTab: (event: SyntheticKeyboardEvent<>) => void; */
   onTab(event: SyntheticKeyboardEvent<>) {
     const { extended } = this.props
     const { editorState } = this.state
@@ -214,6 +220,7 @@ class FilterableEditor extends Component<Props, State> {
     this.onChange(newState)
   }
 
+  /* :: handleKeyCommand: (command: string) => "handled" | "not-handled"; */
   handleKeyCommand(command: string) {
     const { editorState } = this.state
 
