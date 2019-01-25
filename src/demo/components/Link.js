@@ -1,17 +1,19 @@
 // @flow
 import React from "react"
 import type { Node } from "react"
+import { ContentState } from "draft-js"
+import type { ContentBlock } from "draft-js"
 
 type Props = {
-  contentState: Object,
+  contentState: ContentState,
   entityKey: string,
   children: Node,
 }
 
 export const linkStrategy = (
-  contentBlock: Object,
-  callback: Function,
-  contentState: Object,
+  contentBlock: ContentBlock,
+  callback: (start: number, end: number) => void,
+  contentState: ContentState,
 ) => {
   contentBlock.findEntityRanges((character) => {
     const entityKey = character.getEntity()

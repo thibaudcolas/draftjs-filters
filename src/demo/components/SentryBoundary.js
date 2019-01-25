@@ -16,7 +16,7 @@ class SentryBoundary extends Component<Props, State> {
     this.state = { error: null }
   }
 
-  componentDidCatch(error: Error, errorInfo: Object) {
+  componentDidCatch(error: Error, errorInfo: { componentStack: string }) {
     const isRavenAvailable = !!window.Raven
     this.setState({ error })
 
