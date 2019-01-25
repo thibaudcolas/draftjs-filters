@@ -38,6 +38,8 @@ type FilterOptions = {
     // Allowed attributes. Other attributes will be removed.
     attributes: $ReadOnlyArray<string>,
     // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
+    // It's also possible to use "true" to signify that a field is required to be present,
+    // and "false" for fields required to be absent.
     whitelist: {
       [attribute: string]: string | boolean,
     },

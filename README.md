@@ -62,19 +62,21 @@ Here are the available options:
 
 ```jsx
 // Whitelist of allowed block types. unstyled and atomic are always included.
-blocks: Array<string>,
+blocks: $ReadOnlyArray<string>,
 // Whitelist of allowed inline styles.
-styles: Array<string>,
+styles: $ReadOnlyArray<string>,
 // Whitelist of allowed entities.
-entities: Array<{
-    // Entity type, eg. "LINK"
-    type: string,
-    // Allowed attributes. Other attributes will be removed.
-    attributes: Array<string>,
-    // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
-    whitelist: {
-      [attribute: string]: string,
-    },
+entities: $ReadOnlyArray<{
+  // Entity type, eg. "LINK"
+  type: string,
+  // Allowed attributes. Other attributes will be removed.
+  attributes: $ReadOnlyArray<string>,
+  // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
+  // It's also possible to use "true" to signify that a field is required to be present,
+  // and "false" for fields required to be absent.
+  whitelist: {
+    [attribute: string]: string | boolean,
+  },
 }>,
 // Maximum amount of depth for lists (0 = no nesting).
 maxNesting: number,
