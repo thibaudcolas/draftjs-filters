@@ -23,22 +23,23 @@ import {
 import { replaceTextBySpaces } from "./text"
 import { applyContentWithSelection } from "./selection"
 
+import { ContentState } from "draft-js"
 import type { EditorState as EditorStateType } from "draft-js"
 
 type FilterOptions = {
   // Whitelist of allowed block types. unstyled and atomic are always included.
-  blocks: Array<string>,
+  blocks: $ReadOnlyArray<string>,
   // Whitelist of allowed inline styles.
-  styles: Array<string>,
+  styles: $ReadOnlyArray<string>,
   // Whitelist of allowed entities.
-  entities: Array<{
+  entities: $ReadOnlyArray<{
     // Entity type, eg. "LINK"
     type: string,
     // Allowed attributes. Other attributes will be removed.
-    attributes: Array<string>,
+    attributes: $ReadOnlyArray<string>,
     // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
     whitelist: {
-      [attribute: string]: string,
+      [attribute: string]: string | boolean,
     },
   }>,
   // Maximum amount of depth for lists (0 = no nesting).
@@ -137,7 +138,7 @@ export const filterEditorState = (
 
   const content = editorState.getCurrentContent()
   const nextContent = filters.reduce(
-    (c, filter: Function) => filter(c),
+    (c, filter: (ContentState) => ContentState) => filter(c),
     content,
   )
 

@@ -36,7 +36,7 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
  * ends up in the text. Other use cases may not be well covered.
  */
 export const preserveBlockByText = (
-  rules: Array<{
+  rules: $ReadOnlyArray<{
     test: string,
     type: string,
     depth: number,
@@ -125,7 +125,7 @@ export const limitBlockDepth = (max: number, content: ContentState) => {
  * Also sets depth to 0 (for potentially nested list items).
  */
 export const filterBlockTypes = (
-  whitelist: Array<string>,
+  whitelist: $ReadOnlyArray<string>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
