@@ -4,7 +4,7 @@ import { EditorState, RichUtils, AtomicBlockUtils } from "draft-js"
 
 import FilterableEditor from "./FilterableEditor"
 
-const lib = require("../../lib/index")
+const editor = require("../../lib/filters/editor")
 
 describe("FilterableEditor", () => {
   beforeEach(() => {
@@ -91,8 +91,8 @@ describe("FilterableEditor", () => {
     })
 
     it("#filtered shouldFilterPaste", () => {
-      jest.spyOn(lib, "filterEditorState")
-      lib.filterEditorState.mockImplementation((opts, e) => e)
+      jest.spyOn(editor, "filterEditorState")
+      editor.filterEditorState.mockImplementation((opts, e) => e)
 
       const state = EditorState.createEmpty()
       const fakeState = {
@@ -103,12 +103,12 @@ describe("FilterableEditor", () => {
 
       wrapper.instance().onChange(fakeState)
 
-      expect(lib.filterEditorState).toHaveBeenCalled()
+      expect(editor.filterEditorState).toHaveBeenCalled()
     })
 
     it("#filtered shouldFilterPaste #extended", () => {
-      jest.spyOn(lib, "filterEditorState")
-      lib.filterEditorState.mockImplementation((opts, e) => e)
+      jest.spyOn(editor, "filterEditorState")
+      editor.filterEditorState.mockImplementation((opts, e) => e)
 
       const state = EditorState.createEmpty()
       const fakeState = {
@@ -119,7 +119,7 @@ describe("FilterableEditor", () => {
 
       wrapper.instance().onChange(fakeState)
 
-      expect(lib.filterEditorState).toHaveBeenCalled()
+      expect(editor.filterEditorState).toHaveBeenCalled()
     })
   })
 

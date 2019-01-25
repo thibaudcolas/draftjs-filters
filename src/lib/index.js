@@ -1,17 +1,17 @@
 // @flow
-import {
+export {
   preserveAtomicBlocks,
   resetAtomicBlocks,
   removeInvalidAtomicBlocks,
 } from "./filters/atomic"
-import {
+export {
   removeInvalidDepthBlocks,
   limitBlockDepth,
   preserveBlockByText,
   filterBlockTypes,
 } from "./filters/blocks"
-import { filterInlineStyles } from "./filters/styles"
-import {
+export { filterInlineStyles } from "./filters/styles"
+export {
   cloneEntities,
   filterEntityRanges,
   shouldKeepEntityType,
@@ -19,26 +19,6 @@ import {
   shouldKeepEntityByAttribute,
   filterEntityData,
 } from "./filters/entities"
-import { replaceTextBySpaces } from "./filters/text"
-import { applyContentWithSelection } from "./filters/selection"
-import { filterEditorState } from "./filters/editor"
-
-export {
-  preserveAtomicBlocks,
-  resetAtomicBlocks,
-  removeInvalidAtomicBlocks,
-  removeInvalidDepthBlocks,
-  limitBlockDepth,
-  preserveBlockByText,
-  filterBlockTypes,
-  filterInlineStyles,
-  cloneEntities,
-  filterEntityRanges,
-  shouldKeepEntityType,
-  shouldRemoveImageEntity,
-  shouldKeepEntityByAttribute,
-  filterEntityData,
-  replaceTextBySpaces,
-  applyContentWithSelection,
-  filterEditorState,
-}
+export { replaceTextBySpaces } from "./filters/text"
+export { applyContentWithSelection } from "./filters/selection"
+export { filterEditorState } from "./filters/editor"
