@@ -16,8 +16,6 @@ Please note that this project is released with a [Contributor Code of Conduct](/
 nvm install
 # Then, install all project dependencies.
 npm install
-# Install the git hooks.
-./.githooks/deploy.sh
 ```
 
 ### Working on the project
