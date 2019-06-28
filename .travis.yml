@@ -1,15 +1,14 @@
 language: node_js
 install:
   - npm ci
-  - npm install -g coveralls @commitlint/travis-cli@^7.0.0
 script:
   - npm run test:ci
-  - commitlint-travis
-  - if [ "$TRAVIS_SECURE_ENV_VARS" == true ]; then npm run danger; fi
+  - npx commitlint-travis
+  - if [ "$TRAVIS_SECURE_ENV_VARS" == true ]; then npx danger ci --verbose; fi
   - npm run report:package
 after_success:
   - mv coverage/lcov-report build || true
-  - cat ./coverage/lcov.info | coveralls
+  - cat ./coverage/lcov.info | npx coveralls
 branches:
   except:
     - gh-pages
