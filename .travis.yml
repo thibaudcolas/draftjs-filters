@@ -21,7 +21,7 @@ deploy:
       branch: master
   - provider: script
     skip_cleanup: true
-    script: npm run semantic-release
+    script: npx semantic-release
 notifications:
   email: false
 env:

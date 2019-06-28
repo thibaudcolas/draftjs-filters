@@ -36,9 +36,7 @@ npx flow
 # Re-formats all of the files in the project (with Prettier).
 npm run format
 # Run tests in a watcher.
-npm run test:watch
-# Run test coverage
-npm run test:coverage
+npm run test:watche
 # Open the coverage report with:
 npm run report:coverage
 # Open the build report with:
