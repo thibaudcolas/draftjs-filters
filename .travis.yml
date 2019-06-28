@@ -1,9 +1,6 @@
 language: node_js
-cache:
-  directories:
-    - node_modules
 install:
-  - npm install
+  - npm ci
   - npm install -g coveralls @commitlint/travis-cli@^7.0.0
 script:
   - npm run test:ci
