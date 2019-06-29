@@ -75,7 +75,7 @@
     "report:package": "npm pack --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee build/package.txt && rm *.tgz",
     "lint": "prettier --check '**/*.{js,css,md,json,yaml,yml,html}' && documentation lint src/**",
     "format": "prettier --write '**/*.{js,css,md,json,yaml,yml,html}'",
-    "test:ci": "npm run lint -s && npm run build -s && flow && npm run test -s -- --outputFile build/test-results.json --json",
+    "test:ci": "npm run lint -s && npm run build -s && flow --quiet && npm run test -s -- --outputFile build/test-results.json --json",
     "prepare": "./.githooks/deploy.sh",
     "prepublishOnly": "npm run build -s",
     "build:docs": "documentation readme src/lib/index.js -f md --section=API --markdown-toc=false && prettier --write README.md"
