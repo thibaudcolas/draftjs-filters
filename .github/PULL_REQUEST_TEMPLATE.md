@@ -8,4 +8,4 @@ _Before_ submitting a pull request, please make sure to:
 - The test suite passes, with 100% coverage (`npm run test`)
 - The linting passes (`npm run lint`).
 
-Thanks you!
+Thank you!
