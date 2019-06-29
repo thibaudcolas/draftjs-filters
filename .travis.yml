@@ -9,8 +9,6 @@ script:
   - npm run test:ci
   - npx commitlint-travis
   - if [ "$TRAVIS_SECURE_ENV_VARS" == true ]; then npx danger ci --verbose; fi
-  - npm run report:coverage
-  - npm run report:build
   - npm run report:package
 after_success:
   - mv coverage/lcov-report build || true
