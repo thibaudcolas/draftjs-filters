@@ -1,6 +1,8 @@
 // @flow
 // flowlint untyped-import:off
 const { danger, message, warn, fail, schedule } = require("danger")
+const semanticRelease = require("semantic-release")
+const envCi = require("env-ci")
 const isLocal = !danger.github
 
 const libModifiedFiles = danger.git.modified_files.filter(
@@ -89,3 +91,19 @@ schedule(async () => {
     }
   }
 })
+
+if (!isLocal) {
+  schedule(async () => {
+    // Retrieve the current branch so semantic-release is configured as if it was to make a release from it.
+    const { branch } = envCi()
+
+    const result = await semanticRelease({ dryRun: true, branch })
+    if (result.nextRelease) {
+      message(
+        `:tada: Merging this will publish a new ${
+          result.nextRelease.type
+        } release, v${result.nextRelease.version}.`,
+      )
+    }
+  })
+}
