@@ -100,9 +100,7 @@ if (!isLocal) {
     const result = await semanticRelease({ dryRun: true, branch })
     if (result.nextRelease) {
       message(
-        `:tada: Merging this will publish a new ${
-          result.nextRelease.type
-        } release, v${result.nextRelease.version}.`,
+        `:tada: Merging this will publish a new ${result.nextRelease.type} release, v${result.nextRelease.version}.`,
       )
     }
   })
