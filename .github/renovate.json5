@@ -1,0 +1,96 @@
+{
+  extends: ["config:base"],
+  // https://renovatebot.com/docs/configuration-options/#commitbodytable
+  commitBodyTable: true,
+  // https://renovatebot.com/docs/configuration-options/#ignoredeps
+  ignoreDeps: ["immutable", "draft-js", "core-js", "normalize.css"],
+  // https://renovatebot.com/docs/configuration-options/#labels
+  labels: ["enhancement"],
+  // https://renovatebot.com/docs/configuration-options/#prcreation
+  prCreation: "not-pending",
+  // https://renovatebot.com/docs/configuration-options/#semanticcommits
+  semanticCommits: true,
+  // https://renovatebot.com/docs/configuration-options/#prbodydefinitions
+  prBodyDefinitions: {
+    Sourcegraph: '[![code search for "{{{depName}}}"](https://sourcegraph.com/search/badge?q=repo:%5Egithub%5C.com/{{{repository}}}%24+case:yes+-file:package%28-lock%29%3F%5C.json+{{{depName}}}&label=matches)](https://sourcegraph.com/search?q=repo:%5Egithub%5C.com/{{{repository}}}%24+case:yes+-file:package%28-lock%29%3F%5C.json+{{{depName}}})',
+  },
+  // https://renovatebot.com/docs/configuration-options/#prbodycolumns
+  prBodyColumns: ["Package", "Update", "Type", "Change", "Sourcegraph"],
+  // https://renovatebot.com/docs/configuration-options/#schedule
+  schedule: ["every weekend"],
+  node: {
+    enabled: true,
+    major: {
+      enabled: true,
+    },
+    // https://renovatebot.com/docs/node/#configuring-support-policy
+    supportPolicy: ["current"],
+  },
+  packageRules: [
+    {
+      packageNames: ["prettier"],
+      groupName: "prettier",
+      automerge: true,
+    },
+    {
+      packageNames: ["flow-bin"],
+      groupName: "flow",
+      automerge: true,
+    },
+    {
+      packageNames: ["coveralls"],
+      groupName: "coveralls",
+      automerge: true,
+    },
+    {
+      packageNames: ["danger"],
+      groupName: "danger",
+      automerge: true,
+    },
+    {
+      packageNames: ["documentation"],
+      groupName: "documentation",
+      automerge: true,
+    },
+    {
+      packageNames: ["react-scripts"],
+      groupName: "react-scripts",
+      automerge: true,
+    },
+    {
+      packagePatterns: ["^@commitlint"],
+      groupName: "commitlint",
+      automerge: true,
+    },
+    {
+      packagePatterns: ["^enzyme"],
+      groupName: "enzyme",
+      automerge: true,
+    },
+    {
+      packagePatterns: ["^rollup", "^@babel"],
+      groupName: "rollup",
+      automerge: true,
+    },
+    {
+      packagePatterns: ["^react"],
+      groupName: "react",
+      automerge: true,
+    },
+    {
+      packageNames: ["snapshot-diff"],
+      groupName: "snapshot-diff",
+      automerge: true,
+    },
+    {
+      packageNames: ["source-map-explorer"],
+      groupName: "source-map-explorer",
+      automerge: true,
+    },
+    {
+      packagePatterns: ["^semantic-release", "^@semantic-release"],
+      groupName: "semantic-release",
+      automerge: false,
+    },
+  ],
+}
