@@ -17,7 +17,7 @@
   // https://renovatebot.com/docs/configuration-options/#prbodycolumns
   prBodyColumns: ["Package", "Update", "Type", "Change", "Sourcegraph"],
   // https://renovatebot.com/docs/configuration-options/#schedule
-  schedule: ["every weekend"],
+  // schedule: ["every weekend"],
   node: {
     enabled: true,
     major: {
