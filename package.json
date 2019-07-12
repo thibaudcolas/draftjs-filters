@@ -41,7 +41,7 @@
     "@semantic-release/git": "7.0.4",
     "babel-plugin-transform-flow-comments": "6.22.0",
     "core-js": "^2.5.7",
-    "coveralls": "3.0.4",
+    "coveralls": "3.0.5",
     "danger": "9.1.0",
     "documentation": "8.1.2",
     "draft-js": "0.10.5",
