@@ -58,7 +58,7 @@
     "react-test-renderer": "16.8.6",
     "rollup": "0.66.2",
     "rollup-plugin-babel": "3.0.7",
-    "semantic-release": "15.13.18",
+    "semantic-release": "15.13.19",
     "snapshot-diff": "0.4.0",
     "source-map-explorer": "2.0.1"
   },
