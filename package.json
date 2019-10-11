@@ -1,6 +1,6 @@
 {
   "name": "draftjs-filters",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "Filter Draft.js content to preserve only the formatting you allow",
   "author": "Thibaud Colas",
   "license": "MIT",

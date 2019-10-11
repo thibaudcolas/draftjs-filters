@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## [2.2.4](https://github.com/thibaudcolas/draftjs-filters/compare/v2.2.3...v2.2.4) (2019-10-11)
+
+### Bug Fixes
+
+- **deps:** allow draft-js ^0.11.0 as a peer dependency ([#78](https://github.com/thibaudcolas/draftjs-filters/issues/78)) ([81ae721](https://github.com/thibaudcolas/draftjs-filters/commit/81ae721))
+
 ## [2.2.3](https://github.com/thibaudcolas/draftjs-filters/compare/v2.2.2...v2.2.3) (2019-01-25)
 
 ### Bug Fixes
