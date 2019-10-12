@@ -46,7 +46,7 @@
     "documentation": "8.1.2",
     "draft-js": "0.10.5",
     "enzyme": "3.10.0",
-    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-adapter-react-16": "1.15.1",
     "enzyme-to-json": "3.4.2",
     "flow-bin": "0.91.0",
     "immutable": "~3.7.6",
