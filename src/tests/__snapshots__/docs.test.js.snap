@@ -88,22 +88,22 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -145,15 +123,10 @@
+@@ -144,15 +122,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "c49pl",
         "text": "Unstyled, bold link comment",
         "type": "unstyled",
-      },
 @@ -162,11 +135,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -310,7 +310,7 @@ Snapshot Diff:
         "type": "IMAGE",
       },
       "5": Object {
-        "data": Object {
+-       "data": Object {
 -         "height": "85",
 -         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
 -         "width": "125",
@@ -319,7 +319,7 @@ Snapshot Diff:
 -       "type": "IMAGE",
 -     },
 -     "6": Object {
--       "data": Object {
+        "data": Object {
 -         "height": "218",
           "src": "https://lh3.googleusercontent.com/NDtruncatedoh",
 -         "width": "353",
@@ -418,22 +418,22 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -154,15 +132,10 @@
+@@ -153,15 +131,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "1de3t",
         "text": "Unstyled, bold link comment",
         "type": "unstyled",
-      },
 @@ -171,11 +144,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -640,7 +640,7 @@ Snapshot Diff:
         "type": "IMAGE",
       },
       "5": Object {
-        "data": Object {
+-       "data": Object {
 -         "height": "85",
 -         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
 -         "width": "125",
@@ -649,7 +649,7 @@ Snapshot Diff:
 -       "type": "IMAGE",
 -     },
 -     "6": Object {
--       "data": Object {
+        "data": Object {
 -         "height": "218",
           "src": "https://lh6.googleusercontent.com/0HtruncatedD8",
 -         "width": "353",
@@ -748,22 +748,22 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -145,15 +123,10 @@
+@@ -144,15 +122,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "f7f15",
         "text": "Unstyled, bold link comment",
         "type": "unstyled",
-      },
 @@ -162,11 +135,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -970,7 +970,7 @@ Snapshot Diff:
         "type": "IMAGE",
       },
       "5": Object {
-        "data": Object {
+-       "data": Object {
 -         "height": "85",
 -         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
 -         "width": "125",
@@ -979,7 +979,7 @@ Snapshot Diff:
 -       "type": "IMAGE",
 -     },
 -     "6": Object {
--       "data": Object {
+        "data": Object {
 -         "height": "218",
           "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
 -         "width": "353",
@@ -1078,22 +1078,22 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -145,15 +123,10 @@
+@@ -144,15 +122,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "avel3",
         "text": "Unstyled, bold link comment",
         "type": "unstyled",
-      },
 @@ -162,11 +135,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -1300,7 +1300,7 @@ Snapshot Diff:
         "type": "IMAGE",
       },
       "5": Object {
-        "data": Object {
+-       "data": Object {
 -         "height": "85",
 -         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
 -         "width": "125",
@@ -1309,7 +1309,7 @@ Snapshot Diff:
 -       "type": "IMAGE",
 -     },
 -     "6": Object {
--       "data": Object {
+        "data": Object {
 -         "height": "218",
           "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
 -         "width": "353",
@@ -1408,22 +1408,22 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -154,15 +132,10 @@
+@@ -153,15 +131,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "afmv9",
         "text": "Unstyled, bold link comment",
         "type": "unstyled",
-      },
 @@ -171,11 +144,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -1630,7 +1630,7 @@ Snapshot Diff:
         "type": "IMAGE",
       },
       "5": Object {
-        "data": Object {
+-       "data": Object {
 -         "height": "85",
 -         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
 -         "width": "125",
@@ -1639,7 +1639,7 @@ Snapshot Diff:
 -       "type": "IMAGE",
 -     },
 -     "6": Object {
--       "data": Object {
+        "data": Object {
 -         "height": "218",
           "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
 -         "width": "353",
@@ -2030,22 +2030,22 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -145,15 +123,10 @@
+@@ -144,15 +122,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "187oj",
         "text": "Unstyled, bold link comment",
         "type": "unstyled",
-      },
 @@ -162,11 +135,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -2252,7 +2252,7 @@ Snapshot Diff:
         "type": "IMAGE",
       },
       "5": Object {
-        "data": Object {
+-       "data": Object {
 -         "height": "85",
 -         "src": "https://docs.google.com/drawings/d/sttruncatedzg/image?w=125&h=85&rev=9&ac=1",
 -         "width": "125",
@@ -2261,7 +2261,7 @@ Snapshot Diff:
 -       "type": "IMAGE",
 -     },
 -     "6": Object {
--       "data": Object {
+        "data": Object {
 -         "height": "218",
           "src": "https://lh6.googleusercontent.com/W_truncatedpQ",
 -         "width": "353",

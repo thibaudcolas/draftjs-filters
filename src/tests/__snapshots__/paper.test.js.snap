@@ -28,22 +28,22 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -46,15 +46,10 @@
+@@ -45,15 +45,10 @@
+          },
           Object {
             "length": 11,
             "offset": 24,
             "style": "ITALIC",
-          },
+-         },
 -         Object {
 -           "length": 13,
 -           "offset": 37,
 -           "style": "STRIKETHROUGH",
--         },
+          },
         ],
         "key": "4evok",
         "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
         "type": "unstyled",
-      },
 @@ -63,11 +58,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -302,10 +302,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
           "url": "http://example.com/",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "10": Object {
 -       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
@@ -320,10 +320,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
--       },
--       "mutability": "MUTABLE",
--       "type": "LINK",
--     },
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
 -     "12": Object {
 -       "data": Object {
 -         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
@@ -469,22 +469,22 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -55,15 +55,10 @@
+@@ -54,15 +54,10 @@
+          },
           Object {
             "length": 11,
             "offset": 24,
             "style": "ITALIC",
-          },
+-         },
 -         Object {
 -           "length": 13,
 -           "offset": 37,
 -           "style": "STRIKETHROUGH",
--         },
+          },
         ],
         "key": "4n3ij",
         "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
         "type": "unstyled",
-      },
 @@ -72,11 +67,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -743,10 +743,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
           "url": "http://example.com/",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "10": Object {
 -       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
@@ -761,10 +761,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
--       },
--       "mutability": "MUTABLE",
--       "type": "LINK",
--     },
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
 -     "12": Object {
 -       "data": Object {
 -         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
@@ -1173,7 +1173,7 @@ Snapshot Diff:
         "type": "LINK",
       },
       "10": Object {
-        "data": Object {
+-       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
 -       },
@@ -1191,7 +1191,7 @@ Snapshot Diff:
 -       "type": "LINK",
 -     },
 -     "12": Object {
--       "data": Object {
+        "data": Object {
 -         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
 -         "url": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
 -       },
@@ -1211,21 +1211,21 @@ Snapshot Diff:
 -     "14": Object {
 -       "data": Object {
 -         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
--     "15": Object {
--       "data": Object {
--         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
--         "rel": "noreferrer nofollow noopener",
--         "target": "_blank",
 -         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "LINK",
 -     },
+-     "15": Object {
+-       "data": Object {
+-         "href": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+-         "rel": "noreferrer nofollow noopener",
+-         "target": "_blank",
+          "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
       "2": Object {
         "data": Object {
 -         "href": "https://paper.dropbox.com/ep/profile/iX86truncated",
@@ -1333,22 +1333,22 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -46,15 +46,10 @@
+@@ -45,15 +45,10 @@
+          },
           Object {
             "length": 11,
             "offset": 24,
             "style": "ITALIC",
-          },
+-         },
 -         Object {
 -           "length": 13,
 -           "offset": 37,
 -           "style": "STRIKETHROUGH",
--         },
+          },
         ],
         "key": "espno",
         "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
         "type": "unstyled",
-      },
 @@ -63,11 +58,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -1607,10 +1607,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
           "url": "http://example.com/",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "10": Object {
 -       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
@@ -1625,10 +1625,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
--       },
--       "mutability": "MUTABLE",
--       "type": "LINK",
--     },
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
 -     "12": Object {
 -       "data": Object {
 -         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
@@ -1774,22 +1774,22 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -55,15 +55,10 @@
+@@ -54,15 +54,10 @@
+          },
           Object {
             "length": 11,
             "offset": 24,
             "style": "ITALIC",
-          },
+-         },
 -         Object {
 -           "length": 13,
 -           "offset": 37,
 -           "style": "STRIKETHROUGH",
--         },
+          },
         ],
         "key": "672qe",
         "text": "Unstyled, bold, italic, bold italic, strikethrough, code, unstyled, bold code",
         "type": "unstyled",
-      },
 @@ -72,11 +67,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -2048,10 +2048,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
           "url": "http://example.com/",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "10": Object {
 -       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
@@ -2066,10 +2066,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
 -         "url": "https://trello.com/c/ePWJbTYs/1-test",
--       },
--       "mutability": "MUTABLE",
--       "type": "LINK",
--     },
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
 -     "12": Object {
 -       "data": Object {
 -         "href": "https://www.youtube.com/watch?v=y8Kyi0WNg40&",
@@ -2658,10 +2658,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
           "url": "http://example.com/",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "10": Object {
 -       "data": Object {
 -         "href": "https://trello.com/c/ePWJbTYs/1-test",
@@ -2704,10 +2704,10 @@ Snapshot Diff:
 -         "rel": "noreferrer nofollow noopener",
 -         "target": "_blank",
 -         "url": "https://gist.github.com/thibaudcolas/29cea5e843e503831334abaf927dd5a0",
--       },
--       "mutability": "MUTABLE",
--       "type": "LINK",
--     },
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
       "2": Object {
         "data": Object {
 -         "href": "https://paper.dropbox.com/doc/njfdkwmkeGQ9KICjVwLmU",

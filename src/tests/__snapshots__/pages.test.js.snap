@@ -34,46 +34,46 @@ Snapshot Diff:
           },
         ],
         "inlineStyleRanges": Array [],
-@@ -298,19 +293,10 @@
+@@ -295,19 +290,10 @@
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "a0cut",
         "text": "Nested bulleted list (1)",
         "type": "unordered-list-item",
-      },
-      Object {
-        "data": Object {},
+-     },
+-     Object {
+-       "data": Object {},
 -       "depth": 1,
 -       "entityRanges": Array [],
 -       "inlineStyleRanges": Array [],
 -       "key": "9qivi",
 -       "text": "",
 -       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
-        "depth": 2,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "5d0m7",
-        "text": "Nested bulleted list (2)",
-@@ -370,19 +356,10 @@
-        "text": "Nested numbered list (1)",
-        "type": "ordered-list-item",
       },
       Object {
         "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+@@ -367,19 +353,10 @@
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5l8i0",
+        "text": "Nested numbered list (1)",
+        "type": "ordered-list-item",
+-     },
+-     Object {
+-       "data": Object {},
 -       "depth": 1,
 -       "entityRanges": Array [],
 -       "inlineStyleRanges": Array [],
 -       "key": "3hv4s",
 -       "text": "",
 -       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
+      },
+      Object {
+        "data": Object {},
         "depth": 2,
         "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "cpeao",
-        "text": "Nested numbered list (2)",
 @@ -442,19 +419,10 @@
         "text": "Nested dashed list (1)",
         "type": "unordered-list-item",
@@ -94,26 +94,26 @@ Snapshot Diff:
         "inlineStyleRanges": Array [],
         "key": "dcqr8",
         "text": "Nested dashed list (2)",
-@@ -514,19 +482,10 @@
+@@ -511,19 +479,10 @@
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "2th4s",
         "text": "Nested image list (1)",
         "type": "unordered-list-item",
-      },
-      Object {
-        "data": Object {},
+-     },
+-     Object {
+-       "data": Object {},
 -       "depth": 1,
 -       "entityRanges": Array [],
 -       "inlineStyleRanges": Array [],
 -       "key": "6ua5u",
 -       "text": "",
 -       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
+      },
+      Object {
+        "data": Object {},
         "depth": 2,
         "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "ekuqe",
-        "text": "Nested image list (2)",
 @@ -1281,27 +1240,17 @@
       },
     ],
@@ -127,7 +127,7 @@ Snapshot Diff:
         "type": "LINK",
       },
       "1": Object {
-        "data": Object {
+-       "data": Object {
 -         "href": "mailto:test@example.com?subject=subject",
 -         "url": "mailto:test@example.com?subject=subject",
 -       },
@@ -135,7 +135,7 @@ Snapshot Diff:
 -       "type": "LINK",
 -     },
 -     "2": Object {
--       "data": Object {
+        "data": Object {
 -         "href": "http://example.com",
           "url": "http://example.com/",
         },

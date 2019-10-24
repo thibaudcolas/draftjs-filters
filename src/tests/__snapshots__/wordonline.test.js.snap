@@ -57,28 +57,33 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -180,15 +163,10 @@
+@@ -179,15 +162,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "61paa",
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
-      },
-@@ -552,41 +530,20 @@
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
+@@ -547,25 +525,10 @@
         "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1ul0j",
+        "text": "Image with alt title and description ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 2,
@@ -89,15 +94,12 @@ Snapshot Diff:
 -       "inlineStyleRanges": Array [],
 -       "key": "187nl",
 -       "text": "📷 ",
--       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
--       "depth": 0,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "rn60",
-        "text": "Image wrap text with border ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+@@ -576,17 +539,11 @@
         "type": "unstyled",
       },
       Object {
@@ -139,12 +141,12 @@ Snapshot Diff:
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "2": Object {
 -       "data": Object {
 -         "alt": "Test alt text",
 -         "src": "data:image/jpeg;base64,/9truncated",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },
@@ -154,8 +156,8 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
--   },
+      },
+    },
   }
 `;
 
@@ -216,28 +218,33 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -180,15 +163,10 @@
+@@ -179,15 +162,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "nk9e",
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
-      },
-@@ -552,41 +530,20 @@
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
+@@ -547,25 +525,10 @@
         "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "1nj17",
+        "text": "Image with alt title and description ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 2,
@@ -248,15 +255,12 @@ Snapshot Diff:
 -       "inlineStyleRanges": Array [],
 -       "key": "1ptvu",
 -       "text": "📷 ",
--       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
--       "depth": 0,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "189sv",
-        "text": "Image wrap text with border ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+@@ -576,17 +539,11 @@
         "type": "unstyled",
       },
       Object {
@@ -298,12 +302,12 @@ Snapshot Diff:
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "2": Object {
 -       "data": Object {
 -         "alt": "Test alt text",
 -         "src": "data:image/jpeg;base64,/9truncated",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },
@@ -313,8 +317,8 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
--   },
+      },
+    },
   }
 `;
 
@@ -375,28 +379,33 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -170,15 +153,10 @@
+@@ -169,15 +152,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "fu8j8",
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
-      },
-@@ -532,41 +510,20 @@
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
+@@ -527,25 +505,10 @@
         "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "2iph2",
+        "text": "Image with alt title and description ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 2,
@@ -407,15 +416,12 @@ Snapshot Diff:
 -       "inlineStyleRanges": Array [],
 -       "key": "5t8gv",
 -       "text": "📷 ",
--       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
--       "depth": 0,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "7sfnt",
-        "text": "Image wrap text with border ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+@@ -556,17 +519,11 @@
         "type": "unstyled",
       },
       Object {
@@ -457,12 +463,12 @@ Snapshot Diff:
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "2": Object {
 -       "data": Object {
 -         "alt": "Test alt text",
 -         "src": "data:image/jpeg;base64,/9truncated",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },
@@ -472,8 +478,8 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
--   },
+      },
+    },
   }
 `;
 
@@ -534,28 +540,33 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -170,15 +153,10 @@
+@@ -169,15 +152,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "4auln",
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
-      },
-@@ -532,41 +510,20 @@
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
+@@ -527,25 +505,10 @@
         "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "7v5jj",
+        "text": "Image with alt title and description ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 2,
@@ -566,15 +577,12 @@ Snapshot Diff:
 -       "inlineStyleRanges": Array [],
 -       "key": "6ogvg",
 -       "text": "📷 ",
--       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
--       "depth": 0,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "80leb",
-        "text": "Image wrap text with border ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+@@ -556,17 +519,11 @@
         "type": "unstyled",
       },
       Object {
@@ -616,12 +624,12 @@ Snapshot Diff:
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "2": Object {
 -       "data": Object {
 -         "alt": "Test alt text",
 -         "src": "data:image/jpeg;base64,/9truncated",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },
@@ -631,8 +639,8 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
--   },
+      },
+    },
   }
 `;
 
@@ -693,28 +701,33 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -170,15 +153,10 @@
+@@ -169,15 +152,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "6j2m8",
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
-      },
-@@ -532,41 +510,20 @@
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
+@@ -527,25 +505,10 @@
         "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "998m9",
+        "text": "Image with alt title and description ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 2,
@@ -725,15 +738,12 @@ Snapshot Diff:
 -       "inlineStyleRanges": Array [],
 -       "key": "cu1uf",
 -       "text": "📷 ",
--       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
--       "depth": 0,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "5lfj",
-        "text": "Image wrap text with border ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+@@ -556,17 +519,11 @@
         "type": "unstyled",
       },
       Object {
@@ -775,12 +785,12 @@ Snapshot Diff:
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "2": Object {
 -       "data": Object {
 -         "alt": "Test alt text",
 -         "src": "data:image/jpeg;base64,/9truncated",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },
@@ -790,8 +800,8 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
--   },
+      },
+    },
   }
 `;
 
@@ -852,28 +862,33 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -180,15 +163,10 @@
+@@ -179,15 +162,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 17,
             "offset": 10,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 17,
 -           "offset": 10,
 -           "style": "UNDERLINE",
--         },
+          },
         ],
         "key": "35jh7",
         "text": "Unstyled, bold link comment ",
         "type": "unstyled",
-      },
-@@ -552,41 +530,20 @@
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
+@@ -547,25 +525,10 @@
         "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "2nc9c",
+        "text": "Image with alt title and description ",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 2,
@@ -884,15 +899,12 @@ Snapshot Diff:
 -       "inlineStyleRanges": Array [],
 -       "key": "aknoc",
 -       "text": "📷 ",
--       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
--       "depth": 0,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [],
-        "key": "bftp0",
-        "text": "Image wrap text with border ",
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
+@@ -576,17 +539,11 @@
         "type": "unstyled",
       },
       Object {
@@ -934,12 +946,12 @@ Snapshot Diff:
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "2": Object {
 -       "data": Object {
 -         "alt": "Test alt text",
 -         "src": "data:image/jpeg;base64,/9truncated",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },
@@ -949,7 +961,7 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
--   },
+      },
+    },
   }
 `;
