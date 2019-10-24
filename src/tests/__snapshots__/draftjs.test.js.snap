@@ -18,17 +18,18 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -37,20 +37,10 @@
+@@ -36,21 +36,11 @@
+          },
           Object {
             "length": 11,
             "offset": 24,
             "style": "ITALIC",
-          },
+-         },
 -         Object {
 -           "length": 13,
 -           "offset": 37,
 -           "style": "STRIKETHROUGH",
--         },
+          },
 -         Object {
 -           "length": 9,
 -           "offset": 89,

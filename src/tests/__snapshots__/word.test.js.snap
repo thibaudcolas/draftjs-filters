@@ -348,22 +348,22 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -99,15 +88,10 @@
+@@ -98,15 +87,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 7,
             "offset": 32,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 20,
 -           "offset": 53,
 -           "style": "STRIKETHROUGH",
--         },
+          },
         ],
         "key": "d1736",
         "text": "Unstyled, red, text background, outline, small caps, double strikethrough, unstyled",
         "type": "unstyled",
-      },
 @@ -131,11 +115,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -377,7 +377,7 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [
-@@ -144,33 +128,18 @@
+@@ -144,32 +128,17 @@
             "length": 4,
             "offset": 10,
           },
@@ -401,18 +401,17 @@ Snapshot Diff:
 +           "key": 2,
             "length": 10,
             "offset": 57,
-          },
+-         },
 -         Object {
 -           "key": 5,
 -           "length": 6,
 -           "offset": 76,
--         },
+          },
         ],
         "inlineStyleRanges": Array [],
         "key": "cnvhf",
         "text": "Unstyled, link, email link, tooltip link, internal link, frame link, comment[T.C1] ",
-        "type": "unstyled",
-@@ -178,19 +147,14 @@
+@@ -178,18 +147,13 @@
       Object {
         "data": Object {},
         "depth": 0,
@@ -422,17 +421,16 @@ Snapshot Diff:
 +           "key": 3,
             "length": 17,
             "offset": 10,
-          },
+-         },
 -         Object {
 -           "key": 7,
 -           "length": 6,
 -           "offset": 27,
--         },
+          },
         ],
         "inlineStyleRanges": Array [
           Object {
             "length": 17,
-            "offset": 10,
 @@ -206,11 +170,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -717,12 +715,17 @@ Snapshot Diff:
         "key": "2oqmd",
         "text": "Caption",
         "type": "unstyled",
-@@ -580,25 +511,10 @@
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
+@@ -575,25 +506,10 @@
         "depth": 0,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "aud2o",
+        "text": "Image with effects",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 12,
@@ -733,16 +736,11 @@ Snapshot Diff:
 -       "inlineStyleRanges": Array [],
 -       "key": "8cu2j",
 -       "text": "📷",
--       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
--       "depth": 0,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [
-          Object {
-            "length": 5,
-            "offset": 0,
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
 @@ -728,21 +644,21 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -885,12 +883,17 @@ Snapshot Diff:
             "length": 5,
             "offset": 1,
             "style": "BOLD",
-@@ -911,25 +806,10 @@
-        "type": "unstyled",
-      },
-      Object {
-        "data": Object {},
-        "depth": 0,
+@@ -906,25 +801,10 @@
+            "style": "BOLD",
+          },
+        ],
+        "key": "1p28l",
+        "text": "SmartArt",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 0,
 -       "entityRanges": Array [
 -         Object {
 -           "key": 15,
@@ -901,16 +904,11 @@ Snapshot Diff:
 -       "inlineStyleRanges": Array [],
 -       "key": "4t12b",
 -       "text": "📷",
--       "type": "unstyled",
--     },
--     Object {
--       "data": Object {},
--       "depth": 0,
-        "entityRanges": Array [],
-        "inlineStyleRanges": Array [
-          Object {
-            "length": 5,
-            "offset": 0,
+        "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 0,
 @@ -941,25 +821,10 @@
         "type": "unstyled",
       },
@@ -989,11 +987,10 @@ Snapshot Diff:
         "data": Object {
 -         "href": "mailto:test@example.com",
 -         "url": "mailto:test@example.com",
-+         "url": "http://www.example.com/",
-        },
-        "mutability": "MUTABLE",
-        "type": "LINK",
-      },
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
 -     "10": Object {
 -       "data": Object {
 -         "alt": "*",
@@ -1021,7 +1018,8 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
++         "url": "http://www.example.com/",
+        },
 -     "13": Object {
 -       "data": Object {
 -         "height": "39",
@@ -1055,7 +1053,7 @@ Snapshot Diff:
 -         "src": "file:///C:\\\\truncated\\\\msohtmlclip1\\\\01\\\\clip_image011.png",
 -         "width": "174",
 -       },
--       "mutability": "MUTABLE",
+        "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },
 -     "17": Object {
@@ -1072,8 +1070,8 @@ Snapshot Diff:
 -         "url": "http://localhost/#_msoanchor_2",
 -       },
 -       "mutability": "MUTABLE",
--       "type": "LINK",
--     },
+        "type": "LINK",
+      },
       "2": Object {
         "data": Object {
 -         "href": "http://www.example.com",
@@ -1084,7 +1082,7 @@ Snapshot Diff:
         "type": "LINK",
       },
       "3": Object {
-        "data": Object {
+-       "data": Object {
 -         "href": "#_Inline_styles",
 -         "url": "http://localhost/#_Inline_styles",
 -       },
@@ -1092,18 +1090,18 @@ Snapshot Diff:
 -       "type": "LINK",
 -     },
 -     "4": Object {
--       "data": Object {
+        "data": Object {
 -         "href": "http://www.example.com/",
           "url": "http://www.example.com/",
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "5": Object {
 -       "data": Object {
 -         "href": "#_msocom_1",
 -         "url": "http://localhost/#_msocom_1",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "LINK",
 -     },
@@ -1142,8 +1140,8 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
--   },
+      },
+    },
   }
 `;
 
@@ -1165,17 +1163,18 @@ Snapshot Diff:
         "data": Object {},
         "depth": 0,
         "entityRanges": Array [],
-@@ -64,31 +64,20 @@
+@@ -63,32 +63,21 @@
+          },
           Object {
             "length": 11,
             "offset": 24,
             "style": "ITALIC",
-          },
+-         },
 -         Object {
 -           "length": 13,
 -           "offset": 37,
 -           "style": "STRIKETHROUGH",
--         },
+          },
         ],
         "key": "1oott",
         "text": "Unstyled, bold, italic, bold italic, strikethrough, monospace, unstyled, bold monospace",
@@ -1198,22 +1197,22 @@ Snapshot Diff:
         "type": "unstyled",
       },
       Object {
-@@ -99,15 +88,10 @@
+@@ -98,15 +87,10 @@
+        "inlineStyleRanges": Array [
           Object {
             "length": 7,
             "offset": 32,
             "style": "BOLD",
-          },
+-         },
 -         Object {
 -           "length": 20,
 -           "offset": 53,
 -           "style": "STRIKETHROUGH",
--         },
+          },
         ],
         "key": "4bfp4",
         "text": "Unstyled, red, text background, outline, small caps, double strikethrough, unstyled",
         "type": "unstyled",
-      },
 @@ -131,11 +115,11 @@
         "depth": 0,
         "entityRanges": Array [],
@@ -1786,13 +1785,13 @@ Snapshot Diff:
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "10": Object {
 -       "data": Object {
 -         "height": "39",
 -         "src": "file:///C:\\\\truncated\\\\msohtmlclip1\\\\01\\\\clip_image006.png",
 -         "width": "119",
--       },
+      },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
 -     },
@@ -1839,12 +1838,12 @@ Snapshot Diff:
         },
         "mutability": "MUTABLE",
         "type": "LINK",
-      },
+-     },
 -     "4": Object {
 -       "data": Object {
 -         "href": "http://www.example.com",
 -         "url": "http://www.example.com/",
-    },
+-       },
 -       "mutability": "MUTABLE",
 -       "type": "LINK",
 -     },
@@ -1895,8 +1894,8 @@ Snapshot Diff:
 -       },
 -       "mutability": "MUTABLE",
 -       "type": "IMAGE",
--     },
--   },
+      },
+    },
   }
 `;
 

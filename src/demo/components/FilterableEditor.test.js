@@ -8,10 +8,8 @@ const editor = require("../../lib/filters/editor")
 
 describe("FilterableEditor", () => {
   beforeEach(() => {
-    global.sessionStorage = {
-      getItem: jest.fn(),
-      setItem: jest.fn(),
-    }
+    jest.spyOn(Storage.prototype, "getItem")
+    jest.spyOn(Storage.prototype, "setItem")
     jest.spyOn(RichUtils, "toggleInlineStyle")
     jest.spyOn(RichUtils, "toggleBlockType")
     jest.spyOn(RichUtils, "toggleLink")
