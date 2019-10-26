@@ -43,7 +43,7 @@
     "core-js": "^2.5.7",
     "coveralls": "3.0.7",
     "danger": "9.2.2",
-    "documentation": "8.1.2",
+    "documentation": "12.1.2",
     "draft-js": "0.10.5",
     "enzyme": "3.10.0",
     "enzyme-adapter-react-16": "1.15.1",
