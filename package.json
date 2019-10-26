@@ -27,11 +27,6 @@
     "dist/*.js"
   ],
   "browserslist": "> 1%, IE 11",
-  "babel": {
-    "presets": [
-      "env"
-    ]
-  },
   "devDependencies": {
     "@babel/plugin-transform-flow-comments": "7.6.3",
     "@commitlint/cli": "8.2.0",
