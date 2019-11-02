@@ -50,7 +50,7 @@
     "react-dom": "16.11.0",
     "react-scripts": "3.2.0",
     "react-test-renderer": "16.11.0",
-    "rollup": "1.26.2",
+    "rollup": "1.26.3",
     "rollup-plugin-babel": "4.3.3",
     "semantic-release": "15.13.29",
     "snapshot-diff": "0.5.2",
