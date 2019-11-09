@@ -45,7 +45,7 @@
     "flow-bin": "0.91.0",
     "immutable": "~3.7.6",
     "normalize.css": "7.0.0",
-    "prettier": "1.18.2",
+    "prettier": "1.19.0",
     "react": "16.11.0",
     "react-dom": "16.11.0",
     "react-scripts": "3.2.0",
