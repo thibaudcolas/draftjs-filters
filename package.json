@@ -34,7 +34,7 @@
     "@commitlint/travis-cli": "8.2.0",
     "@semantic-release/changelog": "3.0.5",
     "@semantic-release/exec": "3.3.8",
-    "@semantic-release/git": "7.0.17",
+    "@semantic-release/git": "7.0.18",
     "coveralls": "3.0.7",
     "danger": "9.2.2",
     "documentation": "12.1.2",
