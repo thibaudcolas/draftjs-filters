@@ -54,7 +54,7 @@
     "rollup-plugin-babel": "4.3.3",
     "semantic-release": "15.13.30",
     "snapshot-diff": "0.6.1",
-    "source-map-explorer": "2.1.0"
+    "source-map-explorer": "2.1.1"
   },
   "peerDependencies": {
     "draft-js": "^0.10.4 || ^0.11.0"
