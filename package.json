@@ -35,7 +35,7 @@
     "@semantic-release/changelog": "3.0.6",
     "@semantic-release/exec": "3.3.8",
     "@semantic-release/git": "7.0.18",
-    "coveralls": "3.0.8",
+    "coveralls": "3.0.9",
     "danger": "9.2.8",
     "documentation": "12.1.4",
     "draft-js": "0.10.5",
