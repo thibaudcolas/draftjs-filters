@@ -8,10 +8,10 @@ expect.addSnapshotSerializer(createSerializer({ mode: "deep" }))
 
 jest.mock("draft-js", () => {
   const packages = {
-    "0.10.5": "draft-js",
-    "0.11.2": "draft-js-11",
+    "0.10": "draft-js",
+    "0.11": "draft-js-11",
   }
-  const version = process.env.DRAFTJS_VERSION || "0.10.5"
+  const version = process.env.DRAFTJS_VERSION || "0.10"
 
   // Require the original module.
   const originalModule = jest.requireActual(packages[version])
