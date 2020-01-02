@@ -25,14 +25,14 @@ branches:
     - gh-pages
 deploy:
   - provider: pages
-    edge: true
+    skip_cleanup: true
     local_dir: build
     github_token: "$PAGES_GITHUB_API_TOKEN"
     on:
       branch: master
       condition: "$DRAFTJS_VERSION = 0.10"
   - provider: script
-    edge: true
+    skip_cleanup: true
     script: npx semantic-release
     on:
       condition: "$DRAFTJS_VERSION = 0.10"
