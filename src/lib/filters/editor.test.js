@@ -542,5 +542,24 @@ describe("editor", () => {
         ).toEqual(convertToRaw(filteredState.getCurrentContent()))
       })
     })
+
+    it("#blockTextRules can be overriden (#65)", () => {
+      const content = convertFromRaw({
+        entityMap: { ...preserveBlockByTextEntities },
+        blocks: [...preserveBlockByText],
+      })
+      expect(
+        convertToRaw(
+          filterEditorState(
+            {
+              ...filters,
+              whitespacedCharacters: [],
+              blockTextRules: [],
+            },
+            EditorState.createWithContent(content),
+          ).getCurrentContent(),
+        ),
+      ).toEqual(convertToRaw(content))
+    })
   })
 })
