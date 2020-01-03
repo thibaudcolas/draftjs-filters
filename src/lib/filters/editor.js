@@ -49,9 +49,20 @@ type FilterOptions = {
   maxNesting: number,
   // Characters to replace with whitespace.
   whitespacedCharacters: Array<string>,
+  // Optional: Rules used to automatically convert blocks from one type to another
+  // based on the block’s text. Also supports setting the block depth.
+  // Defaults to the filters’ built-in block prefix rules.
+  blockTextRules?: $ReadOnlyArray<{
+    // A regex as a string, to match against block text, e.g. "^(◦|o |o\t)".
+    test: string,
+    // The type to convert the block to if the test regex matches.
+    type: string,
+    // The depth to set (e.g. for list items with different prefixes per depth).
+    depth: number,
+  }>,
 }
 
-const PREFIX_RULES = [
+const BLOCK_PREFIX_RULES = [
   {
     // https://regexper.com/#%5E(%C2%B7%20%7C%E2%80%A2%5Ct%7C%E2%80%A2%7C%F0%9F%93%B7%20%7C%5Ct%7C%20%5Ct)
     test: "^(· |•\t|•|📷 |\t| \t)",
@@ -101,6 +112,7 @@ export const filterEditorState = (
     entities,
     maxNesting,
     whitespacedCharacters,
+    blockTextRules = BLOCK_PREFIX_RULES,
   } = options
   const shouldKeepEntityRange = (content, entityKey, block) => {
     const entity = content.getEntity(entityKey)
@@ -119,7 +131,7 @@ export const filterEditorState = (
   const filters = [
     // 1. clean up blocks.
     removeInvalidDepthBlocks,
-    preserveBlockByText.bind(null, PREFIX_RULES),
+    preserveBlockByText.bind(null, blockTextRules),
     limitBlockDepth.bind(null, maxNesting),
     // 2. reset styles and blocks.
     filterInlineStyles.bind(null, styles),

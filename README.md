@@ -60,7 +60,7 @@ function onChange(nextState) {
 }
 ```
 
-Here are the available options:
+Here are all the available options:
 
 ```jsx
 // Whitelist of allowed block types. unstyled and atomic are always included.
@@ -85,6 +85,17 @@ entities: $ReadOnlyArray<{
 maxNesting: number,
 // Characters to replace with whitespace.
 whitespacedCharacters: Array<string>,
+// Optional: Rules used to automatically convert blocks from one type to another
+// based on the block’s text. Also supports setting the block depth.
+// Defaults to the filters’ built-in block prefix rules.
+blockTextRules?: $ReadOnlyArray<{
+  // A regex as a string, to match against block text, e.g. "^(◦|o |o\t)".
+  test: string,
+  // The type to convert the block to if the test regex matches.
+  type: string,
+  // The depth to set (e.g. for list items with different prefixes per depth).
+  depth: number,
+}>,
 ```
 
 ### Types
