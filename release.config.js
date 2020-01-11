@@ -30,7 +30,7 @@ ${COMMENT_POSTFIX}
  * https://github.com/semantic-release/changelog
  */
 module.exports = {
-  branch: "master",
+  branches: "master",
   tagFormat: "v${version}",
   npmPublish: true,
   tarballDir: "dist",
