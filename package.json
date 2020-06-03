@@ -55,14 +55,14 @@
     "rollup-plugin-babel": "4.4.0",
     "semantic-release": "17.0.8",
     "snapshot-diff": "0.8.0",
-    "source-map-explorer": "2.4.1"
+    "source-map-explorer": "2.4.2"
   },
   "peerDependencies": {
     "draft-js": "^0.10.4 || ^0.11.0"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=true react-scripts build && source-map-explorer --html build/static/js/main.* > build/source-map-explorer.html && rollup -c",
+    "build": "CI=true react-scripts build && source-map-explorer build/static/js/*.js --html > build/source-map-explorer.html && rollup -c",
     "test": "CI=true react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom",
     "report:coverage": "open coverage/lcov-report/index.html",
