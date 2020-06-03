@@ -12,6 +12,7 @@ suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe
 [include]
 
 [libs]
+./flow-typed/npm/react-dom_v16.x.x.js
 
 [lints]
 all=error
