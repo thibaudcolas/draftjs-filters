@@ -28,7 +28,7 @@
   ],
   "browserslist": "> 1%, IE 11",
   "devDependencies": {
-    "@babel/plugin-transform-flow-comments": "7.10.1",
+    "@babel/plugin-transform-flow-comments": "7.10.4",
     "@commitlint/cli": "9.0.1",
     "@commitlint/config-conventional": "9.0.1",
     "@commitlint/travis-cli": "9.0.1",
@@ -51,7 +51,7 @@
     "react-dom": "16.13.1",
     "react-scripts": "3.4.1",
     "react-test-renderer": "16.13.1",
-    "rollup": "2.18.1",
+    "rollup": "2.18.2",
     "rollup-plugin-babel": "4.4.0",
     "semantic-release": "17.1.1",
     "snapshot-diff": "0.8.1",
