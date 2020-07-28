@@ -1,4 +1,5 @@
 [ignore]
+# Draft.js publishes broken type definitions. See https://github.com/facebook/draft-js/issues/1974.
 .*/node_modules/draft-js/lib/DraftEditorContents.react.js.flow
 .*/node_modules/draft-js/lib/ContentBlockNode.js.flow
 .*/node_modules/draft-js/lib/ContentBlock.js.flow
