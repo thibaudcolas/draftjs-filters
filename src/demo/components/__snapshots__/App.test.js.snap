@@ -65,7 +65,7 @@ exports[`App renders 1`] = `
     By default, Draft.js preserves quite a lot. Have a look at our 
     <a
       className="link"
-      href="https://github.com/thibaudcolas/draftjs-filters/tree/master/pasting"
+      href="https://github.com/thibaudcolas/draftjs-filters/tree/main/pasting"
     >
       full test suite
     </a>
@@ -87,7 +87,7 @@ exports[`App renders 1`] = `
     <li>
       <a
         className="link"
-        href="https://github.com/thibaudcolas/draftjs-filters/blob/master/pasting/documents/Draft.js%20paste%20test%20document%20Word2010.docx"
+        href="https://github.com/thibaudcolas/draftjs-filters/blob/main/pasting/documents/Draft.js%20paste%20test%20document%20Word2010.docx"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -117,7 +117,7 @@ exports[`App renders 1`] = `
     <li>
       <a
         className="link"
-        href="https://github.com/thibaudcolas/draftjs-filters/blob/master/pasting/documents/Draft.js%20paste%20test%20document.pages"
+        href="https://github.com/thibaudcolas/draftjs-filters/blob/main/pasting/documents/Draft.js%20paste%20test%20document.pages"
         rel="noopener noreferrer"
         target="_blank"
       >
@@ -127,7 +127,7 @@ exports[`App renders 1`] = `
     <li>
       <a
         className="link"
-        href="https://github.com/thibaudcolas/draftjs-filters/blob/master/pasting/documents/Draft.js%20paste%20test%20document%20Word2016%20macOS.docx"
+        href="https://github.com/thibaudcolas/draftjs-filters/blob/main/pasting/documents/Draft.js%20paste%20test%20document%20Word2016%20macOS.docx"
         rel="noopener noreferrer"
         target="_blank"
       >
