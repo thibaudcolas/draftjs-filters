@@ -8,8 +8,8 @@ script:
   - npm run prepare
   # Test commit message validation in CI.
   - git log -1 --pretty=%B >> latest.log && ./.git/hooks/commit-msg latest.log
-  - DRAFTJS_VERSION=0.10 npm run test:ci
-  - DRAFTJS_VERSION=0.11 npm run test
+  - DRAFTJS_VERSION=0.11 npm run test:ci
+  - DRAFTJS_VERSION=0.10 npm run test
   - npx commitlint-travis
   - if [ "$TRAVIS_SECURE_ENV_VARS" == true ]; then npx danger ci --verbose; fi
   - npm run report:package
