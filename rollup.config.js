@@ -5,7 +5,7 @@ const BANNER = `// @flow`
 const CJS_BANNER = `${BANNER}
 /*:: import type { ContentState, EditorState } from "draft-js"*/`
 
-export default [
+const config = [
   {
     input: "src/lib/index.js",
     external: ["draft-js"],
@@ -30,3 +30,5 @@ export default [
     ],
   },
 ]
+
+export default config
