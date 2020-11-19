@@ -8,6 +8,7 @@ import {
   CompositeDecorator,
   AtomicBlockUtils,
   convertFromRaw,
+  getDefaultKeyBinding,
 } from "draft-js"
 import type { ContentBlock } from "draft-js"
 import type { DraftEntityType } from "draft-js/lib/DraftEntityType.js.flow"
@@ -119,7 +120,7 @@ class FilterableEditor extends Component<Props, State> {
       editorState: editorState,
     }
     this.onChange = this.onChange.bind(this)
-    this.onTab = this.onTab.bind(this)
+    this.keyBindingFn = this.keyBindingFn.bind(this)
     this.toggleStyle = this.toggleStyle.bind(this)
     this.toggleBlock = this.toggleBlock.bind(this)
     this.toggleEntity = this.toggleEntity.bind(this)
@@ -210,14 +211,22 @@ class FilterableEditor extends Component<Props, State> {
     }
   }
 
-  /* :: onTab: (event: SyntheticKeyboardEvent<>) => void; */
-  onTab(event: SyntheticKeyboardEvent<>) {
-    const { extended } = this.props
-    const { editorState } = this.state
-    const maxNesting = extended ? MAX_NESTING_EXTENDED : MAX_NESTING
-    const newState = RichUtils.onTab(event, editorState, maxNesting)
-
-    this.onChange(newState)
+  /* :: keyBindingFn: (event: SyntheticKeyboardEvent<>) => void; */
+  keyBindingFn(event: SyntheticKeyboardEvent /*:: <> */) {
+    const TAB = 9
+    switch (event.keyCode) {
+      case TAB: {
+        const { extended } = this.props
+        const { editorState } = this.state
+        const maxNesting = extended ? MAX_NESTING_EXTENDED : MAX_NESTING
+        const newState = RichUtils.onTab(event, editorState, maxNesting)
+        this.onChange(newState)
+        return null
+      }
+      default: {
+        return getDefaultKeyBinding(event)
+      }
+    }
   }
 
   /* :: handleKeyCommand: (command: string) => "handled" | "not-handled"; */
@@ -274,7 +283,7 @@ class FilterableEditor extends Component<Props, State> {
             onChange={this.onChange}
             stripPastedStyles={false}
             blockRendererFn={this.blockRenderer}
-            onTab={this.onTab}
+            keyBindingFn={this.keyBindingFn}
             handleKeyCommand={this.handleKeyCommand}
           />
         </SentryBoundary>

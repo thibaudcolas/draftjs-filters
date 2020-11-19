@@ -41,7 +41,8 @@ describe("SentryBoundary", () => {
 
   it("#error reload", () => {
     window.Raven = false
-    window.location.reload = jest.fn()
+    delete window.location
+    window.location = { reload: jest.fn() }
 
     shallow(<SentryBoundary>Test</SentryBoundary>)
       .setState({

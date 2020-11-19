@@ -39,10 +39,11 @@ describe("Link", () => {
         },
       ],
     })
+    const entityKey = contentState.getFirstBlock().getEntityAt(3)
 
     expect(
       shallow(
-        <Link contentState={contentState} entityKey="1">
+        <Link contentState={contentState} entityKey={entityKey}>
           Test
         </Link>,
       ),

@@ -1,5 +1,5 @@
 import React from "react"
-import { shallow } from "enzyme"
+import { mount, shallow } from "enzyme"
 import { EditorState, RichUtils, AtomicBlockUtils } from "draft-js"
 
 import FilterableEditor from "./FilterableEditor"
@@ -165,23 +165,25 @@ describe("FilterableEditor", () => {
     })
   })
 
-  describe("onTab", () => {
+  describe("keyBindingFn", () => {
     it("works", () => {
-      const wrapper = shallow(
+      const wrapper = mount(
         <FilterableEditor filtered={false} extended={false} />,
       )
 
       wrapper.instance().onChange = jest.fn()
-      wrapper.instance().onTab({})
+      wrapper.instance().keyBindingFn({ keyCode: 9 })
       expect(wrapper.instance().onChange).toHaveBeenCalled()
     })
 
-    it("#extended", () => {
-      const wrapper = shallow(<FilterableEditor filtered={false} extended />)
+    it("does not change state directly with other keys", () => {
+      const wrapper = mount(
+        <FilterableEditor filtered={false} extended={false} />,
+      )
 
       wrapper.instance().onChange = jest.fn()
-      wrapper.instance().onTab({})
-      expect(wrapper.instance().onChange).toHaveBeenCalled()
+      wrapper.instance().keyBindingFn({ keyCode: 22 })
+      expect(wrapper.instance().onChange).not.toHaveBeenCalled()
     })
   })
 
