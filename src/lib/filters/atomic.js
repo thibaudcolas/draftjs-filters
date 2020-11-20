@@ -79,7 +79,7 @@ export const resetAtomicBlocks = (content: ContentState) => {
  * Removes atomic blocks for which the entity type isn't allowed.
  */
 export const removeInvalidAtomicBlocks = (
-  whitelist: $ReadOnlyArray<{ type: string }>,
+  allowlist: $ReadOnlyArray<{ type: string }>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
@@ -95,7 +95,7 @@ export const removeInvalidAtomicBlocks = (
     if (entityKey) {
       const type = content.getEntity(entityKey).getType()
 
-      isValid = whitelist.some((t) => t.type === type)
+      isValid = allowlist.some((t) => t.type === type)
     } else {
       isValid = false
     }

@@ -125,13 +125,13 @@ export const limitBlockDepth = (max: number, content: ContentState) => {
  * Also sets depth to 0 (for potentially nested list items).
  */
 export const filterBlockTypes = (
-  whitelist: $ReadOnlyArray<string>,
+  allowlist: $ReadOnlyArray<string>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
 
   const changedBlocks = blockMap
-    .filter((block) => !whitelist.includes(block.getType()))
+    .filter((block) => !allowlist.includes(block.getType()))
     .map((block) =>
       block.merge({
         type: UNSTYLED,

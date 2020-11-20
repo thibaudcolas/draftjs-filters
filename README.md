@@ -134,11 +134,11 @@ This is how they are stored by Draft.js by default.
 
 ##### removeInvalidAtomicBlocks
 
-Removes atomic blocks for which the entity isn't allowed.
+Removes atomic blocks for which the entity type isn't allowed.
 
 ###### Parameters
 
-- `whitelist` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
+- `allowlist` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
 - `content` **ContentState**
 
 ##### removeInvalidDepthBlocks
@@ -179,7 +179,7 @@ Also sets depth to 0 (for potentially nested list items).
 
 ###### Parameters
 
-- `whitelist` **$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
+- `allowlist` **$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 - `content` **ContentState**
 
 ##### filterInlineStyles
@@ -188,7 +188,7 @@ Removes all styles not present in the list.
 
 ###### Parameters
 
-- `whitelist` **$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
+- `allowlist` **$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 - `content` **ContentState**
 
 ##### cloneEntities
@@ -218,7 +218,7 @@ Keeps all entity types (images, links, documents, embeds) that are enabled.
 
 ###### Parameters
 
-- `whitelist` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
+- `allowlist` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
 - `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ##### shouldRemoveImageEntity

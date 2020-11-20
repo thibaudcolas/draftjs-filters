@@ -5,7 +5,7 @@ import { ContentState, CharacterMetadata } from "draft-js"
  * Removes all styles not present in the list.
  */
 export const filterInlineStyles = (
-  whitelist: $ReadOnlyArray<string>,
+  allowlist: $ReadOnlyArray<string>,
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
@@ -18,7 +18,7 @@ export const filterInlineStyles = (
 
       char
         .getStyle()
-        .filter((type) => !whitelist.includes(type))
+        .filter((type) => !allowlist.includes(type))
         .forEach((type) => {
           altered = true
           newChar = CharacterMetadata.removeStyle(newChar, type)

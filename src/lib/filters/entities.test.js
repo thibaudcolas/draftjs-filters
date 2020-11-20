@@ -421,7 +421,7 @@ describe("entities", () => {
         ).toBe(true)
       })
 
-      it("no whitelist", () => {
+      it("no allowlist", () => {
         expect(
           shouldKeepEntityByAttribute(
             [
@@ -595,7 +595,7 @@ describe("entities", () => {
         })
       })
 
-      it("no whitelist", () => {
+      it("no allowlist", () => {
         let content = convertFromRaw({
           entityMap: {
             4: {
