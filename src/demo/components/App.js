@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import "./App.css"
 
 import FilterableEditor from "./FilterableEditor"
+import ClipboardLogger from "./ClipboardLogger"
 
 class App extends Component<{}> {
   render() {
@@ -155,6 +156,10 @@ class App extends Component<{}> {
         <p>Here is an editor with more formatting enabled:</p>
 
         <FilterableEditor filtered={false} extended={true} />
+
+        <p>Clipboard log:</p>
+
+        <ClipboardLogger />
       </div>
     )
   }

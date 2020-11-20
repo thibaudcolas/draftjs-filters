@@ -162,5 +162,9 @@ exports[`App renders 1`] = `
     extended={true}
     filtered={false}
   />
+  <p>
+    Clipboard log:
+  </p>
+  <ClipboardLogger />
 </div>
 `;

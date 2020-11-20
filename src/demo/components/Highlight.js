@@ -3,7 +3,6 @@ import React from "react"
 
 type Props = {
   value: string,
-  language: string,
 }
 
 const onCopy = (value) => {
@@ -17,16 +16,20 @@ const onCopy = (value) => {
   document.body.removeChild(hidden)
 }
 
-const Highlight = ({ value, language }: Props) => (
-  <pre className={`language-${language}`} style={{ position: "relative" }}>
+const Highlight = ({ value }: Props) => (
+  <div style={{ position: "relative" }}>
     <button
       onClick={onCopy.bind(null, value)}
       style={{ position: "absolute", right: "1rem" }}
     >
       Copy
     </button>
-    <code>{value}</code>
-  </pre>
+    <textarea
+      style={{ width: "100%", resize: "vertical", minHeight: "100px" }}
+      readOnly
+      value={value}
+    ></textarea>
+  </div>
 )
 
 export default Highlight

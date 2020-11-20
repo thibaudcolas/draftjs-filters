@@ -292,7 +292,6 @@ class FilterableEditor extends Component<Props, State> {
             <span className="link">Debug</span>
           </summary>
           <Highlight
-            language="js"
             value={JSON.stringify(
               convertToRaw(editorState.getCurrentContent()),
               null,
