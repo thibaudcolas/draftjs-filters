@@ -8,7 +8,7 @@ describe("Image", () => {
   it("renders", () => {
     const content = convertFromRaw({
       entityMap: {
-        "0": {
+        0: {
           type: "IMAGE",
           data: {
             src: "/example.png",

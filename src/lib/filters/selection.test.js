@@ -132,7 +132,7 @@ describe("selection", () => {
       let editorState = EditorState.createWithContent(
         convertFromRaw({
           entityMap: {
-            "0": {
+            0: {
               type: "IMAGE",
               mutability: "IMMUTABLE",
               data: {
@@ -193,7 +193,7 @@ describe("selection", () => {
       let editorState = EditorState.createWithContent(
         convertFromRaw({
           entityMap: {
-            "0": {
+            0: {
               type: "IMAGE",
               mutability: "IMMUTABLE",
               data: {
@@ -254,7 +254,7 @@ describe("selection", () => {
       let editorState = EditorState.createWithContent(
         convertFromRaw({
           entityMap: {
-            "0": {
+            0: {
               type: "IMAGE",
               mutability: "IMMUTABLE",
               data: {
@@ -324,7 +324,7 @@ describe("selection", () => {
       let editorState = EditorState.createWithContent(
         convertFromRaw({
           entityMap: {
-            "0": {
+            0: {
               type: "IMAGE",
               mutability: "IMMUTABLE",
               data: {
@@ -404,7 +404,7 @@ describe("selection", () => {
       let editorState = EditorState.createWithContent(
         convertFromRaw({
           entityMap: {
-            "0": {
+            0: {
               type: "IMAGE",
               mutability: "IMMUTABLE",
               data: {

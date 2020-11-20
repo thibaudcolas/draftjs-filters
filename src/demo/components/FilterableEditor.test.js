@@ -176,6 +176,16 @@ describe("FilterableEditor", () => {
       expect(wrapper.instance().onChange).toHaveBeenCalled()
     })
 
+    it("works #extended", () => {
+      const wrapper = mount(
+        <FilterableEditor filtered={false} extended={true} />,
+      )
+
+      wrapper.instance().onChange = jest.fn()
+      wrapper.instance().keyBindingFn({ keyCode: 9 })
+      expect(wrapper.instance().onChange).toHaveBeenCalled()
+    })
+
     it("does not change state directly with other keys", () => {
       const wrapper = mount(
         <FilterableEditor filtered={false} extended={false} />,

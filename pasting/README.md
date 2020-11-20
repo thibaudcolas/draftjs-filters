@@ -36,6 +36,7 @@ Depth 0:
 "📷 "
 // Image list, Word 2010, IE11 (plain text)
 " \t"
+
 ```
 
 Depth 1:
@@ -49,6 +50,7 @@ Depth 1:
 "◦"
 // Word Safari iOS11
 "\t"
+
 ```
 
 Depth 2:
@@ -62,6 +64,7 @@ Depth 2:
 "◾"
 // Word Safari iOS11
 "\t"
+
 ```
 
 #### OL
@@ -75,6 +78,7 @@ Depth 0:
 "1.\t"
 // Dropbox Paper / Google Docs, IE11 (plain text)
 "1."
+
 ```
 
 Depth 1:
@@ -86,6 +90,7 @@ Depth 1:
 "a.\t"
 // Dropbox Paper / Google Docs, IE11 (plain text)
 "a."
+
 ```
 
 Depth 2:
@@ -97,6 +102,7 @@ Depth 2:
 "i.\t"
 // Dropbox Paper / Google Docs, IE11 (plain text)
 "i."
+
 ```
 
 ## By word processor

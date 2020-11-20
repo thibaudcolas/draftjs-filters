@@ -14,13 +14,13 @@ describe("entities", () => {
     it("works", () => {
       const content = convertFromRaw({
         entityMap: {
-          "1": {
+          1: {
             type: "LINK",
             data: {
               url: "www.example.com",
             },
           },
-          "2": {
+          2: {
             type: "IMAGE",
             data: {
               src: "/example.png",
@@ -102,25 +102,25 @@ describe("entities", () => {
     it("works", () => {
       let content = convertFromRaw({
         entityMap: {
-          "0": {
+          0: {
             type: "LINK",
             data: {
               url: "www.example.com",
             },
           },
-          "1": {
+          1: {
             type: "TEST",
             data: {
               url: "doc.pdf",
             },
           },
-          "4": {
+          4: {
             type: "IMAGE",
             data: {
               src: "/example.png",
             },
           },
-          "5": {
+          5: {
             type: "EMBED",
             data: {
               url: "http://www.youtube.com/watch?v=y8Kyi0WNg40",
@@ -441,14 +441,14 @@ describe("entities", () => {
     it("works", () => {
       let content = convertFromRaw({
         entityMap: {
-          "4": {
+          4: {
             type: "LINK",
             data: {
               href: "http://example.com",
               url: "http://example.com/",
             },
           },
-          "5": {
+          5: {
             type: "IMAGE",
             data: {
               alt: "",
@@ -456,7 +456,7 @@ describe("entities", () => {
               width: "15",
             },
           },
-          "6": {
+          6: {
             type: "EMBED",
             data: {
               url: "http://example.com/",
@@ -549,7 +549,7 @@ describe("entities", () => {
       it("missing config", () => {
         let content = convertFromRaw({
           entityMap: {
-            "4": {
+            4: {
               type: "LINK",
               data: {
                 url: "http://example.com/",
@@ -598,7 +598,7 @@ describe("entities", () => {
       it("no whitelist", () => {
         let content = convertFromRaw({
           entityMap: {
-            "4": {
+            4: {
               type: "LINK",
               data: {
                 url: "http://example.com/",

@@ -3,7 +3,7 @@ import { EditorState, convertFromRaw, convertToRaw } from "draft-js"
 import { filterEditorState } from "./editor"
 
 const preserveAtomicBlocksEntities = {
-  "0": {
+  0: {
     type: "IMAGE",
     data: {
       src: "/0.png",
@@ -139,13 +139,13 @@ const filterInlineStyles = [
 ]
 
 const resetAtomicBlocksEntities = {
-  "1": {
+  1: {
     type: "IMAGE",
     data: {
       src: "/1.png",
     },
   },
-  "236": {
+  236: {
     type: "EMBED",
     data: {
       url: "http://www.youtube.com/watch?v=2",
@@ -208,31 +208,31 @@ const removeInvalidAtomicBlocks = [
 ]
 
 const filterEntityRangesEntities = {
-  "2": {
+  2: {
     type: "IMAGE",
     data: {
       src: "/example.png",
     },
   },
-  "3": {
+  3: {
     type: "LINK",
     data: {
       url: "www.example.com",
     },
   },
-  "328": {
+  328: {
     type: "TEST",
     data: {
       url: "doc.pdf",
     },
   },
-  "512": {
+  512: {
     type: "EMBED",
     data: {
       url: "http://www.youtube.com/watch?v=y8Kyi0WNg40",
     },
   },
-  "1024": {
+  1024: {
     type: "IMAGE",
     data: {
       src: "http://example.com/example.png",
@@ -309,7 +309,7 @@ const filterEntityRanges = [
 ]
 
 const filterEntityDataEntities = {
-  "4": {
+  4: {
     type: "LINK",
     data: {
       href: "http://example.com",
@@ -334,7 +334,7 @@ const filterEntityData = [
 ]
 
 const cloneEntitiesEntities = {
-  "5": {
+  5: {
     type: "LINK",
     data: {},
   },
@@ -381,7 +381,7 @@ const replaceTextBySpaces = [
 ]
 
 const preserveBlockByTextEntities = {
-  "6": {
+  6: {
     type: "IMAGE",
     data: {},
   },

@@ -9,7 +9,7 @@ expect.addSnapshotSerializer(createSerializer({ mode: "deep" }))
 jest.mock("draft-js", () => {
   const packages = {
     "0.10": "draft-js-10",
-    "0.11": "draft-js",
+    0.11: "draft-js",
   }
   const version = process.env.DRAFTJS_VERSION || "0.11"
 

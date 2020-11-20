@@ -6,21 +6,21 @@ import { config } from "./utils"
 
 const rawContent = {
   entityMap: {
-    "0": {
+    0: {
       type: "LINK",
       mutability: "MUTABLE",
       data: {
         url: "http://example.com/",
       },
     },
-    "1": {
+    1: {
       type: "LINK",
       mutability: "MUTABLE",
       data: {
         url: "http://example.com/",
       },
     },
-    "2": {
+    2: {
       type: "IMAGE",
       mutability: "IMMUTABLE",
       data: {

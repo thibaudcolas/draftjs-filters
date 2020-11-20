@@ -13,7 +13,7 @@ describe("Link", () => {
   it("renders", () => {
     const contentState = convertFromRaw({
       entityMap: {
-        "0": {
+        0: {
           type: "LINK",
           mutability: "MUTABLE",
           data: {

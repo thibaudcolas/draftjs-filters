@@ -11,7 +11,7 @@ describe("atomic", () => {
     it("works", () => {
       const content = convertFromRaw({
         entityMap: {
-          "4": {
+          4: {
             type: "IMAGE",
             data: {
               src: "/example.png",
@@ -84,7 +84,7 @@ describe("atomic", () => {
     it("works", () => {
       const content = convertFromRaw({
         entityMap: {
-          "4": {
+          4: {
             type: "IMAGE",
             data: {
               src: "/example.png",
@@ -151,13 +151,13 @@ describe("atomic", () => {
     it("works", () => {
       const content = convertFromRaw({
         entityMap: {
-          "4": {
+          4: {
             type: "IMAGE",
             data: {
               src: "/example.png",
             },
           },
-          "5": {
+          5: {
             type: "EMBED",
             data: {
               url: "http://www.youtube.com/watch?v=y8Kyi0WNg40",

@@ -92,7 +92,7 @@ describe("blocks", () => {
     it("works", () => {
       const content = convertFromRaw({
         entityMap: {
-          "0": {
+          0: {
             type: "IMAGE",
             data: {},
           },
