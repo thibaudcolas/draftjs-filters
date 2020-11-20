@@ -122,10 +122,10 @@ export const filterEntityRanges = (
  * Keeps all entity types (images, links, documents, embeds) that are enabled.
  */
 export const shouldKeepEntityType = (
-  whitelist: $ReadOnlyArray<{ type: string }>,
+  allowlist: $ReadOnlyArray<{ type: string }>,
   type: string,
 ) => {
-  return whitelist.some((e) => e.type === type)
+  return allowlist.some((e) => e.type === type)
 }
 
 /**
@@ -200,14 +200,14 @@ export const filterEntityData = (
     const entity = entities[key]
     const data = entity.getData()
     const config = entityTypes.find((t) => t.type === entity.getType())
-    const whitelist = config ? config.attributes : null
+    const allowlist = config ? config.attributes : null
 
-    // If no whitelist is defined, keep all of the data.
-    if (!whitelist) {
+    // If no allowlist is defined, keep all of the data.
+    if (!allowlist) {
       return data
     }
 
-    const newData = whitelist.reduce((attrs, attr) => {
+    const newData = allowlist.reduce((attrs, attr) => {
       // We do not want to include undefined values if there is no data.
       if (data.hasOwnProperty(attr)) {
         attrs[attr] = data[attr]
