@@ -27,6 +27,12 @@
     "dist/*.js"
   ],
   "browserslist": "> 1%, IE 11",
+  "jest": {
+    "collectCoverageFrom": [
+      "src/lib/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/"
+    ]
+  },
   "devDependencies": {
     "@babel/plugin-transform-flow-comments": "7.12.1",
     "@commitlint/cli": "11.0.0",
