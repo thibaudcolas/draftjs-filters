@@ -27,17 +27,17 @@ import { ContentState } from "draft-js"
 import type { EditorState as EditorStateType } from "draft-js"
 
 type FilterOptions = {
-  // Whitelist of allowed block types. unstyled and atomic are always included.
+  // List of allowed block types. unstyled and atomic are always included.
   blocks: $ReadOnlyArray<string>,
-  // Whitelist of allowed inline styles.
+  // List of allowed inline styles.
   styles: $ReadOnlyArray<string>,
-  // Whitelist of allowed entities.
+  // List of allowed entities.
   entities: $ReadOnlyArray<{
     // Entity type, eg. "LINK"
     type: string,
     // Allowed attributes. Other attributes will be removed. If this is omitted, all attributes are kept.
     attributes?: $ReadOnlyArray<string>,
-    // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
+    // Refine which entities are kept by matching acceptable values with regular expression patterns.
     // It's also possible to use "true" to signify that a field is required to be present,
     // and "false" for fields required to be absent.
     // If this is omitted, all entities are kept.
@@ -98,8 +98,8 @@ const BLOCK_PREFIX_RULES = [
 ]
 
 /**
- * Applies whitelist and blacklist operations to the editor content,
- * to enforce it's shaped according to the options.
+ * Applies filtering and preservation operations to the editor content,
+ * to restrict it to supported patterns.
  * Will not alter the editor state if there are no changes to make.
  */
 export const filterEditorState = (

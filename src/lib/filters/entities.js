@@ -172,7 +172,7 @@ export const shouldKeepEntityByAttribute = (
 }
 
 /**
- * Filters data on an entity to only retain what is whitelisted.
+ * Filters data on an entity to only retain what is allowed.
  * This is crucial for IMAGE and LINK, where Draft.js adds a lot
  * of unneeded attributes (width, height, etc).
  */

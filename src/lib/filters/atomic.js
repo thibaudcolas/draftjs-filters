@@ -76,7 +76,7 @@ export const resetAtomicBlocks = (content: ContentState) => {
 }
 
 /**
- * Removes atomic blocks for which the entity isn't whitelisted.
+ * Removes atomic blocks for which the entity type isn't allowed.
  */
 export const removeInvalidAtomicBlocks = (
   whitelist: $ReadOnlyArray<{ type: string }>,
