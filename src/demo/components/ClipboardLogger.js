@@ -3,21 +3,13 @@ import React, { useEffect, useState } from "react"
 import Highlight from "./Highlight"
 
 const ClipboardLogger = () => {
+  const [target, setValue] = useState("")
   const [log, setLog] = useState([])
   useEffect(() => {
     const onPaste = (e: ClipboardEvent) => {
-      if (e.clipboardData) {
-        const text = e.clipboardData.getData("text/plain")
-        const html = e.clipboardData.getData("text/html")
-        setLog(
-          log.concat([
-            {
-              text,
-              html,
-            },
-          ]),
-        )
-      }
+      const text = e.clipboardData ? e.clipboardData.getData("text/plain") : ""
+      const html = e.clipboardData ? e.clipboardData.getData("text/html") : ""
+      setLog(log.concat([{ text, html }]))
     }
     document.addEventListener("paste", onPaste)
 
@@ -27,6 +19,11 @@ const ClipboardLogger = () => {
   })
   return (
     <div>
+      <p>Paste here:</p>
+      <textarea
+        value={target}
+        onChange={(e) => setValue(e.target.value)}
+      ></textarea>
       {log.map(({ text, html }, i) => {
         return (
           <div key={i}>

@@ -157,7 +157,7 @@ class App extends Component<{}> {
 
         <FilterableEditor filtered={false} extended={true} />
 
-        <p>Clipboard log:</p>
+        <h3>Clipboard log</h3>
 
         <ClipboardLogger />
       </div>
