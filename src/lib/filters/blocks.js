@@ -121,7 +121,7 @@ export const limitBlockDepth = (max: number, content: ContentState) => {
 }
 
 /**
- * Converts all block types not present in the whitelist to unstyled.
+ * Converts all block types not present in the list to unstyled.
  * Also sets depth to 0 (for potentially nested list items).
  */
 export const filterBlockTypes = (

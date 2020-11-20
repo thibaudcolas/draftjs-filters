@@ -2,7 +2,7 @@
 import { ContentState, CharacterMetadata } from "draft-js"
 
 /**
- * Removes all styles not present in the whitelist.
+ * Removes all styles not present in the list.
  */
 export const filterInlineStyles = (
   whitelist: $ReadOnlyArray<string>,

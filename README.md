@@ -63,17 +63,17 @@ function onChange(nextState) {
 Here are all the available options:
 
 ```jsx
-// Whitelist of allowed block types. unstyled and atomic are always included.
+// List of allowed block types. unstyled and atomic are always included.
 blocks: $ReadOnlyArray<string>,
-// Whitelist of allowed inline styles.
+// List of allowed inline styles.
 styles: $ReadOnlyArray<string>,
-// Whitelist of allowed entities.
+// List of allowed entities.
 entities: $ReadOnlyArray<{
   // Entity type, eg. "LINK"
   type: string,
   // Allowed attributes. Other attributes will be removed. If this is omitted, all attributes are kept.
   attributes?: $ReadOnlyArray<string>,
-  // Refine which entities are kept by whitelisting acceptable values with regular expression patterns.
+  // Refine which entities are kept by matching acceptable values with regular expression patterns.
   // It's also possible to use "true" to signify that a field is required to be present,
   // and "false" for fields required to be absent.
   // If this is omitted, all entities are kept.
@@ -134,7 +134,7 @@ This is how they are stored by Draft.js by default.
 
 ##### removeInvalidAtomicBlocks
 
-Removes atomic blocks for which the entity isn't whitelisted.
+Removes atomic blocks for which the entity isn't allowed.
 
 ###### Parameters
 
@@ -174,7 +174,7 @@ Resets the depth of all the content to at most max.
 
 ##### filterBlockTypes
 
-Converts all block types not present in the whitelist to unstyled.
+Converts all block types not present in the list to unstyled.
 Also sets depth to 0 (for potentially nested list items).
 
 ###### Parameters
@@ -184,7 +184,7 @@ Also sets depth to 0 (for potentially nested list items).
 
 ##### filterInlineStyles
 
-Removes all styles not present in the whitelist.
+Removes all styles not present in the list.
 
 ###### Parameters
 
@@ -243,7 +243,7 @@ Filters entities based on the data they contain.
 
 ##### filterEntityData
 
-Filters data on an entity to only retain what is whitelisted.
+Filters data on an entity to only retain what is allowed.
 This is crucial for IMAGE and LINK, where Draft.js adds a lot
 of unneeded attributes (width, height, etc).
 
@@ -275,8 +275,8 @@ See <https://github.com/thibaudcolas/draftjs-filters/issues/27>.
 
 ##### filterEditorState
 
-Applies whitelist and blacklist operations to the editor content,
-to enforce it's shaped according to the options.
+Applies filtering and preservation operations to the editor content,
+to restrict it to supported patterns.
 Will not alter the editor state if there are no changes to make.
 
 ###### Parameters
