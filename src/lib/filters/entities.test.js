@@ -237,7 +237,7 @@ describe("entities", () => {
           [
             {
               type: "IMAGE",
-              whitelist: {
+              allowlist: {
                 src: "^/",
               },
             },
@@ -256,7 +256,7 @@ describe("entities", () => {
           [
             {
               type: "IMAGE",
-              whitelist: {
+              allowlist: {
                 src: "^/",
               },
             },
@@ -275,7 +275,7 @@ describe("entities", () => {
           [
             {
               type: "LINK",
-              whitelist: {
+              allowlist: {
                 href: "^(http:|https:|undefined$)",
               },
             },
@@ -295,7 +295,7 @@ describe("entities", () => {
             [
               {
                 type: "LINK",
-                whitelist: {
+                allowlist: {
                   href: "^(http:|https:|undefined$)",
                   target: "_blank",
                 },
@@ -316,7 +316,7 @@ describe("entities", () => {
             [
               {
                 type: "LINK",
-                whitelist: {
+                allowlist: {
                   href: "^(http:|https:|undefined$)",
                   target: "_blank",
                 },
@@ -339,7 +339,7 @@ describe("entities", () => {
             [
               {
                 type: "LINK",
-                whitelist: {
+                allowlist: {
                   id: true,
                 },
               },
@@ -356,7 +356,7 @@ describe("entities", () => {
             [
               {
                 type: "LINK",
-                whitelist: {
+                allowlist: {
                   id: true,
                 },
               },
@@ -375,7 +375,7 @@ describe("entities", () => {
             [
               {
                 type: "LINK",
-                whitelist: {
+                allowlist: {
                   id: false,
                 },
               },
@@ -392,7 +392,7 @@ describe("entities", () => {
             [
               {
                 type: "LINK",
-                whitelist: {
+                allowlist: {
                   id: false,
                 },
               },
@@ -427,6 +427,32 @@ describe("entities", () => {
             [
               {
                 type: "LINK",
+              },
+            ],
+            "LINK",
+            {},
+          ),
+        ).toBe(true)
+      })
+
+      it("deprecated whitelist", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [{ type: "LINK", whitelist: { id: true } }],
+            "LINK",
+            {},
+          ),
+        ).toBe(false)
+      })
+
+      it("invalid – both allowlist and whitelist", () => {
+        expect(
+          shouldKeepEntityByAttribute(
+            [
+              {
+                type: "LINK",
+                allowlist: { id: false },
+                whitelist: { id: true },
               },
             ],
             "LINK",

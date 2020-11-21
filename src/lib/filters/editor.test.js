@@ -457,14 +457,14 @@ const filters = {
     {
       type: "IMAGE",
       attributes: ["src"],
-      whitelist: {
+      allowlist: {
         src: "^/",
       },
     },
     {
       type: "LINK",
       attributes: ["url"],
-      whitelist: {},
+      allowlist: {},
     },
   ],
   maxNesting: 1,

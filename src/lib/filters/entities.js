@@ -145,6 +145,10 @@ export const shouldRemoveImageEntity = (
 export const shouldKeepEntityByAttribute = (
   entityTypes: $ReadOnlyArray<{
     type: string,
+    allowlist?: {
+      [attribute: string]: string | boolean,
+    },
+    // Deprecated. Use allowlist instead. Will be removed in a future release.
     whitelist?: {
       [attribute: string]: string | boolean,
     },
@@ -153,11 +157,16 @@ export const shouldKeepEntityByAttribute = (
   data: {},
 ) => {
   const config = entityTypes.find((t) => t.type === entityType)
-  // If no whitelist is defined, the filter keeps the entity.
-  const whitelist = config && config.whitelist ? config.whitelist : {}
+  // If no allowlist is defined, the filter keeps the entity.
+  const allowlist =
+    config && config.allowlist
+      ? config.allowlist
+      : config && config.whitelist
+      ? config.whitelist
+      : {}
 
-  const isValid = Object.keys(whitelist).every((attr) => {
-    const check = whitelist[attr]
+  const isValid = Object.keys(allowlist).every((attr) => {
+    const check = allowlist[attr]
 
     if (typeof check === "boolean") {
       const hasData = data.hasOwnProperty(attr)
