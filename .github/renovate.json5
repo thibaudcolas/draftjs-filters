@@ -3,7 +3,7 @@
   // https://renovatebot.com/docs/configuration-options/#commitbodytable
   commitBodyTable: true,
   // https://renovatebot.com/docs/configuration-options/#ignoredeps
-  ignoreDeps: ["immutable", "draft-js", "normalize.css", "flow-bin"],
+  ignoreDeps: ["immutable", "draft-js", "draft-js-10", "normalize.css", "flow-bin"],
   // https://renovatebot.com/docs/configuration-options/#labels
   labels: ["enhancement"],
   // https://renovatebot.com/docs/configuration-options/#prcreation
