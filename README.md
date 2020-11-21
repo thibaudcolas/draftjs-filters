@@ -241,7 +241,7 @@ Filters entities based on the data they contain.
 
 ###### Parameters
 
-- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), allowlist: {}?}>**
+- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), allowlist: {}?, whitelist: {}?}>**
 - `entityType` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 - `data` **{}**
 

@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+# [2.5.0](https://github.com/thibaudcolas/draftjs-filters/compare/v2.4.0...v2.5.0) (2020-11-21)
+
+### Features
+
+- **api:** deprecate whitelist config option, use allowlist instead ([4d48cba](https://github.com/thibaudcolas/draftjs-filters/commit/4d48cba583e21df69cbd86035068deadbe2802c8))
+
 # [2.4.0](https://github.com/thibaudcolas/draftjs-filters/compare/v2.3.0...v2.4.0) (2020-11-20)
 
 ### Features
