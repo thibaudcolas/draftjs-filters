@@ -19,14 +19,14 @@ export const config = {
     {
       type: "LINK",
       attributes: ["url"],
-      whitelist: {
+      allowlist: {
         href: "^(http:|https:|undefined$)",
       },
     },
     {
       type: "IMAGE",
       attributes: ["src"],
-      whitelist: {
+      allowlist: {
         src: "^http",
       },
     },

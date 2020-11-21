@@ -62,7 +62,7 @@ const ENTITIES = [
     type: "LINK",
     label: "🔗",
     attributes: ["url"],
-    whitelist: {
+    allowlist: {
       href: "^(http:|https:|undefined$)",
     },
   },
@@ -70,7 +70,7 @@ const ENTITIES = [
     type: "IMAGE",
     label: "📷",
     attributes: ["src"],
-    whitelist: {
+    allowlist: {
       src: "^http|\\./",
     },
   },

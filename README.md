@@ -40,7 +40,7 @@ function onChange(nextState) {
           {
             type: "IMAGE",
             attributes: ["src"],
-            whitelist: {
+            allowlist: {
               src: "^http",
             },
           },
@@ -77,7 +77,7 @@ entities: $ReadOnlyArray<{
   // It's also possible to use "true" to signify that a field is required to be present,
   // and "false" for fields required to be absent.
   // If this is omitted, all entities are kept.
-  whitelist?: {
+  allowlist?: {
     [attribute: string]: string | boolean,
   },
 }>,
@@ -237,7 +237,7 @@ Filters entities based on the data they contain.
 
 ###### Parameters
 
-- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), whitelist: {}?}>**
+- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), allowlist: {}?}>**
 - `entityType` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 - `data` **{}**
 

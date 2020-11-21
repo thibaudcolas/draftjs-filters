@@ -24,7 +24,7 @@ describe("selection", () => {
         {
           type: "IMAGE",
           attributes: ["src"],
-          whitelist: {
+          allowlist: {
             src: "^http",
           },
         },

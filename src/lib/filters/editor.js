@@ -41,6 +41,10 @@ type FilterOptions = {
     // It's also possible to use "true" to signify that a field is required to be present,
     // and "false" for fields required to be absent.
     // If this is omitted, all entities are kept.
+    allowlist?: {
+      [attribute: string]: string | boolean,
+    },
+    // Deprecated. Use allowlist instead. Will be removed in a future release.
     whitelist?: {
       [attribute: string]: string | boolean,
     },

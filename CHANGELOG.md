@@ -116,7 +116,7 @@ The project has reached a high-enough level of stability to be used in productio
 
 ### Features
 
-- **api:** add ability for whitelist to filter by undefined attribute ([a4af845](https://github.com/thibaudcolas/draftjs-filters/commit/a4af845))
+- **api:** add ability for allowlist to filter by undefined attribute ([a4af845](https://github.com/thibaudcolas/draftjs-filters/commit/a4af845))
 
 # [0.3.0](https://github.com/thibaudcolas/draftjs-filters/compare/v0.2.2...v0.3.0) (2018-01-15)
 
@@ -132,10 +132,10 @@ The project has reached a high-enough level of stability to be used in productio
 - **api:** add enableLineBreak option to filterEditorState ([6c334b3](https://github.com/thibaudcolas/draftjs-filters/commit/6c334b3))
 - **api:** change filterEditorState to separate options & input ([32a4586](https://github.com/thibaudcolas/draftjs-filters/commit/32a4586))
 - **api:** change filterEditorState to take object as param, with keys ([cbac155](https://github.com/thibaudcolas/draftjs-filters/commit/cbac155))
-- **api:** entity data filter keeps all data if no whitelist is defined ([83199dd](https://github.com/thibaudcolas/draftjs-filters/commit/83199dd))
+- **api:** entity data filter keeps all data if no allowlist is defined ([83199dd](https://github.com/thibaudcolas/draftjs-filters/commit/83199dd))
 - **api:** expose all filters to package consumers ([606f8a0](https://github.com/thibaudcolas/draftjs-filters/commit/606f8a0))
 - **api:** expose new whitespaceCharacters method to the API ([9b3057d](https://github.com/thibaudcolas/draftjs-filters/commit/9b3057d))
-- **api:** filter by attr should keep entity if there is no whitelist ([514e093](https://github.com/thibaudcolas/draftjs-filters/commit/514e093))
+- **api:** filter by attr should keep entity if there is no allowlist ([514e093](https://github.com/thibaudcolas/draftjs-filters/commit/514e093))
 - **api:** refactor all filters to work on ContentState ([6c7fbaf](https://github.com/thibaudcolas/draftjs-filters/commit/6c7fbaf))
 - **api:** refactor entity filters to iterator + callback pattern ([1e6d3f2](https://github.com/thibaudcolas/draftjs-filters/commit/1e6d3f2))
 - **api:** remove enableHorizontalRule - use entities instead ([4603a36](https://github.com/thibaudcolas/draftjs-filters/commit/4603a36))
@@ -143,7 +143,7 @@ The project has reached a high-enough level of stability to be used in productio
 - **api:** rename filterEntityAttributes to filterEntityData ([9403ca2](https://github.com/thibaudcolas/draftjs-filters/commit/9403ca2))
 - **api:** replace enableLineBreak with whitespacedCharacters ([a0c7745](https://github.com/thibaudcolas/draftjs-filters/commit/a0c7745))
 - **filters:** add filterEntityAttributes to filterEditorState ([ab0a30e](https://github.com/thibaudcolas/draftjs-filters/commit/ab0a30e))
-- **filters:** add new filterEntityAttributes filter w/ whitelist ([745ba09](https://github.com/thibaudcolas/draftjs-filters/commit/745ba09))
+- **filters:** add new filterEntityAttributes filter w/ allowlist ([745ba09](https://github.com/thibaudcolas/draftjs-filters/commit/745ba09))
 - **filters:** add new whitespaceCharacters method ([6fde9ee](https://github.com/thibaudcolas/draftjs-filters/commit/6fde9ee))
 - **filters:** add removeInvalidDepthBlocks method to API ([5139451](https://github.com/thibaudcolas/draftjs-filters/commit/5139451))
 - **filters:** implement entity filtering by attribute ([ae76945](https://github.com/thibaudcolas/draftjs-filters/commit/ae76945))
