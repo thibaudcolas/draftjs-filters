@@ -98,6 +98,10 @@ blockTextRules?: $ReadOnlyArray<{
 }>,
 ```
 
+### Deprecated
+
+`filterEditorState` (and `shouldKeepEntityByAttribute` described further below) used to support a `whitelist` config option. It has been renamed to `allowlist`, and will be removed altogether in a future release.
+
 ### Types
 
 If your project uses [Flow](https://flow.org/), type inference should just work. If you don't use Flow, it won't get in your way either.
