@@ -19,6 +19,8 @@
   schedule: ["every weekend"],
   // Limit the number of consecutive PRs
   prHourlyLimit: 2,
+  // Silently merge updates without PRs
+  automergeType: "branch",
   node: {
     enabled: true,
     major: {
@@ -32,19 +34,16 @@
       packageNames: ["prettier"],
       groupName: "prettier",
       automerge: true,
-      automergeType: "branch",
     },
     {
       packageNames: ["coveralls"],
       groupName: "coveralls",
       automerge: true,
-      automergeType: "branch",
     },
     {
       packageNames: ["danger"],
       groupName: "danger",
       automerge: true,
-      automergeType: "branch",
     },
     {
       packageNames: ["documentation"],
@@ -60,7 +59,6 @@
       packagePatterns: ["^@commitlint"],
       groupName: "commitlint",
       automerge: true,
-      automergeType: "branch",
     },
     {
       packagePatterns: ["^enzyme"],
@@ -72,7 +70,6 @@
       packagePatterns: ["^rollup", "^@babel"],
       groupName: "rollup",
       automerge: true,
-      automergeType: "branch",
     },
     {
       packagePatterns: ["^react"],
@@ -93,7 +90,6 @@
       packagePatterns: ["^semantic-release", "^@semantic-release"],
       groupName: "semantic-release",
       automerge: true,
-      automergeType: "branch",
     },
   ],
 }
