@@ -1,0 +1,59 @@
+name: CI
+on:
+  push:
+    branches-ignore:
+      - "gh-pages"
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+      - id: nvm
+        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: "${{ steps.nvm.outputs.NVMRC }}"
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - run: npm install --no-optional --no-audit --no-fund --progress=false
+      # Test Git hooks in CI, to make sure script upgrades do not break them.
+      - run: npm run prepare
+      # Test commit message validation in CI.
+      - run: git log -1 --pretty=%B >> latest.log && ./.git/hooks/commit-msg latest.log
+      - run: DRAFTJS_VERSION=0.11 npm run test:ci
+      - run: DRAFTJS_VERSION=0.10 npm run test
+      - run: npx commitlint --from HEAD~${{ github.event.pull_request.commits }} --to HEAD
+        if: ${{ github.event_name == 'pull_request' }}
+      - run: then npx danger ci --verbose
+        if: ${{ github.event_name == 'pull_request' }}
+        env:
+          DANGER_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: npm run report:package
+      - run: wc -c build/source-map-explorer.html
+      - run: mv coverage/lcov-report build || true
+      - run: cat ./coverage/lcov.info | npx coveralls || true
+      - uses: actions/upload-artifact@v2
+        with:
+          name: build
+          path: build
+          retention-days: 1
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/download-artifact@v2
+      - uses: JfamesIves/github-pages-deploy-action@3.7.1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: build
+          CLEAN: true
+      - run: npx semantic-release
