@@ -19,11 +19,13 @@ const ClipboardLogger = () => {
   })
   return (
     <div>
-      <p>Paste here:</p>
-      <textarea
-        value={target}
-        onChange={(e) => setValue(e.target.value)}
-      ></textarea>
+      <label>
+        <div>Paste here</div>
+        <textarea
+          value={target}
+          onChange={(e) => setValue(e.target.value)}
+        ></textarea>
+      </label>
       {log.map(({ text, html }, i) => {
         return (
           <div key={i}>
