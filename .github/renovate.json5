@@ -3,7 +3,16 @@
   // https://renovatebot.com/docs/configuration-options/#commitbodytable
   commitBodyTable: true,
   // https://renovatebot.com/docs/configuration-options/#ignoredeps
-  ignoreDeps: ["immutable", "draft-js", "draft-js-10", "normalize.css", "flow-bin"],
+  ignoreDeps: [
+    "immutable",
+    "draft-js",
+    "draft-js-10",
+    "normalize.css",
+    "flow-bin",
+    "react",
+    "react-dom",
+    "react-test-renderer",
+  ],
   // https://renovatebot.com/docs/configuration-options/#labels
   labels: ["enhancement"],
   // https://renovatebot.com/docs/configuration-options/#prcreation
@@ -69,11 +78,6 @@
     {
       packagePatterns: ["^rollup", "^@babel"],
       groupName: "rollup",
-      automerge: true,
-    },
-    {
-      packagePatterns: ["^react"],
-      groupName: "react",
       automerge: true,
     },
     {
