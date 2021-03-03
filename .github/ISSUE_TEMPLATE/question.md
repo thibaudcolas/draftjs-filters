@@ -1,9 +1,10 @@
 ---
 name: "❓ Question"
 about: Get help with this project
-title: ""
+title: ''
 labels: question
-assignees: ""
+assignees: thibaudcolas, thi-bot
+
 ---
 
 Please make sure you have read available documentation and have searched for other resources available online before submitting your question here.
