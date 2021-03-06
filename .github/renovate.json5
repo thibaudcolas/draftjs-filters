@@ -95,5 +95,10 @@
       groupName: "semantic-release",
       automerge: true,
     },
+    {
+      packageNames: ["JamesIves/github-pages-deploy-action"],
+      groupName: "JamesIves/github-pages-deploy-action",
+      automerge: true,
+    },
   ],
 }
