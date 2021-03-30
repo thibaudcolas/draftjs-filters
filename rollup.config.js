@@ -1,11 +1,11 @@
 import babel from "rollup-plugin-babel"
 import pkg from "./package.json"
 
-const BANNER = `// @flow`
+var BANNER = `// @flow`
 const CJS_BANNER = `${BANNER}
 /*:: import type { ContentState, EditorState } from "draft-js"*/`
 
-const config = [
+const config =   [
   {
     input: "src/lib/index.js",
     external: ["draft-js"],
