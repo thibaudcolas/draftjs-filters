@@ -20,6 +20,8 @@ import App from "./demo/components/App"
 
 const mount = document.getElementById("root")
 
+var test = 5
+
 if (mount) {
   ReactDOM.render(<App />, mount)
 }
