@@ -1,7 +1,9 @@
 import babel from "rollup-plugin-babel"
 import pkg from "./package.json"
 
-var BANNER = `// @flow`
+var test = 5
+
+const BANNER = `// @flow`
 const CJS_BANNER = `${BANNER}
 /*:: import type { ContentState, EditorState } from "draft-js"*/`
 
