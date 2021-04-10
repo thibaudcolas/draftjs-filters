@@ -47,7 +47,7 @@
     "draft-js-10": "npm:draft-js@0.10.5",
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
-    "enzyme-to-json": "3.6.1",
+    "enzyme-to-json": "3.6.2",
     "flow-bin": "0.131.0",
     "immutable": "~3.7.6",
     "normalize.css": "7.0.0",
