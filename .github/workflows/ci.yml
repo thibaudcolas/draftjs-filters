@@ -1,8 +1,9 @@
 name: CI
 on:
   push:
-    branches-ignore:
-      - "gh-pages"
+    branches:
+      - main
+      - "renovate/**"
   pull_request:
 jobs:
   test:
