@@ -24,8 +24,7 @@ const rawContent = {
       type: "IMAGE",
       mutability: "IMMUTABLE",
       data: {
-        src:
-          "https://thibaudcolas.github.io/draftjs-filters/word-toolbars-overload.jpg",
+        src: "https://thibaudcolas.github.io/draftjs-filters/word-toolbars-overload.jpg",
       },
     },
   },
