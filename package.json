@@ -59,7 +59,7 @@
     "rollup": "2.52.1",
     "rollup-plugin-babel": "4.4.0",
     "semantic-release": "17.4.4",
-    "snapshot-diff": "0.8.1",
+    "snapshot-diff": "0.9.0",
     "source-map-explorer": "2.5.2"
   },
   "peerDependencies": {
