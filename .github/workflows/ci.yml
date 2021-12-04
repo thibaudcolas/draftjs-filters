@@ -19,18 +19,18 @@ jobs:
           fetch-depth: ${{ env.commits_count_incr }}
       - uses: actions/checkout@v2
         if: ${{ github.event_name != 'pull_request' }}
-      - id: nvm
-        run: echo "##[set-output name=NVMRC;]$(cat .nvmrc)"
-      - uses: actions/setup-node@v2-beta
+      - uses: actions/setup-node@v2
         with:
-          node-version: "${{ steps.nvm.outputs.NVMRC }}"
-      - uses: actions/cache@v2
+          node-version-file: ".nvmrc"
+      - id: node-cache
+        uses: actions/cache@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          path: node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/.nvmrc') }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-      - run: npm install --no-optional --no-audit --no-fund --progress=false
+      - if: steps.node-cache.outputs.cache-hit != 'true'
+        run: npm install --no-optional --no-audit --no-fund --progress=false
       # Test Git hooks in CI, to make sure script upgrades do not break them.
       - run: npm run prepare
       # Test commit message validation in CI.
