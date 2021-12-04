@@ -142,7 +142,7 @@ Removes atomic blocks for which the entity type isn't allowed.
 
 ###### Parameters
 
-- `allowlist` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
+- `allowlist` **$ReadOnlyArray<{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
 - `content` **ContentState**
 
 ##### removeInvalidDepthBlocks
@@ -164,7 +164,7 @@ ends up in the text. Other use cases may not be well covered.
 
 ###### Parameters
 
-- `rules` **$ReadOnlyArray&lt;{test: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), depth: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>**
+- `rules` **$ReadOnlyArray<{test: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), depth: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)}>**
 - `content` **ContentState**
 
 ##### limitBlockDepth
@@ -183,7 +183,7 @@ Also sets depth to 0 (for potentially nested list items).
 
 ###### Parameters
 
-- `allowlist` **$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
+- `allowlist` **$ReadOnlyArray<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 - `content` **ContentState**
 
 ##### filterInlineStyles
@@ -192,7 +192,7 @@ Removes all styles not present in the list.
 
 ###### Parameters
 
-- `allowlist` **$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
+- `allowlist` **$ReadOnlyArray<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 - `content` **ContentState**
 
 ##### cloneEntities
@@ -222,7 +222,7 @@ Keeps all entity types (images, links, documents, embeds) that are enabled.
 
 ###### Parameters
 
-- `allowlist` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
+- `allowlist` **$ReadOnlyArray<{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)}>**
 - `type` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 
 ##### shouldRemoveImageEntity
@@ -241,7 +241,7 @@ Filters entities based on the data they contain.
 
 ###### Parameters
 
-- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), allowlist: {}?, whitelist: {}?}>**
+- `entityTypes` **$ReadOnlyArray<{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), allowlist: {}?, whitelist: {}?}>**
 - `entityType` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
 - `data` **{}**
 
@@ -253,7 +253,7 @@ of unneeded attributes (width, height, etc).
 
 ###### Parameters
 
-- `entityTypes` **$ReadOnlyArray&lt;{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), attributes: $ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>?}>**
+- `entityTypes` **$ReadOnlyArray<{type: [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String), attributes: $ReadOnlyArray<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>?}>**
 - `content` **ContentState**
 
 ##### replaceTextBySpaces
@@ -262,7 +262,7 @@ Replaces the given characters by their equivalent length of spaces, in all block
 
 ###### Parameters
 
-- `characters` **$ReadOnlyArray&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
+- `characters` **$ReadOnlyArray<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 - `content` **ContentState**
 
 ##### applyContentWithSelection
