@@ -26,6 +26,14 @@ const ClipboardLogger = () => {
           onChange={(e) => setValue(e.target.value)}
         ></textarea>
       </label>
+      <label>
+        <div>Or here</div>
+        <input
+          type="text"
+          value={target}
+          onChange={(e) => setValue(e.target.value)}
+        />
+      </label>
       {log.map(({ text, html }, i) => {
         return (
           <div key={i}>
