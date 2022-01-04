@@ -30,7 +30,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
       - if: steps.node-cache.outputs.cache-hit != 'true'
-        run: npm install --no-optional --no-audit --no-fund --progress=false
+        run: npm ci
       # Test Git hooks in CI, to make sure script upgrades do not break them.
       - run: npm run prepare
       # Test commit message validation in CI.
