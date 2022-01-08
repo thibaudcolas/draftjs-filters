@@ -41,7 +41,7 @@
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "coveralls": "3.1.1",
-    "danger": "10.7.1",
+    "danger": "10.8.0",
     "documentation": "13.2.5",
     "draft-js": "0.11.7",
     "draft-js-10": "npm:draft-js@0.10.5",
