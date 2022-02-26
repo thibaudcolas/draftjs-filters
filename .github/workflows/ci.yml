@@ -19,7 +19,7 @@ jobs:
           fetch-depth: ${{ env.commits_count_incr }}
       - uses: actions/checkout@v2
         if: ${{ github.event_name != 'pull_request' }}
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version-file: ".nvmrc"
       - id: node-cache
