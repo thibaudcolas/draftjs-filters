@@ -103,5 +103,10 @@
       groupName: "JamesIves/github-pages-deploy-action",
       automerge: true,
     },
+    {
+      packagePatterns: ["^actions/"],
+      groupName: "actions",
+      automerge: true,
+    },
   ],
 }
