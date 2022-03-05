@@ -47,7 +47,7 @@ jobs:
       - run: wc -c build/source-map-explorer.html
       - run: mv coverage/lcov-report build || true
       - run: cat ./coverage/lcov.info | npx coveralls || true
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: build
           path: build
