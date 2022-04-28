@@ -2,6 +2,8 @@
   extends: ["config:base"],
   // https://renovatebot.com/docs/configuration-options/#commitbodytable
   commitBodyTable: true,
+  // https://docs.renovatebot.com/configuration-options/#dependencydashboard
+  dependencyDashboard: false,
   // https://renovatebot.com/docs/configuration-options/#ignoredeps
   ignoreDeps: [
     "immutable",
@@ -12,6 +14,7 @@
     "react",
     "react-dom",
     "react-test-renderer",
+    "jamesives/github-pages-deploy-action",
   ],
   // https://renovatebot.com/docs/configuration-options/#labels
   labels: ["enhancement"],
