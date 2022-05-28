@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "@babel/plugin-transform-flow-comments": "7.17.12",
-    "@commitlint/cli": "17.0.0",
+    "@commitlint/cli": "17.0.1",
     "@commitlint/config-conventional": "17.0.0",
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/exec": "6.0.3",
