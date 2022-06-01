@@ -1,4 +1,9 @@
-import { EditorState, convertFromRaw, convertToRaw } from "draft-js"
+import {
+  EditorState,
+  convertFromRaw,
+  convertToRaw,
+  RawDraftContentState,
+} from "draft-js"
 
 import {
   cloneEntities,
@@ -87,7 +92,7 @@ describe("entities", () => {
             ],
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       expect(convertToRaw(cloneEntities(content))).toMatchSnapshot()
     })
@@ -170,7 +175,7 @@ describe("entities", () => {
             ],
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       content = filterEntityRanges((content, entityKey, block) => {
         const entityType = content.getEntity(entityKey).getType()
@@ -181,9 +186,9 @@ describe("entities", () => {
         content
           .getBlockMap()
           .map((b) => {
-            return b
+            return b!
               .getCharacterList()
-              .map((c) => c.getEntity())
+              .map((c) => c!.getEntity())
               .map((e) => {
                 return e ? content.getEntity(e).getType() : null
               })
@@ -527,7 +532,7 @@ describe("entities", () => {
             ],
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       content = filterEntityData(
         [
@@ -546,12 +551,16 @@ describe("entities", () => {
         ],
         content,
       )
-      const entities = {}
+      const entities: { [type: string]: {} } = {}
       content.getBlockMap().forEach((block) => {
-        block.findEntityRanges((char) => {
-          const entity = content.getEntity(char.getEntity())
-          entities[entity.getType()] = entity.getData()
-        })
+        block!.findEntityRanges(
+          (char) => {
+            const entity = content.getEntity(char.getEntity())
+            entities[entity.getType()] = entity.getData()
+            return true
+          },
+          () => {},
+        )
       })
 
       expect(entities).toEqual({
@@ -595,7 +604,7 @@ describe("entities", () => {
               ],
             },
           ],
-        })
+        } as unknown as RawDraftContentState)
 
         content = filterEntityData(
           [
@@ -606,12 +615,16 @@ describe("entities", () => {
           ],
           content,
         )
-        const entities = {}
+        const entities: { [type: string]: {} } = {}
         content.getBlockMap().forEach((block) => {
-          block.findEntityRanges((char) => {
-            const entity = content.getEntity(char.getEntity())
-            entities[entity.getType()] = entity.getData()
-          })
+          block!.findEntityRanges(
+            (char) => {
+              const entity = content.getEntity(char.getEntity())
+              entities[entity.getType()] = entity.getData()
+              return true
+            },
+            () => {},
+          )
         })
 
         expect(entities).toEqual({
@@ -644,7 +657,7 @@ describe("entities", () => {
               ],
             },
           ],
-        })
+        } as unknown as RawDraftContentState)
 
         content = filterEntityData(
           [
@@ -654,12 +667,16 @@ describe("entities", () => {
           ],
           content,
         )
-        const entities = {}
+        const entities: { [type: string]: {} } = {}
         content.getBlockMap().forEach((block) => {
-          block.findEntityRanges((char) => {
-            const entity = content.getEntity(char.getEntity())
-            entities[entity.getType()] = entity.getData()
-          })
+          block!.findEntityRanges(
+            (char) => {
+              const entity = content.getEntity(char.getEntity())
+              entities[entity.getType()] = entity.getData()
+              return true
+            },
+            () => {},
+          )
         })
 
         expect(entities).toEqual({

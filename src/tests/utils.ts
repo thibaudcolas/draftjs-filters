@@ -1,4 +1,9 @@
-import { EditorState, convertFromRaw, convertToRaw } from "draft-js"
+import {
+  EditorState,
+  convertFromRaw,
+  convertToRaw,
+  RawDraftContentState,
+} from "draft-js"
 import snapshotDiff from "snapshot-diff"
 
 import { filterEditorState } from "../lib/index"
@@ -36,7 +41,7 @@ export const config = {
   whitespacedCharacters: ["\t"],
 } as const
 
-export const testFilteringDiff = (raw) => {
+export const testFilteringDiff = (raw: RawDraftContentState) => {
   const editorState = filterEditorState(
     config,
     EditorState.createWithContent(convertFromRaw(raw)),

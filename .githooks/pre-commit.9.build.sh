@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
-FLOW_STAGED=$(grep -e '.flowconfig$' <<< "$STAGED" || true)
+TS_STAGED=$(grep 'tsconfig.json' <<< "$STAGED" || true)
 
-if [ -n "$JS_STAGED" ] || [ -n "$FLOW_STAGED" ];
+if [ -n "$JS_STAGED" ] || [ -n "$TS_STAGED" ];
 then
   npm run build
-  npx flow
 fi

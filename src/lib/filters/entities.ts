@@ -1,4 +1,5 @@
-import { CharacterMetadata, ContentState } from "draft-js"
+import { CharacterMetadata, ContentBlock, ContentState } from "draft-js"
+import { List } from "immutable"
 import { ATOMIC, IMAGE } from "../constants"
 
 /**
@@ -10,10 +11,10 @@ export const cloneEntities = (content: ContentState) => {
   let newContent = content
   const blockMap = newContent.getBlockMap()
 
-  const encounteredEntities = []
+  const encounteredEntities: string[] = []
 
   // Marks ranges that need cloning, because their entity has been encountered previously.
-  const shouldCloneEntity = (firstChar) => {
+  const shouldCloneEntity = (firstChar: CharacterMetadata) => {
     const key = firstChar.getEntity()
 
     if (key) {
@@ -29,11 +30,11 @@ export const cloneEntities = (content: ContentState) => {
 
   // We're going to update blocks that contain ranges pointing at the same entity as other ranges.
   const blocks = blockMap.map((block) => {
-    let newChars = block.getCharacterList()
+    let newChars = block!.getCharacterList()
     let altered = false
 
     // Updates ranges for which the entity needs to be cloned.
-    const updateRangeWithClone = (start, end) => {
+    const updateRangeWithClone = (start: number, end: number) => {
       const key = newChars.get(start).getEntity()
       const entity = newContent.getEntity(key)
 
@@ -46,24 +47,30 @@ export const cloneEntities = (content: ContentState) => {
 
       // Update all of the chars in the range with the new entity.
       newChars = newChars.map((char, i) => {
-        if (start <= i && i <= end) {
-          return CharacterMetadata.applyEntity(char, newKey)
+        const j = i as number
+        if (start <= j && j <= end) {
+          return CharacterMetadata.applyEntity(
+            char as CharacterMetadata,
+            newKey,
+          )
         }
 
         return char
-      })
+      }) as List<CharacterMetadata>
 
       altered = true
     }
 
-    block.findEntityRanges(shouldCloneEntity, updateRangeWithClone)
+    block!.findEntityRanges(shouldCloneEntity, updateRangeWithClone)
 
-    return altered ? block.set("characterList", newChars) : block
+    return (
+      altered ? block!.set("characterList", newChars) : block
+    ) as ContentBlock
   })
 
   return newContent.merge({
     blockMap: blockMap.merge(blocks),
-  })
+  }) as ContentState
 }
 
 /**
@@ -75,7 +82,7 @@ export const filterEntityRanges = (
   filterFn: (
     content: ContentState,
     entityKey: string,
-    block: BlockNode,
+    block: ContentBlock,
   ) => boolean,
   content: ContentState,
 ) => {
@@ -92,27 +99,33 @@ export const filterEntityRanges = (
   const blocks = blockMap.map((block) => {
     let altered = false
 
-    const chars = block.getCharacterList().map((char) => {
-      const entityKey = char.getEntity()
+    const chars = block!.getCharacterList().map((char) => {
+      const entityKey = char!.getEntity()
 
       if (entityKey) {
-        const shouldRemove = !filterFn(content, entityKey, block)
+        const shouldRemove = !filterFn(
+          content,
+          entityKey,
+          block as ContentBlock,
+        )
 
         if (shouldRemove) {
           altered = true
-          return CharacterMetadata.applyEntity(char, null)
+          return CharacterMetadata.applyEntity(char as CharacterMetadata, null)
         }
       }
 
       return char
     })
 
-    return altered ? block.set("characterList", chars) : block
+    return (
+      altered ? block!.set("characterList", chars) : block
+    ) as ContentBlock
   })
 
   return content.merge({
     blockMap: blockMap.merge(blocks),
-  })
+  }) as ContentState
 }
 
 /**
@@ -144,12 +157,12 @@ export const shouldRemoveImageEntity = (
 export const shouldKeepEntityByAttribute = (
   entityTypes: ReadonlyArray<{
     type: string
-    allowlist?: Record<string, string | boolean>
+    allowlist?: { [attr: string]: string | boolean }
     // Deprecated. Use allowlist instead. Will be removed in a future release.
-    whitelist?: Record<string, string | boolean>
+    whitelist?: { [attr: string]: string | boolean }
   }>,
   entityType: string,
-  data: {},
+  data: { [attr: string]: any },
 ) => {
   const config = entityTypes.find((t) => t.type === entityType)
   // If no allowlist is defined, the filter keeps the entity.
@@ -188,16 +201,20 @@ export const filterEntityData = (
   content: ContentState,
 ) => {
   let newContent = content
-  const entities = {}
+  const entities: { [type: string]: any } = {}
 
   newContent.getBlockMap().forEach((block) => {
-    block.findEntityRanges((char) => {
-      const entityKey = char.getEntity()
-      if (entityKey) {
-        const entity = newContent.getEntity(entityKey)
-        entities[entityKey] = entity
-      }
-    })
+    block!.findEntityRanges(
+      (char: CharacterMetadata) => {
+        const entityKey = char.getEntity()
+        if (entityKey) {
+          const entity = newContent.getEntity(entityKey)
+          entities[entityKey] = entity
+        }
+        return false
+      },
+      () => {},
+    )
   })
 
   Object.keys(entities).forEach((key) => {
@@ -211,7 +228,7 @@ export const filterEntityData = (
       return data
     }
 
-    const newData = allowlist.reduce((attrs, attr) => {
+    const newData = allowlist.reduce<{ [attr: string]: any }>((attrs, attr) => {
       // We do not want to include undefined values if there is no data.
       if (data.hasOwnProperty(attr)) {
         attrs[attr] = data[attr]

@@ -1,4 +1,4 @@
-import { EditorState, convertFromRaw } from "draft-js"
+import { EditorState, convertFromRaw, RawDraftContentState } from "draft-js"
 
 import {
   removeInvalidDepthBlocks,
@@ -38,7 +38,10 @@ describe("selection", () => {
           {
             key: "f8beh",
             text: "test",
+            type: "unstyled",
             depth: 3,
+            inlineStyleRanges: [],
+            entityRanges: [],
           },
         ],
       })
@@ -57,7 +60,10 @@ describe("selection", () => {
             {
               key: "f8beh",
               text: "test",
+              type: "unstyled",
               depth: 3,
+              inlineStyleRanges: [],
+              entityRanges: [],
             },
           ],
         }),
@@ -100,7 +106,7 @@ describe("selection", () => {
               text: "Test",
             },
           ],
-        }),
+        } as unknown as RawDraftContentState),
       )
       editorState = EditorState.acceptSelection(
         editorState,
@@ -161,7 +167,7 @@ describe("selection", () => {
               ],
             },
           ],
-        }),
+        } as unknown as RawDraftContentState),
       )
       editorState = EditorState.acceptSelection(
         editorState,
@@ -222,7 +228,7 @@ describe("selection", () => {
               ],
             },
           ],
-        }),
+        } as unknown as RawDraftContentState),
       )
       editorState = EditorState.acceptSelection(
         editorState,
@@ -292,7 +298,7 @@ describe("selection", () => {
               text: "Test",
             },
           ],
-        }),
+        } as unknown as RawDraftContentState),
       )
       editorState = EditorState.acceptSelection(
         editorState,
@@ -372,7 +378,7 @@ describe("selection", () => {
               text: "Test",
             },
           ],
-        }),
+        } as unknown as RawDraftContentState),
       )
       editorState = EditorState.acceptSelection(
         editorState,
@@ -448,7 +454,7 @@ describe("selection", () => {
               text: "Test",
             },
           ],
-        }),
+        } as unknown as RawDraftContentState),
       )
       editorState = EditorState.acceptSelection(
         editorState,
@@ -491,7 +497,7 @@ describe("selection", () => {
               text: "Test",
             },
           ],
-        }),
+        } as unknown as RawDraftContentState),
       )
       editorState = EditorState.acceptSelection(
         editorState,

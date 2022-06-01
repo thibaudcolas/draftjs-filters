@@ -1,4 +1,4 @@
-import { ContentState } from "draft-js"
+import { ContentBlock, ContentState } from "draft-js"
 
 /**
  * Replaces the given characters by their equivalent length of spaces, in all blocks.
@@ -9,7 +9,7 @@ export const replaceTextBySpaces = (
 ) => {
   const blockMap = content.getBlockMap()
   const blocks = blockMap.map((block) => {
-    const text = block.getText()
+    const text = block!.getText()
 
     // Only replaces the character(s) with as many spaces as their length,
     // so that style and entity ranges are left undisturbed.
@@ -19,10 +19,12 @@ export const replaceTextBySpaces = (
       return txt.replace(new RegExp(char, "g"), " ".repeat(char.length))
     }, text)
 
-    return text !== newText ? block.set("text", newText) : block
+    return (
+      text !== newText ? block!.set("text", newText) : block
+    ) as ContentBlock
   })
 
   return content.merge({
     blockMap: blockMap.merge(blocks),
-  })
+  }) as ContentState
 }

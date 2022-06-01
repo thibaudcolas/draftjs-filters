@@ -9,6 +9,7 @@ describe("Image", () => {
       entityMap: {
         0: {
           type: "IMAGE",
+          mutability: "IMMUTABLE",
           data: {
             src: "/example.png",
           },
@@ -18,6 +19,9 @@ describe("Image", () => {
         {
           key: "a",
           text: " ",
+          type: "atomic",
+          depth: 0,
+          inlineStyleRanges: [],
           entityRanges: [
             {
               offset: 0,
@@ -41,6 +45,10 @@ describe("Image", () => {
         {
           key: "a",
           text: " ",
+          type: "atomic",
+          depth: 0,
+          inlineStyleRanges: [],
+          entityRanges: [],
         },
       ],
     })

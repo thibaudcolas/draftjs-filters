@@ -1,4 +1,9 @@
-import { EditorState, convertFromRaw, convertToRaw } from "draft-js"
+import {
+  EditorState,
+  convertFromRaw,
+  convertToRaw,
+  RawDraftContentState,
+} from "draft-js"
 
 import { filterEditorState } from "../lib/index"
 import { config } from "./utils"
@@ -340,7 +345,7 @@ const rawContent = {
       data: {},
     },
   ],
-}
+} as RawDraftContentState
 
 describe("No paste", () => {
   it("does not alter content entered manually", () => {

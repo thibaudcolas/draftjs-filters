@@ -79,8 +79,8 @@ const MAX_NESTING = 1
 const MAX_NESTING_EXTENDED = 4
 
 interface FilterableEditorProps {
-  filtered: boolean
-  extended: boolean
+  filtered?: boolean
+  extended?: boolean
 }
 
 interface FilterableEditorState {

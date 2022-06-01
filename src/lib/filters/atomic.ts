@@ -1,4 +1,4 @@
-import { CharacterMetadata, ContentState } from "draft-js"
+import { CharacterMetadata, ContentBlock, ContentState } from "draft-js"
 import { ATOMIC } from "../constants"
 
 /**
@@ -10,20 +10,21 @@ import { ATOMIC } from "../constants"
 export const preserveAtomicBlocks = (content: ContentState) => {
   const blockMap = content.getBlockMap()
 
-  const perservedBlocks = blockMap
+  const preservedBlocks = blockMap
     .filter((block) => {
-      const text = block.getText()
-      const entityKey = block.getEntityAt(0)
-      const shouldPreserve = entityKey && ["📷", " ", "📷 "].includes(text)
+      const text = block!.getText()
+      const entityKey = block!.getEntityAt(0)
+      const shouldPreserve =
+        Boolean(entityKey) && ["📷", " ", "📷 "].includes(text)
 
       return shouldPreserve
     })
-    .map((block) => block.set("type", ATOMIC))
+    .map((block) => block!.set("type", ATOMIC) as ContentBlock)
 
-  if (perservedBlocks.size !== 0) {
+  if (preservedBlocks.size !== 0) {
     return content.merge({
-      blockMap: blockMap.merge(perservedBlocks),
-    })
+      blockMap: blockMap.merge(preservedBlocks),
+    }) as ContentState
   }
 
   return content
@@ -40,28 +41,28 @@ export const resetAtomicBlocks = (content: ContentState) => {
   const normalisedBlocks = blocks
     .filter(
       (block) =>
-        block.getType() === ATOMIC &&
-        (block.getText() !== " " || block.getInlineStyleAt(0).size !== 0),
+        block!.getType() === ATOMIC &&
+        (block!.getText() !== " " || block!.getInlineStyleAt(0).size !== 0),
     )
     .map((block) => {
       // Retain only the first character, and remove all of its styles.
-      const chars = block
+      const chars = block!
         .getCharacterList()
         .slice(0, 1)
         .map((char) => {
-          let newChar = char
+          let newChar = char as CharacterMetadata
 
-          char.getStyle().forEach((type) => {
-            newChar = CharacterMetadata.removeStyle(newChar, type)
+          char!.getStyle().forEach((type) => {
+            newChar = CharacterMetadata.removeStyle(newChar, type as string)
           })
 
           return newChar
         })
 
-      return block.merge({
+      return block!.merge({
         text: " ",
         characterList: chars,
-      })
+      }) as ContentBlock
     })
 
   if (normalisedBlocks.size !== 0) {
@@ -70,7 +71,7 @@ export const resetAtomicBlocks = (content: ContentState) => {
 
   return content.merge({
     blockMap: blocks,
-  })
+  }) as ContentState
 }
 
 /**
@@ -82,12 +83,12 @@ export const removeInvalidAtomicBlocks = (
 ) => {
   const blockMap = content.getBlockMap()
 
-  const isValidAtomicBlock = (block) => {
-    if (block.getType() !== ATOMIC) {
+  const isValidAtomicBlock = (block?: ContentBlock) => {
+    if (block!.getType() !== ATOMIC) {
       return true
     }
 
-    const entityKey = block.getEntityAt(0)
+    const entityKey = block!.getEntityAt(0)
     let isValid
 
     if (entityKey) {
@@ -106,7 +107,7 @@ export const removeInvalidAtomicBlocks = (
   if (filteredBlocks.size !== blockMap.size) {
     return content.merge({
       blockMap: filteredBlocks,
-    })
+    }) as ContentState
   }
 
   return content

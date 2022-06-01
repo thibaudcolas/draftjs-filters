@@ -1,4 +1,4 @@
-import { EditorState, convertFromRaw } from "draft-js"
+import { EditorState, convertFromRaw, RawDraftContentState } from "draft-js"
 
 import {
   preserveAtomicBlocks,
@@ -60,12 +60,12 @@ describe("atomic", () => {
             ],
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       expect(
         preserveAtomicBlocks(content)
           .getBlockMap()
-          .map((b) => b.getType())
+          .map((b) => b!.getType())
           .toJS(),
       ).toEqual({
         a: "atomic",
@@ -126,15 +126,15 @@ describe("atomic", () => {
             ],
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       expect(
         resetAtomicBlocks(content)
           .getBlockMap()
           .map((b) => ({
-            text: b.getText(),
-            type: b.getType(),
-            style: b.getInlineStyleAt(0).size,
+            text: b!.getText(),
+            type: b!.getType(),
+            style: b!.getInlineStyleAt(0).size,
           }))
           .toJS(),
       ).toEqual({
@@ -183,14 +183,14 @@ describe("atomic", () => {
             inlineStyleRanges: [],
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       expect(
         removeInvalidAtomicBlocks([{ type: "IMAGE" }], content)
           .getBlockMap()
           .map((b) => ({
-            text: b.getText(),
-            type: b.getType(),
+            text: b!.getText(),
+            type: b!.getType(),
           }))
           .toJS(),
       ).toEqual({

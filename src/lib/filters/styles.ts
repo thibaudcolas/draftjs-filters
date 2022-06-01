@@ -1,4 +1,4 @@
-import { ContentState, CharacterMetadata } from "draft-js"
+import { ContentState, CharacterMetadata, ContentBlock } from "draft-js"
 
 /**
  * Removes all styles not present in the list.
@@ -12,24 +12,26 @@ export const filterInlineStyles = (
   const blocks = blockMap.map((block) => {
     let altered = false
 
-    const chars = block.getCharacterList().map((char) => {
-      let newChar = char
+    const chars = block!.getCharacterList().map((char) => {
+      let newChar = char as CharacterMetadata
 
-      char
+      char!
         .getStyle()
-        .filter((type) => !allowlist.includes(type))
+        .filter((type) => !allowlist.includes(type as string))
         .forEach((type) => {
           altered = true
-          newChar = CharacterMetadata.removeStyle(newChar, type)
+          newChar = CharacterMetadata.removeStyle(newChar, type as string)
         })
 
       return newChar
     })
 
-    return altered ? block.set("characterList", chars) : block
+    return (
+      altered ? block!.set("characterList", chars) : block
+    ) as ContentBlock
   })
 
   return content.merge({
     blockMap: blockMap.merge(blocks),
-  })
+  }) as ContentState
 }

@@ -1,4 +1,9 @@
-import { EditorState, convertFromRaw, convertToRaw } from "draft-js"
+import {
+  EditorState,
+  convertFromRaw,
+  convertToRaw,
+  RawDraftContentState,
+} from "draft-js"
 
 import { UNSTYLED } from "../constants"
 import {
@@ -33,12 +38,12 @@ describe("blocks", () => {
             depth: 2,
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       expect(
         removeInvalidDepthBlocks(content)
           .getBlockMap()
-          .map((block) => block.getDepth())
+          .map((block) => block!.getDepth())
           .toJS(),
       ).toEqual({ a: 0, c: 2 })
     })
@@ -73,11 +78,11 @@ describe("blocks", () => {
             depth: 2,
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
       expect(
         limitBlockDepth(1, content)
           .getBlockMap()
-          .map((block) => block.getDepth())
+          .map((block) => block!.getDepth())
           .toJS(),
       ).toEqual({ a: 0, b: 1, c: 1 })
     })
@@ -148,7 +153,7 @@ describe("blocks", () => {
           { key: "y", text: "a.\tNumbered 1" },
           { key: "z", text: "z.\tNumbered 1" },
         ],
-      })
+      } as unknown as RawDraftContentState)
       expect(
         convertToRaw(
           preserveBlockByText(
@@ -202,7 +207,7 @@ describe("blocks", () => {
             text: "test",
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
       expect(preserveBlockByText([], content)).toBe(content)
     })
   })
@@ -234,14 +239,14 @@ describe("blocks", () => {
             depth: 1,
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       expect(
         filterBlockTypes(["unordered-list-item"], content)
           .getBlockMap()
           .map((block) => ({
-            type: block.getType(),
-            depth: block.getDepth(),
+            type: block!.getType(),
+            depth: block!.getDepth(),
           }))
           .toJS(),
       ).toEqual({

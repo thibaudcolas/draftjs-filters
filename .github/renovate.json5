@@ -10,7 +10,6 @@
     "draft-js",
     "draft-js-10",
     "normalize.css",
-    "flow-bin",
     "react",
     "react-dom",
     "react-test-renderer",
@@ -41,7 +40,7 @@
     // https://renovatebot.com/docs/node/#configuring-support-policy
     supportPolicy: ["current"],
   },
-  "vulnerabilityAlerts": {
+  vulnerabilityAlerts: {
     automerge: true,
   },
   packageRules: [

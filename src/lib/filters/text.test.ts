@@ -1,4 +1,4 @@
-import { EditorState, convertFromRaw } from "draft-js"
+import { EditorState, convertFromRaw, RawDraftContentState } from "draft-js"
 
 import { replaceTextBySpaces } from "./text"
 
@@ -26,16 +26,16 @@ describe("text", () => {
             ],
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
       content = replaceTextBySpaces(["\n"], content)
       expect(
         content
           .getBlockMap()
           .map((b) => ({
-            text: b.getText(),
-            styles: b
+            text: b!.getText(),
+            styles: b!
               .getCharacterList()
-              .map((c) => c.getStyle())
+              .map((c) => c!.getStyle())
               .toJS(),
           }))
           .toJS(),

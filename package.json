@@ -34,12 +34,17 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-flow-comments": "7.17.12",
     "@commitlint/cli": "17.0.2",
     "@commitlint/config-conventional": "17.0.2",
+    "@rollup/plugin-typescript": "8.3.2",
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/exec": "6.0.3",
     "@semantic-release/git": "10.0.1",
+    "@types/draft-js": "0.10.45",
+    "@types/enzyme": "3.10.12",
+    "@types/jest": "27.5.2",
+    "@types/react": "16.14.26",
+    "@types/react-dom": "16.9.16",
     "coveralls": "3.1.1",
     "danger": "11.0.7",
     "documentation": "13.2.5",
@@ -48,7 +53,6 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.6",
     "enzyme-to-json": "3.6.2",
-    "flow-bin": "0.131.0",
     "immutable": "~3.7.6",
     "normalize.css": "7.0.0",
     "prettier": "2.6.2",
@@ -57,10 +61,10 @@
     "react-scripts": "5.0.1",
     "react-test-renderer": "16.14.0",
     "rollup": "2.75.5",
-    "rollup-plugin-babel": "4.4.0",
     "semantic-release": "19.0.2",
     "snapshot-diff": "0.9.0",
-    "source-map-explorer": "2.5.2"
+    "source-map-explorer": "2.5.2",
+    "typescript": "4.7.2"
   },
   "peerDependencies": {
     "draft-js": "^0.10.4 || ^0.11.0 || ^0.12.0"
@@ -73,11 +77,11 @@
     "report:coverage": "open coverage/lcov-report/index.html",
     "report:build": "open public/source-map-explorer.html",
     "report:package": "npm pack --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee build/package.txt && rm *.tgz",
-    "lint": "prettier --check '**/?(.)*.{md,css,scss,js,json,yaml,yml,html}' && documentation lint src/**",
-    "format": "prettier --write '**/?(.)*.{md,css,scss,js,json,yaml,yml,html}'",
-    "test:ci": "npm run lint -s && npm run build -s && npm run build:docs && flow --quiet && npm run test -s -- --outputFile build/test-results.json --json",
+    "lint": "prettier --check '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}' && documentation lint 'src/**/*.(ts|js|tsx)'",
+    "format": "prettier --write '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}'",
+    "test:ci": "npm run lint -s && npm run build -s && npm run build:docs && npm run test -s -- --outputFile build/test-results.json --json",
     "prepare": "./.githooks/deploy.sh",
     "prepublishOnly": "npm run build -s",
-    "build:docs": "documentation readme src/lib/index.js -f md --section=API --markdown-toc=false && prettier --write README.md"
+    "build:docs": "documentation readme src/lib/index.ts --parse-extension ts -f md --section=API --markdown-toc=false && prettier --write README.md"
   }
 }

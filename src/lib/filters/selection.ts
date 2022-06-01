@@ -44,7 +44,11 @@ export const applyContentWithSelection = (
   // Starting from the end so the selection is preserved towards the last preserved block in the filtered region.
   const nextAnchorKey = nextKeys
     .reverse()
-    .find((k) => content.getKeyAfter(k) !== nextContent.getKeyAfter(k))
+    .find(
+      (k) =>
+        content.getKeyAfter(k as string) !==
+        nextContent.getKeyAfter(k as string),
+    )
 
   // If the selection was already misplaced before paste, we do not move it.
   if (nextAnchorKey) {

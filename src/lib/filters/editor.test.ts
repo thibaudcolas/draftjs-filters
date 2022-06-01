@@ -1,4 +1,9 @@
-import { EditorState, convertFromRaw, convertToRaw } from "draft-js"
+import {
+  EditorState,
+  convertFromRaw,
+  convertToRaw,
+  RawDraftContentState,
+} from "draft-js"
 
 import { filterEditorState } from "./editor"
 
@@ -453,7 +458,7 @@ const content = convertFromRaw({
     ...cloneEntities,
     ...replaceTextBySpaces,
   ],
-})
+} as unknown as RawDraftContentState)
 
 const filters = {
   blocks: [
@@ -480,7 +485,7 @@ const filters = {
   ],
   maxNesting: 1,
   whitespacedCharacters: ["\n", "\t", "📷"],
-}
+} as const
 
 describe("editor", () => {
   describe("#filterEditorState", () => {
@@ -540,6 +545,10 @@ describe("editor", () => {
                 {
                   key: "a",
                   text: "o List item",
+                  type: "unstyled",
+                  depth: 0,
+                  inlineStyleRanges: [],
+                  entityRanges: [],
                 },
               ],
             }),
@@ -558,7 +567,7 @@ describe("editor", () => {
       const content = convertFromRaw({
         entityMap: { ...preserveBlockByTextEntities },
         blocks: [...preserveBlockByText],
-      })
+      } as unknown as RawDraftContentState)
       expect(
         convertToRaw(
           filterEditorState(

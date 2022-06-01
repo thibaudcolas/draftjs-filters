@@ -1,33 +1,15 @@
-import babel from "rollup-plugin-babel"
 import pkg from "./package.json"
-
-const BANNER = `// @flow`
-const CJS_BANNER = `${BANNER}
-/*:: import type { ContentState, EditorState } from "draft-js"*/`
+import typescript from "@rollup/plugin-typescript"
 
 const config = [
   {
-    input: "src/lib/index.js",
+    input: "src/lib/index.ts",
     external: ["draft-js"],
     output: [
-      { file: pkg.main, format: "cjs", banner: CJS_BANNER },
-      { file: pkg.module, format: "es", banner: BANNER },
+      { file: pkg.main, format: "cjs" },
+      { file: pkg.module, format: "es" },
     ],
-    plugins: [
-      babel({
-        babelrc: false,
-        exclude: ["node_modules/**"],
-        presets: [
-          [
-            "@babel/preset-env",
-            {
-              modules: false,
-            },
-          ],
-        ],
-        plugins: ["@babel/plugin-transform-flow-comments"],
-      }),
-    ],
+    plugins: [typescript()],
   },
 ]
 

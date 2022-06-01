@@ -1,25 +1,39 @@
 import { mount, shallow } from "enzyme"
-import { EditorState, RichUtils, AtomicBlockUtils } from "draft-js"
+import {
+  EditorState,
+  RichUtils,
+  AtomicBlockUtils,
+  ContentBlock,
+} from "draft-js"
 
 import FilterableEditor from "./FilterableEditor"
+import React from "react"
 
 const editor = require("../../lib/filters/editor")
 
 describe("FilterableEditor", () => {
+  let getItem: jest.SpyInstance
+  let toggleInlineStyle: jest.SpyInstance
+  let toggleBlockType: jest.SpyInstance
+  let toggleLink: jest.SpyInstance
+  let handleKeyCommand: jest.SpyInstance
+  let insertAtomicBlock: jest.SpyInstance
+
   beforeEach(() => {
-    jest.spyOn(Storage.prototype, "getItem")
-    jest.spyOn(Storage.prototype, "setItem")
-    jest.spyOn(RichUtils, "toggleInlineStyle")
-    jest.spyOn(RichUtils, "toggleBlockType")
-    jest.spyOn(RichUtils, "toggleLink")
-    jest.spyOn(AtomicBlockUtils, "insertAtomicBlock")
+    getItem = jest.spyOn(Storage.prototype, "getItem")
+    toggleInlineStyle = jest.spyOn(RichUtils, "toggleInlineStyle")
+    toggleBlockType = jest.spyOn(RichUtils, "toggleBlockType")
+    toggleLink = jest.spyOn(RichUtils, "toggleLink")
+    handleKeyCommand = jest.spyOn(RichUtils, "handleKeyCommand")
+    insertAtomicBlock = jest.spyOn(AtomicBlockUtils, "insertAtomicBlock")
   })
 
   afterEach(() => {
-    RichUtils.toggleInlineStyle.mockRestore()
-    RichUtils.toggleBlockType.mockRestore()
-    RichUtils.toggleLink.mockRestore()
-    AtomicBlockUtils.insertAtomicBlock.mockRestore()
+    toggleInlineStyle.mockRestore()
+    toggleBlockType.mockRestore()
+    toggleLink.mockRestore()
+    handleKeyCommand.mockRestore()
+    insertAtomicBlock.mockRestore()
   })
 
   it("renders", () => {
@@ -41,7 +55,7 @@ describe("FilterableEditor", () => {
     })
 
     it("save feature", () => {
-      global.sessionStorage.getItem.mockReturnValue(
+      getItem.mockReturnValue(
         JSON.stringify({
           entityMap: {},
           blocks: [
@@ -54,11 +68,13 @@ describe("FilterableEditor", () => {
       )
 
       expect(
-        shallow(<FilterableEditor filtered={false} extended />)
+        shallow<FilterableEditor>(
+          <FilterableEditor filtered={false} extended />,
+        )
           .state("editorState")
           .getCurrentContent()
           .getBlockMap()
-          .map((b) => b.getText())
+          .map((b) => b!.getText())
           .toJS(),
       ).toEqual({
         a: "test",
@@ -69,7 +85,7 @@ describe("FilterableEditor", () => {
   describe("onChange", () => {
     it("works", () => {
       const state = EditorState.createEmpty()
-      const wrapper = shallow(
+      const wrapper = shallow<FilterableEditor>(
         <FilterableEditor filtered={false} extended={false} />,
       )
 
@@ -80,7 +96,9 @@ describe("FilterableEditor", () => {
 
     it("#filtered", () => {
       const state = EditorState.createEmpty()
-      const wrapper = shallow(<FilterableEditor filtered extended={false} />)
+      const wrapper = shallow<FilterableEditor>(
+        <FilterableEditor filtered extended={false} />,
+      )
 
       wrapper.instance().onChange(state)
 
@@ -88,56 +106,68 @@ describe("FilterableEditor", () => {
     })
 
     it("#filtered shouldFilterPaste", () => {
-      jest.spyOn(editor, "filterEditorState")
-      editor.filterEditorState.mockImplementation((opts, e) => e)
+      const spy = jest.spyOn(editor, "filterEditorState")
+      spy.mockImplementation((opts, e) => e)
 
       const state = EditorState.createEmpty()
       const fakeState = {
         getCurrentContent: () => state.getCurrentContent(),
         getLastChangeType: () => "insert-fragment",
       }
-      const wrapper = shallow(<FilterableEditor filtered extended={false} />)
+      const wrapper = shallow<FilterableEditor>(
+        <FilterableEditor filtered extended={false} />,
+      )
 
-      wrapper.instance().onChange(fakeState)
+      wrapper.instance().onChange(fakeState as EditorState)
 
       expect(editor.filterEditorState).toHaveBeenCalled()
     })
 
     it("#filtered shouldFilterPaste #extended", () => {
-      jest.spyOn(editor, "filterEditorState")
-      editor.filterEditorState.mockImplementation((opts, e) => e)
+      const spy = jest.spyOn(editor, "filterEditorState")
+      spy.mockImplementation((opts, e) => e)
 
       const state = EditorState.createEmpty()
       const fakeState = {
         getCurrentContent: () => state.getCurrentContent(),
         getLastChangeType: () => "insert-fragment",
       }
-      const wrapper = shallow(<FilterableEditor filtered extended />)
+      const wrapper = shallow<FilterableEditor>(
+        <FilterableEditor filtered extended />,
+      )
 
-      wrapper.instance().onChange(fakeState)
+      wrapper.instance().onChange(fakeState as EditorState)
 
       expect(editor.filterEditorState).toHaveBeenCalled()
     })
   })
 
   it("toggleStyle", () => {
-    shallow(<FilterableEditor filtered={false} extended={false} />)
+    shallow<FilterableEditor>(
+      <FilterableEditor filtered={false} extended={false} />,
+    )
       .instance()
-      .toggleStyle("BOLD", new Event("mousedown"))
+      .toggleStyle("BOLD", { preventDefault: () => {} } as React.MouseEvent)
 
     expect(RichUtils.toggleInlineStyle).toHaveBeenCalled()
   })
 
   it("toggleBlock", () => {
-    shallow(<FilterableEditor filtered={false} extended={false} />)
+    shallow<FilterableEditor>(
+      <FilterableEditor filtered={false} extended={false} />,
+    )
       .instance()
-      .toggleBlock("header-two", new Event("mousedown"))
+      .toggleBlock("header-two", {
+        preventDefault: () => {},
+      } as React.MouseEvent)
 
     expect(RichUtils.toggleBlockType).toHaveBeenCalled()
   })
 
   it("toggleEntity - LINK", () => {
-    shallow(<FilterableEditor filtered={false} extended={false} />)
+    shallow<FilterableEditor>(
+      <FilterableEditor filtered={false} extended={false} />,
+    )
       .instance()
       .toggleEntity("LINK")
 
@@ -145,7 +175,9 @@ describe("FilterableEditor", () => {
   })
 
   it("toggleEntity - IMAGE", () => {
-    shallow(<FilterableEditor filtered={false} extended={false} />)
+    shallow<FilterableEditor>(
+      <FilterableEditor filtered={false} extended={false} />,
+    )
       .instance()
       .toggleEntity("IMAGE")
 
@@ -154,11 +186,13 @@ describe("FilterableEditor", () => {
 
   it("blockRenderer", () => {
     expect(
-      shallow(<FilterableEditor filtered={false} extended={false} />)
+      shallow<FilterableEditor>(
+        <FilterableEditor filtered={false} extended={false} />,
+      )
         .instance()
         .blockRenderer({
           getType: () => "atomic",
-        }),
+        } as ContentBlock),
     ).toMatchObject({
       editable: false,
     })
@@ -166,59 +200,59 @@ describe("FilterableEditor", () => {
 
   describe("keyBindingFn", () => {
     it("works", () => {
-      const wrapper = mount(
+      const wrapper = mount<FilterableEditor>(
         <FilterableEditor filtered={false} extended={false} />,
       )
 
       wrapper.instance().onChange = jest.fn()
-      wrapper.instance().keyBindingFn({ keyCode: 9 })
+      wrapper.instance().keyBindingFn({ keyCode: 9 } as React.KeyboardEvent)
       expect(wrapper.instance().onChange).toHaveBeenCalled()
     })
 
     it("works #extended", () => {
-      const wrapper = mount(
+      const wrapper = mount<FilterableEditor>(
         <FilterableEditor filtered={false} extended={true} />,
       )
 
       wrapper.instance().onChange = jest.fn()
-      wrapper.instance().keyBindingFn({ keyCode: 9 })
+      wrapper.instance().keyBindingFn({ keyCode: 9 } as React.KeyboardEvent)
       expect(wrapper.instance().onChange).toHaveBeenCalled()
     })
 
     it("does not change state directly with other keys", () => {
-      const wrapper = mount(
+      const wrapper = mount<FilterableEditor>(
         <FilterableEditor filtered={false} extended={false} />,
       )
 
       wrapper.instance().onChange = jest.fn()
-      wrapper.instance().keyBindingFn({ keyCode: 22 })
+      wrapper.instance().keyBindingFn({ keyCode: 22 } as React.KeyboardEvent)
       expect(wrapper.instance().onChange).not.toHaveBeenCalled()
     })
   })
 
   describe("handleKeyCommand", () => {
     it("draftjs internal, handled", () => {
-      RichUtils.handleKeyCommand = jest.fn((editorState) => editorState)
+      handleKeyCommand.mockImplementation((editorState) => editorState)
 
       expect(
-        shallow(<FilterableEditor />)
+        shallow<FilterableEditor>(<FilterableEditor />)
           .instance()
           .handleKeyCommand("backspace"),
       ).toBe("handled")
 
-      RichUtils.handleKeyCommand.mockRestore()
+      handleKeyCommand.mockRestore()
     })
 
     it("draftjs internal, not handled", () => {
-      RichUtils.handleKeyCommand = jest.fn(() => false)
+      handleKeyCommand.mockImplementation(() => false)
 
       expect(
-        shallow(<FilterableEditor />)
+        shallow<FilterableEditor>(<FilterableEditor />)
           .instance()
           .handleKeyCommand("backspace"),
       ).toBe("not-handled")
 
-      RichUtils.handleKeyCommand.mockRestore()
+      handleKeyCommand.mockRestore()
     })
   })
 })

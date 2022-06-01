@@ -54,7 +54,8 @@ describe("linkStrategy", () => {
   it("works", () => {
     const editorState = EditorState.createWithContent(
       ContentState.createFromBlockArray(
-        convertFromHTML(`<h1><a href="http://example.com/">Test</a></h1>`),
+        convertFromHTML(`<h1><a href="http://example.com/">Test</a></h1>`)
+          .contentBlocks,
       ),
     )
     const currentContent = editorState.getCurrentContent()
