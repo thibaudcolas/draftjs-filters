@@ -3,32 +3,36 @@ import SentryBoundary from "./SentryBoundary"
 
 describe("SentryBoundary", () => {
   it("renders", () => {
-    expect(shallow(<SentryBoundary>Test</SentryBoundary>)).toMatchSnapshot()
+    expect(
+      shallow<SentryBoundary>(<SentryBoundary>Test</SentryBoundary>),
+    ).toMatchSnapshot()
   })
 
   it("componentDidCatch", () => {
-    const wrapper = shallow(<SentryBoundary>Test</SentryBoundary>)
+    const wrapper = shallow<SentryBoundary>(
+      <SentryBoundary>Test</SentryBoundary>,
+    )
 
-    wrapper.instance().componentDidCatch(new Error("test"), {
-      info: "test",
-    })
+    wrapper.instance().componentDidCatch(new Error("test"))
 
     expect(wrapper.state("error")).not.toBe(null)
   })
 
   it("#error", () => {
     expect(
-      shallow(<SentryBoundary>Test</SentryBoundary>).setState({
+      shallow<SentryBoundary>(<SentryBoundary>Test</SentryBoundary>).setState({
         error: new Error("test"),
       }),
     ).toMatchSnapshot()
   })
 
   it("#error reload", () => {
-    delete window.location
-    window.location = { reload: jest.fn() }
+    Object.defineProperty(window, "location", {
+      configurable: true,
+      value: { reload: jest.fn() },
+    })
 
-    shallow(<SentryBoundary>Test</SentryBoundary>)
+    shallow<SentryBoundary>(<SentryBoundary>Test</SentryBoundary>)
       .setState({
         error: new Error("test"),
       })

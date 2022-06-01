@@ -29,8 +29,6 @@ nvm use
 npm run start
 # Runs linting.
 npm run lint
-# Start a Flow server for type errors.
-npx flow
 # Re-formats all of the files in the project (with Prettier).
 npm run format
 # Run tests in a watcher.
@@ -45,4 +43,4 @@ npm run
 
 ### Code style
 
-This project uses [Prettier](https://prettier.io/), [ESLint](https://eslint.org/), and [Flow](https://flow.org/). All code should always be checked with those tools.
+This project uses [Prettier](https://prettier.io/), [ESLint](https://eslint.org/), and [TypeScript](https://www.typescriptlang.org/). All code should always be checked with those tools.

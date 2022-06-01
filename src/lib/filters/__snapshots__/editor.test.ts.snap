@@ -355,66 +355,66 @@ Object {
       "data": Object {
         "src": "/0.png",
       },
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
     "1": Object {
       "data": Object {
         "src": "/0.png",
       },
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
     "2": Object {
       "data": Object {
         "src": "/0.png",
       },
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
     "3": Object {
       "data": Object {
         "src": "/1.png",
       },
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
     "4": Object {
       "data": Object {
         "src": "/1.png",
       },
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
     "5": Object {
       "data": Object {
         "src": "/example.png",
       },
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
     "6": Object {
       "data": Object {
         "url": "www.example.com",
       },
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "LINK",
     },
     "7": Object {
       "data": Object {
         "url": "http://example.com/",
       },
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "LINK",
     },
     "8": Object {
       "data": Object {},
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "LINK",
     },
     "9": Object {
       "data": Object {},
-      "mutability": undefined,
+      "mutability": "IMMUTABLE",
       "type": "LINK",
     },
   },

@@ -22,43 +22,43 @@ import {
 import { replaceTextBySpaces } from "./text"
 import { applyContentWithSelection } from "./selection"
 
-import { ContentState } from "draft-js"
+import { ContentBlock, ContentState } from "draft-js"
 import type { EditorState as EditorStateType } from "draft-js"
 
-type FilterOptions = {
+interface FilterOptions {
   // List of allowed block types. unstyled and atomic are always included.
-  blocks: ReadonlyArray<string>
+  blocks: readonly string[]
   // List of allowed inline styles.
-  styles: ReadonlyArray<string>
+  styles: readonly string[]
   // List of allowed entities.
-  entities: ReadonlyArray<{
+  entities: readonly {
     // Entity type, eg. "LINK"
     type: string
     // Allowed attributes. Other attributes will be removed. If this is omitted, all attributes are kept.
-    attributes?: ReadonlyArray<string>
+    attributes?: readonly string[]
     // Refine which entities are kept by matching acceptable values with regular expression patterns.
     // It's also possible to use "true" to signify that a field is required to be present,
     // and "false" for fields required to be absent.
     // If this is omitted, all entities are kept.
-    allowlist?: Record<string, string | boolean>
+    allowlist?: { [attr: string]: string | boolean }
     // Deprecated. Use allowlist instead. Will be removed in a future release.
-    whitelist?: Record<string, string | boolean>
-  }>
+    whitelist?: { [attr: string]: string | boolean }
+  }[]
   // Maximum amount of depth for lists (0 = no nesting).
   maxNesting: number
   // Characters to replace with whitespace.
-  whitespacedCharacters: Array<string>
+  whitespacedCharacters: readonly string[]
   // Optional: Rules used to automatically convert blocks from one type to another
   // based on the block’s text. Also supports setting the block depth.
   // Defaults to the filters’ built-in block prefix rules.
-  blockTextRules?: ReadonlyArray<{
+  blockTextRules?: readonly {
     // A regex as a string, to match against block text, e.g. "^(◦|o |o\t)".
     test: string
     // The type to convert the block to if the test regex matches.
     type: string
     // The depth to set (e.g. for list items with different prefixes per depth).
     depth: number
-  }>
+  }[]
 }
 
 const BLOCK_PREFIX_RULES = [
@@ -94,7 +94,9 @@ const BLOCK_PREFIX_RULES = [
     type: "ordered-list-item",
     depth: 1,
   },
-]
+] as const
+
+type ContentFilter = (content: ContentState) => ContentState
 
 /**
  * Applies filtering and preservation operations to the editor content,
@@ -113,7 +115,11 @@ export const filterEditorState = (
     whitespacedCharacters,
     blockTextRules = BLOCK_PREFIX_RULES,
   } = options
-  const shouldKeepEntityRange = (content, entityKey, block) => {
+  const shouldKeepEntityRange = (
+    content: ContentState,
+    entityKey: string,
+    block: ContentBlock,
+  ) => {
     const entity = content.getEntity(entityKey)
     const entityData = entity.getData()
     const entityType = entity.getType()
@@ -127,7 +133,7 @@ export const filterEditorState = (
   }
 
   // Order matters. Some filters may need the information filtered out by others.
-  const filters = [
+  const filters: ContentFilter[] = [
     // 1. clean up blocks.
     removeInvalidDepthBlocks,
     preserveBlockByText.bind(null, blockTextRules),
@@ -152,7 +158,7 @@ export const filterEditorState = (
 
   const content = editorState.getCurrentContent()
   const nextContent = filters.reduce(
-    (c, filter: (ContentState) => ContentState) => filter(c),
+    (c: ContentState, filter: ContentFilter) => filter(c),
     content,
   )
 

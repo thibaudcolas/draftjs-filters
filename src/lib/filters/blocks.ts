@@ -1,4 +1,4 @@
-import { ContentState } from "draft-js"
+import { ContentState, ContentBlock } from "draft-js"
 import { UNSTYLED, UNORDERED_LIST_ITEM, ORDERED_LIST_ITEM } from "../constants"
 
 /**
@@ -8,12 +8,12 @@ import { UNSTYLED, UNORDERED_LIST_ITEM, ORDERED_LIST_ITEM } from "../constants"
 export const removeInvalidDepthBlocks = (content: ContentState) => {
   const blockMap = content.getBlockMap()
 
-  const isValidDepthBlock = (block) => {
+  const isValidDepthBlock = (block?: ContentBlock) => {
     const isListBlock = [UNORDERED_LIST_ITEM, ORDERED_LIST_ITEM].includes(
-      block.getType(),
+      block!.getType(),
     )
 
-    return isListBlock || block.getDepth() === 0
+    return isListBlock || block!.getDepth() === 0
   }
 
   const filteredBlocks = blockMap.filter(isValidDepthBlock)
@@ -21,7 +21,7 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
   if (filteredBlocks.size !== blockMap.size) {
     return content.merge({
       blockMap: filteredBlocks,
-    })
+    }) as ContentState
   }
 
   return content
@@ -45,11 +45,11 @@ export const preserveBlockByText = (
   const blockMap = content.getBlockMap()
 
   const blocks = blockMap
-    .filter((block) => block.getType() === "unstyled")
+    .filter((block) => block!.getType() === "unstyled")
     .map((block) => {
-      const text = block.getText()
-      let newBlock = block
-      let match
+      const text = block!.getText()
+      let newBlock = block as ContentBlock
+      let match!: RegExpExecArray | null
 
       const matchingRule = rules.find((rule) => {
         match = new RegExp(rule.test).exec(text)
@@ -57,8 +57,8 @@ export const preserveBlockByText = (
       })
 
       if (matchingRule && match && match[0]) {
-        const text = block.getText()
-        const entity = block.getEntityAt(0)
+        const text = newBlock.getText()
+        const entity = newBlock.getEntityAt(0)
 
         // Special case – do not convert the block if there is an entity at the start, and the matching text is the full block’s text.
         // This can happen in Word for equations, which are injected as images with text "📷 ".
@@ -77,7 +77,7 @@ export const preserveBlockByText = (
 
         // Maintain persistence in the list while removing chars from the start.
         // https://github.com/facebook/draft-js/blob/788595984da7c1e00d1071ea82b063ff87140be4/src/model/transaction/removeRangeFromContentState.js#L333
-        let chars = block.getCharacterList()
+        let chars = newBlock.getCharacterList()
         let startOffset = 0
         while (startOffset < sliceOffset) {
           chars = chars.shift()
@@ -89,7 +89,7 @@ export const preserveBlockByText = (
           depth: matchingRule.depth,
           text: text.slice(sliceOffset),
           characterList: chars,
-        })
+        }) as ContentBlock
       }
 
       return newBlock
@@ -97,9 +97,9 @@ export const preserveBlockByText = (
 
   return blocks.size === 0
     ? content
-    : content.merge({
+    : (content.merge({
         blockMap: blockMap.merge(blocks),
-      })
+      }) as ContentState)
 }
 
 /**
@@ -109,14 +109,14 @@ export const limitBlockDepth = (max: number, content: ContentState) => {
   const blockMap = content.getBlockMap()
 
   const changedBlocks = blockMap
-    .filter((block) => block.getDepth() > max)
-    .map((block) => block.set("depth", max))
+    .filter((block) => block!.getDepth() > max)
+    .map((block) => block!.set("depth", max) as ContentBlock)
 
   return changedBlocks.size === 0
     ? content
-    : content.merge({
+    : (content.merge({
         blockMap: blockMap.merge(changedBlocks),
-      })
+      }) as ContentState)
 }
 
 /**
@@ -130,17 +130,18 @@ export const filterBlockTypes = (
   const blockMap = content.getBlockMap()
 
   const changedBlocks = blockMap
-    .filter((block) => !allowlist.includes(block.getType()))
-    .map((block) =>
-      block.merge({
-        type: UNSTYLED,
-        depth: 0,
-      }),
+    .filter((block) => !allowlist.includes(block!.getType()))
+    .map(
+      (block) =>
+        block!.merge({
+          type: UNSTYLED,
+          depth: 0,
+        }) as ContentBlock,
     )
 
   return changedBlocks.size === 0
     ? content
-    : content.merge({
+    : (content.merge({
         blockMap: blockMap.merge(changedBlocks),
-      })
+      }) as ContentState)
 }

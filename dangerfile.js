@@ -1,5 +1,3 @@
-// @flow
-// flowlint untyped-import:off
 const { danger, message, warn, fail, schedule } = require("danger")
 const semanticRelease = require("semantic-release")
 const envCi = require("env-ci")

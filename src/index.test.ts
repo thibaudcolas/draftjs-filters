@@ -1,10 +1,6 @@
 describe("demo", () => {
   beforeEach(() => {
     jest.resetModules()
-    // global.sessionStorage = {
-    //   getItem: jest.fn(),
-    //   setItem: jest.fn(),
-    // }
   })
 
   it("mount", () => {
@@ -23,3 +19,5 @@ describe("demo", () => {
     expect(document.body.innerHTML).toBe("")
   })
 })
+
+export {}

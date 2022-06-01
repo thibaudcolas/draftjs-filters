@@ -1,4 +1,4 @@
-import { EditorState, convertFromRaw } from "draft-js"
+import { EditorState, convertFromRaw, RawDraftContentState } from "draft-js"
 
 import { filterInlineStyles } from "./styles"
 
@@ -35,12 +35,12 @@ describe("styles", () => {
             ],
           },
         ],
-      })
+      } as unknown as RawDraftContentState)
 
       expect(
         filterInlineStyles(["BOLD"], content)
           .getBlockMap()
-          .map((b) => b.getCharacterList().map((c) => c.getStyle()))
+          .map((b) => b!.getCharacterList().map((c) => c!.getStyle()))
           .toJS(),
       ).toEqual({
         a: [["BOLD"], [], ["BOLD"]],
