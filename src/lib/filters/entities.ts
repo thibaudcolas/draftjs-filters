@@ -3,6 +3,27 @@ import { List } from "immutable"
 import { ATOMIC, IMAGE } from "../constants"
 
 /**
+ * Parameters to determine which entity instances to keep.
+ */
+export interface EntityRule {
+  // Entity type, eg. "LINK"
+  type: string
+  // Allowed attributes. Other attributes will be removed. If this is omitted, all attributes are kept.
+  attributes?: readonly string[]
+  // Refine which entities are kept by matching acceptable values with regular expression patterns.
+  // It's also possible to use "true" to signify that a field is required to be present,
+  // and "false" for fields required to be absent.
+  // If this is omitted, all entities are kept.
+  allowlist?: {
+    [attr: string]: string | boolean
+  }
+  // Deprecated. Use allowlist instead. Will be removed in a future release.
+  whitelist?: {
+    [attr: string]: string | boolean
+  }
+}
+
+/**
  * Clones entities in the entityMap, so each range points to its own entity instance.
  * This only clones entities as necessary – if an entity is only referenced
  * in a single range, it won't be changed.
@@ -132,9 +153,7 @@ export const filterEntityRanges = (
  * Keeps all entity types (images, links, documents, embeds) that are enabled.
  */
 export const shouldKeepEntityType = (
-  allowlist: ReadonlyArray<{
-    type: string
-  }>,
+  allowlist: readonly EntityRule[],
   type: string,
 ) => {
   return allowlist.some((e) => e.type === type)
@@ -155,12 +174,7 @@ export const shouldRemoveImageEntity = (
  * Filters entities based on the data they contain.
  */
 export const shouldKeepEntityByAttribute = (
-  entityTypes: ReadonlyArray<{
-    type: string
-    allowlist?: { [attr: string]: string | boolean }
-    // Deprecated. Use allowlist instead. Will be removed in a future release.
-    whitelist?: { [attr: string]: string | boolean }
-  }>,
+  entityTypes: readonly EntityRule[],
   entityType: string,
   data: { [attr: string]: any },
 ) => {
@@ -188,20 +202,19 @@ export const shouldKeepEntityByAttribute = (
   return isValid
 }
 
+type EntityData = { [attr: string]: any }
+
 /**
  * Filters data on an entity to only retain what is allowed.
  * This is crucial for IMAGE and LINK, where Draft.js adds a lot
  * of unneeded attributes (width, height, etc).
  */
 export const filterEntityData = (
-  entityTypes: ReadonlyArray<{
-    type: string
-    attributes?: ReadonlyArray<string>
-  }>,
+  entityTypes: readonly EntityRule[],
   content: ContentState,
 ) => {
   let newContent = content
-  const entities: { [type: string]: any } = {}
+  const entities: { [type: string]: EntityData } = {}
 
   newContent.getBlockMap().forEach((block) => {
     block!.findEntityRanges(
@@ -228,7 +241,7 @@ export const filterEntityData = (
       return data
     }
 
-    const newData = allowlist.reduce<{ [attr: string]: any }>((attrs, attr) => {
+    const newData = allowlist.reduce<EntityData>((attrs, attr) => {
       // We do not want to include undefined values if there is no data.
       if (data.hasOwnProperty(attr)) {
         attrs[attr] = data[attr]

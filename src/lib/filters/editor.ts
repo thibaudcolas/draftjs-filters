@@ -5,6 +5,7 @@ import {
   removeInvalidAtomicBlocks,
 } from "./atomic"
 import {
+  BlockTextRule,
   limitBlockDepth,
   preserveBlockByText,
   filterBlockTypes,
@@ -12,6 +13,7 @@ import {
 } from "./blocks"
 import { filterInlineStyles } from "./styles"
 import {
+  EntityRule,
   cloneEntities,
   filterEntityData,
   filterEntityRanges,
@@ -22,8 +24,7 @@ import {
 import { replaceTextBySpaces } from "./text"
 import { applyContentWithSelection } from "./selection"
 
-import { ContentBlock, ContentState } from "draft-js"
-import type { EditorState as EditorStateType } from "draft-js"
+import { EditorState, ContentBlock, ContentState } from "draft-js"
 
 interface FilterOptions {
   // List of allowed block types. unstyled and atomic are always included.
@@ -31,34 +32,13 @@ interface FilterOptions {
   // List of allowed inline styles.
   styles: readonly string[]
   // List of allowed entities.
-  entities: readonly {
-    // Entity type, eg. "LINK"
-    type: string
-    // Allowed attributes. Other attributes will be removed. If this is omitted, all attributes are kept.
-    attributes?: readonly string[]
-    // Refine which entities are kept by matching acceptable values with regular expression patterns.
-    // It's also possible to use "true" to signify that a field is required to be present,
-    // and "false" for fields required to be absent.
-    // If this is omitted, all entities are kept.
-    allowlist?: { [attr: string]: string | boolean }
-    // Deprecated. Use allowlist instead. Will be removed in a future release.
-    whitelist?: { [attr: string]: string | boolean }
-  }[]
+  entities: readonly EntityRule[]
   // Maximum amount of depth for lists (0 = no nesting).
   maxNesting: number
   // Characters to replace with whitespace.
   whitespacedCharacters: readonly string[]
-  // Optional: Rules used to automatically convert blocks from one type to another
-  // based on the block’s text. Also supports setting the block depth.
-  // Defaults to the filters’ built-in block prefix rules.
-  blockTextRules?: readonly {
-    // A regex as a string, to match against block text, e.g. "^(◦|o |o\t)".
-    test: string
-    // The type to convert the block to if the test regex matches.
-    type: string
-    // The depth to set (e.g. for list items with different prefixes per depth).
-    depth: number
-  }[]
+  // Optional: Rules used to switch block types based on block text.
+  blockTextRules?: readonly BlockTextRule[]
 }
 
 const BLOCK_PREFIX_RULES = [
@@ -96,8 +76,6 @@ const BLOCK_PREFIX_RULES = [
   },
 ] as const
 
-type ContentFilter = (content: ContentState) => ContentState
-
 /**
  * Applies filtering and preservation operations to the editor content,
  * to restrict it to supported patterns.
@@ -105,7 +83,7 @@ type ContentFilter = (content: ContentState) => ContentState
  */
 export const filterEditorState = (
   options: FilterOptions,
-  editorState: EditorStateType,
+  editorState: EditorState,
 ) => {
   const {
     blocks,
@@ -133,7 +111,7 @@ export const filterEditorState = (
   }
 
   // Order matters. Some filters may need the information filtered out by others.
-  const filters: ContentFilter[] = [
+  const filters = [
     // 1. clean up blocks.
     removeInvalidDepthBlocks,
     preserveBlockByText.bind(null, blockTextRules),
@@ -157,10 +135,7 @@ export const filterEditorState = (
   ]
 
   const content = editorState.getCurrentContent()
-  const nextContent = filters.reduce(
-    (c: ContentState, filter: ContentFilter) => filter(c),
-    content,
-  )
+  const nextContent = filters.reduce((c, filter) => filter(c), content)
 
   return applyContentWithSelection(editorState, content, nextContent)
 }

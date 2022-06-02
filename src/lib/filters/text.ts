@@ -4,7 +4,7 @@ import { ContentBlock, ContentState } from "draft-js"
  * Replaces the given characters by their equivalent length of spaces, in all blocks.
  */
 export const replaceTextBySpaces = (
-  characters: ReadonlyArray<string>,
+  characters: readonly string[],
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()

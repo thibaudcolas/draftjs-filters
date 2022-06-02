@@ -1,12 +1,11 @@
-import type { ContentBlock, ContentState } from "draft-js"
+import { ContentBlock, ContentState } from "draft-js"
 
-const Image = ({
-  block,
-  contentState,
-}: {
+interface ImageProps {
   block: ContentBlock
   contentState: ContentState
-}) => {
+}
+
+const Image = ({ block, contentState }: ImageProps) => {
   const entityKey = block.getEntityAt(0)
   const src = entityKey
     ? contentState.getEntity(entityKey).getData().src

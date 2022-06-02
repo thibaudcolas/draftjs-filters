@@ -1,5 +1,6 @@
 import { CharacterMetadata, ContentBlock, ContentState } from "draft-js"
 import { ATOMIC } from "../constants"
+import { EntityRule } from "./entities"
 
 /**
  * Creates atomic blocks where they would be required for a block-level entity
@@ -78,7 +79,7 @@ export const resetAtomicBlocks = (content: ContentState) => {
  * Removes atomic blocks for which the entity type isn't allowed.
  */
 export const removeInvalidAtomicBlocks = (
-  allowlist: readonly { type: string }[],
+  allowlist: readonly EntityRule[],
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
