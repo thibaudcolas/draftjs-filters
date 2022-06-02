@@ -3,5 +3,4 @@ node_modules
 coverage/
 dist/
 *.bundle.js
-public/source-map-explorer.html
 build/
