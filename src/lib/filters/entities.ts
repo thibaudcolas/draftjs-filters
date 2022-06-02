@@ -217,17 +217,15 @@ export const filterEntityData = (
   const entities: { [type: string]: EntityData } = {}
 
   newContent.getBlockMap().forEach((block) => {
-    block!.findEntityRanges(
-      (char: CharacterMetadata) => {
-        const entityKey = char.getEntity()
-        if (entityKey) {
-          const entity = newContent.getEntity(entityKey)
-          entities[entityKey] = entity
-        }
-        return false
-      },
-      () => {},
-    )
+    // @ts-ignore
+    block!.findEntityRanges((char: CharacterMetadata) => {
+      const entityKey = char.getEntity()
+      if (entityKey) {
+        const entity = newContent.getEntity(entityKey)
+        entities[entityKey] = entity
+      }
+      return false
+    })
   })
 
   Object.keys(entities).forEach((key) => {
