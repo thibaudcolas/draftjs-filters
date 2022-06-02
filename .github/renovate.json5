@@ -91,11 +91,6 @@
       automerge: true,
     },
     {
-      packageNames: ["source-map-explorer"],
-      groupName: "source-map-explorer",
-      automerge: true,
-    },
-    {
       packagePatterns: ["^semantic-release", "^@semantic-release"],
       groupName: "semantic-release",
       automerge: true,

@@ -63,7 +63,6 @@
     "rollup": "2.75.5",
     "semantic-release": "19.0.2",
     "snapshot-diff": "0.9.0",
-    "source-map-explorer": "2.5.2",
     "typescript": "4.7.2"
   },
   "peerDependencies": {
@@ -71,11 +70,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "CI=true react-scripts build && source-map-explorer build/static/js/*.js --html > build/source-map-explorer.html && rollup -c",
+    "build": "CI=true react-scripts build && rollup -c",
     "test": "CI=true react-scripts test --env=jsdom --coverage",
     "test:watch": "react-scripts test --env=jsdom",
     "report:coverage": "open coverage/lcov-report/index.html",
-    "report:build": "open public/source-map-explorer.html",
     "report:package": "npm pack --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee build/package.txt && rm *.tgz",
     "lint": "prettier --check '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}' && documentation lint 'src/**/*.(ts|js|tsx)'",
     "format": "prettier --write '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}'",
