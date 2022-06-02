@@ -28,6 +28,20 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
 }
 
 /**
+ * Rules used to automatically convert blocks from one type to another
+ * based on the block’s text. Also supports setting the block depth.
+ * Defaults to the filters’ built-in block prefix rules.
+ */
+export interface BlockTextRule {
+  // A regex as a string, to match against block text, e.g. "^(◦|o |o\t)".
+  test: string
+  // The type to convert the block to if the test regex matches.
+  type: string
+  // The depth to set (e.g. for list items with different prefixes per depth).
+  depth: number
+}
+
+/**
  * Changes block type and depth based on the block's text. – some word processors
  * add a specific prefix within the text, eg. "· Bulleted list" in Word 2010.
  * Also removes the matched text.
@@ -35,11 +49,7 @@ export const removeInvalidDepthBlocks = (content: ContentState) => {
  * ends up in the text. Other use cases may not be well covered.
  */
 export const preserveBlockByText = (
-  rules: ReadonlyArray<{
-    test: string
-    type: string
-    depth: number
-  }>,
+  rules: readonly BlockTextRule[],
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()
@@ -124,7 +134,7 @@ export const limitBlockDepth = (max: number, content: ContentState) => {
  * Also sets depth to 0 (for potentially nested list items).
  */
 export const filterBlockTypes = (
-  allowlist: ReadonlyArray<string>,
+  allowlist: readonly string[],
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()

@@ -4,7 +4,7 @@ import { ContentState, CharacterMetadata, ContentBlock } from "draft-js"
  * Removes all styles not present in the list.
  */
 export const filterInlineStyles = (
-  allowlist: ReadonlyArray<string>,
+  allowlist: readonly string[],
   content: ContentState,
 ) => {
   const blockMap = content.getBlockMap()

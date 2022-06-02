@@ -3,13 +3,14 @@ import {
   Editor,
   EditorState,
   RichUtils,
+  ContentBlock,
   convertToRaw,
   CompositeDecorator,
   AtomicBlockUtils,
   convertFromRaw,
   getDefaultKeyBinding,
+  DraftEntityType,
 } from "draft-js"
-import type { ContentBlock, DraftEntityType } from "draft-js"
 
 import { filterEditorState } from "../../lib/index"
 
