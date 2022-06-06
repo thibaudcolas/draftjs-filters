@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+## [3.0.1](https://github.com/thibaudcolas/draftjs-filters/compare/v3.0.0...v3.0.1) (2022-06-06)
+
+### Bug Fixes
+
+- **package:** make sure to include .d.ts files in published package ([0f77134](https://github.com/thibaudcolas/draftjs-filters/commit/0f7713408cf419b4eebc8e85d8b8a089d3b70b81))
+
 # [3.0.0](https://github.com/thibaudcolas/draftjs-filters/compare/v2.5.0...v3.0.0) (2022-06-06)
 
 ### Features
