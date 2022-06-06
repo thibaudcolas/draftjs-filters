@@ -48,7 +48,6 @@
     "@types/react-dom": "16.9.16",
     "coveralls": "3.1.1",
     "danger": "11.0.7",
-    "documentation": "13.2.5",
     "draft-js": "0.11.7",
     "draft-js-10": "npm:draft-js@0.10.5",
     "enzyme": "3.11.0",
@@ -77,11 +76,10 @@
     "test:watch": "react-scripts test --env=jsdom",
     "report:coverage": "open coverage/lcov-report/index.html",
     "report:package": "npm pack --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee build/package.txt && rm *.tgz",
-    "lint": "prettier --check '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}' && documentation lint 'src/**/*.(ts|js|tsx)'",
+    "lint": "prettier --check '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}'",
     "format": "prettier --write '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}'",
-    "test:ci": "npm run lint -s && npm run build -s && npm run build:docs && npm run test -s -- --outputFile build/test-results.json --json",
+    "test:ci": "npm run lint -s && npm run build -s && npm run test -s -- --outputFile build/test-results.json --json",
     "prepare": "./.githooks/deploy.sh",
-    "prepublishOnly": "npm run build -s",
-    "build:docs": "documentation readme src/lib/index.ts --parse-extension ts -f md --section=API --markdown-toc=false && prettier --write README.md"
+    "prepublishOnly": "npm run build -s"
   }
 }
