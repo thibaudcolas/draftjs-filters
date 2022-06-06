@@ -146,6 +146,13 @@ const App = () => (
 
     <FilterableEditor filtered={false} extended={true} />
 
+    <p>
+      And here is a single-line editor condensing copy-pasted content onto a
+      single line:
+    </p>
+
+    <FilterableEditor filtered={true} extended={false} multiline={false} />
+
     <h3>Clipboard log</h3>
 
     <ClipboardLogger />

@@ -1,3 +1,11 @@
+import {
+  EditorState,
+  ContentBlock,
+  ContentState,
+  CharacterMetadata,
+} from "draft-js"
+import { List } from "immutable"
+
 import { ATOMIC, UNSTYLED } from "../constants"
 import {
   preserveAtomicBlocks,
@@ -23,8 +31,6 @@ import {
 } from "./entities"
 import { replaceTextBySpaces } from "./text"
 import { applyContentWithSelection } from "./selection"
-
-import { EditorState, ContentBlock, ContentState } from "draft-js"
 
 interface FilterOptions {
   // List of allowed block types. unstyled and atomic are always included.
@@ -138,4 +144,82 @@ export const filterEditorState = (
   const nextContent = filters.reduce((c, filter) => filter(c), content)
 
   return applyContentWithSelection(editorState, content, nextContent)
+}
+
+/**
+ * Condenses an array of content blocks into a single block.
+ * - Skipping the undo-redo stack.
+ * - Adding a space between each block to match the behavior of vanilla HTML fields.
+ * - Making sure the space gets the correct styles or entities applied.
+ * - Placing the selection at the same end offset as the last selection.
+ *
+ * This exhibits two known issues:
+ * - A link / other entity spread over multiple lines will be split into multiple entities of identical data.
+ * - Upon redo-ing the change, the selection isn’t correctly placed.
+ */
+export const condenseBlocks = (
+  nextState: EditorState,
+  prevState: EditorState,
+) => {
+  const content = nextState.getCurrentContent()
+  const blockMap = content.getBlockMap()
+
+  if (blockMap.size < 2) {
+    return nextState
+  }
+
+  let text = ""
+  let characterList: List<CharacterMetadata>
+
+  // Calculate the condensed block text and character list,
+  // making sure to insert a space between each block, with
+  // the correct styles and entity.
+  blockMap.forEach((block) => {
+    // Atomic blocks should be ignored (stripped)
+    if (block!.getType() !== "atomic") {
+      text = `${text}${text ? " " : ""}${block!.getText()}`
+      const blockList = block!.getCharacterList()
+      characterList = characterList
+        ? (characterList.concat(
+            // Duplicate the CharacterMetadata of the block’s first character.
+            blockList.slice(0, 1),
+            blockList,
+          ) as List<CharacterMetadata>)
+        : blockList
+    }
+  })
+
+  // Keep only the last block, with the combined text and character list.
+  // Ideally we would keep the first block to have a stable key, but this
+  // causes a runtime error when redo-ing the change.
+  const changedBlocks = blockMap
+    .slice(-1)
+    .map((block) => block!.merge({ text, characterList }) as ContentBlock)
+
+  const nextContent = content.merge({
+    blockMap: changedBlocks,
+  })
+
+  // Calculate the new selection’s position, to be at the end of the pasted text.
+  const prevSelection = prevState.getSelection()
+  const prevOffset = Math.max(
+    prevSelection.getFocusOffset(),
+    prevSelection.getAnchorOffset(),
+  )
+  const prevContentLength = prevState
+    .getCurrentContent()
+    .getFirstBlock()
+    .getLength()
+  const newContentLength = text.length - prevContentLength
+
+  const selection = nextState.getSelection()
+  const nextSelection = selection.merge({
+    anchorOffset: prevOffset + newContentLength,
+    focusOffset: prevOffset + newContentLength,
+  })
+  const condensed = EditorState.set(nextState, {
+    currentContent: nextContent,
+  })
+
+  return EditorState.acceptSelection(condensed, nextSelection)
 }
