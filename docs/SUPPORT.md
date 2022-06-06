@@ -16,7 +16,7 @@ Documentation for this project is all within the GitHub repository. Please make 
 
 Please make sure you have read available documentation and have searched for other resources available online before submitting your question here.
 
-To ask a question, head over to the issues, make sure your question hasn’t already been asked, then create a new issue with the "Question" template.
+To ask a question, head over to [GitHub Discussions](https://github.com/thibaudcolas/draftjs-filters/discussions), make sure your question hasn’t already been asked, then create a new entry in the appropriate category.
 
 Please understand that people involved with this project often do so for fun, next to their day job, and might take a while to respond.
 
