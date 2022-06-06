@@ -162,6 +162,14 @@ exports[`App renders 1`] = `
     extended={true}
     filtered={false}
   />
+  <p>
+    And here is a single-line editor condensing copy-pasted content onto a single line:
+  </p>
+  <FilterableEditor
+    extended={false}
+    filtered={true}
+    multiline={false}
+  />
   <h3>
     Clipboard log
   </h3>

@@ -3,9 +3,11 @@ import {
   convertFromRaw,
   convertToRaw,
   RawDraftContentState,
+  ContentState,
+  convertFromHTML,
 } from "draft-js"
 
-import { filterEditorState } from "./editor"
+import { filterEditorState, condenseBlocks } from "./editor"
 
 const preserveAtomicBlocksEntities = {
   0: {
@@ -580,6 +582,191 @@ describe("editor", () => {
           ).getCurrentContent(),
         ),
       ).toEqual(convertToRaw(content))
+    })
+  })
+
+  describe("#condenseBlocks", () => {
+    it("works", () => {
+      expect(
+        convertToRaw(
+          condenseBlocks(
+            EditorState.createWithContent(content),
+            EditorState.createWithContent(content),
+          ).getCurrentContent(),
+        ).blocks,
+      ).toHaveLength(1)
+    })
+
+    it("skips any changes for single-block content", () => {
+      const editorState = condenseBlocks(
+        EditorState.createWithContent(content),
+        EditorState.createWithContent(content),
+      )
+      expect(condenseBlocks(editorState, editorState)).toBe(editorState)
+    })
+
+    it("uses the key of the last block", () => {
+      const editorState = EditorState.createWithContent(content)
+      expect(
+        condenseBlocks(editorState, editorState)
+          .getCurrentContent()
+          .getFirstBlock()
+          .getKey(),
+      ).toBe(editorState.getCurrentContent().getLastBlock().getKey())
+    })
+
+    it("adds spaces between collapsed blocks", () => {
+      const content = ContentState.createFromText("this\nworks\nwell")
+      const editorState = EditorState.createWithContent(content)
+      expect(
+        convertToRaw(
+          condenseBlocks(editorState, editorState).getCurrentContent(),
+        ).blocks[0].text,
+      ).toBe("this works well")
+    })
+
+    it("gives in-between spaces the styles of the following character", () => {
+      const content = ContentState.createFromBlockArray(
+        convertFromHTML("<p><b>k</b></p><i>o</i></p>").contentBlocks,
+      )
+      const editorState = EditorState.createWithContent(content)
+      expect(
+        condenseBlocks(editorState, editorState)
+          .getCurrentContent()
+          .getFirstBlock()
+          .getCharacterList()
+          .map((t) => t!.getStyle().toJS()[0])
+          .toJS(),
+      ).toEqual(["BOLD", "ITALIC", "ITALIC"])
+    })
+
+    it("gives in-between spaces the entity of the following character", () => {
+      const content = ContentState.createFromBlockArray(
+        convertFromHTML("<p>k</p><a href='https://w'>o</a></p>").contentBlocks,
+      )
+      const editorState = EditorState.createWithContent(content)
+      expect(
+        condenseBlocks(editorState, editorState)
+          .getCurrentContent()
+          .getFirstBlock()
+          .getCharacterList()
+          .map((t) => !!t!.getEntity())
+          .toJS(),
+      ).toEqual([false, true, true])
+    })
+
+    it("skips atomic blocks", () => {
+      const content = ContentState.createFromBlockArray(
+        convertFromHTML("<p>k</p><img src='https://w/test.png'><p>o</p>")
+          .contentBlocks,
+      )
+      const editorState = filterEditorState(
+        filters,
+        EditorState.createWithContent(content),
+      )
+      expect(
+        convertToRaw(
+          condenseBlocks(editorState, editorState).getCurrentContent(),
+        )
+          .blocks.map((t) => t.text)
+          .join(""),
+      ).toBe("k o")
+    })
+
+    it("moves a collapsed selection to the expected end-of-paste marker", () => {
+      let prevState = EditorState.createWithContent(
+        ContentState.createFromText("test"),
+      )
+      prevState = EditorState.set(prevState, {
+        selection: prevState.getSelection().merge({
+          anchorOffset: 4,
+          focusOffset: 4,
+        }),
+      })
+      let editorState = EditorState.createWithContent(
+        ContentState.createFromText("test\nthis works"),
+      )
+      const key = editorState.getCurrentContent().getLastBlock().getKey()
+      editorState = EditorState.acceptSelection(
+        editorState,
+        editorState.getSelection().merge({
+          anchorKey: key,
+          focusKey: key,
+          anchorOffset: 10,
+          focusOffset: 10,
+        }),
+      )
+      editorState = condenseBlocks(editorState, prevState)
+      expect(editorState.getSelection().toJS()).toMatchObject({
+        anchorKey: key,
+        anchorOffset: 15,
+        focusKey: key,
+        focusOffset: 15,
+      })
+    })
+
+    it("moves a forwards selection to the expected end-of-paste marker", () => {
+      let prevState = EditorState.createWithContent(
+        ContentState.createFromText("test"),
+      )
+      prevState = EditorState.set(prevState, {
+        selection: prevState.getSelection().merge({
+          anchorOffset: 1,
+          focusOffset: 4,
+        }),
+      })
+      let editorState = EditorState.createWithContent(
+        ContentState.createFromText("t\nthis\nworks"),
+      )
+      const key = editorState.getCurrentContent().getLastBlock().getKey()
+      editorState = EditorState.acceptSelection(
+        editorState,
+        editorState.getSelection().merge({
+          anchorKey: key,
+          focusKey: key,
+          anchorOffset: 5,
+          focusOffset: 5,
+        }),
+      )
+      editorState = condenseBlocks(editorState, prevState)
+      expect(editorState.getSelection().toJS()).toMatchObject({
+        anchorKey: key,
+        anchorOffset: 12,
+        focusKey: key,
+        focusOffset: 12,
+      })
+    })
+
+    it("moves a backwards selection to the expected end-of-paste marker", () => {
+      let prevState = EditorState.createWithContent(
+        ContentState.createFromText("test"),
+      )
+      prevState = EditorState.set(prevState, {
+        selection: prevState.getSelection().merge({
+          anchorOffset: 4,
+          focusOffset: 1,
+        }),
+      })
+      let editorState = EditorState.createWithContent(
+        ContentState.createFromText("t\nthis\nworks"),
+      )
+      const key = editorState.getCurrentContent().getLastBlock().getKey()
+      editorState = EditorState.acceptSelection(
+        editorState,
+        editorState.getSelection().merge({
+          anchorKey: key,
+          focusKey: key,
+          anchorOffset: 5,
+          focusOffset: 5,
+        }),
+      )
+      editorState = condenseBlocks(editorState, prevState)
+      expect(editorState.getSelection().toJS()).toMatchObject({
+        anchorKey: key,
+        anchorOffset: 12,
+        focusKey: key,
+        focusOffset: 12,
+      })
     })
   })
 })

@@ -20,6 +20,7 @@ import Link, { linkStrategy } from "./Link"
 import Image from "./Image"
 
 import "./FilterableEditor.css"
+import { condenseBlocks } from "../../lib/filters/editor"
 
 const BLOCKS = {
   unstyled: "P",
@@ -82,6 +83,7 @@ const MAX_NESTING_EXTENDED = 4
 interface FilterableEditorProps {
   filtered?: boolean
   extended?: boolean
+  multiline?: boolean
 }
 
 interface FilterableEditorState {
@@ -125,17 +127,19 @@ class FilterableEditor extends Component<
     this.toggleBlock = this.toggleBlock.bind(this)
     this.toggleEntity = this.toggleEntity.bind(this)
     this.blockRenderer = this.blockRenderer.bind(this)
+    this.handleReturn = this.handleReturn.bind(this)
     this.handleKeyCommand = this.handleKeyCommand.bind(this)
   }
 
   onChange(nextState: EditorState) {
-    const { filtered, extended } = this.props
+    const { filtered, extended, multiline = true } = this.props
     const { editorState } = this.state
+    const prevState = editorState
     let filteredState = nextState
 
     if (filtered) {
       const shouldFilterPaste =
-        nextState.getCurrentContent() !== editorState.getCurrentContent() &&
+        nextState.getCurrentContent() !== prevState.getCurrentContent() &&
         filteredState.getLastChangeType() === "insert-fragment"
 
       if (shouldFilterPaste) {
@@ -148,6 +152,10 @@ class FilterableEditor extends Component<
         }
 
         filteredState = filterEditorState(filters, filteredState)
+
+        if (!multiline) {
+          filteredState = condenseBlocks(filteredState, prevState)
+        }
       }
     }
 
@@ -223,6 +231,16 @@ class FilterableEditor extends Component<
     }
   }
 
+  handleReturn(e: React.KeyboardEvent) {
+    const { multiline = true } = this.props
+
+    if (!multiline) {
+      return "handled"
+    }
+
+    return "not-handled"
+  }
+
   handleKeyCommand(command: string) {
     const { editorState } = this.state
 
@@ -277,6 +295,7 @@ class FilterableEditor extends Component<
             stripPastedStyles={false}
             blockRendererFn={this.blockRenderer}
             keyBindingFn={this.keyBindingFn}
+            handleReturn={this.handleReturn}
             handleKeyCommand={this.handleKeyCommand}
           />
         </SentryBoundary>
