@@ -290,7 +290,7 @@ Will not alter the editor state if there are no changes to make.
 
 ### Browser support and polyfills
 
-The Draft.js filters follow the browser support targets of Draft.js. Be sure to have a look at the [required Draft.js polyfills](https://facebook.github.io/draft-js/docs/advanced-topics-issues-and-pitfalls).
+The Draft.js filters only support modern browsers with ES2020 features. Support for legacy browsers can be achieved, up to IE11, by appropriately transpiling the package’s code and including the [required Draft.js polyfills](https://facebook.github.io/draft-js/docs/advanced-topics-issues-and-pitfalls).
 
 #### Word processor support
 
