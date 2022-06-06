@@ -7,9 +7,12 @@
   // https://renovatebot.com/docs/configuration-options/#ignoredeps
   ignoreDeps: [
     "immutable",
+    "@types/draft-js",
     "draft-js",
     "draft-js-10",
     "normalize.css",
+    "@types/react",
+    "@types/react-dom",
     "react",
     "react-dom",
     "react-test-renderer",
@@ -65,8 +68,13 @@
       automerge: true,
     },
     {
-      packageNames: ["react-scripts"],
+      packageNames: ["@types/jest", "react-scripts"],
       groupName: "react-scripts",
+      automerge: true,
+    },
+    {
+      packageNames: ["typescript"],
+      groupName: "typescript",
       automerge: true,
     },
     {
@@ -81,7 +89,7 @@
       automergeType: "branch",
     },
     {
-      packagePatterns: ["^rollup", "^@babel"],
+      packagePatterns: ["^rollup", "^@rollup"],
       groupName: "rollup",
       automerge: true,
     },
