@@ -106,7 +106,7 @@ blockTextRules?: readonly []<{
 
 If your project uses [TypeScript](https://www.typescriptlang.org/), type inference should just work. If you don't use TypeScript, it won't get in your way either.
 
-[Flow](https://flow.org/) types were included up to [v2.5.0](https://github.com/thibaudcolas/draftjs-filters/blob/main/CHANGELOG.md#250-2020-11-21) of the package, and have been removed in v3.0.0.
+[Flow](https://flow.org/) types were included up to [v2.5.0](https://github.com/thibaudcolas/draftjs-filters/blob/main/CHANGELOG.md#250-2020-11-21) of the package, and have been removed in v3.0.0. They may still be used by manually downloading the [library definitions](https://github.com/thibaudcolas/draftjs-filters/tree/main/docs/flow-typed/npm) and manually adding them to projects.
 
 ### Advanced usage
 
