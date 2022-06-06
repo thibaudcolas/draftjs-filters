@@ -25,7 +25,8 @@
   },
   "homepage": "https://thibaudcolas.github.io/draftjs-filters/",
   "files": [
-    "dist/*.js"
+    "dist/*.js",
+    "dist/*.d.ts"
   ],
   "browserslist": "> 1%, IE 11",
   "jest": {
