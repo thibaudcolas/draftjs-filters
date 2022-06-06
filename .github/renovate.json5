@@ -63,11 +63,6 @@
       automerge: true,
     },
     {
-      packageNames: ["documentation"],
-      groupName: "documentation",
-      automerge: true,
-    },
-    {
       packageNames: ["@types/jest", "react-scripts"],
       groupName: "react-scripts",
       automerge: true,

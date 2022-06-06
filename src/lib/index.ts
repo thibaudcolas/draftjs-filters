@@ -20,4 +20,4 @@ export {
 } from "./filters/entities"
 export { replaceTextBySpaces } from "./filters/text"
 export { applyContentWithSelection } from "./filters/selection"
-export { filterEditorState } from "./filters/editor"
+export { filterEditorState, condenseBlocks } from "./filters/editor"

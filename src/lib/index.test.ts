@@ -1,21 +1,4 @@
-import {
-  preserveAtomicBlocks,
-  resetAtomicBlocks,
-  removeInvalidAtomicBlocks,
-  removeInvalidDepthBlocks,
-  limitBlockDepth,
-  preserveBlockByText,
-  filterBlockTypes,
-  filterInlineStyles,
-  cloneEntities,
-  filterEntityRanges,
-  shouldKeepEntityType,
-  shouldRemoveImageEntity,
-  filterEntityData,
-  replaceTextBySpaces,
-  applyContentWithSelection,
-  filterEditorState,
-} from "./index"
+import * as exports from "./index"
 
 const pkg = require("../../package.json")
 
@@ -24,21 +7,27 @@ const pkg = require("../../package.json")
  */
 describe(pkg.name, () => {
   it("has a stable API", () => {
-    expect(preserveAtomicBlocks).toBeDefined()
-    expect(resetAtomicBlocks).toBeDefined()
-    expect(removeInvalidAtomicBlocks).toBeDefined()
-    expect(removeInvalidDepthBlocks).toBeDefined()
-    expect(limitBlockDepth).toBeDefined()
-    expect(preserveBlockByText).toBeDefined()
-    expect(filterBlockTypes).toBeDefined()
-    expect(filterInlineStyles).toBeDefined()
-    expect(cloneEntities).toBeDefined()
-    expect(filterEntityRanges).toBeDefined()
-    expect(shouldKeepEntityType).toBeDefined()
-    expect(shouldRemoveImageEntity).toBeDefined()
-    expect(filterEntityData).toBeDefined()
-    expect(replaceTextBySpaces).toBeDefined()
-    expect(applyContentWithSelection).toBeDefined()
-    expect(filterEditorState).toBeDefined()
+    expect(exports).toMatchInlineSnapshot(`
+      Object {
+        "applyContentWithSelection": [Function],
+        "cloneEntities": [Function],
+        "condenseBlocks": [Function],
+        "filterBlockTypes": [Function],
+        "filterEditorState": [Function],
+        "filterEntityData": [Function],
+        "filterEntityRanges": [Function],
+        "filterInlineStyles": [Function],
+        "limitBlockDepth": [Function],
+        "preserveAtomicBlocks": [Function],
+        "preserveBlockByText": [Function],
+        "removeInvalidAtomicBlocks": [Function],
+        "removeInvalidDepthBlocks": [Function],
+        "replaceTextBySpaces": [Function],
+        "resetAtomicBlocks": [Function],
+        "shouldKeepEntityByAttribute": [Function],
+        "shouldKeepEntityType": [Function],
+        "shouldRemoveImageEntity": [Function],
+      }
+    `)
   })
 })
