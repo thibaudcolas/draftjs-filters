@@ -4,6 +4,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html), enforced with [semantic-release](https://github.com/semantic-release/semantic-release).
 
+# [3.0.0](https://github.com/thibaudcolas/draftjs-filters/compare/v2.5.0...v3.0.0) (2022-06-06)
+
+### Features
+
+- **api:** convert filters API to TypeScript ([1dfbf00](https://github.com/thibaudcolas/draftjs-filters/commit/1dfbf00e5c203395c2bb7b536552d8536999e4be))
+- **filters:** add opt-in condenseBlocks filter to support single-line copy-paste ([82778c2](https://github.com/thibaudcolas/draftjs-filters/commit/82778c232f41468fea57321e921db308df19e318))
+- **support:** remove support for legacy browsers ([501901a](https://github.com/thibaudcolas/draftjs-filters/commit/501901a5babfcede5982ad0a4c10ef3625f1aaaa))
+
+### BREAKING CHANGES
+
+- **support:** The package no longer supports IE11 and other legacy browsers.
+
+Support can still be achieved by transpiling to ES5 syntax, and including needed polyfills.
+
+- **api:** The filters are now written in TypeScript.
+
+Flow types are no longer available, and TypeScript types are built-in.
+
 # [2.5.0](https://github.com/thibaudcolas/draftjs-filters/compare/v2.4.0...v2.5.0) (2020-11-21)
 
 ### Features
