@@ -36,8 +36,8 @@
     ]
   },
   "devDependencies": {
-    "@commitlint/cli": "17.0.2",
-    "@commitlint/config-conventional": "17.0.2",
+    "@commitlint/cli": "17.0.3",
+    "@commitlint/config-conventional": "17.0.3",
     "@rollup/plugin-typescript": "8.3.3",
     "@semantic-release/changelog": "6.0.1",
     "@semantic-release/exec": "6.0.3",
