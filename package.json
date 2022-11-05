@@ -52,7 +52,7 @@
     "draft-js": "0.11.7",
     "draft-js-10": "npm:draft-js@0.10.5",
     "enzyme": "3.11.0",
-    "enzyme-adapter-react-16": "1.15.6",
+    "enzyme-adapter-react-16": "1.15.7",
     "enzyme-to-json": "3.6.2",
     "immutable": "~3.7.6",
     "normalize.css": "7.0.0",
