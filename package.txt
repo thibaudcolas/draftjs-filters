@@ -13,7 +13,7 @@ version:       3.0.1
 filename:      draftjs-filters-3.0.1.tgz               
 package size:  13.7 kB                                 
 unpacked size: 74.8 kB                                 
-shasum:        cddf4ad707a91f8f1d832ad317eaae9fea2077c3
-integrity:     sha512-fZ7OKk6o8vR+Z[...]VvDpMkMnBZ4RQ==
+shasum:        89b40cd70ed0b4acaddf3402800516631a5cec62
+integrity:     sha512-NJNS+OKaQ6EkJ[...]iK9ZYSg55k9rA==
 total files:   6                                       
 
