@@ -13,11 +13,11 @@ jobs:
         if: ${{ github.event_name == 'pull_request' }}
         env:
           COUNT: ${{ github.event.pull_request.commits }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         if: ${{ github.event_name == 'pull_request' }}
         with:
           fetch-depth: ${{ env.commits_count_incr }}
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         if: ${{ github.event_name != 'pull_request' }}
       - uses: actions/setup-node@v3
         with:
@@ -63,7 +63,7 @@ jobs:
     needs: test
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/download-artifact@v3
       - uses: JamesIves/github-pages-deploy-action@v4.4.3
         with:
