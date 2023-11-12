@@ -28,3 +28,33 @@ export const replaceTextBySpaces = (
     blockMap: blockMap.merge(blocks),
   }) as ContentState
 }
+
+/**
+ * Switches target characters in all content with desired replacements.
+ */
+export const replaceText = (
+  characters: { [character: string]: string },
+  content: ContentState,
+) => {
+  const blockMap = content.getBlockMap()
+  const blocks = blockMap.map((block) => {
+    const text = block!.getText()
+
+    // Only replaces the character(s) with as many spaces as their length,
+    // so that style and entity ranges are left undisturbed.
+    // If we want to completely remove the character, we also need to filter
+    // the corresponding CharacterMetadata entities.
+    const newText = Object.keys(characters).reduce((txt, char) => {
+      const replacement = characters[char]
+      return txt.replace(new RegExp(char, "g"), replacement.repeat(char.length))
+    }, text)
+
+    return (
+      text !== newText ? block!.set("text", newText) : block
+    ) as ContentBlock
+  })
+
+  return content.merge({
+    blockMap: blockMap.merge(blocks),
+  }) as ContentState
+}
