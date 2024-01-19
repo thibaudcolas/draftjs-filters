@@ -29,6 +29,11 @@ pids
 *.pyc
 *.pyo
 *.pot
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # -------------------------------------------------
 # Instrumentation and tooling

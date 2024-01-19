@@ -1,4 +1,163 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Apple Pages > applepages-chrome62-macos1013 1`] = `
+Snapshot Diff:
+- First value
++ Second value
+
+@@ -120,15 +120,10 @@
+          Object {
+            "key": 0,
+            "length": 4,
+            "offset": 10,
+          },
+-         Object {
+-           "key": 1,
+-           "length": 10,
+-           "offset": 16,
+-         },
+        ],
+        "inlineStyleRanges": Array [],
+        "key": "9ql98",
+        "text": "Unstyled, link, email link, bookmark link, comment ",
+        "type": "unstyled",
+@@ -136,11 +131,11 @@
+      Object {
+        "data": Object {},
+        "depth": 0,
+        "entityRanges": Array [
+          Object {
+-           "key": 2,
++           "key": 1,
+            "length": 17,
+            "offset": 10,
+          },
+        ],
+        "inlineStyleRanges": Array [],
+@@ -295,19 +290,10 @@
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "a0cut",
+        "text": "Nested bulleted list (1)",
+        "type": "unordered-list-item",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 1,
+-       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "9qivi",
+-       "text": "",
+-       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+@@ -367,19 +353,10 @@
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "5l8i0",
+        "text": "Nested numbered list (1)",
+        "type": "ordered-list-item",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 1,
+-       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "3hv4s",
+-       "text": "",
+-       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+@@ -442,19 +419,10 @@
+        "text": "Nested dashed list (1)",
+        "type": "unordered-list-item",
+      },
+      Object {
+        "data": Object {},
+-       "depth": 1,
+-       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "7m278",
+-       "text": "",
+-       "type": "unstyled",
+-     },
+-     Object {
+-       "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "dcqr8",
+        "text": "Nested dashed list (2)",
+@@ -511,19 +479,10 @@
+        "entityRanges": Array [],
+        "inlineStyleRanges": Array [],
+        "key": "2th4s",
+        "text": "Nested image list (1)",
+        "type": "unordered-list-item",
+-     },
+-     Object {
+-       "data": Object {},
+-       "depth": 1,
+-       "entityRanges": Array [],
+-       "inlineStyleRanges": Array [],
+-       "key": "6ua5u",
+-       "text": "",
+-       "type": "unstyled",
+      },
+      Object {
+        "data": Object {},
+        "depth": 2,
+        "entityRanges": Array [],
+@@ -1281,27 +1240,17 @@
+      },
+    ],
+    "entityMap": Object {
+      "0": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+      "1": Object {
+-       "data": Object {
+-         "href": "mailto:test@example.com?subject=subject",
+-         "url": "mailto:test@example.com?subject=subject",
+-       },
+-       "mutability": "MUTABLE",
+-       "type": "LINK",
+-     },
+-     "2": Object {
+        "data": Object {
+-         "href": "http://example.com",
+          "url": "http://example.com/",
+        },
+        "mutability": "MUTABLE",
+        "type": "LINK",
+      },
+`;
+
+exports[`Apple Pages > applepages-firefox57-macos1013 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Apple Pages > applepages-safari-ios11 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
+
+exports[`Apple Pages > applepages-safari11-macos1013 1`] = `
+Snapshot Diff:
+Compared values have no visual difference.
+`;
 
 exports[`Apple Pages applepages-chrome62-macos1013 1`] = `
 Snapshot Diff:

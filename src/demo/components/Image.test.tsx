@@ -1,4 +1,5 @@
-import { shallow } from "enzyme"
+import { describe, it, expect } from "vitest"
+import { render } from "@testing-library/react"
 import { convertFromRaw } from "draft-js"
 
 import Image from "./Image"
@@ -33,9 +34,18 @@ describe("Image", () => {
       ],
     })
 
-    expect(
-      shallow(<Image contentState={content} block={content.getFirstBlock()} />),
-    ).toMatchSnapshot()
+    const { asFragment } = render(
+      <Image contentState={content} block={content.getFirstBlock()} />,
+    )
+    expect(asFragment()).toMatchInlineSnapshot(`
+      <DocumentFragment>
+        <img
+          alt=""
+          src="/example.png"
+          width="256"
+        />
+      </DocumentFragment>
+    `)
   })
 
   it("no entity", () => {
@@ -53,8 +63,17 @@ describe("Image", () => {
       ],
     })
 
-    expect(
-      shallow(<Image contentState={content} block={content.getFirstBlock()} />),
-    ).toMatchSnapshot()
+    const { asFragment } = render(
+      <Image contentState={content} block={content.getFirstBlock()} />,
+    )
+    expect(asFragment()).toMatchInlineSnapshot(`
+      <DocumentFragment>
+        <img
+          alt=""
+          src="404.svg"
+          width="256"
+        />
+      </DocumentFragment>
+    `)
   })
 })

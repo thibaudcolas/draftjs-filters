@@ -136,7 +136,12 @@ const App = () => (
         </a>
       </li>
       <li>
-        <a className="link" href="tests" target="_blank" rel="noreferrer">
+        <a
+          className="link"
+          href="tests/index.html"
+          target="_blank"
+          rel="noreferrer"
+        >
           HTML content
         </a>
       </li>

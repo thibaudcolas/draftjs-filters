@@ -263,7 +263,7 @@ class FilterableEditor extends Component<
     return (
       <div className="FilterableEditor">
         <SentryBoundary>
-          <div className="EditorToolbar">
+          <div className="EditorToolbar" role="toolbar">
             {Object.entries(styles).map(([type, option]) => (
               <button
                 key={type}

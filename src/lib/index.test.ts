@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest"
 import * as exports from "./index"
 
 const pkg = require("../../package.json")
@@ -8,7 +9,7 @@ const pkg = require("../../package.json")
 describe(pkg.name, () => {
   it("has a stable API", () => {
     expect(exports).toMatchInlineSnapshot(`
-      Object {
+      {
         "applyContentWithSelection": [Function],
         "cloneEntities": [Function],
         "condenseBlocks": [Function],

@@ -1,105 +1,105 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`entities #cloneEntities works 1`] = `
-Object {
-  "blocks": Array [
-    Object {
-      "data": Object {},
+exports[`entities > #cloneEntities > works 1`] = `
+{
+  "blocks": [
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 0,
           "length": 1,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "a",
       "text": " ",
       "type": "atomic",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 1,
           "length": 1,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "b",
       "text": " ",
       "type": "atomic",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 2,
           "length": 4,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "c",
       "text": "test",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 3,
           "length": 5,
           "offset": 0,
         },
-        Object {
+        {
           "key": 4,
           "length": 4,
           "offset": 5,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "d",
       "text": "test test",
       "type": "unstyled",
     },
   ],
-  "entityMap": Object {
-    "0": Object {
-      "data": Object {
+  "entityMap": {
+    "0": {
+      "data": {
         "src": "/example.png",
       },
       "mutability": undefined,
       "type": "IMAGE",
     },
-    "1": Object {
-      "data": Object {
+    "1": {
+      "data": {
         "src": "/example.png",
       },
       "mutability": undefined,
       "type": "IMAGE",
     },
-    "2": Object {
-      "data": Object {
+    "2": {
+      "data": {
         "url": "www.example.com",
       },
       "mutability": undefined,
       "type": "LINK",
     },
-    "3": Object {
-      "data": Object {
+    "3": {
+      "data": {
         "url": "www.example.com",
       },
       "mutability": undefined,
       "type": "LINK",
     },
-    "4": Object {
-      "data": Object {
+    "4": {
+      "data": {
         "url": "www.example.com",
       },
       "mutability": undefined,

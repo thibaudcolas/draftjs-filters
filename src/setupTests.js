@@ -1,25 +1,17 @@
-import { configure } from "enzyme"
-import Adapter from "enzyme-adapter-react-16"
-import { createSerializer } from "enzyme-to-json"
+import { expect, vi } from "vitest"
+import snapshotDiff from "snapshot-diff"
 
-configure({ adapter: new Adapter() })
+// https://github.com/jest-community/snapshot-diff
+expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
 
-expect.addSnapshotSerializer(createSerializer({ mode: "deep" }))
-
-jest.mock("draft-js", () => {
+vi.mock("draft-js", async () => {
   const packages = {
     "0.10": "draft-js-10",
     0.11: "draft-js",
   }
   const version = process.env.DRAFTJS_VERSION || "0.11"
 
-  // Require the original module.
-  const originalModule = jest.requireActual(packages[version])
-
-  return {
-    __esModule: true,
-    ...originalModule,
-  }
+  return await vi.importActual(packages[version])
 })
 
 const consoleWarn = console.warn

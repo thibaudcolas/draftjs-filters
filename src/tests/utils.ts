@@ -1,3 +1,4 @@
+import { expect } from "vitest"
 import {
   EditorState,
   convertFromRaw,
@@ -7,9 +8,6 @@ import {
 import snapshotDiff from "snapshot-diff"
 
 import { filterEditorState } from "../lib/index"
-
-// https://github.com/jest-community/snapshot-diff
-expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
 
 export const config = {
   blocks: [
