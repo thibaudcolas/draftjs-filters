@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Apple Pages applepages-chrome62-macos1013 1`] = `
+exports[`Apple Pages > applepages-chrome62-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -144,17 +144,17 @@ Snapshot Diff:
       },
 `;
 
-exports[`Apple Pages applepages-firefox57-macos1013 1`] = `
+exports[`Apple Pages > applepages-firefox57-macos1013 1`] = `
 Snapshot Diff:
 Compared values have no visual difference.
 `;
 
-exports[`Apple Pages applepages-safari-ios11 1`] = `
+exports[`Apple Pages > applepages-safari-ios11 1`] = `
 Snapshot Diff:
 Compared values have no visual difference.
 `;
 
-exports[`Apple Pages applepages-safari11-macos1013 1`] = `
+exports[`Apple Pages > applepages-safari11-macos1013 1`] = `
 Snapshot Diff:
 Compared values have no visual difference.
 `;

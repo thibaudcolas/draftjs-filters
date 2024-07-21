@@ -13,28 +13,28 @@
       content="Filter Draft.js content to preserve only the formatting you allow. Built for Draftail and Wagtail"
     />
 
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="/draftjs-filters/favicon.ico" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="%PUBLIC_URL%/apple-touch-icon.png"
+      href="/draftjs-filters/apple-touch-icon.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="%PUBLIC_URL%/favicon-32x32.png"
+      href="/draftjs-filters/favicon-32x32.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="%PUBLIC_URL%/favicon-16x16.png"
+      href="/draftjs-filters/favicon-16x16.png"
     />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="/draftjs-filters/manifest.json" />
     <link
       rel="mask-icon"
-      href="%PUBLIC_URL%/safari-pinned-tab.svg"
+      href="/draftjs-filters/safari-pinned-tab.svg"
       color="#007d7e"
     />
     <meta name="theme-color" content="#ffffff" />
@@ -103,7 +103,7 @@
 
     <div class="page-wrapper">
       <header class="page-header">
-        <a href="%PUBLIC_URL%" class="u-block"
+        <a href="" class="u-block"
           ><h1 class="page-title">Draft.js filters</h1></a
         >
         <p class="page-description">
@@ -158,5 +158,11 @@
         </p>
       </footer>
     </div>
+    <script>
+      if (global === undefined) {
+        var global = window
+      }
+    </script>
+    <script type="module" src="src/index.tsx"></script>
   </body>
 </html>

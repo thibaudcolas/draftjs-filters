@@ -1,217 +1,217 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`editor #filterEditorState works 1`] = `
-Object {
-  "blocks": Array [
-    Object {
-      "data": Object {},
+exports[`editor > #filterEditorState > works 1`] = `
+{
+  "blocks": [
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 0,
           "length": 1,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "a",
       "text": " ",
       "type": "atomic",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 1,
           "length": 1,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "b",
       "text": " ",
       "type": "atomic",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "c",
       "text": " ",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "d",
       "text": "Star list",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "e",
       "text": "0",
       "type": "ordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 1,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "g",
       "text": "2",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "ab",
       "text": "Bullet 0",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "ac",
       "text": "Bullet 0",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 2,
           "length": 1,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "ad",
       "text": " ",
       "type": "atomic",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 1,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "ae",
       "text": "Bullet 1",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 1,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "af",
       "text": "Bullet 2",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "ag",
       "text": "Numbered 0",
       "type": "ordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 1,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "ah",
       "text": "Numbered 2",
       "type": "ordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 1,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "ai",
       "text": "Numbered 1",
       "type": "ordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "h",
       "text": "0",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 1,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "i",
       "text": "1",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 1,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "j",
       "text": "2",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "k",
       "text": "P",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "l",
       "text": "UL",
       "type": "unordered-list-item",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "m",
       "text": "H1",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [
-        Object {
+      "entityRanges": [],
+      "inlineStyleRanges": [
+        {
           "length": 1,
           "offset": 0,
           "style": "BOLD",
         },
-        Object {
+        {
           "length": 1,
           "offset": 2,
           "style": "BOLD",
@@ -221,125 +221,125 @@ Object {
       "text": "tes",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 3,
           "length": 1,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "o",
       "text": " ",
       "type": "atomic",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 4,
           "length": 1,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "p",
       "text": " ",
       "type": "atomic",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 5,
           "length": 1,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "t",
       "text": " ",
       "type": "atomic",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 6,
           "length": 2,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "u",
       "text": "test",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "v",
       "text": "shouldRemoveImageEntity ",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 7,
           "length": 4,
           "offset": 0,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "x",
       "text": "link",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [
-        Object {
+      "entityRanges": [
+        {
           "key": 8,
           "length": 4,
           "offset": 0,
         },
-        Object {
+        {
           "key": 9,
           "length": 4,
           "offset": 5,
         },
       ],
-      "inlineStyleRanges": Array [],
+      "inlineStyleRanges": [],
       "key": "y",
       "text": "link link",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [],
+      "entityRanges": [],
+      "inlineStyleRanges": [],
       "key": "z",
       "text": "So ft",
       "type": "unstyled",
     },
-    Object {
-      "data": Object {},
+    {
+      "data": {},
       "depth": 0,
-      "entityRanges": Array [],
-      "inlineStyleRanges": Array [
-        Object {
+      "entityRanges": [],
+      "inlineStyleRanges": [
+        {
           "length": 3,
           "offset": 0,
           "style": "BOLD",
@@ -350,70 +350,70 @@ Object {
       "type": "unstyled",
     },
   ],
-  "entityMap": Object {
-    "0": Object {
-      "data": Object {
+  "entityMap": {
+    "0": {
+      "data": {
         "src": "/0.png",
       },
       "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
-    "1": Object {
-      "data": Object {
+    "1": {
+      "data": {
         "src": "/0.png",
       },
       "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
-    "2": Object {
-      "data": Object {
+    "2": {
+      "data": {
         "src": "/0.png",
       },
       "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
-    "3": Object {
-      "data": Object {
+    "3": {
+      "data": {
         "src": "/1.png",
       },
       "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
-    "4": Object {
-      "data": Object {
+    "4": {
+      "data": {
         "src": "/1.png",
       },
       "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
-    "5": Object {
-      "data": Object {
+    "5": {
+      "data": {
         "src": "/example.png",
       },
       "mutability": "IMMUTABLE",
       "type": "IMAGE",
     },
-    "6": Object {
-      "data": Object {
+    "6": {
+      "data": {
         "url": "www.example.com",
       },
       "mutability": "IMMUTABLE",
       "type": "LINK",
     },
-    "7": Object {
-      "data": Object {
+    "7": {
+      "data": {
         "url": "http://example.com/",
       },
       "mutability": "IMMUTABLE",
       "type": "LINK",
     },
-    "8": Object {
-      "data": Object {},
+    "8": {
+      "data": {},
       "mutability": "IMMUTABLE",
       "type": "LINK",
     },
-    "9": Object {
-      "data": Object {},
+    "9": {
+      "data": {},
       "mutability": "IMMUTABLE",
       "type": "LINK",
     },

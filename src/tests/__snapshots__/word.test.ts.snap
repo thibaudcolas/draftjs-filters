@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Microsoft Word word-safari-ios11 1`] = `
+exports[`Microsoft Word > word-safari-ios11 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -297,7 +297,7 @@ Snapshot Diff:
         "depth": 0,
 `;
 
-exports[`Microsoft Word word2010-chrome62-win81 1`] = `
+exports[`Microsoft Word > word2010-chrome62-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -1145,7 +1145,7 @@ Snapshot Diff:
   }
 `;
 
-exports[`Microsoft Word word2010-firefox57-win81 1`] = `
+exports[`Microsoft Word > word2010-firefox57-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -1899,7 +1899,7 @@ Snapshot Diff:
   }
 `;
 
-exports[`Microsoft Word word2010-ie11-noequation-strippastedstyles-win81 1`] = `
+exports[`Microsoft Word > word2010-ie11-noequation-strippastedstyles-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -2204,7 +2204,7 @@ Snapshot Diff:
         "entityRanges": Array [],
 `;
 
-exports[`Microsoft Word word2010-ie11-noequation-win81 1`] = `
+exports[`Microsoft Word > word2010-ie11-noequation-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value

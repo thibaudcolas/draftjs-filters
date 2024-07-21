@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Word Online wordonline-chrome62-macos1013 1`] = `
+exports[`Word Online > wordonline-chrome62-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -161,7 +161,7 @@ Snapshot Diff:
   }
 `;
 
-exports[`Word Online wordonline-chrome62-win81 1`] = `
+exports[`Word Online > wordonline-chrome62-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -322,7 +322,7 @@ Snapshot Diff:
   }
 `;
 
-exports[`Word Online wordonline-edge16-win10 1`] = `
+exports[`Word Online > wordonline-edge16-win10 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -483,7 +483,7 @@ Snapshot Diff:
   }
 `;
 
-exports[`Word Online wordonline-firefox57-macos1013 1`] = `
+exports[`Word Online > wordonline-firefox57-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -644,7 +644,7 @@ Snapshot Diff:
   }
 `;
 
-exports[`Word Online wordonline-firefox57-win81 1`] = `
+exports[`Word Online > wordonline-firefox57-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -805,7 +805,7 @@ Snapshot Diff:
   }
 `;
 
-exports[`Word Online wordonline-safari11-macos1013 1`] = `
+exports[`Word Online > wordonline-safari11-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value

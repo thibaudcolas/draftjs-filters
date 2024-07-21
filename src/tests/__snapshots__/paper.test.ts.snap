@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Dropbox Paper dropboxpaper-chrome62-macos1013 1`] = `
+exports[`Dropbox Paper > dropboxpaper-chrome62-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -441,7 +441,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Dropbox Paper dropboxpaper-chrome62-win81 1`] = `
+exports[`Dropbox Paper > dropboxpaper-chrome62-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -882,7 +882,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Dropbox Paper dropboxpaper-edge16-win10 1`] = `
+exports[`Dropbox Paper > dropboxpaper-edge16-win10 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -1305,7 +1305,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Dropbox Paper dropboxpaper-firefox57-macos1013 1`] = `
+exports[`Dropbox Paper > dropboxpaper-firefox57-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -1746,7 +1746,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Dropbox Paper dropboxpaper-firefox57-win81 1`] = `
+exports[`Dropbox Paper > dropboxpaper-firefox57-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -2187,7 +2187,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Dropbox Paper dropboxpaper-ie11-unsupported-strippastedstyles-win81 1`] = `
+exports[`Dropbox Paper > dropboxpaper-ie11-unsupported-strippastedstyles-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -2362,17 +2362,17 @@ Snapshot Diff:
         "entityRanges": Array [],
 `;
 
-exports[`Dropbox Paper dropboxpaper-ie11-unsupported-win81 1`] = `
+exports[`Dropbox Paper > dropboxpaper-ie11-unsupported-win81 1`] = `
 Snapshot Diff:
 Compared values have no visual difference.
 `;
 
-exports[`Dropbox Paper dropboxpaper-safari-ios11 1`] = `
+exports[`Dropbox Paper > dropboxpaper-safari-ios11 1`] = `
 Snapshot Diff:
 Compared values have no visual difference.
 `;
 
-exports[`Dropbox Paper dropboxpaper-safari11-macos1013 1`] = `
+exports[`Dropbox Paper > dropboxpaper-safari11-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value

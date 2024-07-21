@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Google Docs googledocs-chrome62-macos1013 1`] = `
+exports[`Google Docs > googledocs-chrome62-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -330,7 +330,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Google Docs googledocs-chrome62-win81 1`] = `
+exports[`Google Docs > googledocs-chrome62-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -660,7 +660,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Google Docs googledocs-edge16-win10 1`] = `
+exports[`Google Docs > googledocs-edge16-win10 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -990,7 +990,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Google Docs googledocs-firefox57-macos1013 1`] = `
+exports[`Google Docs > googledocs-firefox57-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -1320,7 +1320,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Google Docs googledocs-firefox57-win81 1`] = `
+exports[`Google Docs > googledocs-firefox57-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -1650,7 +1650,7 @@ Snapshot Diff:
     },
 `;
 
-exports[`Google Docs googledocs-ie11-strippastedstyles-win81 1`] = `
+exports[`Google Docs > googledocs-ie11-strippastedstyles-win81 1`] = `
 Snapshot Diff:
 - First value
 + Second value
@@ -1932,17 +1932,17 @@ Snapshot Diff:
         "entityRanges": Array [],
 `;
 
-exports[`Google Docs googledocs-ie11-win81 1`] = `
+exports[`Google Docs > googledocs-ie11-win81 1`] = `
 Snapshot Diff:
 Compared values have no visual difference.
 `;
 
-exports[`Google Docs googledocs-safari-ios11 1`] = `
+exports[`Google Docs > googledocs-safari-ios11 1`] = `
 Snapshot Diff:
 Compared values have no visual difference.
 `;
 
-exports[`Google Docs googledocs-safari11-macos1013 1`] = `
+exports[`Google Docs > googledocs-safari11-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value

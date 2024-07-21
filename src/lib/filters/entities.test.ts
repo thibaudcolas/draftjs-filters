@@ -1,3 +1,4 @@
+import { describe, it, expect } from "vitest"
 import {
   EditorState,
   convertFromRaw,
@@ -177,7 +178,7 @@ describe("entities", () => {
         ],
       } as unknown as RawDraftContentState)
 
-      content = filterEntityRanges((content, entityKey, block) => {
+      content = filterEntityRanges((content, entityKey, _) => {
         const entityType = content.getEntity(entityKey).getType()
         return ["IMAGE", "LINK"].includes(entityType)
       }, content)

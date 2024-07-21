@@ -12,7 +12,7 @@ import {
   DraftEntityType,
 } from "draft-js"
 
-import { filterEditorState } from "../../lib/index"
+import { filterEditorState, condenseBlocks } from "../../lib/index"
 
 import SentryBoundary from "./SentryBoundary"
 import Highlight from "./Highlight"
@@ -20,7 +20,6 @@ import Link, { linkStrategy } from "./Link"
 import Image from "./Image"
 
 import "./FilterableEditor.css"
-import { condenseBlocks } from "../../lib/filters/editor"
 
 const BLOCKS = {
   unstyled: "P",
@@ -231,7 +230,7 @@ class FilterableEditor extends Component<
     }
   }
 
-  handleReturn(e: React.KeyboardEvent) {
+  handleReturn() {
     const { multiline = true } = this.props
 
     if (!multiline) {
@@ -263,7 +262,7 @@ class FilterableEditor extends Component<
     return (
       <div className="FilterableEditor">
         <SentryBoundary>
-          <div className="EditorToolbar">
+          <div className="EditorToolbar" role="toolbar">
             {Object.entries(styles).map(([type, option]) => (
               <button
                 key={type}

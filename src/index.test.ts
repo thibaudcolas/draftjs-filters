@@ -1,20 +1,21 @@
+import { describe, it, beforeEach, expect, vi } from "vitest"
 describe("demo", () => {
   beforeEach(() => {
-    jest.resetModules()
+    vi.resetModules()
   })
 
-  it("mount", () => {
+  it("mount", async () => {
     document.body.innerHTML = "<div id=root></div>"
 
-    require("./index")
+    await import("./index")
 
     expect(document.body.innerHTML).toContain("DraftEditor-root")
   })
 
-  it("no mount", () => {
+  it("no mount", async () => {
     document.body.innerHTML = ""
 
-    require("./index")
+    await import("./index")
 
     expect(document.body.innerHTML).toBe("")
   })

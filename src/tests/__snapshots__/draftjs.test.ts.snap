@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`Draft.js draftjs-chrome64-macos1013 1`] = `
+exports[`Draft.js > draftjs-chrome64-macos1013 1`] = `
 Snapshot Diff:
 - First value
 + Second value
