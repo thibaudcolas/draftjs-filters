@@ -1,4 +1,12 @@
-import { describe, it, beforeEach, afterEach, expect, vi } from "vitest"
+import {
+  describe,
+  it,
+  beforeEach,
+  afterEach,
+  expect,
+  vi,
+  MockInstance,
+} from "vitest"
 import { render } from "@testing-library/react"
 import {
   EditorState,
@@ -13,12 +21,12 @@ import React from "react"
 import * as editor from "../../lib/filters/editor"
 
 describe("FilterableEditor", () => {
-  let getItem: any
-  let toggleInlineStyle: any
-  let toggleBlockType: any
-  let toggleLink: any
-  let handleKeyCommand: any
-  let insertAtomicBlock: any
+  let getItem: MockInstance<typeof Storage.prototype.getItem>
+  let toggleInlineStyle: MockInstance<typeof RichUtils.toggleInlineStyle>
+  let toggleBlockType: MockInstance<typeof RichUtils.toggleBlockType>
+  let toggleLink: MockInstance<typeof RichUtils.toggleLink>
+  let handleKeyCommand: MockInstance<typeof RichUtils.handleKeyCommand>
+  let insertAtomicBlock: MockInstance<typeof AtomicBlockUtils.insertAtomicBlock>
 
   beforeEach(() => {
     getItem = vi.spyOn(Storage.prototype, "getItem")
@@ -200,6 +208,22 @@ describe("FilterableEditor", () => {
 
       expect(editor.filterEditorState).toHaveBeenCalled()
     })
+
+    it("#filtered shouldFilterPaste to avoid multiline", () => {
+      vi.spyOn(editor, "condenseBlocks").mockImplementation((_, e) => e)
+
+      const state = EditorState.createEmpty()
+      const fakeState = {
+        getCurrentContent: () => state.getCurrentContent(),
+        getLastChangeType: () => "insert-fragment",
+      }
+      const ref = React.createRef<FilterableEditor>()
+      render(<FilterableEditor filtered extended multiline={false} ref={ref} />)
+
+      ref.current?.onChange(fakeState as EditorState)
+
+      expect(editor.condenseBlocks).toHaveBeenCalled()
+    })
   })
 
   it("toggleStyle", () => {
@@ -286,6 +310,7 @@ describe("FilterableEditor", () => {
   describe("handleKeyCommand", () => {
     it("draftjs internal, handled", () => {
       handleKeyCommand.mockImplementation(
+        // @ts-expect-error - ignore
         (editorState: EditorState) => editorState,
       )
       const ref = React.createRef<FilterableEditor>()
@@ -297,13 +322,29 @@ describe("FilterableEditor", () => {
     })
 
     it("draftjs internal, not handled", () => {
-      handleKeyCommand.mockImplementation(() => false)
+      handleKeyCommand.mockImplementation(() => null)
       const ref = React.createRef<FilterableEditor>()
       render(<FilterableEditor ref={ref} />)
 
       expect(ref.current?.handleKeyCommand("backspace")).toBe("not-handled")
 
       handleKeyCommand.mockRestore()
+    })
+  })
+
+  describe("handleReturn", () => {
+    it("prevents multiline", () => {
+      const ref = React.createRef<FilterableEditor>()
+      render(<FilterableEditor multiline={false} ref={ref} />)
+
+      expect(ref.current?.handleReturn()).toBe("handled")
+    })
+
+    it("allows multiline", () => {
+      const ref = React.createRef<FilterableEditor>()
+      render(<FilterableEditor ref={ref} />)
+
+      expect(ref.current?.handleReturn()).toBe("not-handled")
     })
   })
 })

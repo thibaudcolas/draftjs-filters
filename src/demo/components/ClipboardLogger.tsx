@@ -5,6 +5,10 @@ import Highlight from "./Highlight"
 const ClipboardLogger = () => {
   const [target, setValue] = useState<string>("")
   const [log, setLog] = useState<{ text: string; html: string }[]>([])
+  const onChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
+  ) => setValue(e.target.value)
+
   useEffect(() => {
     const onPaste = (e: ClipboardEvent) => {
       const text = e.clipboardData ? e.clipboardData.getData("text/plain") : ""
@@ -21,18 +25,11 @@ const ClipboardLogger = () => {
     <div>
       <label>
         <div>Paste here</div>
-        <textarea
-          value={target}
-          onChange={(e) => setValue(e.target.value)}
-        ></textarea>
+        <textarea value={target} onChange={onChange}></textarea>
       </label>
       <label>
         <div>Or here</div>
-        <input
-          type="text"
-          value={target}
-          onChange={(e) => setValue(e.target.value)}
-        />
+        <input type="text" value={target} onChange={onChange} />
       </label>
       {log.map(({ text, html }, i) => {
         return (

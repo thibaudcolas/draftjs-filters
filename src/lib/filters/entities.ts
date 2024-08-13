@@ -1,4 +1,9 @@
-import { CharacterMetadata, ContentBlock, ContentState } from "draft-js"
+import {
+  CharacterMetadata,
+  ContentBlock,
+  ContentState,
+  EntityInstance,
+} from "draft-js"
 import { List } from "immutable"
 import { ATOMIC, IMAGE } from "../constants"
 
@@ -176,7 +181,7 @@ export const shouldRemoveImageEntity = (
 export const shouldKeepEntityByAttribute = (
   entityTypes: readonly EntityRule[],
   entityType: string,
-  data: { [attr: string]: any },
+  data: { [attr: string]: unknown },
 ) => {
   const config = entityTypes.find((t) => t.type === entityType)
   // If no allowlist is defined, the filter keeps the entity.
@@ -184,25 +189,25 @@ export const shouldKeepEntityByAttribute = (
     config && config.allowlist
       ? config.allowlist
       : config && config.whitelist
-      ? config.whitelist
-      : {}
+        ? config.whitelist
+        : {}
 
   const isValid = Object.keys(allowlist).every((attr) => {
     const check = allowlist[attr]
 
     if (typeof check === "boolean") {
-      const hasData = data.hasOwnProperty(attr)
+      const hasData = Object.prototype.hasOwnProperty.call(data, attr)
 
       return check ? hasData : !hasData
     }
 
-    return new RegExp(check).test(data[attr])
+    return new RegExp(check).test(data[attr] as string)
   })
 
   return isValid
 }
 
-type EntityData = { [attr: string]: any }
+type EntityData = { [attr: string]: unknown }
 
 /**
  * Filters data on an entity to only retain what is allowed.
@@ -214,10 +219,10 @@ export const filterEntityData = (
   content: ContentState,
 ) => {
   let newContent = content
-  const entities: { [type: string]: EntityData } = {}
+  const entities: { [type: string]: EntityInstance } = {}
 
   newContent.getBlockMap().forEach((block) => {
-    // @ts-ignore
+    // @ts-expect-error not providing callback on find
     block!.findEntityRanges((char: CharacterMetadata) => {
       const entityKey = char.getEntity()
       if (entityKey) {
@@ -241,7 +246,7 @@ export const filterEntityData = (
 
     const newData = allowlist.reduce<EntityData>((attrs, attr) => {
       // We do not want to include undefined values if there is no data.
-      if (data.hasOwnProperty(attr)) {
+      if (Object.prototype.hasOwnProperty.call(data, attr)) {
         attrs[attr] = data[attr]
       }
 

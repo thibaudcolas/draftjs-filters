@@ -1,5 +1,4 @@
 /* eslint-disable    */
-/* eslint-disable global-require */
 const data = {
   "applepages-chrome62-macos1013": require("./json/applepages-chrome62-macos1013.json"),
   "applepages-firefox57-macos1013": require("./json/applepages-firefox57-macos1013.json"),

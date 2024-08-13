@@ -1,4 +1,4 @@
 // See https://github.com/marionebl/commitlint.
-module.exports = {
+export default {
   extends: ["@commitlint/config-conventional"],
 }

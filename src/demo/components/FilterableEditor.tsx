@@ -243,7 +243,7 @@ class FilterableEditor extends Component<
   handleKeyCommand(command: string) {
     const { editorState } = this.state
 
-    let newState = RichUtils.handleKeyCommand(editorState, command)
+    const newState = RichUtils.handleKeyCommand(editorState, command)
 
     if (newState) {
       this.onChange(newState)

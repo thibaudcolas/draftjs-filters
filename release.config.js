@@ -1,5 +1,6 @@
-/* eslint-disable no-template-curly-in-string */
-const pkg = require("./package.json")
+const pkg = {
+  name: "draftjs-filters",
+}
 
 const CHANGELOG_HEADER = `# Changelog
 
@@ -29,7 +30,7 @@ ${COMMENT_POSTFIX}
  * https://github.com/semantic-release/commit-analyzer
  * https://github.com/semantic-release/changelog
  */
-module.exports = {
+export default {
   branches: "main",
   tagFormat: "v${version}",
   npmPublish: true,

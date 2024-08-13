@@ -5,9 +5,10 @@ import {
   convertToRaw,
   RawDraftContentState,
 } from "draft-js"
-import snapshotDiff from "snapshot-diff"
 
 import { filterEditorState } from "../lib/index"
+
+import snapshotDiff from "./snapshot-diff"
 
 export const config = {
   blocks: [
@@ -39,10 +40,10 @@ export const config = {
   whitespacedCharacters: ["\t"],
 } as const
 
-export const testFilteringDiff = (raw: RawDraftContentState) => {
+export const testFilteringDiff = (raw: object | RawDraftContentState) => {
   const editorState = filterEditorState(
     config,
-    EditorState.createWithContent(convertFromRaw(raw)),
+    EditorState.createWithContent(convertFromRaw(raw as RawDraftContentState)),
   )
   // We snapshot the difference in the content before-after filtering, instead of the resulting content.
   // This makes it easier to review what exactly is filtered out.

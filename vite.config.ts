@@ -9,5 +9,16 @@ export default defineConfig({
   test: {
     environment: "jsdom",
     setupFiles: ["./src/setupTests.js"],
+    coverage: {
+      provider: "v8",
+      exclude: [
+        "./*.{js,mjs,ts}",
+        "build",
+        "dist",
+        "docs",
+        "pasting",
+        "src/vite-env.d.ts",
+      ],
+    },
   },
 })

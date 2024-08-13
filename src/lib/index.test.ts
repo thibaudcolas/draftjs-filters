@@ -1,12 +1,10 @@
 import { describe, it, expect } from "vitest"
 import * as exports from "./index"
 
-const pkg = require("../../package.json")
-
 /**
  * Makes sure the API shape is validated against.
  */
-describe(pkg.name, () => {
+describe("draftjs-filters", () => {
   it("has a stable API", () => {
     expect(exports).toMatchInlineSnapshot(`
       {

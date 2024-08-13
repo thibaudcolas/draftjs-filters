@@ -54,7 +54,7 @@ describe("selection", () => {
     })
 
     it("inserts a block if there is none left, with selection on it", () => {
-      let editorState = EditorState.createWithContent(
+      const editorState = EditorState.createWithContent(
         convertFromRaw({
           entityMap: {},
           blocks: [

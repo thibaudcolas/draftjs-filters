@@ -55,4 +55,20 @@ describe("ClipboardLogger", () => {
 
     expect(getAllByText("0: …")).toBeTruthy()
   })
+
+  it("on type in textarea", () => {
+    render(<ClipboardLogger />)
+
+    const field = document.querySelector("textarea") as HTMLTextAreaElement
+    fireEvent.change(field, { target: { value: "Typed Text" } })
+    expect(field.value).toBe("Typed Text")
+  })
+
+  it("on type in input", () => {
+    render(<ClipboardLogger />)
+
+    const field = document.querySelector("[type='text']") as HTMLInputElement
+    fireEvent.change(field, { target: { value: "Typed Text" } })
+    expect(field.value).toBe("Typed Text")
+  })
 })

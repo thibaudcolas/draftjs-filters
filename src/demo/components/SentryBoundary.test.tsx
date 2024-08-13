@@ -7,15 +7,21 @@ const ErrorComponent = ({ throwError }: { throwError: boolean }) => {
   if (throwError) {
     throw new Error("Test error")
   }
-  return <div>Normal operation</div>
+  return <div>Test</div>
 }
 
 describe("SentryBoundary", () => {
   it("renders", () => {
-    const { asFragment } = render(<SentryBoundary>Test</SentryBoundary>)
+    const { asFragment } = render(
+      <SentryBoundary>
+        <ErrorComponent throwError={false} />
+      </SentryBoundary>,
+    )
     expect(asFragment()).toMatchInlineSnapshot(`
       <DocumentFragment>
-        Test
+        <div>
+          Test
+        </div>
       </DocumentFragment>
     `)
   })

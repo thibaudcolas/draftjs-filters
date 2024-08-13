@@ -178,7 +178,7 @@ describe("entities", () => {
         ],
       } as unknown as RawDraftContentState)
 
-      content = filterEntityRanges((content, entityKey, _) => {
+      content = filterEntityRanges((content, entityKey) => {
         const entityType = content.getEntity(entityKey).getType()
         return ["IMAGE", "LINK"].includes(entityType)
       }, content)
@@ -552,7 +552,7 @@ describe("entities", () => {
         ],
         content,
       )
-      const entities: { [type: string]: {} } = {}
+      const entities: { [type: string]: object } = {}
       content.getBlockMap().forEach((block) => {
         block!.findEntityRanges(
           (char) => {
@@ -616,7 +616,7 @@ describe("entities", () => {
           ],
           content,
         )
-        const entities: { [type: string]: {} } = {}
+        const entities: { [type: string]: object } = {}
         content.getBlockMap().forEach((block) => {
           block!.findEntityRanges(
             (char) => {
@@ -668,7 +668,7 @@ describe("entities", () => {
           ],
           content,
         )
-        const entities: { [type: string]: {} } = {}
+        const entities: { [type: string]: object } = {}
         content.getBlockMap().forEach((block) => {
           block!.findEntityRanges(
             (char) => {

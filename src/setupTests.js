@@ -1,8 +1,16 @@
 import { expect, vi } from "vitest"
-import snapshotDiff from "snapshot-diff"
 
 // https://github.com/jest-community/snapshot-diff
-expect.addSnapshotSerializer(snapshotDiff.getSnapshotDiffSerializer())
+const SNAPSHOT_TITLE = "Snapshot Diff:\n"
+
+expect.addSnapshotSerializer({
+  test(value) {
+    return typeof value === "string" && value.indexOf(SNAPSHOT_TITLE) === 0
+  },
+  print(value) {
+    return value
+  },
+})
 
 vi.mock("draft-js", async () => {
   const packages = {
