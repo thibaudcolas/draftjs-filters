@@ -1,10 +1,6 @@
-# [Draft.js filters](https://thibaudcolas.github.io/draftjs-filters/) [<img src="https://raw.githubusercontent.com/thibaudcolas/draftail.org/main/.github/draftail-logo.svg?sanitize=true" width="90" height="90" align="right">](https://www.draftail.org/)
+# [Draft.js filters](https://thibaudcolas.github.io/draftjs-filters/)
 
-[![npm](https://img.shields.io/npm/v/draftjs-filters.svg)](https://www.npmjs.com/package/draftjs-filters) [![Build status](https://github.com/thibaudcolas/draftjs-filters/workflows/CI/badge.svg)](https://github.com/thibaudcolas/draftjs-filters/actions)
-
-> Filter [Draft.js](https://facebook.github.io/draft-js/) content to preserve only the formatting you allow. Built for [Draftail](https://www.draftail.org/).
-
-[![Screenshot of Microsoft Word with tens of toolbars activated](https://thibaudcolas.github.io/draftjs-filters/word-toolbars-overload.jpg)](https://thibaudcolas.github.io/draftjs-filters)
+Filter [Draft.js](https://facebook.github.io/draft-js/) content to preserve only the formatting you allow. Built for [Draftail](https://www.draftail.org/).
 
 The main use case is to select what formatting to keep when copy-pasting rich text into an editor, for example from Word or Google Docs, addressing Draft.js limitations like [#166](https://github.com/facebook/draft-js/issues/166) and [#504](https://github.com/facebook/draft-js/issues/504). Check out the [online demo](https://thibaudcolas.github.io/draftjs-filters)!
 
