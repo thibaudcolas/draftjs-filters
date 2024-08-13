@@ -39,12 +39,12 @@ jobs:
       - run: npx commitlint --from HEAD~${{ github.event.pull_request.commits }} --to HEAD
         if: ${{ github.event_name == 'pull_request' }}
       - run: npm run report:package
-      - run: mv coverage/lcov-report build || true
+      - run: mv coverage/lcov-report dist || true
       - run: cat ./coverage/lcov.info | npx coveralls || true
       - uses: actions/configure-pages@v4
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: build
+          path: dist
       - run: npx semantic-release
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         env:

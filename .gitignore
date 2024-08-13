@@ -76,7 +76,6 @@ local.py
 # Generated files
 # -------------------------------------------------
 dist
-build
 /var/static/
 /var/media/
 /docs/_build/

@@ -9,7 +9,6 @@ export default tseslint.config(
       "coverage",
       "docs",
       "dist",
-      "build",
       "es",
       "**/*.min.js",
       "**/*.bundle.js",

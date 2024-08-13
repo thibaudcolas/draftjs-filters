@@ -80,7 +80,7 @@
     "test": "vitest run --coverage.enabled",
     "test:watch": "vitest watch",
     "report:coverage": "open coverage/lcov-report/index.html",
-    "report:package": "npm pack --dry-run --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee build/package.txt",
+    "report:package": "npm pack --dry-run --loglevel notice 2>&1 >/dev/null | sed -e 's/^npm notice //' | tee dist/package.txt",
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0 && prettier --check '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}'",
     "format": "prettier --write '**/?(.)*.{md,css,scss,js,ts,tsx,json,yaml,yml,html}'",
     "test:ci": "npm run lint -s && npm run build -s && npm run test -- --coverage.thresholds.100",

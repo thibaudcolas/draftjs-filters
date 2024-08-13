@@ -13,7 +13,6 @@ export default defineConfig({
       provider: "v8",
       exclude: [
         "./*.{js,mjs,ts}",
-        "build",
         "dist",
         "docs",
         "pasting",
