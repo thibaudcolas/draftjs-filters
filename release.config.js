@@ -33,12 +33,13 @@ ${COMMENT_POSTFIX}
 export default {
   branches: "main",
   tagFormat: "v${version}",
-  npmPublish: true,
+  // Disable automated npm publishing for now.
+  // npmPublish: true,
   tarballDir: "dist",
   assets: "dist/*.tgz",
   verifyConditions: [
     "@semantic-release/changelog",
-    "@semantic-release/npm",
+    // "@semantic-release/npm",
     "@semantic-release/git",
     "@semantic-release/github",
   ],
@@ -57,7 +58,7 @@ export default {
       path: "@semantic-release/exec",
       cmd: "prettier --write CHANGELOG.md && rm -rf .git/hooks",
     },
-    "@semantic-release/npm",
+    // "@semantic-release/npm",
     {
       path: "@semantic-release/git",
       message:
