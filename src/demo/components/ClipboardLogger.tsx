@@ -35,6 +35,7 @@ const ClipboardLogger = () => {
         return (
           <div key={i}>
             <p>{`${i}: ${text.slice(0, 50)}…`}</p>
+            <Highlight value={text}></Highlight>
             <Highlight value={html}></Highlight>
           </div>
         )
