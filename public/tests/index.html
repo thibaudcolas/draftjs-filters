@@ -137,5 +137,81 @@
         <img src="file://word-toolbars-overload.jpg" alt="Last block" />
       </div>
     </details>
+
+    <details>
+      <summary>
+        Styleguide-like coverage (<a
+          href="https://github.com/thibaudcolas/draftjs-filters/issues/155"
+          >#155</a
+        >)
+      </summary>
+      <div contenteditable>
+        <h1>Heading level 1</h1>
+        <h2>Heading level 2</h2>
+        <h3>Heading level 3</h3>
+        <p>
+          Body copy with <strong>strong</strong>, <em>emphasis</em>,
+          <code>inline code</code>, and <a href="https://example.com/">link</a>.
+        </p>
+        <blockquote>
+          This blockquote helps validate conversion and filtering behavior.
+        </blockquote>
+        <hr />
+        <ul>
+          <li>Unordered item one</li>
+          <li>Unordered item two</li>
+        </ul>
+        <ol>
+          <li>Ordered item one</li>
+          <li>Ordered item two</li>
+        </ol>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Element</th>
+              <th>Sample</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Keyboard</td>
+              <td><kbd>Ctrl</kbd> + <kbd>V</kbd></td>
+            </tr>
+            <tr>
+              <td>Code</td>
+              <td><code>const filters = ["LINK"]</code></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+
+    <details>
+      <summary>Security-sensitive examples</summary>
+      <div contenteditable>
+        <p>
+          Potentially unsafe URLs:
+          <a href="javascript:alert('xss')">javascript:</a>,
+          <a
+            href="data:text/html;base64,PHNjcmlwdD5hbGVydCgneHNzJyk8L3NjcmlwdD4="
+            >data:</a
+          >,
+          <a href="vbscript:msgbox('xss')">vbscript:</a>
+        </p>
+        <pre>
+&lt;img src=&quot;x&quot; onerror=&quot;alert('xss')&quot; /&gt;
+&lt;svg onload=&quot;alert('xss')&quot;&gt;&lt;/svg&gt;
+&lt;script&gt;alert('xss')&lt;/script&gt;
+&lt;iframe srcdoc=&quot;&lt;script&gt;alert('xss')&lt;/script&gt;&quot;&gt;&lt;/iframe&gt;</pre
+        >
+        <p>
+          Suspicious CSS as text:
+          <code
+            >style=&quot;background-image:
+            url(javascript:alert('xss'))&quot;</code
+          >
+        </p>
+      </div>
+    </details>
   </body>
 </html>
