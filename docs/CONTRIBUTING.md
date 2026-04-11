@@ -1,46 +1,65 @@
 # Contribution Guidelines
 
-Thank you for considering to help this project.
+Thanks for considering contributing to this project.
 
 We welcome all support, whether on bug reports, feature requests, code, design, reviews, tests, documentation, and more.
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By participating in this project you agree to abide by its terms.
 
-## Development
+## Development setup
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (version from `.nvmrc`)
+- [nvm](https://github.com/nvm-sh/nvm)
 
 ### Install
 
-> Clone the project on your computer. You will also need [Node](https://nodejs.org) and [nvm](https://github.com/creationix/nvm).
-
 ```sh
+# Clone the repository first.
 nvm install
-# Then, install all project dependencies.
+nvm use
 npm install
 ```
 
-### Working on the project
-
-> Everything mentioned in the installation process should already be done.
+## Working on the project
 
 ```sh
-# Make sure you use the right node version.
+# Ensure the expected Node.js version.
 nvm use
-# Start the server and the development tools.
+
+# Start the local demo site.
 npm run start
-# Runs linting.
+
+# Lint all files.
 npm run lint
-# Re-formats all of the files in the project (with Prettier).
+
+# Format files with Prettier.
 npm run format
-# Run tests in a watcher.
-npm run test:watche
-# Open the coverage report with:
+
+# Run tests once.
+npm run test
+
+# Or run tests in watch mode.
+npm run test:watch
+
+# Open the coverage report.
 npm run report:coverage
-# Open the build report with:
-npm run report:build
-# View other available commands with:
+
+# See all available scripts.
 npm run
 ```
 
-### Code style
+## Pull requests
 
-This project uses [Prettier](https://prettier.io/), [ESLint](https://eslint.org/), and [TypeScript](https://www.typescriptlang.org/). All code should always be checked with those tools.
+Before opening a pull request:
+
+1. Keep changes focused and explain the motivation.
+2. Update documentation and tests when relevant.
+3. Ensure linting and tests pass locally (`npm run lint` and `npm run test`).
+
+PRs should use clear commit messages (conventional commits are preferred).
+
+## Code style
+
+This project uses [Prettier](https://prettier.io/), [ESLint](https://eslint.org/), and [TypeScript](https://www.typescriptlang.org/). Please run formatting and linting before submitting changes.
